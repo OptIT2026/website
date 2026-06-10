@@ -1,0 +1,4620 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      IT Infrastructure Management Services | DevOps as a service | Security
+      Services | Opt IT
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --navy: #064e3b;
+        --navy-mid: #065f46;
+        --blue: #10b981;
+        --blue-bright: #34d399;
+        --cyan: #6ee7b7;
+        --cyan-soft: #ecfdf5;
+        --gold: #e8a426;
+        --white: #ffffff;
+        --off-white: #f7f9fc;
+        --gray-100: #eef1f7;
+        --gray-200: #d8dee9;
+        --gray-400: #8b95a9;
+        --gray-600: #4a5568;
+        --gray-800: #1e2533;
+        --text-primary: #022c22;
+        --text-secondary: #4a5568;
+        --text-muted: #8b95a9;
+        --border: #e2e8f0;
+        --shadow-sm:
+          0 1px 3px rgba(6, 78, 59, 0.07), 0 1px 2px rgba(6, 78, 59, 0.04);
+        --shadow-md:
+          0 4px 16px rgba(6, 78, 59, 0.1), 0 2px 4px rgba(6, 78, 59, 0.06);
+        --shadow-lg:
+          0 16px 48px rgba(6, 78, 59, 0.14), 0 4px 12px rgba(6, 78, 59, 0.08);
+        --shadow-xl: 0 32px 80px rgba(6, 78, 59, 0.18);
+        --radius-sm: 8px;
+        --radius-md: 12px;
+        --radius-lg: 20px;
+        --radius-xl: 28px;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        font-size: 16px;
+      }
+
+      body {
+        font-family: "DM Sans", sans-serif;
+        color: var(--text-primary);
+        background: var(--white);
+        overflow-x: hidden;
+        line-height: 1.6;
+      }
+
+      /* ── TYPOGRAPHY ── */
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        font-family: "Syne", sans-serif;
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+      }
+
+      h1 {
+        font-size: clamp(24px, 3.2vw, 38px);
+      }
+      h2 {
+        font-size: clamp(20px, 2.6vw, 30px);
+      }
+      h3 {
+        font-size: clamp(17px, 2vw, 22px);
+      }
+      h4 {
+        font-size: 16px;
+      }
+      h5 {
+        font-size: 14px;
+      }
+
+      p {
+        font-size: 15px;
+        line-height: 1.7;
+      }
+      .subtitle {
+        font-size: 16px;
+        color: var(--text-secondary);
+      }
+      .label {
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--blue);
+      }
+      .label-light {
+        color: var(--cyan);
+      }
+
+      /* ── LAYOUT ── */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+
+      .section {
+        padding: 80px 0;
+      }
+      .section-sm {
+        padding: 64px 0;
+      }
+
+      /* ── BUTTONS ── */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 13px 28px;
+        border-radius: var(--radius-sm);
+        font-family: "DM Sans", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        border: none;
+        text-decoration: none;
+        transition: all 0.22s ease;
+      }
+
+      .btn-primary {
+        background: var(--blue);
+        color: var(--white);
+        box-shadow: 0 4px 14px rgba(16, 185, 129, 0.38);
+      }
+
+      .btn-primary:hover {
+        background: var(--blue-bright);
+        transform: translateY(-1px);
+        box-shadow: 0 6px 20px rgba(16, 185, 129, 0.45);
+      }
+
+      .btn-outline {
+        background: transparent;
+        color: var(--navy);
+        border: 1.5px solid var(--gray-200);
+      }
+
+      .btn-outline:hover {
+        border-color: var(--blue);
+        color: var(--blue);
+      }
+
+      .btn-white {
+        background: var(--white);
+        color: var(--navy);
+      }
+
+      .btn-white:hover {
+        background: var(--cyan-soft);
+      }
+
+      .btn-ghost {
+        background: rgba(255, 255, 255, 0.12);
+        color: var(--white);
+        border: 1.5px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .btn-ghost:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      .btn svg {
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+      }
+
+      /* ── NAV ── */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: rgba(255, 255, 255, 0.97);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--border);
+        transition: box-shadow 0.3s;
+      }
+
+      nav.scrolled {
+        box-shadow: var(--shadow-md);
+      }
+
+      .nav-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 32px;
+        height: 68px;
+        display: flex;
+        align-items: center;
+        gap: 40px;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        flex-shrink: 0;
+      }
+
+      .logo-circle {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle at 35% 30%,
+          #d4f55a,
+          #8cc418 45%,
+          #4a9a0a 100%
+        );
+        border: 2px solid #1a1a1a;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        box-shadow:
+          inset 0 -4px 8px rgba(0, 0, 0, 0.2),
+          inset 0 4px 10px rgba(255, 255, 255, 0.35);
+      }
+
+      .logo-circle-text {
+        font-size: 6.5px;
+        font-weight: 700;
+        color: #1a1a1a;
+        text-align: center;
+        line-height: 1.25;
+        font-family: "DM Sans", sans-serif;
+        letter-spacing: 0.01em;
+      }
+
+      .logo-wordmark {
+        display: flex;
+        align-items: center;
+        font-family: "Syne", sans-serif;
+        font-weight: 800;
+        font-size: 22px;
+        color: #1a1a1a;
+        letter-spacing: -0.03em;
+        line-height: 1;
+        gap: 1px;
+      }
+
+      .logo-i-bar {
+        width: 5px;
+        height: 15px;
+        background: linear-gradient(to bottom, #8cc418, #4a9a0a);
+        border-radius: 3px;
+        flex-shrink: 0;
+        margin: 0 2px 0 5px;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        flex: 1;
+      }
+
+      .nav-link,
+      .nav-dropdown {
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--text-secondary);
+        text-decoration: none;
+        transition: all 0.15s;
+        white-space: nowrap;
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        position: relative;
+      }
+
+      .nav-link:hover,
+      .nav-dropdown:hover {
+        color: var(--navy);
+        background: var(--off-white);
+      }
+
+      .nav-link.active {
+        color: var(--blue);
+      }
+
+      .nav-dd-label {
+        cursor: pointer;
+        color: inherit;
+      }
+
+      .nav-dropdown.label-active > .nav-dd-label {
+        color: var(--blue);
+      }
+
+      .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-lg);
+        min-width: 240px;
+        padding: 8px 0;
+        margin-top: 4px;
+        display: none;
+        z-index: 1000;
+      }
+
+      .nav-dropdown:hover .dropdown-menu {
+        display: block;
+      }
+
+      .dropdown-item {
+        padding: 12px 20px;
+        font-size: 14px;
+        color: var(--text-secondary);
+        text-decoration: none;
+        display: block;
+        transition: all 0.15s;
+      }
+
+      .dropdown-item:hover {
+        background: var(--off-white);
+        color: var(--blue);
+      }
+
+      .dropdown-divider {
+        height: 1px;
+        background: var(--border);
+        margin: 8px 0;
+      }
+
+      .nav-cta {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-shrink: 0;
+      }
+
+      .nav-cta .btn {
+        padding: 9px 20px;
+        font-size: 13px;
+      }
+
+      /* ── HERO ── */
+      .hero {
+        min-height: 100vh;
+        background: var(--navy);
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        padding-top: 68px;
+      }
+
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            ellipse 80% 60% at 60% 40%,
+            rgba(16, 185, 129, 0.25) 0%,
+            transparent 60%
+          ),
+          radial-gradient(
+            ellipse 40% 40% at 80% 70%,
+            rgba(110, 231, 183, 0.12) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            ellipse 30% 30% at 10% 80%,
+            rgba(232, 164, 38, 0.08) 0%,
+            transparent 50%
+          );
+      }
+
+      .hero-grid {
+        position: absolute;
+        inset: 0;
+        opacity: 0.04;
+        background-image:
+          linear-gradient(var(--white) 1px, transparent 1px),
+          linear-gradient(90deg, var(--white) 1px, transparent 1px);
+        background-size: 60px 60px;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 80px 32px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: center;
+      }
+
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(110, 231, 183, 0.1);
+        border: 1px solid rgba(110, 231, 183, 0.25);
+        border-radius: 100px;
+        padding: 6px 14px 6px 6px;
+        margin-bottom: 28px;
+      }
+
+      .hero-badge-dot {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: rgba(110, 231, 183, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .hero-badge-dot::after {
+        content: "";
+        width: 8px;
+        height: 8px;
+        background: var(--cyan);
+        border-radius: 50%;
+      }
+
+      .hero-badge span {
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--cyan);
+        letter-spacing: 0.04em;
+      }
+
+      .hero-title {
+        font-size: clamp(28px, 3.8vw, 44px);
+        font-weight: 800;
+        color: var(--white);
+        margin-bottom: 20px;
+      }
+
+      .hero-title .accent {
+        color: var(--cyan);
+      }
+      .hero-title .gold {
+        color: var(--gold);
+      }
+
+      .hero-sub {
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.65);
+        line-height: 1.7;
+        margin-bottom: 40px;
+        max-width: 480px;
+        font-weight: 300;
+      }
+
+      .hero-actions {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-bottom: 56px;
+      }
+
+      .hero-stats {
+        display: flex;
+        gap: 56px;
+        flex-wrap: wrap;
+      }
+
+      .hero-stat {
+      }
+
+      .hero-stat .num {
+        font-family: "Syne", sans-serif;
+        font-size: 32px;
+        font-weight: 800;
+        color: var(--white);
+        line-height: 1;
+        margin-bottom: 6px;
+      }
+
+      .hero-stat .num span {
+        color: var(--cyan);
+      }
+
+      .hero-stat .lbl {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.5);
+        font-weight: 300;
+      }
+
+      .hero-visual {
+        position: relative;
+      }
+
+      .hero-card-stack {
+        position: relative;
+        height: 420px;
+      }
+
+      .h-card {
+        position: absolute;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: var(--radius-lg);
+        backdrop-filter: blur(20px);
+        padding: 24px;
+      }
+
+      .h-card-main {
+        top: 0;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.07);
+      }
+
+      .h-card-title {
+        font-family: "Syne", sans-serif;
+        font-weight: 700;
+        color: var(--white);
+        font-size: 15px;
+        margin-bottom: 6px;
+      }
+
+      .h-card-sub {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.5);
+        margin-bottom: 20px;
+      }
+
+      .h-metric-row {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+
+      .h-metric {
+        flex: 1;
+        padding: 14px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .h-metric .val {
+        font-family: "Syne", sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--white);
+        line-height: 1;
+      }
+
+      .h-metric .val.up {
+        color: #4ade80;
+      }
+      .h-metric .val.cyan {
+        color: var(--cyan);
+      }
+
+      .h-metric .key {
+        font-size: 11px;
+        color: rgba(255, 255, 255, 0.45);
+        margin-top: 4px;
+      }
+
+      /* ── TRUSTED BY ── */
+      .trusted {
+        background: var(--off-white);
+        padding: 40px 0;
+      }
+
+      .trusted-label {
+        text-align: center;
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--text-muted);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 24px;
+      }
+
+      .trusted-logos {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 48px;
+        flex-wrap: wrap;
+      }
+
+      .client-logo {
+        font-family: "Syne", sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        color: var(--navy);
+        opacity: 0.5;
+        transition: all 0.2s;
+        white-space: nowrap;
+      }
+
+      .client-logo:hover {
+        opacity: 0.8;
+      }
+
+      /* ── STATS SECTION ── */
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 32px;
+        margin: 64px 0;
+      }
+
+      .stat-card {
+        text-align: center;
+        padding: 32px 24px;
+        border-radius: var(--radius-lg);
+        background: var(--white);
+        border: 1px solid var(--border);
+      }
+
+      .stat-number {
+        font-family: "Syne", sans-serif;
+        font-size: 48px;
+        font-weight: 800;
+        color: var(--blue);
+        margin-bottom: 8px;
+      }
+
+      .stat-label {
+        font-size: 14px;
+        color: var(--text-secondary);
+        font-weight: 500;
+      }
+
+      /* ── SERVICES ── */
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin-top: 48px;
+      }
+
+      .service-card {
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        background: var(--white);
+        box-shadow: var(--shadow-sm);
+        transition: all 0.28s ease;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        min-height: 300px;
+      }
+
+      .service-card-bg {
+        position: absolute;
+        inset: 0;
+        opacity: 0.13;
+        transition: opacity 0.3s;
+        overflow: hidden;
+      }
+      .service-card-bg svg {
+        width: 100%;
+        height: 100%;
+      }
+
+      .service-card:hover .service-card-bg {
+        opacity: 0.2;
+      }
+
+      .service-card:hover {
+        border-color: var(--blue);
+        box-shadow: var(--shadow-md);
+        transform: translateY(-4px);
+      }
+
+      .service-card-content {
+        position: relative;
+        z-index: 2;
+        padding: 28px 24px;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+      }
+
+      .service-name {
+        font-family: "Syne", sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--navy);
+        margin-bottom: 10px;
+        line-height: 1.3;
+      }
+
+      .service-desc {
+        font-size: 13.5px;
+        color: var(--text-secondary);
+        line-height: 1.65;
+        flex: 1;
+        margin-bottom: 20px;
+      }
+
+      .service-learn-btn {
+        display: block;
+        padding: 9px 22px;
+        background: var(--blue);
+        color: var(--white);
+        border-radius: var(--radius-sm);
+        font-size: 13px;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.2s;
+        text-align: center;
+        width: fit-content;
+        margin: 0 auto;
+      }
+
+      .service-learn-btn:hover {
+        background: var(--blue-bright);
+        transform: translateY(-1px);
+      }
+
+      .service-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        background: #f0fdf4;
+        border: 1px solid #d1fae5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        margin-bottom: 16px;
+        flex-shrink: 0;
+      }
+
+      .service-link {
+        display: block;
+        padding: 9px 22px;
+        background: var(--blue);
+        color: var(--white);
+        border-radius: var(--radius-sm);
+        font-size: 13px;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.2s;
+        text-align: center;
+        width: fit-content;
+        margin: auto auto 0;
+      }
+
+      .service-link:hover {
+        background: var(--blue-bright);
+        transform: translateY(-1px);
+      }
+
+      /* ── INDUSTRIES GRID ── */
+      .industries-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 14px;
+        margin-top: 48px;
+      }
+
+      .industry-card {
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        padding: 24px 16px;
+        text-align: center;
+        background: var(--white);
+        transition: all 0.25s;
+        cursor: pointer;
+      }
+
+      .industry-card:hover {
+        border-color: var(--blue);
+        box-shadow: var(--shadow-md);
+        transform: translateY(-2px);
+      }
+
+      .industry-icon {
+        font-size: 32px;
+        margin-bottom: 12px;
+        display: block;
+      }
+
+      .industry-name {
+        font-family: "Syne", sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--navy);
+      }
+
+      /* ── SECTION HEADERS ── */
+      .section-header {
+        max-width: 600px;
+      }
+
+      .section-header.center {
+        max-width: 640px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .section-title {
+        font-size: clamp(20px, 2.6vw, 30px);
+        font-weight: 800;
+        color: var(--navy);
+        margin: 10px 0 14px;
+      }
+
+      .section-title-light {
+        color: var(--white);
+      }
+
+      .section-subtitle {
+        font-size: 15px;
+        color: var(--text-secondary);
+        line-height: 1.7;
+        font-weight: 300;
+      }
+
+      .section-subtitle-light {
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      /* ── PAGE HERO ── */
+      .page-hero {
+        background: var(--navy);
+        padding: 140px 0 80px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .page-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse 60% 80% at 70% 50%,
+          rgba(16, 185, 129, 0.2) 0%,
+          transparent 60%
+        );
+      }
+
+      .page-hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 720px;
+      }
+
+      .page-title {
+        font-size: clamp(24px, 3.2vw, 38px);
+        font-weight: 800;
+        color: var(--white);
+        margin: 12px 0 20px;
+      }
+
+      .page-sub {
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.6);
+        font-weight: 300;
+        line-height: 1.7;
+      }
+
+      /* ── WHY CHOOSE ── */
+      .why {
+        background: var(--navy);
+      }
+
+      .why-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: center;
+        margin-top: 56px;
+      }
+
+      .why-items {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+      }
+
+      .why-item {
+        display: flex;
+        gap: 20px;
+      }
+
+      .why-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        background: rgba(16, 185, 129, 0.2);
+        border: 1px solid rgba(16, 185, 129, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        flex-shrink: 0;
+      }
+
+      .why-item-title {
+        font-family: "Syne", sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--white);
+        margin-bottom: 6px;
+      }
+
+      .why-item-desc {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.55);
+        line-height: 1.65;
+        font-weight: 300;
+      }
+
+      .cert-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 24px;
+      }
+
+      .cert-card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: var(--radius-md);
+        padding: 20px;
+        text-align: center;
+      }
+
+      .cert-badge {
+        font-size: 28px;
+        margin-bottom: 8px;
+      }
+
+      .cert-name {
+        font-family: "Syne", sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--white);
+      }
+
+      .cert-sub {
+        font-size: 11px;
+        color: rgba(255, 255, 255, 0.45);
+        margin-top: 3px;
+      }
+
+      .exp-box {
+        background: linear-gradient(
+          135deg,
+          rgba(16, 185, 129, 0.25),
+          rgba(110, 231, 183, 0.15)
+        );
+        border: 1px solid rgba(110, 231, 183, 0.2);
+        border-radius: var(--radius-md);
+        padding: 24px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .exp-num {
+        font-family: "Syne", sans-serif;
+        font-size: 52px;
+        font-weight: 800;
+        color: var(--white);
+        line-height: 1;
+      }
+
+      .exp-num span {
+        color: var(--cyan);
+      }
+
+      .exp-title {
+        font-family: "Syne", sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--white);
+      }
+
+      .exp-sub {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.5);
+        font-weight: 300;
+        margin-top: 4px;
+      }
+
+      /* ── TECH STACK ── */
+      .tech-section {
+        background: var(--off-white);
+      }
+
+      .tech-grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 12px;
+        margin-top: 48px;
+      }
+
+      .tech-badge {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 20px 14px;
+        text-align: center;
+        transition: all 0.2s;
+      }
+
+      .tech-badge:hover {
+        border-color: var(--blue);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .tech-logo {
+        font-size: 24px;
+        margin-bottom: 8px;
+      }
+
+      .tech-name {
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--text-secondary);
+      }
+
+      /* ── TESTIMONIALS ── */
+      .testimonials {
+        background: var(--off-white);
+      }
+
+      .testimonial-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-top: 56px;
+      }
+
+      .testimonial-card {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 32px;
+        box-shadow: var(--shadow-sm);
+      }
+
+      .stars {
+        color: var(--gold);
+        font-size: 14px;
+        margin-bottom: 16px;
+        letter-spacing: 2px;
+      }
+
+      .testimonial-text {
+        font-size: 14px;
+        color: var(--text-secondary);
+        line-height: 1.75;
+        margin-bottom: 24px;
+        font-style: italic;
+      }
+
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .author-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Syne", sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+        color: var(--white);
+      }
+
+      .author-name {
+        font-family: "Syne", sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--navy);
+      }
+
+      .author-role {
+        font-size: 12px;
+        color: var(--text-muted);
+      }
+
+      /* ── CTA BANNER ── */
+      .cta-banner {
+        background: linear-gradient(
+          135deg,
+          var(--navy) 0%,
+          #047857 50%,
+          #10b981 100%
+        );
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cta-banner::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse 60% 100% at 80% 50%,
+          rgba(110, 231, 183, 0.12) 0%,
+          transparent 60%
+        );
+      }
+
+      .cta-inner {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+      }
+
+      .cta-title {
+        font-size: clamp(28px, 4vw, 44px);
+        font-weight: 800;
+        color: var(--white);
+        margin: 12px 0 16px;
+      }
+
+      .cta-sub {
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.65);
+        margin-bottom: 40px;
+        font-weight: 300;
+        max-width: 540px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .cta-actions {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+      }
+
+      /* ── FOOTER ── */
+      footer {
+        background: var(--gray-800);
+        padding: 72px 0 32px;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 48px;
+        margin-bottom: 56px;
+      }
+
+      .footer-brand-desc {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.45);
+        line-height: 1.7;
+        margin: 16px 0 24px;
+        font-weight: 300;
+      }
+
+      .footer-social {
+        display: flex;
+        gap: 10px;
+      }
+
+      .social-btn {
+        width: 34px;
+        height: 34px;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.07);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        cursor: pointer;
+        transition: all 0.2s;
+        color: rgba(255, 255, 255, 0.5);
+        text-decoration: none;
+      }
+
+      .social-btn:hover {
+        background: var(--blue);
+        border-color: var(--blue);
+        color: var(--white);
+      }
+
+      .footer-col-title {
+        font-family: "Syne", sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--white);
+        margin-bottom: 18px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .footer-link {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.45);
+        text-decoration: none;
+        transition: color 0.15s;
+        font-weight: 300;
+      }
+
+      .footer-link:hover {
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.07);
+        padding-top: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .footer-bottom-left {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.3);
+      }
+
+      .footer-bottom-right {
+        display: flex;
+        gap: 24px;
+      }
+
+      .footer-legal {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.3);
+        text-decoration: none;
+        transition: color 0.15s;
+      }
+
+      .footer-legal:hover {
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      /* ── PAGE SECTIONS ── */
+      .page {
+        display: none;
+      }
+      .page.active {
+        display: block;
+      }
+
+      .divider {
+        border: none;
+        border-top: 1px solid var(--border);
+      }
+
+      /* ── UTILS ── */
+      .text-center {
+        text-align: center;
+      }
+      .mt-32 {
+        margin-top: 32px;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(24px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate {
+        animation: fadeUp 0.6s ease forwards;
+      }
+      .delay-1 {
+        animation-delay: 0.1s;
+        opacity: 0;
+      }
+      .delay-2 {
+        animation-delay: 0.2s;
+        opacity: 0;
+      }
+      .delay-3 {
+        animation-delay: 0.3s;
+        opacity: 0;
+      }
+      .delay-4 {
+        animation-delay: 0.4s;
+        opacity: 0;
+      }
+
+      /* ── SERVICE FEATURES ── */
+      .service-features {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin-top: 48px;
+      }
+
+      .feature-card {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 28px;
+        transition: all 0.25s ease;
+      }
+
+      .feature-card:hover {
+        border-color: var(--blue);
+        box-shadow: var(--shadow-md);
+        transform: translateY(-2px);
+      }
+
+      .feature-icon {
+        font-size: 28px;
+        margin-bottom: 14px;
+        display: block;
+      }
+
+      .feature-title {
+        font-family: "Syne", sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--navy);
+        margin-bottom: 8px;
+      }
+
+      .feature-text {
+        font-size: 14px;
+        color: var(--text-secondary);
+        line-height: 1.65;
+      }
+
+      /* ── CASE STUDIES ── */
+      .cases-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin-top: 48px;
+      }
+
+      .case-card {
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        background: var(--white);
+        box-shadow: var(--shadow-sm);
+        transition: all 0.25s;
+      }
+
+      .case-card:hover {
+        box-shadow: var(--shadow-md);
+        transform: translateY(-3px);
+      }
+
+      .case-top {
+        height: 140px;
+        display: flex;
+        align-items: flex-end;
+        padding: 20px;
+      }
+
+      .case-industry {
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 100px;
+        padding: 4px 12px;
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--white);
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .case-body {
+        padding: 24px;
+      }
+
+      .case-title {
+        font-family: "Syne", sans-serif;
+        font-size: 17px;
+        font-weight: 700;
+        color: var(--navy);
+        margin-bottom: 8px;
+        line-height: 1.3;
+      }
+
+      .case-desc {
+        font-size: 14px;
+        color: var(--text-secondary);
+        line-height: 1.65;
+        margin-bottom: 16px;
+      }
+
+      .case-metric {
+        font-family: "Syne", sans-serif;
+        font-size: 32px;
+        font-weight: 800;
+        color: var(--blue);
+        line-height: 1;
+      }
+
+      .case-metric-label {
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-top: 4px;
+      }
+
+      /* ── TABS ── */
+      .page-tabs {
+        display: flex;
+        gap: 4px;
+        border-bottom: 2px solid var(--border);
+      }
+
+      .page-tab {
+        padding: 10px 22px;
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--text-secondary);
+        background: none;
+        border: none;
+        cursor: pointer;
+        border-bottom: 2px solid transparent;
+        margin-bottom: -2px;
+        transition: all 0.15s;
+        font-family: "DM Sans", sans-serif;
+      }
+
+      .page-tab:hover {
+        color: var(--navy);
+      }
+      .page-tab.active {
+        color: var(--blue);
+        border-bottom-color: var(--blue);
+      }
+
+      .tab-content {
+        padding-top: 40px;
+      }
+
+      /* ── RESOURCES ── */
+      .resources-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+
+      .resource-card {
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        background: var(--white);
+        transition: all 0.25s;
+        cursor: pointer;
+      }
+
+      .resource-card:hover {
+        box-shadow: var(--shadow-md);
+        transform: translateY(-2px);
+      }
+
+      .resource-img {
+        height: 120px;
+        background: linear-gradient(135deg, var(--navy), var(--blue));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 36px;
+      }
+
+      .resource-body {
+        padding: 20px;
+      }
+
+      .resource-tag {
+        display: inline-block;
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--blue);
+        margin-bottom: 8px;
+      }
+
+      .resource-title {
+        font-family: "Syne", sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--navy);
+        margin-bottom: 8px;
+        line-height: 1.35;
+      }
+
+      .resource-excerpt {
+        font-size: 13px;
+        color: var(--text-secondary);
+        line-height: 1.6;
+      }
+
+      /* ── CONTACT ── */
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.6fr;
+        gap: 64px;
+        align-items: start;
+      }
+
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+      }
+
+      .contact-item {
+        display: flex;
+        gap: 16px;
+      }
+
+      .contact-icon {
+        font-size: 20px;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+
+      .contact-label {
+        font-family: "Syne", sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--blue);
+        margin-bottom: 4px;
+      }
+
+      .contact-val {
+        font-size: 14px;
+        color: var(--text-secondary);
+        line-height: 1.65;
+      }
+
+      .contact-form-card {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-xl);
+        padding: 40px;
+        box-shadow: var(--shadow-lg);
+      }
+
+      .form-group {
+        margin-bottom: 18px;
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+
+      .form-label {
+        display: block;
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--navy);
+        margin-bottom: 6px;
+      }
+
+      .form-input {
+        width: 100%;
+        padding: 10px 14px;
+        border: 1.5px solid var(--border);
+        border-radius: var(--radius-sm);
+        font-family: "DM Sans", sans-serif;
+        font-size: 14px;
+        color: var(--text-primary);
+        outline: none;
+        transition: border-color 0.15s;
+        background: var(--white);
+        appearance: none;
+      }
+
+      .form-input:focus {
+        border-color: var(--blue);
+        box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+      }
+
+      textarea.form-input {
+        min-height: 100px;
+        resize: vertical;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAV -->
+    <nav id="mainNav">
+      <div class="nav-inner">
+        <a
+          href="#"
+          class="logo"
+          onclick="
+            showPage('home');
+            return false;
+          "
+          style="gap: 8px"
+        >
+          <div class="logo-circle">
+            <span class="logo-circle-text">Start<br />Optimizing</span>
+          </div>
+          <div class="logo-wordmark">
+            <span>PT</span>
+            <div class="logo-i-bar"></div>
+            <span>T</span>
+          </div>
+        </a>
+
+        <div class="nav-links">
+          <a
+            href="#"
+            class="nav-link active"
+            onclick="
+              showPage('home');
+              return false;
+            "
+            >Home</a
+          >
+
+          <a
+            href="#"
+            class="nav-link"
+            onclick="
+              showPage('about');
+              return false;
+            "
+            >About Us</a
+          >
+
+          <div class="nav-dropdown" id="nav-dd-services">
+            <span
+              class="nav-dd-label"
+              onclick="
+                showPage('services');
+                return false;
+              "
+              >Services</span
+            >
+            <div class="dropdown-menu">
+              <a
+                href="#"
+                class="dropdown-item"
+                onclick="
+                  showPage('svc-infra');
+                  return false;
+                "
+                >IT Infrastructure Management</a
+              >
+              <a
+                href="#"
+                class="dropdown-item"
+                onclick="
+                  showPage('svc-cloud');
+                  return false;
+                "
+                >Cloud Services</a
+              >
+              <a
+                href="#"
+                class="dropdown-item"
+                onclick="
+                  showPage('svc-devops');
+                  return false;
+                "
+                >DevOps Services</a
+              >
+              <a
+                href="#"
+                class="dropdown-item"
+                onclick="
+                  showPage('svc-security');
+                  return false;
+                "
+                >Security & Cybersecurity</a
+              >
+              <a
+                href="#"
+                class="dropdown-item"
+                onclick="
+                  showPage('svc-semi');
+                  return false;
+                "
+                >Semiconductor & EDA Infrastructure</a
+              >
+              <a
+                href="#"
+                class="dropdown-item"
+                onclick="
+                  showPage('svc-elevate');
+                  return false;
+                "
+                >ElevateOps AI Platform</a
+              >
+            </div>
+          </div>
+
+          <div class="nav-dropdown" id="nav-dd-industries">
+            <span
+              class="nav-dd-label"
+              onclick="
+                showPage('industries');
+                return false;
+              "
+              >Industries</span
+            >
+            <div class="dropdown-menu">
+              <a
+                href="#"
+                class="dropdown-item"
+                onclick="
+                  showPage('industries');
+                  return false;
+                "
+                >Semiconductor & Electronics</a
+              >
+              <a
+                href="#"
+                class="dropdown-item"
+                onclick="
+                  showPage('industries');
+                  return false;
+                "
+                >Manufacturing</a
+              >
+              <a
+                href="#"
+                class="dropdown-item"
+                onclick="
+                  showPage('industries');
+                  return false;
+                "
+                >Healthcare & Life Sciences</a
+              >
+              <a
+                href="#"
+                class="dropdown-item"
+                onclick="
+                  showPage('industries');
+                  return false;
+                "
+                >Banking & Financial Services</a
+              >
+              <a
+                href="#"
+                class="dropdown-item"
+                onclick="
+                  showPage('industries');
+                  return false;
+                "
+                >Technology & SaaS</a
+              >
+            </div>
+          </div>
+
+          <div class="nav-dropdown" id="nav-dd-resources">
+            <span
+              class="nav-dd-label"
+              onclick="
+                showPage('resources');
+                return false;
+              "
+              >Resources</span
+            >
+            <div class="dropdown-menu">
+              <a
+                href="#"
+                class="dropdown-item"
+                onclick="
+                  showPage('res-blog');
+                  return false;
+                "
+                >Blog</a
+              >
+              <a
+                href="#"
+                class="dropdown-item"
+                onclick="
+                  showPage('res-news');
+                  return false;
+                "
+                >News</a
+              >
+              <a
+                href="#"
+                class="dropdown-item"
+                onclick="
+                  showPage('res-clients');
+                  return false;
+                "
+                >Clients</a
+              >
+              <a
+                href="#"
+                class="dropdown-item"
+                onclick="
+                  showPage('res-cases');
+                  return false;
+                "
+                >Case Studies</a
+              >
+            </div>
+          </div>
+
+          <a
+            href="#"
+            class="nav-link"
+            onclick="
+              showPage('careers');
+              return false;
+            "
+            >Careers</a
+          >
+
+          <a
+            href="#"
+            class="nav-link"
+            onclick="
+              showPage('contact');
+              return false;
+            "
+            >Contact Us</a
+          >
+        </div>
+
+        <div class="nav-cta">
+          <a
+            href="#"
+            class="btn btn-primary"
+            onclick="
+              showPage('contact');
+              scrollToForm();
+              return false;
+            "
+            >Request a Demo</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- HOME PAGE -->
+    <div id="page-home" class="page active">
+      <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-grid"></div>
+        <div class="hero-content">
+          <div class="hero-left">
+            <div class="hero-badge animate">
+              <div class="hero-badge-dot"></div>
+              <span>Enterprise Technology Partner</span>
+            </div>
+
+            <h1 class="hero-title animate delay-1">
+              Transform Your<br /><span class="accent">Technology</span
+              ><br />Infrastructure
+            </h1>
+
+            <p class="hero-sub animate delay-2">
+              From cloud migration to semiconductor EDA environments — Opt IT
+              delivers enterprise-grade technology transformation that scales
+              with your ambition.
+            </p>
+
+            <div class="hero-actions animate delay-3">
+              <a
+                href="#"
+                class="btn btn-primary"
+                onclick="
+                  showPage('contact');
+                  return false;
+                "
+              >
+                <svg
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                >
+                  <path d="M3 8h10M9 4l4 4-4 4" />
+                </svg>
+                Start Your Transformation
+              </a>
+              <a
+                href="#"
+                class="btn btn-ghost"
+                onclick="
+                  showPage('services');
+                  return false;
+                "
+                >Explore Services</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- STATS SECTION -->
+      <section class="section" style="background: var(--off-white)">
+        <div class="container">
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-number">50+</div>
+              <div class="stat-label">Turnkey Solutions Delivered</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">17+</div>
+              <div class="stat-label">Years In Business</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">200+</div>
+              <div class="stat-label">Members</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">300+</div>
+              <div class="stat-label">Customers</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TRUSTED BY -->
+      <section class="trusted">
+        <div class="container">
+          <div class="trusted-label">
+            Trusted by leading enterprises across India & the US
+          </div>
+          <div class="trusted-logos">
+            <div class="client-logo">Samhita Academy</div>
+            <div class="client-logo">TechCorp India</div>
+            <div class="client-logo">HealthBridge Tech</div>
+            <div class="client-logo">FinServe Pro</div>
+            <div class="client-logo">Apex VLSI</div>
+            <div class="client-logo">CloudScale Inc</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES OVERVIEW -->
+      <section class="section">
+        <div class="container">
+          <div class="section-header">
+            <div class="label">Our Services</div>
+            <h2 class="section-title">End-to-end technology capabilities</h2>
+            <p class="section-subtitle">
+              From foundational infrastructure to cutting-edge AI platforms —
+              built for enterprises that demand more.
+            </p>
+          </div>
+
+          <div class="services-grid">
+            <!-- IT Infrastructure -->
+            <div class="service-card" onclick="showPage('svc-infra')">
+              <div class="service-card-bg" aria-hidden="true">
+                <svg viewBox="0 0 400 280" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#064e3b">
+                  <rect x="140" y="20" width="120" height="240" rx="6" stroke-width="2.5"/>
+                  <rect x="152" y="34" width="96" height="24" rx="3" stroke-width="2"/><circle cx="166" cy="46" r="5" fill="#10b981" stroke="none"/><rect x="178" y="42" width="52" height="3" rx="1.5" fill="#064e3b"/><rect x="178" y="49" width="35" height="3" rx="1.5" fill="#064e3b" opacity="0.5"/>
+                  <rect x="152" y="66" width="96" height="24" rx="3" stroke-width="2"/><circle cx="166" cy="78" r="5" fill="#10b981" stroke="none"/><rect x="178" y="74" width="52" height="3" rx="1.5" fill="#064e3b"/><rect x="178" y="81" width="42" height="3" rx="1.5" fill="#064e3b" opacity="0.5"/>
+                  <rect x="152" y="98" width="96" height="24" rx="3" stroke-width="2"/><circle cx="166" cy="110" r="5" fill="#064e3b" stroke="none" opacity="0.5"/><rect x="178" y="106" width="52" height="3" rx="1.5" fill="#064e3b"/><rect x="178" y="113" width="30" height="3" rx="1.5" fill="#064e3b" opacity="0.5"/>
+                  <rect x="152" y="130" width="96" height="24" rx="3" stroke-width="2"/><circle cx="166" cy="142" r="5" fill="#10b981" stroke="none"/><rect x="178" y="138" width="52" height="3" rx="1.5" fill="#064e3b"/><rect x="178" y="145" width="45" height="3" rx="1.5" fill="#064e3b" opacity="0.5"/>
+                  <rect x="152" y="162" width="96" height="24" rx="3" stroke-width="2"/><circle cx="166" cy="174" r="5" fill="#10b981" stroke="none"/><rect x="178" y="170" width="52" height="3" rx="1.5" fill="#064e3b"/><rect x="178" y="177" width="38" height="3" rx="1.5" fill="#064e3b" opacity="0.5"/>
+                  <rect x="152" y="194" width="96" height="24" rx="3" stroke-width="2"/><circle cx="166" cy="206" r="5" fill="#064e3b" stroke="none" opacity="0.5"/><rect x="178" y="202" width="52" height="3" rx="1.5" fill="#064e3b"/><rect x="178" y="209" width="28" height="3" rx="1.5" fill="#064e3b" opacity="0.5"/>
+                  <path d="M140 110 L70 80" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.6"/><path d="M140 142 L70 160" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.6"/>
+                  <path d="M260 110 L330 80" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.6"/><path d="M260 142 L330 160" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.6"/>
+                  <rect x="42" y="68" width="28" height="22" rx="3" stroke-width="2" opacity="0.7"/><rect x="42" y="149" width="28" height="22" rx="3" stroke-width="2" opacity="0.7"/>
+                  <rect x="330" y="68" width="28" height="22" rx="3" stroke-width="2" opacity="0.7"/><rect x="330" y="149" width="28" height="22" rx="3" stroke-width="2" opacity="0.7"/>
+                </svg>
+              </div>
+              <div class="service-card-content">
+                <div class="service-name">IT Infrastructure Management</div>
+                <div class="service-desc">Fully managed, proactive infrastructure operations. We become your IT backbone — from on-premise to hybrid cloud.</div>
+                <a href="#" class="service-link" onclick="showPage('svc-infra'); return false;">Learn More</a>
+              </div>
+            </div>
+
+            <!-- Cloud Services -->
+            <div class="service-card" onclick="showPage('svc-cloud')">
+              <div class="service-card-bg" aria-hidden="true">
+                <svg viewBox="0 0 400 280" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#064e3b">
+                  <path d="M125 145 Q108 145 104 130 Q96 114 112 103 Q108 84 127 77 Q140 62 162 68 Q173 48 197 45 Q228 40 240 64 Q263 58 275 77 Q293 82 290 104 Q306 116 298 134 Q292 150 270 150 Z" stroke-width="2.5"/>
+                  <line x1="110" y1="212" x2="155" y2="155" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.7"/>
+                  <line x1="200" y1="215" x2="200" y2="155" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.7"/>
+                  <line x1="290" y1="212" x2="248" y2="155" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.7"/>
+                  <polyline points="195,172 200,155 205,172" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="133" cy="185" r="4" fill="#10b981" stroke="none"/><circle cx="200" cy="188" r="4" fill="#10b981" stroke="none"/><circle cx="270" cy="185" r="4" fill="#10b981" stroke="none"/>
+                  <rect x="78" y="214" width="62" height="40" rx="3" stroke-width="2"/><rect x="68" y="254" width="82" height="6" rx="2" stroke-width="2"/>
+                  <line x1="89" y1="230" x2="129" y2="230" stroke-width="1.5" opacity="0.4"/><line x1="89" y1="238" x2="120" y2="238" stroke-width="1.5" opacity="0.4"/>
+                  <rect x="182" y="216" width="36" height="58" rx="7" stroke-width="2"/><circle cx="200" cy="266" r="3.5" stroke-width="1.5"/>
+                  <rect x="260" y="214" width="62" height="40" rx="3" stroke-width="2"/>
+                  <line x1="270" y1="224" x2="312" y2="224" stroke-width="1.5" opacity="0.5"/><line x1="270" y1="232" x2="312" y2="232" stroke-width="1.5" opacity="0.5"/><line x1="270" y1="240" x2="300" y2="240" stroke-width="1.5" opacity="0.5"/>
+                </svg>
+              </div>
+              <div class="service-card-content">
+                <div class="service-name">Cloud Services</div>
+                <div class="service-desc">AWS Advanced Tier Partner. Migrate, modernise, and optimise your cloud infrastructure for performance and cost.</div>
+                <a href="#" class="service-link" onclick="showPage('svc-cloud'); return false;">Learn More</a>
+              </div>
+            </div>
+
+            <!-- DevOps -->
+            <div class="service-card" onclick="showPage('svc-devops')">
+              <div class="service-card-bg" aria-hidden="true">
+                <svg viewBox="0 0 400 280" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#064e3b">
+                  <circle cx="95" cy="90" r="32" stroke-width="2"/>
+                  <path d="M82 82 L75 90 L82 98" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M108 82 L115 90 L108 98" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <line x1="97" y1="82" x2="93" y2="98" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+                  <circle cx="305" cy="90" r="32" stroke-width="2"/>
+                  <circle cx="305" cy="90" r="14" stroke-width="2"/><circle cx="305" cy="90" r="5" fill="#064e3b" stroke="none" opacity="0.6"/>
+                  <rect x="302" y="70" width="6" height="8" rx="2" fill="#064e3b" stroke="none"/><rect x="302" y="102" width="6" height="8" rx="2" fill="#064e3b" stroke="none"/>
+                  <rect x="285" y="87" width="8" height="6" rx="2" fill="#064e3b" stroke="none"/><rect x="317" y="87" width="8" height="6" rx="2" fill="#064e3b" stroke="none"/>
+                  <circle cx="95" cy="200" r="32" stroke-width="2"/>
+                  <polyline points="83,200 93,210 115,188" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="305" cy="200" r="32" stroke-width="2"/>
+                  <path d="M305 218 L305 188" stroke-width="2.5" stroke-linecap="round"/>
+                  <path d="M295 198 L305 184 L315 198" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                  <path d="M200 140 C185 110 150 100 135 120 C120 140 135 170 165 175 C185 178 200 160 200 140 C200 120 215 100 240 98 C265 96 285 115 280 138 C276 158 255 175 235 172 C215 170 200 160 200 140Z" stroke-width="2.5" stroke-linecap="round"/>
+                  <polyline points="167,175 185,178 178,162" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <polyline points="237,101 250,115 233,115" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <line x1="127" y1="90" x2="170" y2="130" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.5"/>
+                  <line x1="273" y1="90" x2="230" y2="130" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.5"/>
+                  <line x1="127" y1="200" x2="170" y2="160" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.5"/>
+                  <line x1="273" y1="200" x2="230" y2="160" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.5"/>
+                </svg>
+              </div>
+              <div class="service-card-content">
+                <div class="service-name">DevOps Services</div>
+                <div class="service-desc">Accelerate delivery pipelines with enterprise DevOps practices, CI/CD automation, and platform engineering.</div>
+                <a href="#" class="service-link" onclick="showPage('svc-devops'); return false;">Learn More</a>
+              </div>
+            </div>
+
+            <!-- Security -->
+            <div class="service-card" onclick="showPage('svc-security')">
+              <div class="service-card-bg" aria-hidden="true">
+                <svg viewBox="0 0 400 280" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#064e3b">
+                  <path d="M200 18 L320 58 L320 155 Q320 232 200 268 Q80 232 80 155 L80 58 Z" stroke-width="2.5" stroke-linejoin="round"/>
+                  <path d="M200 42 L298 74 L298 158 Q298 220 200 248 Q102 220 102 158 L102 74 Z" stroke-width="1" opacity="0.35"/>
+                  <rect x="172" y="150" width="56" height="48" rx="7" stroke-width="2.5"/>
+                  <path d="M183 150 L183 130 Q183 108 200 108 Q217 108 217 130 L217 150" stroke-width="2.5" stroke-linecap="round"/>
+                  <circle cx="200" cy="170" r="8" stroke-width="2"/>
+                  <rect x="196.5" y="174" width="7" height="14" rx="2" fill="#064e3b" stroke="none" opacity="0.8"/>
+                  <circle cx="38" cy="50" r="5" fill="#064e3b" stroke="none" opacity="0.2"/><circle cx="362" cy="50" r="5" fill="#064e3b" stroke="none" opacity="0.2"/>
+                  <circle cx="30" cy="150" r="4" fill="#064e3b" stroke="none" opacity="0.15"/><circle cx="370" cy="150" r="4" fill="#064e3b" stroke="none" opacity="0.15"/>
+                  <circle cx="38" cy="240" r="5" fill="#064e3b" stroke="none" opacity="0.2"/><circle cx="362" cy="240" r="5" fill="#064e3b" stroke="none" opacity="0.2"/>
+                </svg>
+              </div>
+              <div class="service-card-content">
+                <div class="service-name">Security & Cybersecurity</div>
+                <div class="service-desc">ISO 27001 consulting, VAPT, compliance audits, and a security-first posture across your entire technology stack.</div>
+                <a href="#" class="service-link" onclick="showPage('svc-security'); return false;">Learn More</a>
+              </div>
+            </div>
+
+            <!-- Semiconductor -->
+            <div class="service-card" onclick="showPage('svc-semi')">
+              <div class="service-card-bg" aria-hidden="true">
+                <svg viewBox="0 0 400 280" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#064e3b">
+                  <rect x="148" y="100" width="104" height="80" rx="5" stroke-width="2.5"/>
+                  <rect x="162" y="114" width="76" height="52" rx="2" stroke-width="1.5" opacity="0.6"/>
+                  <line x1="162" y1="130" x2="238" y2="130" stroke-width="1" opacity="0.4"/><line x1="162" y1="147" x2="238" y2="147" stroke-width="1" opacity="0.4"/>
+                  <line x1="180" y1="114" x2="180" y2="166" stroke-width="1" opacity="0.4"/><line x1="200" y1="114" x2="200" y2="166" stroke-width="1" opacity="0.4"/><line x1="220" y1="114" x2="220" y2="166" stroke-width="1" opacity="0.4"/>
+                  <line x1="148" y1="118" x2="115" y2="118" stroke-width="2.5" stroke-linecap="round"/><line x1="148" y1="133" x2="115" y2="133" stroke-width="2.5" stroke-linecap="round"/>
+                  <line x1="148" y1="148" x2="115" y2="148" stroke-width="2.5" stroke-linecap="round"/><line x1="148" y1="163" x2="115" y2="163" stroke-width="2.5" stroke-linecap="round"/>
+                  <line x1="252" y1="118" x2="285" y2="118" stroke-width="2.5" stroke-linecap="round"/><line x1="252" y1="133" x2="285" y2="133" stroke-width="2.5" stroke-linecap="round"/>
+                  <line x1="252" y1="148" x2="285" y2="148" stroke-width="2.5" stroke-linecap="round"/><line x1="252" y1="163" x2="285" y2="163" stroke-width="2.5" stroke-linecap="round"/>
+                  <line x1="172" y1="100" x2="172" y2="68" stroke-width="2.5" stroke-linecap="round"/><line x1="200" y1="100" x2="200" y2="68" stroke-width="2.5" stroke-linecap="round"/><line x1="228" y1="100" x2="228" y2="68" stroke-width="2.5" stroke-linecap="round"/>
+                  <line x1="172" y1="180" x2="172" y2="212" stroke-width="2.5" stroke-linecap="round"/><line x1="200" y1="180" x2="200" y2="212" stroke-width="2.5" stroke-linecap="round"/><line x1="228" y1="180" x2="228" y2="212" stroke-width="2.5" stroke-linecap="round"/>
+                  <path d="M115 118 L55 118 L55 55 L95 55" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.65"/>
+                  <path d="M115 148 L40 148 L40 215 L80 215" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.65"/>
+                  <path d="M285 133 L345 133 L345 65 L315 65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.65"/>
+                  <path d="M285 163 L360 163 L360 230 L330 230" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.65"/>
+                  <path d="M172 68 L172 30 L240 30" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.65"/>
+                  <path d="M228 212 L228 255 L160 255" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.65"/>
+                  <circle cx="95" cy="55" r="5.5" stroke-width="2" opacity="0.7"/><circle cx="80" cy="215" r="5.5" stroke-width="2" opacity="0.7"/>
+                  <circle cx="315" cy="65" r="5.5" stroke-width="2" opacity="0.7"/><circle cx="330" cy="230" r="5.5" stroke-width="2" opacity="0.7"/>
+                  <circle cx="240" cy="30" r="5.5" stroke-width="2" opacity="0.7"/><circle cx="160" cy="255" r="5.5" stroke-width="2" opacity="0.7"/>
+                </svg>
+              </div>
+              <div class="service-card-content">
+                <div class="service-name">Semiconductor & EDA Infrastructure</div>
+                <div class="service-desc">Purpose-built infrastructure for chip design teams — EDA tool environments, PDK management, and fab-ready CI/CD.</div>
+                <a href="#" class="service-link" onclick="showPage('svc-semi'); return false;">Learn More</a>
+              </div>
+            </div>
+
+            <!-- ElevateOps AI -->
+            <div class="service-card" onclick="showPage('svc-elevate')">
+              <div class="service-card-bg" aria-hidden="true">
+                <svg viewBox="0 0 400 280" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#064e3b">
+                  <circle cx="60" cy="80" r="18" stroke-width="2"/><circle cx="60" cy="140" r="18" stroke-width="2"/><circle cx="60" cy="200" r="18" stroke-width="2"/>
+                  <circle cx="60" cy="80" r="7" fill="#064e3b" stroke="none" opacity="0.5"/><circle cx="60" cy="140" r="7" fill="#064e3b" stroke="none" opacity="0.5"/><circle cx="60" cy="200" r="7" fill="#064e3b" stroke="none" opacity="0.5"/>
+                  <circle cx="165" cy="55" r="18" stroke-width="2"/><circle cx="165" cy="118" r="18" stroke-width="2"/><circle cx="165" cy="182" r="18" stroke-width="2"/><circle cx="165" cy="245" r="18" stroke-width="2" opacity="0.6"/>
+                  <circle cx="270" cy="55" r="18" stroke-width="2"/><circle cx="270" cy="118" r="18" stroke-width="2"/><circle cx="270" cy="182" r="18" stroke-width="2"/><circle cx="270" cy="245" r="18" stroke-width="2" opacity="0.6"/>
+                  <circle cx="368" cy="105" r="22" stroke-width="2.5"/><circle cx="368" cy="195" r="22" stroke-width="2.5"/>
+                  <circle cx="368" cy="105" r="9" fill="#10b981" stroke="none"/><circle cx="368" cy="195" r="9" fill="#10b981" stroke="none"/>
+                  <line x1="78" y1="80" x2="147" y2="55" stroke-width="1" opacity="0.4"/><line x1="78" y1="80" x2="147" y2="118" stroke-width="1" opacity="0.4"/><line x1="78" y1="80" x2="147" y2="182" stroke-width="1" opacity="0.2"/>
+                  <line x1="78" y1="140" x2="147" y2="55" stroke-width="1" opacity="0.2"/><line x1="78" y1="140" x2="147" y2="118" stroke-width="1" opacity="0.4"/><line x1="78" y1="140" x2="147" y2="182" stroke-width="1" opacity="0.4"/>
+                  <line x1="78" y1="200" x2="147" y2="118" stroke-width="1" opacity="0.2"/><line x1="78" y1="200" x2="147" y2="182" stroke-width="1" opacity="0.4"/><line x1="78" y1="200" x2="147" y2="245" stroke-width="1" opacity="0.3"/>
+                  <line x1="183" y1="55" x2="252" y2="55" stroke-width="1" opacity="0.4"/><line x1="183" y1="55" x2="252" y2="118" stroke-width="1" opacity="0.25"/><line x1="183" y1="118" x2="252" y2="55" stroke-width="1" opacity="0.25"/>
+                  <line x1="183" y1="118" x2="252" y2="118" stroke-width="1" opacity="0.4"/><line x1="183" y1="118" x2="252" y2="182" stroke-width="1" opacity="0.25"/><line x1="183" y1="182" x2="252" y2="118" stroke-width="1" opacity="0.25"/>
+                  <line x1="183" y1="182" x2="252" y2="182" stroke-width="1" opacity="0.4"/><line x1="183" y1="245" x2="252" y2="245" stroke-width="1" opacity="0.3"/>
+                  <line x1="288" y1="55" x2="346" y2="105" stroke-width="1.5" opacity="0.5"/><line x1="288" y1="118" x2="346" y2="105" stroke-width="1.5" opacity="0.5"/>
+                  <line x1="288" y1="182" x2="346" y2="195" stroke-width="1.5" opacity="0.5"/><line x1="288" y1="245" x2="346" y2="195" stroke-width="1.5" opacity="0.4"/>
+                  <line x1="288" y1="55" x2="346" y2="195" stroke-width="1" opacity="0.2"/><line x1="288" y1="245" x2="346" y2="105" stroke-width="1" opacity="0.2"/>
+                </svg>
+              </div>
+              <div class="service-card-content">
+                <div class="service-name">ElevateOps AI Knowledge Platform</div>
+                <div class="service-desc">AI-powered operational intelligence. Surface institutional knowledge, automate runbooks, and elevate your ops team's capabilities.</div>
+                <a href="#" class="service-link" onclick="showPage('svc-elevate'); return false;">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA BANNER -->
+      <section class="section-sm cta-banner">
+        <div class="container">
+          <div class="cta-inner">
+            <div class="label label-light">Get Started</div>
+            <h2 class="cta-title">
+              Ready to modernise your technology infrastructure?
+            </h2>
+            <p class="cta-sub">
+              Book a free infrastructure assessment with our enterprise
+              consultants. No commitment required.
+            </p>
+            <div class="cta-actions">
+              <a
+                href="#"
+                class="btn btn-white"
+                onclick="
+                  showPage('contact');
+                  return false;
+                "
+                >Book Free Assessment</a
+              >
+              <a
+                href="#"
+                class="btn btn-ghost"
+                onclick="
+                  showPage('services');
+                  return false;
+                "
+                >View All Services</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ABOUT PAGE -->
+    <div id="page-about" class="page">
+      <section class="page-hero">
+        <div class="container">
+          <div class="page-hero-content">
+            <div class="label label-light">About Opt IT</div>
+            <h1 class="page-title">17+ years of enterprise IT excellence</h1>
+            <p class="page-sub">
+              Founded in Bengaluru, trusted across India and the United States.
+              We are the technology backbone that growing companies rely on.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section why">
+        <div class="container">
+          <div class="section-header">
+            <div class="label label-light">Why Opt IT</div>
+            <h2 class="section-title section-title-light">
+              The enterprise technology partner that's different
+            </h2>
+            <p class="section-subtitle section-subtitle-light">
+              We don't just manage IT. We become the technical backbone your
+              business depends on.
+            </p>
+          </div>
+
+          <div class="why-grid">
+            <div class="why-left">
+              <div class="why-items">
+                <div class="why-item">
+                  <div class="why-icon">🎯</div>
+                  <div>
+                    <div class="why-item-title">Outcome-driven engagement</div>
+                    <div class="why-item-desc">
+                      Every engagement is defined by measurable business
+                      outcomes — not ticket counts or hours logged.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="why-item">
+                  <div class="why-icon">🔗</div>
+                  <div>
+                    <div class="why-item-title">Vendor-neutral expertise</div>
+                    <div class="why-item-desc">
+                      AWS, Azure, GCP — we recommend what fits your
+                      architecture, not what pays us more.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="why-item">
+                  <div class="why-icon">🛡️</div>
+                  <div>
+                    <div class="why-item-title">Security by design</div>
+                    <div class="why-item-desc">
+                      ISO 27001 framework baked into every engagement. Security
+                      isn't an add-on — it's our foundation.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="why-item">
+                  <div class="why-icon">⚡</div>
+                  <div>
+                    <div class="why-item-title">
+                      Startup speed, enterprise scale
+                    </div>
+                    <div class="why-item-desc">
+                      We move fast and adapt — perfect for growing companies
+                      that need enterprise reliability without the overhead.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="why-right">
+              <div class="cert-grid">
+                <div class="cert-card">
+                  <div class="cert-badge">☁️</div>
+                  <div class="cert-name">AWS Advanced Tier</div>
+                  <div class="cert-sub">Consulting Partner</div>
+                </div>
+
+                <div class="cert-card">
+                  <div class="cert-badge">🔐</div>
+                  <div class="cert-name">ISO 27001</div>
+                  <div class="cert-sub">Certified Practice</div>
+                </div>
+
+                <div class="cert-card">
+                  <div class="cert-badge">🔷</div>
+                  <div class="cert-name">Azure Certified</div>
+                  <div class="cert-sub">Solutions Partner</div>
+                </div>
+
+                <div class="cert-card">
+                  <div class="cert-badge">⚙️</div>
+                  <div class="cert-name">DevOps Institute</div>
+                  <div class="cert-sub">Practitioner Member</div>
+                </div>
+              </div>
+
+              <div class="exp-box">
+                <div class="exp-num">17<span>+</span></div>
+                <div class="exp-text">
+                  <div class="exp-title">Years of enterprise IT excellence</div>
+                  <div class="exp-sub">
+                    Founded in Bengaluru. Trusted across India & the United
+                    States.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- SERVICES PAGE -->
+    <div id="page-services" class="page">
+      <section class="page-hero">
+        <div class="container">
+          <div class="page-hero-content">
+            <div class="label label-light">Services</div>
+            <h1 class="page-title">
+              Enterprise technology services that scale
+            </h1>
+            <p class="page-sub">
+              Six specialised practice areas. One trusted partner. Built to
+              handle the complexity modern enterprises face.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="services-grid">
+            <div class="service-card" onclick="showPage('svc-infra')">
+              <div class="service-card-bg" aria-hidden="true">
+                <svg viewBox="0 0 400 280" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#064e3b">
+                  <rect x="140" y="20" width="120" height="240" rx="6" stroke-width="2.5"/>
+                  <rect x="152" y="34" width="96" height="24" rx="3" stroke-width="2"/><circle cx="166" cy="46" r="5" fill="#10b981" stroke="none"/><rect x="178" y="42" width="52" height="3" rx="1.5" fill="#064e3b"/><rect x="178" y="49" width="35" height="3" rx="1.5" fill="#064e3b" opacity="0.5"/>
+                  <rect x="152" y="66" width="96" height="24" rx="3" stroke-width="2"/><circle cx="166" cy="78" r="5" fill="#10b981" stroke="none"/><rect x="178" y="74" width="52" height="3" rx="1.5" fill="#064e3b"/><rect x="178" y="81" width="42" height="3" rx="1.5" fill="#064e3b" opacity="0.5"/>
+                  <rect x="152" y="98" width="96" height="24" rx="3" stroke-width="2"/><circle cx="166" cy="110" r="5" fill="#064e3b" stroke="none" opacity="0.5"/><rect x="178" y="106" width="52" height="3" rx="1.5" fill="#064e3b"/><rect x="178" y="113" width="30" height="3" rx="1.5" fill="#064e3b" opacity="0.5"/>
+                  <rect x="152" y="130" width="96" height="24" rx="3" stroke-width="2"/><circle cx="166" cy="142" r="5" fill="#10b981" stroke="none"/><rect x="178" y="138" width="52" height="3" rx="1.5" fill="#064e3b"/><rect x="178" y="145" width="45" height="3" rx="1.5" fill="#064e3b" opacity="0.5"/>
+                  <rect x="152" y="162" width="96" height="24" rx="3" stroke-width="2"/><circle cx="166" cy="174" r="5" fill="#10b981" stroke="none"/><rect x="178" y="170" width="52" height="3" rx="1.5" fill="#064e3b"/><rect x="178" y="177" width="38" height="3" rx="1.5" fill="#064e3b" opacity="0.5"/>
+                  <rect x="152" y="194" width="96" height="24" rx="3" stroke-width="2"/><circle cx="166" cy="206" r="5" fill="#064e3b" stroke="none" opacity="0.5"/><rect x="178" y="202" width="52" height="3" rx="1.5" fill="#064e3b"/><rect x="178" y="209" width="28" height="3" rx="1.5" fill="#064e3b" opacity="0.5"/>
+                  <path d="M140 110 L70 80" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.6"/><path d="M140 142 L70 160" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.6"/>
+                  <path d="M260 110 L330 80" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.6"/><path d="M260 142 L330 160" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.6"/>
+                  <rect x="42" y="68" width="28" height="22" rx="3" stroke-width="2" opacity="0.7"/><rect x="42" y="149" width="28" height="22" rx="3" stroke-width="2" opacity="0.7"/>
+                  <rect x="330" y="68" width="28" height="22" rx="3" stroke-width="2" opacity="0.7"/><rect x="330" y="149" width="28" height="22" rx="3" stroke-width="2" opacity="0.7"/>
+                </svg>
+              </div>
+              <div class="service-card-content">
+                <div class="service-name">IT Infrastructure Management</div>
+                <div class="service-desc">Proactive, fully managed infrastructure operations across on-premise, hybrid, and multi-cloud environments.</div>
+                <a href="#" class="service-learn-btn" onclick="showPage('svc-infra'); return false;">Learn More</a>
+              </div>
+            </div>
+
+            <div class="service-card" onclick="showPage('svc-cloud')">
+              <div class="service-card-bg" aria-hidden="true">
+                <svg viewBox="0 0 400 280" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#064e3b">
+                  <path d="M125 145 Q108 145 104 130 Q96 114 112 103 Q108 84 127 77 Q140 62 162 68 Q173 48 197 45 Q228 40 240 64 Q263 58 275 77 Q293 82 290 104 Q306 116 298 134 Q292 150 270 150 Z" stroke-width="2.5"/>
+                  <line x1="110" y1="212" x2="155" y2="155" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.7"/>
+                  <line x1="200" y1="215" x2="200" y2="155" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.7"/>
+                  <line x1="290" y1="212" x2="248" y2="155" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.7"/>
+                  <polyline points="195,172 200,155 205,172" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="133" cy="185" r="4" fill="#10b981" stroke="none"/><circle cx="200" cy="188" r="4" fill="#10b981" stroke="none"/><circle cx="270" cy="185" r="4" fill="#10b981" stroke="none"/>
+                  <rect x="78" y="214" width="62" height="40" rx="3" stroke-width="2"/><rect x="68" y="254" width="82" height="6" rx="2" stroke-width="2"/>
+                  <line x1="89" y1="230" x2="129" y2="230" stroke-width="1.5" opacity="0.4"/><line x1="89" y1="238" x2="120" y2="238" stroke-width="1.5" opacity="0.4"/>
+                  <rect x="182" y="216" width="36" height="58" rx="7" stroke-width="2"/><circle cx="200" cy="266" r="3.5" stroke-width="1.5"/>
+                  <rect x="260" y="214" width="62" height="40" rx="3" stroke-width="2"/>
+                  <line x1="270" y1="224" x2="312" y2="224" stroke-width="1.5" opacity="0.5"/><line x1="270" y1="232" x2="312" y2="232" stroke-width="1.5" opacity="0.5"/><line x1="270" y1="240" x2="300" y2="240" stroke-width="1.5" opacity="0.5"/>
+                </svg>
+              </div>
+              <div class="service-card-content">
+                <div class="service-name">Cloud Services</div>
+                <div class="service-desc">End-to-end cloud strategy, migration, and optimisation. AWS Advanced Tier Partner.</div>
+                <a href="#" class="service-learn-btn" onclick="showPage('svc-cloud'); return false;">Learn More</a>
+              </div>
+            </div>
+
+            <div class="service-card" onclick="showPage('svc-devops')">
+              <div class="service-card-bg" aria-hidden="true">
+                <svg viewBox="0 0 400 280" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#064e3b">
+                  <circle cx="95" cy="90" r="32" stroke-width="2"/>
+                  <path d="M82 82 L75 90 L82 98" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M108 82 L115 90 L108 98" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <line x1="97" y1="82" x2="93" y2="98" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+                  <circle cx="305" cy="90" r="32" stroke-width="2"/>
+                  <circle cx="305" cy="90" r="14" stroke-width="2"/><circle cx="305" cy="90" r="5" fill="#064e3b" stroke="none" opacity="0.6"/>
+                  <rect x="302" y="70" width="6" height="8" rx="2" fill="#064e3b" stroke="none"/><rect x="302" y="102" width="6" height="8" rx="2" fill="#064e3b" stroke="none"/>
+                  <rect x="285" y="87" width="8" height="6" rx="2" fill="#064e3b" stroke="none"/><rect x="317" y="87" width="8" height="6" rx="2" fill="#064e3b" stroke="none"/>
+                  <circle cx="95" cy="200" r="32" stroke-width="2"/>
+                  <polyline points="83,200 93,210 115,188" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="305" cy="200" r="32" stroke-width="2"/>
+                  <path d="M305 218 L305 188" stroke-width="2.5" stroke-linecap="round"/>
+                  <path d="M295 198 L305 184 L315 198" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                  <path d="M200 140 C185 110 150 100 135 120 C120 140 135 170 165 175 C185 178 200 160 200 140 C200 120 215 100 240 98 C265 96 285 115 280 138 C276 158 255 175 235 172 C215 170 200 160 200 140Z" stroke-width="2.5" stroke-linecap="round"/>
+                  <polyline points="167,175 185,178 178,162" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <polyline points="237,101 250,115 233,115" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <line x1="127" y1="90" x2="170" y2="130" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.5"/>
+                  <line x1="273" y1="90" x2="230" y2="130" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.5"/>
+                  <line x1="127" y1="200" x2="170" y2="160" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.5"/>
+                  <line x1="273" y1="200" x2="230" y2="160" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.5"/>
+                </svg>
+              </div>
+              <div class="service-card-content">
+                <div class="service-name">DevOps Services</div>
+                <div class="service-desc">Accelerate software delivery with enterprise DevOps practices, CI/CD pipelines, and platform engineering.</div>
+                <a href="#" class="service-learn-btn" onclick="showPage('svc-devops'); return false;">Learn More</a>
+              </div>
+            </div>
+
+            <div class="service-card" onclick="showPage('svc-security')">
+              <div class="service-card-bg" aria-hidden="true">
+                <svg viewBox="0 0 400 280" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#064e3b">
+                  <path d="M200 18 L320 58 L320 155 Q320 232 200 268 Q80 232 80 155 L80 58 Z" stroke-width="2.5" stroke-linejoin="round"/>
+                  <path d="M200 42 L298 74 L298 158 Q298 220 200 248 Q102 220 102 158 L102 74 Z" stroke-width="1" opacity="0.35"/>
+                  <rect x="172" y="150" width="56" height="48" rx="7" stroke-width="2.5"/>
+                  <path d="M183 150 L183 130 Q183 108 200 108 Q217 108 217 130 L217 150" stroke-width="2.5" stroke-linecap="round"/>
+                  <circle cx="200" cy="170" r="8" stroke-width="2"/>
+                  <rect x="196.5" y="174" width="7" height="14" rx="2" fill="#064e3b" stroke="none" opacity="0.8"/>
+                  <circle cx="38" cy="50" r="5" fill="#064e3b" stroke="none" opacity="0.2"/><circle cx="362" cy="50" r="5" fill="#064e3b" stroke="none" opacity="0.2"/>
+                  <circle cx="30" cy="150" r="4" fill="#064e3b" stroke="none" opacity="0.15"/><circle cx="370" cy="150" r="4" fill="#064e3b" stroke="none" opacity="0.15"/>
+                  <circle cx="38" cy="240" r="5" fill="#064e3b" stroke="none" opacity="0.2"/><circle cx="362" cy="240" r="5" fill="#064e3b" stroke="none" opacity="0.2"/>
+                </svg>
+              </div>
+              <div class="service-card-content">
+                <div class="service-name">Security & Cybersecurity</div>
+                <div class="service-desc">ISO 27001, VAPT, compliance frameworks, and end-to-end security posture management.</div>
+                <a href="#" class="service-learn-btn" onclick="showPage('svc-security'); return false;">Learn More</a>
+              </div>
+            </div>
+
+            <div class="service-card" onclick="showPage('svc-semi')">
+              <div class="service-card-bg" aria-hidden="true">
+                <svg viewBox="0 0 400 280" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#064e3b">
+                  <rect x="148" y="100" width="104" height="80" rx="5" stroke-width="2.5"/>
+                  <rect x="162" y="114" width="76" height="52" rx="2" stroke-width="1.5" opacity="0.6"/>
+                  <line x1="162" y1="130" x2="238" y2="130" stroke-width="1" opacity="0.4"/><line x1="162" y1="147" x2="238" y2="147" stroke-width="1" opacity="0.4"/>
+                  <line x1="180" y1="114" x2="180" y2="166" stroke-width="1" opacity="0.4"/><line x1="200" y1="114" x2="200" y2="166" stroke-width="1" opacity="0.4"/><line x1="220" y1="114" x2="220" y2="166" stroke-width="1" opacity="0.4"/>
+                  <line x1="148" y1="118" x2="115" y2="118" stroke-width="2.5" stroke-linecap="round"/><line x1="148" y1="133" x2="115" y2="133" stroke-width="2.5" stroke-linecap="round"/>
+                  <line x1="148" y1="148" x2="115" y2="148" stroke-width="2.5" stroke-linecap="round"/><line x1="148" y1="163" x2="115" y2="163" stroke-width="2.5" stroke-linecap="round"/>
+                  <line x1="252" y1="118" x2="285" y2="118" stroke-width="2.5" stroke-linecap="round"/><line x1="252" y1="133" x2="285" y2="133" stroke-width="2.5" stroke-linecap="round"/>
+                  <line x1="252" y1="148" x2="285" y2="148" stroke-width="2.5" stroke-linecap="round"/><line x1="252" y1="163" x2="285" y2="163" stroke-width="2.5" stroke-linecap="round"/>
+                  <line x1="172" y1="100" x2="172" y2="68" stroke-width="2.5" stroke-linecap="round"/><line x1="200" y1="100" x2="200" y2="68" stroke-width="2.5" stroke-linecap="round"/><line x1="228" y1="100" x2="228" y2="68" stroke-width="2.5" stroke-linecap="round"/>
+                  <line x1="172" y1="180" x2="172" y2="212" stroke-width="2.5" stroke-linecap="round"/><line x1="200" y1="180" x2="200" y2="212" stroke-width="2.5" stroke-linecap="round"/><line x1="228" y1="180" x2="228" y2="212" stroke-width="2.5" stroke-linecap="round"/>
+                  <path d="M115 118 L55 118 L55 55 L95 55" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.65"/>
+                  <path d="M115 148 L40 148 L40 215 L80 215" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.65"/>
+                  <path d="M285 133 L345 133 L345 65 L315 65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.65"/>
+                  <path d="M285 163 L360 163 L360 230 L330 230" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.65"/>
+                  <path d="M172 68 L172 30 L240 30" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.65"/>
+                  <path d="M228 212 L228 255 L160 255" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.65"/>
+                  <circle cx="95" cy="55" r="5.5" stroke-width="2" opacity="0.7"/><circle cx="80" cy="215" r="5.5" stroke-width="2" opacity="0.7"/>
+                  <circle cx="315" cy="65" r="5.5" stroke-width="2" opacity="0.7"/><circle cx="330" cy="230" r="5.5" stroke-width="2" opacity="0.7"/>
+                  <circle cx="240" cy="30" r="5.5" stroke-width="2" opacity="0.7"/><circle cx="160" cy="255" r="5.5" stroke-width="2" opacity="0.7"/>
+                </svg>
+              </div>
+              <div class="service-card-content">
+                <div class="service-name">Semiconductor & EDA Infrastructure</div>
+                <div class="service-desc">Purpose-built environments for chip design. EDA tools, PDK management, secure compute for VLSI teams.</div>
+                <a href="#" class="service-learn-btn" onclick="showPage('svc-semi'); return false;">Learn More</a>
+              </div>
+            </div>
+
+            <div class="service-card" onclick="showPage('svc-elevate')">
+              <div class="service-card-bg" aria-hidden="true">
+                <svg viewBox="0 0 400 280" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#064e3b">
+                  <circle cx="60" cy="80" r="18" stroke-width="2"/><circle cx="60" cy="140" r="18" stroke-width="2"/><circle cx="60" cy="200" r="18" stroke-width="2"/>
+                  <circle cx="60" cy="80" r="7" fill="#064e3b" stroke="none" opacity="0.5"/><circle cx="60" cy="140" r="7" fill="#064e3b" stroke="none" opacity="0.5"/><circle cx="60" cy="200" r="7" fill="#064e3b" stroke="none" opacity="0.5"/>
+                  <circle cx="165" cy="55" r="18" stroke-width="2"/><circle cx="165" cy="118" r="18" stroke-width="2"/><circle cx="165" cy="182" r="18" stroke-width="2"/><circle cx="165" cy="245" r="18" stroke-width="2" opacity="0.6"/>
+                  <circle cx="270" cy="55" r="18" stroke-width="2"/><circle cx="270" cy="118" r="18" stroke-width="2"/><circle cx="270" cy="182" r="18" stroke-width="2"/><circle cx="270" cy="245" r="18" stroke-width="2" opacity="0.6"/>
+                  <circle cx="368" cy="105" r="22" stroke-width="2.5"/><circle cx="368" cy="195" r="22" stroke-width="2.5"/>
+                  <circle cx="368" cy="105" r="9" fill="#10b981" stroke="none"/><circle cx="368" cy="195" r="9" fill="#10b981" stroke="none"/>
+                  <line x1="78" y1="80" x2="147" y2="55" stroke-width="1" opacity="0.4"/><line x1="78" y1="80" x2="147" y2="118" stroke-width="1" opacity="0.4"/><line x1="78" y1="80" x2="147" y2="182" stroke-width="1" opacity="0.2"/>
+                  <line x1="78" y1="140" x2="147" y2="55" stroke-width="1" opacity="0.2"/><line x1="78" y1="140" x2="147" y2="118" stroke-width="1" opacity="0.4"/><line x1="78" y1="140" x2="147" y2="182" stroke-width="1" opacity="0.4"/>
+                  <line x1="78" y1="200" x2="147" y2="118" stroke-width="1" opacity="0.2"/><line x1="78" y1="200" x2="147" y2="182" stroke-width="1" opacity="0.4"/><line x1="78" y1="200" x2="147" y2="245" stroke-width="1" opacity="0.3"/>
+                  <line x1="183" y1="55" x2="252" y2="55" stroke-width="1" opacity="0.4"/><line x1="183" y1="55" x2="252" y2="118" stroke-width="1" opacity="0.25"/><line x1="183" y1="118" x2="252" y2="55" stroke-width="1" opacity="0.25"/>
+                  <line x1="183" y1="118" x2="252" y2="118" stroke-width="1" opacity="0.4"/><line x1="183" y1="118" x2="252" y2="182" stroke-width="1" opacity="0.25"/><line x1="183" y1="182" x2="252" y2="118" stroke-width="1" opacity="0.25"/>
+                  <line x1="183" y1="182" x2="252" y2="182" stroke-width="1" opacity="0.4"/><line x1="183" y1="245" x2="252" y2="245" stroke-width="1" opacity="0.3"/>
+                  <line x1="288" y1="55" x2="346" y2="105" stroke-width="1.5" opacity="0.5"/><line x1="288" y1="118" x2="346" y2="105" stroke-width="1.5" opacity="0.5"/>
+                  <line x1="288" y1="182" x2="346" y2="195" stroke-width="1.5" opacity="0.5"/><line x1="288" y1="245" x2="346" y2="195" stroke-width="1.5" opacity="0.4"/>
+                  <line x1="288" y1="55" x2="346" y2="195" stroke-width="1" opacity="0.2"/><line x1="288" y1="245" x2="346" y2="105" stroke-width="1" opacity="0.2"/>
+                </svg>
+              </div>
+              <div class="service-card-content">
+                <div class="service-name">ElevateOps AI Knowledge Platform</div>
+                <div class="service-desc">AI-powered ops intelligence. Surface knowledge, automate runbooks, and elevate your team's capabilities.</div>
+                <a href="#" class="service-learn-btn" onclick="showPage('svc-elevate'); return false;">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- SERVICE DETAIL: IT INFRASTRUCTURE -->
+    <div id="page-svc-infra" class="page">
+      <section class="page-hero">
+        <div class="container">
+          <div class="page-hero-content">
+            <div class="label label-light">IT Infrastructure Management</div>
+            <h1 class="page-title">Your infrastructure, expertly managed</h1>
+            <p class="page-sub">
+              We become the IT backbone of your business — monitoring,
+              maintaining, and modernising everything from servers to networks
+              to cloud environments.
+            </p>
+            <div style="margin-top: 32px; display: flex; gap: 14px">
+              <a
+                href="#"
+                class="btn btn-primary"
+                onclick="
+                  showPage('contact');
+                  return false;
+                "
+                >Get Infrastructure Assessment</a
+              >
+              <a
+                href="#"
+                class="btn btn-ghost"
+                onclick="
+                  showPage('services');
+                  return false;
+                "
+                >← All Services</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-header center">
+            <div class="label">Key Capabilities</div>
+            <h2 class="section-title">What we manage for you</h2>
+          </div>
+          <div class="service-features">
+            <div class="feature-card">
+              <div class="feature-icon">🖥️</div>
+              <div class="feature-title">Server & Network Management</div>
+              <p class="feature-text">
+                24/7 monitoring, patch management, and proactive maintenance
+                across your entire server and network estate.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">☁️</div>
+              <div class="feature-title">Hybrid Cloud Operations</div>
+              <p class="feature-text">
+                Seamless management across on-premise and cloud environments
+                with a single pane of glass.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">📊</div>
+              <div class="feature-title">Performance Monitoring</div>
+              <p class="feature-text">
+                Real-time observability with Grafana, Elastic, and custom
+                dashboards tuned to your business SLAs.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🔧</div>
+              <div class="feature-title">Incident Management</div>
+              <p class="feature-text">
+                Structured ITSM processes with defined SLAs, fast response, root
+                cause analysis, and permanent fixes.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">💰</div>
+              <div class="feature-title">Cost Optimisation</div>
+              <p class="feature-text">
+                Continuous right-sizing and resource optimisation. Most clients
+                see 20–40% cost reduction in year one.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">📋</div>
+              <div class="feature-title">Compliance & Reporting</div>
+              <p class="feature-text">
+                Monthly executive reports, compliance documentation, and
+                audit-ready evidence packages.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- SERVICE DETAIL: CLOUD -->
+    <div id="page-svc-cloud" class="page">
+      <section class="page-hero">
+        <div class="container">
+          <div class="page-hero-content">
+            <div class="label label-light">Cloud Services</div>
+            <h1 class="page-title">Cloud transformation, done right</h1>
+            <p class="page-sub">
+              As an AWS Advanced Tier Consulting Partner, we design, migrate,
+              and optimise your cloud infrastructure for performance, security,
+              and cost.
+            </p>
+            <div style="margin-top: 32px; display: flex; gap: 14px">
+              <a
+                href="#"
+                class="btn btn-primary"
+                onclick="
+                  showPage('contact');
+                  return false;
+                "
+                >Start Cloud Journey</a
+              >
+              <a
+                href="#"
+                class="btn btn-ghost"
+                onclick="
+                  showPage('services');
+                  return false;
+                "
+                >← All Services</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-header center">
+            <div class="label">Cloud Capabilities</div>
+            <h2 class="section-title">The full cloud lifecycle</h2>
+          </div>
+          <div class="service-features">
+            <div class="feature-card">
+              <div class="feature-icon">🗺️</div>
+              <div class="feature-title">Cloud Strategy & Assessment</div>
+              <p class="feature-text">
+                Workload assessment, migration scoring, and a clear roadmap
+                before a single workload moves.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🚀</div>
+              <div class="feature-title">Cloud Migration</div>
+              <p class="feature-text">
+                Lift-and-shift, re-platform, and re-architect migrations
+                executed with zero-downtime methodology.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🏗️</div>
+              <div class="feature-title">Cloud Architecture</div>
+              <p class="feature-text">
+                Well-architected frameworks, landing zone design, and
+                multi-account AWS/Azure/GCP environments built to last.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">💸</div>
+              <div class="feature-title">FinOps & Cost Management</div>
+              <p class="feature-text">
+                Continuous cloud cost governance — reserved instance planning,
+                savings plans, and rightsizing.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🔄</div>
+              <div class="feature-title">Cloud Managed Services</div>
+              <p class="feature-text">
+                24/7 cloud operations management so your team can focus on
+                building products.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🔐</div>
+              <div class="feature-title">Cloud Security</div>
+              <p class="feature-text">
+                IAM governance, network security, encryption, and continuous
+                compliance monitoring for your cloud estate.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- SERVICE DETAIL: DEVOPS -->
+    <div id="page-svc-devops" class="page">
+      <section class="page-hero">
+        <div class="container">
+          <div class="page-hero-content">
+            <div class="label label-light">DevOps Services</div>
+            <h1 class="page-title">
+              Ship faster. Deploy safer. Scale smarter.
+            </h1>
+            <p class="page-sub">
+              Enterprise DevOps practices, CI/CD automation, and platform
+              engineering that transform how your software reaches production.
+            </p>
+            <div style="margin-top: 32px; display: flex; gap: 14px">
+              <a
+                href="#"
+                class="btn btn-primary"
+                onclick="
+                  showPage('contact');
+                  return false;
+                "
+                >Accelerate Your Pipeline</a
+              >
+              <a
+                href="#"
+                class="btn btn-ghost"
+                onclick="
+                  showPage('services');
+                  return false;
+                "
+                >← All Services</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-header center">
+            <div class="label">DevOps Capabilities</div>
+            <h2 class="section-title">From commit to production, automated</h2>
+          </div>
+          <div class="service-features">
+            <div class="feature-card">
+              <div class="feature-icon">🔄</div>
+              <div class="feature-title">CI/CD Pipeline Design</div>
+              <p class="feature-text">
+                End-to-end pipeline automation with GitLab, GitHub Actions,
+                Jenkins, or ArgoCD. Reduce deploy time from days to minutes.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">☸️</div>
+              <div class="feature-title">Kubernetes & Container Ops</div>
+              <p class="feature-text">
+                Production-grade Kubernetes clusters, Helm charts, and container
+                orchestration across AWS EKS, AKS, and GKE.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">📦</div>
+              <div class="feature-title">Infrastructure as Code</div>
+              <p class="feature-text">
+                Terraform, Pulumi, and Ansible for repeatable, auditable
+                infrastructure provisioning across all environments.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">📊</div>
+              <div class="feature-title">Observability & Monitoring</div>
+              <p class="feature-text">
+                Full-stack observability with Prometheus, Grafana, ELK, and
+                Datadog. Alerting that escalates intelligently.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🏗️</div>
+              <div class="feature-title">Platform Engineering</div>
+              <p class="feature-text">
+                Internal developer platforms that abstract infrastructure
+                complexity and let your engineers focus on product.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🛡️</div>
+              <div class="feature-title">DevSecOps</div>
+              <p class="feature-text">
+                Security scanning, secret management with Vault, and compliance
+                gates built into every pipeline stage.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- SERVICE DETAIL: SECURITY -->
+    <div id="page-svc-security" class="page">
+      <section class="page-hero">
+        <div class="container">
+          <div class="page-hero-content">
+            <div class="label label-light">Security & Cybersecurity</div>
+            <h1 class="page-title">
+              Security by design, not as an afterthought
+            </h1>
+            <p class="page-sub">
+              ISO 27001 consulting, vulnerability assessments, compliance
+              frameworks, and a security posture that protects your business
+              24/7.
+            </p>
+            <div style="margin-top: 32px; display: flex; gap: 14px">
+              <a
+                href="#"
+                class="btn btn-primary"
+                onclick="
+                  showPage('contact');
+                  return false;
+                "
+                >Get Security Assessment</a
+              >
+              <a
+                href="#"
+                class="btn btn-ghost"
+                onclick="
+                  showPage('services');
+                  return false;
+                "
+                >← All Services</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-header center">
+            <div class="label">Security Services</div>
+            <h2 class="section-title">Comprehensive security coverage</h2>
+          </div>
+          <div class="service-features">
+            <div class="feature-card">
+              <div class="feature-icon">📋</div>
+              <div class="feature-title">ISO 27001 Consulting</div>
+              <p class="feature-text">
+                Gap analysis, ISMS implementation, and full ISO 27001
+                certification readiness. We've guided 30+ companies through
+                certification.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🔍</div>
+              <div class="feature-title">VAPT Services</div>
+              <p class="feature-text">
+                Comprehensive vulnerability assessment and penetration testing
+                for applications, networks, and cloud infrastructure.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🛡️</div>
+              <div class="feature-title">Security Operations</div>
+              <p class="feature-text">
+                24/7 security monitoring, SIEM management, and incident response
+                with defined SLAs and escalation paths.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">📊</div>
+              <div class="feature-title">Compliance Management</div>
+              <p class="feature-text">
+                GDPR, HIPAA, PCI-DSS, and SOC 2 compliance frameworks tailored
+                to your industry and regulatory environment.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🔐</div>
+              <div class="feature-title">Identity & Access Management</div>
+              <p class="feature-text">
+                Zero-trust architecture, PAM implementation, and MFA enforcement
+                across your entire technology estate.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🎓</div>
+              <div class="feature-title">Security Awareness Training</div>
+              <p class="feature-text">
+                Phishing simulations, security awareness programmes, and
+                culture-building to make security everyone's responsibility.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- SERVICE DETAIL: SEMICONDUCTOR -->
+    <div id="page-svc-semi" class="page">
+      <section
+        class="page-hero"
+        style="
+          background: linear-gradient(
+            135deg,
+            #064e3b 0%,
+            #065f46 40%,
+            #10b981 100%
+          );
+        "
+      >
+        <div class="container">
+          <div class="page-hero-content">
+            <div class="label label-light">
+              Semiconductor & EDA Infrastructure
+            </div>
+            <h1 class="page-title">Infrastructure built for chip designers</h1>
+            <p class="page-sub">
+              Purpose-built IT environments for VLSI and chip design teams. EDA
+              tool management, PDK infrastructure, and secure compute
+              environments built for the demands of modern semiconductor R&D.
+            </p>
+            <div style="margin-top: 32px; display: flex; gap: 14px">
+              <a
+                href="#"
+                class="btn btn-primary"
+                onclick="
+                  showPage('contact');
+                  return false;
+                "
+                >Discuss Your EDA Environment</a
+              >
+              <a
+                href="#"
+                class="btn btn-ghost"
+                onclick="
+                  showPage('services');
+                  return false;
+                "
+                >← All Services</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-header center">
+            <div class="label">EDA Infrastructure Capabilities</div>
+            <h2 class="section-title">
+              From PDK to tapeout — we manage the infrastructure
+            </h2>
+          </div>
+          <div class="service-features">
+            <div class="feature-card">
+              <div class="feature-icon">🔬</div>
+              <div class="feature-title">EDA Tool Environment Management</div>
+              <p class="feature-text">
+                Installation, licensing, and version management for Cadence,
+                Synopsys, and Mentor tools across design teams.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">📦</div>
+              <div class="feature-title">PDK Infrastructure</div>
+              <p class="feature-text">
+                Secure PDK storage, version control, and access management.
+                Maintain IP confidentiality with granular permissions.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">☁️</div>
+              <div class="feature-title">Cloud-based Design Compute</div>
+              <p class="feature-text">
+                Burst compute on AWS and Azure for simulation-heavy workloads.
+                Pay for what you use, scale when you need it.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🔒</div>
+              <div class="feature-title">IP Security & DRM</div>
+              <p class="feature-text">
+                End-to-end IP protection with secure remote access, DRM
+                controls, and audit trails for all design data.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🔄</div>
+              <div class="feature-title">Fab-ready CI/CD Pipelines</div>
+              <p class="feature-text">
+                Automated design verification pipelines that integrate with your
+                sign-off flow and tapeout checklist.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">📡</div>
+              <div class="feature-title">Remote Design Team Infrastructure</div>
+              <p class="feature-text">
+                Secure VPN, virtual desktops, and collaboration infrastructure
+                for globally distributed chip design teams.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- SERVICE DETAIL: ELEVATEOPS -->
+    <div id="page-svc-elevate" class="page">
+      <section
+        class="page-hero"
+        style="
+          background: linear-gradient(
+            135deg,
+            #064e3b 0%,
+            #047857 40%,
+            #6b21a8 100%
+          );
+        "
+      >
+        <div class="container">
+          <div class="page-hero-content">
+            <div class="label label-light" style="color: #a78bfa">
+              ✨ AI-Powered Platform
+            </div>
+            <h1 class="page-title" style="margin-top: 16px">
+              Elevate your ops team with AI
+            </h1>
+            <p class="page-sub">
+              ElevateOps is Opt IT's AI knowledge platform that captures your
+              institutional IT knowledge, automates runbooks, and gives your
+              operations team superpowers.
+            </p>
+            <div style="margin-top: 32px; display: flex; gap: 14px">
+              <a
+                href="#"
+                class="btn btn-primary"
+                onclick="
+                  showPage('contact');
+                  return false;
+                "
+                >Request Early Access</a
+              >
+              <a
+                href="#"
+                class="btn btn-ghost"
+                onclick="
+                  showPage('services');
+                  return false;
+                "
+                >← All Services</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-header center">
+            <div class="label" style="color: #a78bfa">
+              Platform Capabilities
+            </div>
+            <h2 class="section-title">What ElevateOps does for your team</h2>
+          </div>
+          <div class="service-features">
+            <div class="feature-card">
+              <div class="feature-icon">🧠</div>
+              <div class="feature-title">AI Knowledge Capture</div>
+              <p class="feature-text">
+                Automatically captures and structures tribal knowledge from your
+                IT team into a searchable, AI-powered knowledge base.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">📖</div>
+              <div class="feature-title">Intelligent Runbooks</div>
+              <p class="feature-text">
+                Convert your existing runbooks into interactive, AI-assisted
+                guides that walk on-call engineers through complex incidents.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🤖</div>
+              <div class="feature-title">Ops Copilot</div>
+              <p class="feature-text">
+                AI assistant that answers "how do I fix this?" using your team's
+                own documentation and past incident data.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">📊</div>
+              <div class="feature-title">Incident Intelligence</div>
+              <p class="feature-text">
+                Pattern detection across incidents to surface recurring issues
+                before they become outages.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🔄</div>
+              <div class="feature-title">Automation Suggestions</div>
+              <p class="feature-text">
+                AI identifies repetitive manual tasks and suggests automation
+                scripts. Reduces toil by an average of 35%.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🔌</div>
+              <div class="feature-title">Integrations</div>
+              <p class="feature-text">
+                Connects with PagerDuty, Jira, Confluence, Slack, ServiceNow,
+                and your existing monitoring stack.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- INDUSTRIES PAGE -->
+    <div id="page-industries" class="page">
+      <section class="page-hero">
+        <div class="container">
+          <div class="page-hero-content">
+            <div class="label label-light">Industries</div>
+            <h1 class="page-title">
+              Deep expertise in the sectors that matter
+            </h1>
+            <p class="page-sub">
+              We don't believe in one-size-fits-all IT. Our specialists
+              understand the specific compliance, performance, and security
+              requirements of your sector.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <div class="cases-grid">
+            <div class="case-card" style="cursor: default">
+              <div
+                class="case-top"
+                style="
+                  background: linear-gradient(135deg, #064e3b, #10b981);
+                  align-items: center;
+                  justify-content: center;
+                "
+              >
+                <span style="font-size: 48px">🔬</span>
+              </div>
+              <div class="case-body">
+                <div class="case-title">Semiconductor & Electronics</div>
+                <p class="case-desc">
+                  EDA infrastructure, IP security, and chip design compute
+                  environments purpose-built for fabless companies and VLSI
+                  teams. We support Cadence, Synopsys, and Mentor toolchains.
+                </p>
+                <div
+                  style="
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 6px;
+                    margin-top: 12px;
+                  "
+                >
+                  <span
+                    style="
+                      font-size: 11px;
+                      padding: 3px 10px;
+                      background: var(--off-white);
+                      border: 1px solid var(--border);
+                      border-radius: 100px;
+                      color: var(--text-secondary);
+                    "
+                    >EDA Tools</span
+                  >
+                  <span
+                    style="
+                      font-size: 11px;
+                      padding: 3px 10px;
+                      background: var(--off-white);
+                      border: 1px solid var(--border);
+                      border-radius: 100px;
+                      color: var(--text-secondary);
+                    "
+                    >PDK Management</span
+                  >
+                  <span
+                    style="
+                      font-size: 11px;
+                      padding: 3px 10px;
+                      background: var(--off-white);
+                      border: 1px solid var(--border);
+                      border-radius: 100px;
+                      color: var(--text-secondary);
+                    "
+                    >IP Security</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="case-card" style="cursor: default">
+              <div
+                class="case-top"
+                style="
+                  background: linear-gradient(135deg, #065f46, #34d399);
+                  align-items: center;
+                  justify-content: center;
+                "
+              >
+                <span style="font-size: 48px">🏭</span>
+              </div>
+              <div class="case-body">
+                <div class="case-title">Manufacturing</div>
+                <p class="case-desc">
+                  OT/IT convergence, industrial network security, and
+                  cloud-connected factory infrastructure for Industry 4.0
+                  transformation.
+                </p>
+                <div
+                  style="
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 6px;
+                    margin-top: 12px;
+                  "
+                >
+                  <span
+                    style="
+                      font-size: 11px;
+                      padding: 3px 10px;
+                      background: var(--off-white);
+                      border: 1px solid var(--border);
+                      border-radius: 100px;
+                      color: var(--text-secondary);
+                    "
+                    >OT/IT Convergence</span
+                  >
+                  <span
+                    style="
+                      font-size: 11px;
+                      padding: 3px 10px;
+                      background: var(--off-white);
+                      border: 1px solid var(--border);
+                      border-radius: 100px;
+                      color: var(--text-secondary);
+                    "
+                    >Industry 4.0</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="case-card" style="cursor: default">
+              <div
+                class="case-top"
+                style="
+                  background: linear-gradient(135deg, #047857, #6ee7b7);
+                  align-items: center;
+                  justify-content: center;
+                "
+              >
+                <span style="font-size: 48px">🏥</span>
+              </div>
+              <div class="case-body">
+                <div class="case-title">Healthcare & Life Sciences</div>
+                <p class="case-desc">
+                  HIPAA-compliant infrastructure, clinical data security, and
+                  cloud environments purpose-built for healthcare data
+                  sensitivity requirements.
+                </p>
+                <div
+                  style="
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 6px;
+                    margin-top: 12px;
+                  "
+                >
+                  <span
+                    style="
+                      font-size: 11px;
+                      padding: 3px 10px;
+                      background: var(--off-white);
+                      border: 1px solid var(--border);
+                      border-radius: 100px;
+                      color: var(--text-secondary);
+                    "
+                    >HIPAA</span
+                  >
+                  <span
+                    style="
+                      font-size: 11px;
+                      padding: 3px 10px;
+                      background: var(--off-white);
+                      border: 1px solid var(--border);
+                      border-radius: 100px;
+                      color: var(--text-secondary);
+                    "
+                    >Data Security</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="case-card" style="cursor: default">
+              <div
+                class="case-top"
+                style="
+                  background: linear-gradient(135deg, #0b3b2e, #1a6b4a);
+                  align-items: center;
+                  justify-content: center;
+                "
+              >
+                <span style="font-size: 48px">🏦</span>
+              </div>
+              <div class="case-body">
+                <div class="case-title">Banking & Financial Services</div>
+                <p class="case-desc">
+                  PCI-DSS compliance, high-availability trading infrastructure,
+                  and zero-trust security architectures for regulated financial
+                  institutions.
+                </p>
+                <div
+                  style="
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 6px;
+                    margin-top: 12px;
+                  "
+                >
+                  <span
+                    style="
+                      font-size: 11px;
+                      padding: 3px 10px;
+                      background: var(--off-white);
+                      border: 1px solid var(--border);
+                      border-radius: 100px;
+                      color: var(--text-secondary);
+                    "
+                    >PCI-DSS</span
+                  >
+                  <span
+                    style="
+                      font-size: 11px;
+                      padding: 3px 10px;
+                      background: var(--off-white);
+                      border: 1px solid var(--border);
+                      border-radius: 100px;
+                      color: var(--text-secondary);
+                    "
+                    >Zero Trust</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="case-card" style="cursor: default">
+              <div
+                class="case-top"
+                style="
+                  background: linear-gradient(135deg, #1a0b3e, #4a1a8a);
+                  align-items: center;
+                  justify-content: center;
+                "
+              >
+                <span style="font-size: 48px">💡</span>
+              </div>
+              <div class="case-body">
+                <div class="case-title">Technology & SaaS</div>
+                <p class="case-desc">
+                  Scalable DevOps infrastructure, cost-optimised cloud
+                  architecture, and platform engineering for fast-growing
+                  technology companies.
+                </p>
+                <div
+                  style="
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 6px;
+                    margin-top: 12px;
+                  "
+                >
+                  <span
+                    style="
+                      font-size: 11px;
+                      padding: 3px 10px;
+                      background: var(--off-white);
+                      border: 1px solid var(--border);
+                      border-radius: 100px;
+                      color: var(--text-secondary);
+                    "
+                    >Scalability</span
+                  >
+                  <span
+                    style="
+                      font-size: 11px;
+                      padding: 3px 10px;
+                      background: var(--off-white);
+                      border: 1px solid var(--border);
+                      border-radius: 100px;
+                      color: var(--text-secondary);
+                    "
+                    >FinOps</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- RESOURCES PAGE -->
+    <div id="page-resources" class="page">
+      <section class="page-hero">
+        <div class="container">
+          <div class="page-hero-content">
+            <div class="label label-light">Resources</div>
+            <h1 class="page-title">
+              Insights from the enterprise IT frontline
+            </h1>
+            <p class="page-sub">
+              Practical guides, case studies, and thinking from our engineers
+              and consultants.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div style="margin-bottom: 40px">
+            <div class="page-tabs">
+              <button
+                class="page-tab active"
+                onclick="switchTab(this, 'tab-blogs')"
+              >
+                Blogs
+              </button>
+              <button class="page-tab" onclick="switchTab(this, 'tab-cases')">
+                Case Studies
+              </button>
+              <button class="page-tab" onclick="switchTab(this, 'tab-clients')">
+                Clients
+              </button>
+            </div>
+          </div>
+          <div id="tab-blogs" class="tab-content">
+            <div class="resources-grid">
+              <div class="resource-card">
+                <div class="resource-img">📝</div>
+                <div class="resource-body">
+                  <div class="resource-tag">Cloud</div>
+                  <div class="resource-title">
+                    How to cut AWS costs by 35% without sacrificing performance
+                  </div>
+                  <p class="resource-excerpt">
+                    A practical FinOps playbook for growing companies spending
+                    between $10K–$100K/month on AWS.
+                  </p>
+                </div>
+              </div>
+              <div class="resource-card">
+                <div
+                  class="resource-img"
+                  style="background: linear-gradient(135deg, #065f46, #6ee7b7)"
+                >
+                  🔐
+                </div>
+                <div class="resource-body">
+                  <div class="resource-tag">Security</div>
+                  <div class="resource-title">
+                    ISO 27001 readiness: the 12-month implementation roadmap
+                  </div>
+                  <p class="resource-excerpt">
+                    Step-by-step guide for companies preparing for their first
+                    ISO 27001 certification audit.
+                  </p>
+                </div>
+              </div>
+              <div class="resource-card">
+                <div
+                  class="resource-img"
+                  style="background: linear-gradient(135deg, #1a0b3e, #4a1a8a)"
+                >
+                  🤖
+                </div>
+                <div class="resource-body">
+                  <div class="resource-tag">ElevateOps</div>
+                  <div class="resource-title">
+                    Why AI-powered runbooks reduce MTTR by 40%
+                  </div>
+                  <p class="resource-excerpt">
+                    Our research into how AI knowledge tools change how on-call
+                    engineers resolve incidents.
+                  </p>
+                </div>
+              </div>
+              <div class="resource-card">
+                <div
+                  class="resource-img"
+                  style="background: linear-gradient(135deg, #064e3b, #34d399)"
+                >
+                  ⚙️
+                </div>
+                <div class="resource-body">
+                  <div class="resource-tag">DevOps</div>
+                  <div class="resource-title">
+                    Platform engineering vs DevOps: what growing companies
+                    actually need
+                  </div>
+                  <p class="resource-excerpt">
+                    A clear-eyed breakdown of when to invest in platform
+                    engineering vs DevOps-as-a-service.
+                  </p>
+                </div>
+              </div>
+              <div class="resource-card">
+                <div
+                  class="resource-img"
+                  style="background: linear-gradient(135deg, #2a1b0e, #a06010)"
+                >
+                  🔬
+                </div>
+                <div class="resource-body">
+                  <div class="resource-tag">Semiconductor</div>
+                  <div class="resource-title">
+                    Setting up an EDA environment on AWS: a complete guide for
+                    VLSI startups
+                  </div>
+                  <p class="resource-excerpt">
+                    How to run Cadence and Synopsys tools on AWS without
+                    breaking your budget or your PDK security model.
+                  </p>
+                </div>
+              </div>
+              <div class="resource-card">
+                <div
+                  class="resource-img"
+                  style="background: linear-gradient(135deg, #064e3b, #10b981)"
+                >
+                  ☸️
+                </div>
+                <div class="resource-body">
+                  <div class="resource-tag">Kubernetes</div>
+                  <div class="resource-title">
+                    Kubernetes in production: the mistakes we see every time
+                  </div>
+                  <p class="resource-excerpt">
+                    15 recurring Kubernetes production issues our engineers
+                    encounter and the fixes that actually work.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="tab-cases" class="tab-content" style="display: none">
+            <div class="cases-grid">
+              <div class="case-card">
+                <div
+                  class="case-top"
+                  style="background: linear-gradient(135deg, #064e3b, #10b981)"
+                >
+                  <span class="case-industry">Healthcare</span>
+                </div>
+                <div class="case-body">
+                  <div class="case-title">
+                    Zero-downtime migration for healthtech startup
+                  </div>
+                  <div class="case-desc">
+                    Migrated 40TB of clinical data and 18 microservices to AWS
+                    with zero production downtime.
+                  </div>
+                  <div class="case-metric">40%</div>
+                  <div class="case-metric-label">
+                    infrastructure cost reduction
+                  </div>
+                </div>
+              </div>
+              <div class="case-card">
+                <div
+                  class="case-top"
+                  style="background: linear-gradient(135deg, #065f46, #6ee7b7)"
+                >
+                  <span class="case-industry">Semiconductor</span>
+                </div>
+                <div class="case-body">
+                  <div class="case-title">
+                    EDA cloud infrastructure for fabless VLSI startup
+                  </div>
+                  <div class="case-desc">
+                    Designed and deployed a secure EDA environment on AWS for a
+                    30-person chip design team.
+                  </div>
+                  <div class="case-metric">3×</div>
+                  <div class="case-metric-label">faster design iteration</div>
+                </div>
+              </div>
+              <div class="case-card">
+                <div
+                  class="case-top"
+                  style="background: linear-gradient(135deg, #047857, #34d399)"
+                >
+                  <span class="case-industry">Education</span>
+                </div>
+                <div class="case-body">
+                  <div class="case-title">
+                    Full IT outsourcing for Samhita Academy
+                  </div>
+                  <div class="case-desc">
+                    Complete IT management for an education institution with
+                    500+ students and 80+ staff.
+                  </div>
+                  <div class="case-metric">₹0</div>
+                  <div class="case-metric-label">in in-house IT headcount</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="tab-clients" class="tab-content" style="display: none">
+            <div class="section-header center" style="margin-bottom: 40px">
+              <h2 class="section-title">300+ enterprises trust Opt IT</h2>
+              <p class="section-subtitle">
+                A selection of the companies we've served across industries and
+                geographies.
+              </p>
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 16px;
+              "
+            >
+              <div
+                class="cert-card"
+                style="background: var(--white); border-color: var(--border)"
+              >
+                <div style="font-size: 24px; margin-bottom: 8px">🏥</div>
+                <div class="cert-name">HealthBridge Technologies</div>
+                <div class="cert-sub">Healthcare, Bengaluru</div>
+              </div>
+              <div
+                class="cert-card"
+                style="background: var(--white); border-color: var(--border)"
+              >
+                <div style="font-size: 24px; margin-bottom: 8px">🔬</div>
+                <div class="cert-name">Apex VLSI Systems</div>
+                <div class="cert-sub">Semiconductor, Hyderabad</div>
+              </div>
+              <div
+                class="cert-card"
+                style="background: var(--white); border-color: var(--border)"
+              >
+                <div style="font-size: 24px; margin-bottom: 8px">🎓</div>
+                <div class="cert-name">Samhita Academy</div>
+                <div class="cert-sub">Education, Bengaluru</div>
+              </div>
+              <div
+                class="cert-card"
+                style="background: var(--white); border-color: var(--border)"
+              >
+                <div style="font-size: 24px; margin-bottom: 8px">🏦</div>
+                <div class="cert-name">FinServe Capital</div>
+                <div class="cert-sub">BFSI, Mumbai</div>
+              </div>
+              <div
+                class="cert-card"
+                style="background: var(--white); border-color: var(--border)"
+              >
+                <div style="font-size: 24px; margin-bottom: 8px">🏭</div>
+                <div class="cert-name">PrecisionMfg Corp</div>
+                <div class="cert-sub">Manufacturing, Pune</div>
+              </div>
+              <div
+                class="cert-card"
+                style="background: var(--white); border-color: var(--border)"
+              >
+                <div style="font-size: 24px; margin-bottom: 8px">💡</div>
+                <div class="cert-name">CloudScale SaaS</div>
+                <div class="cert-sub">Technology, Bengaluru</div>
+              </div>
+              <div
+                class="cert-card"
+                style="background: var(--white); border-color: var(--border)"
+              >
+                <div style="font-size: 24px; margin-bottom: 8px">🚀</div>
+                <div class="cert-name">RocketShip Inc</div>
+                <div class="cert-sub">SaaS, Wilmington DE</div>
+              </div>
+              <div
+                class="cert-card"
+                style="background: var(--white); border-color: var(--border)"
+              >
+                <div style="font-size: 24px; margin-bottom: 8px">🔐</div>
+                <div class="cert-name">SecureNet India</div>
+                <div class="cert-sub">Cybersecurity, Chennai</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- CAREERS PAGE -->
+    <div id="page-careers" class="page">
+      <section class="page-hero">
+        <div class="container">
+          <div class="page-hero-content">
+            <div class="label label-light">Careers</div>
+            <h1 class="page-title">Cloud Managed Services Company In India</h1>
+            <p class="page-sub">What Can You Look Forward To — Building trust, ensuring long-term customer success, sharing expertise, and leveraging technology for real business impact.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CULTURE PILLARS -->
+      <section class="section">
+        <div class="container">
+          <div class="section-header">
+            <div class="label">Our Culture</div>
+            <h2 class="section-title">What Can You Look Forward To</h2>
+            <p class="section-subtitle">We believe great work starts with a great environment. Here's what makes Opt IT a place where people thrive.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px;">
+            <div style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px 26px;">
+              <div style="width: 48px; height: 48px; border-radius: 12px; background: #f0fdf4; border: 1px solid #d1fae5; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 18px;">😊</div>
+              <div style="font-family: 'Syne', sans-serif; font-weight: 700; color: var(--navy); font-size: 16px; margin-bottom: 10px;">Happiness Culture</div>
+              <div style="font-size: 13.5px; color: var(--text-secondary); line-height: 1.7;">We foster a culture of happiness with emphasis on work-life balance and rewards that recognise and celebrate your contributions.</div>
+            </div>
+            <div style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px 26px;">
+              <div style="width: 48px; height: 48px; border-radius: 12px; background: #f0fdf4; border: 1px solid #d1fae5; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 18px;">🎯</div>
+              <div style="font-family: 'Syne', sans-serif; font-weight: 700; color: var(--navy); font-size: 16px; margin-bottom: 10px;">Impact</div>
+              <div style="font-size: 13.5px; color: var(--text-secondary); line-height: 1.7;">Work with innovative customers who are challenging the status quo. Your work directly shapes outcomes that matter to enterprises across India and the US.</div>
+            </div>
+            <div style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px 26px;">
+              <div style="width: 48px; height: 48px; border-radius: 12px; background: #f0fdf4; border: 1px solid #d1fae5; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 18px;">🚀</div>
+              <div style="font-family: 'Syne', sans-serif; font-weight: 700; color: var(--navy); font-size: 16px; margin-bottom: 10px;">Growth & Innovation</div>
+              <div style="font-size: 13.5px; color: var(--text-secondary); line-height: 1.7;">We fuel growth and innovation through creative problem-solving and continuous learning. There is always room to explore new ideas and expand your expertise.</div>
+            </div>
+            <div style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px 26px;">
+              <div style="width: 48px; height: 48px; border-radius: 12px; background: #f0fdf4; border: 1px solid #d1fae5; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 18px;">⭐</div>
+              <div style="font-family: 'Syne', sans-serif; font-weight: 700; color: var(--navy); font-size: 16px; margin-bottom: 10px;">Excellence</div>
+              <div style="font-size: 13.5px; color: var(--text-secondary); line-height: 1.7;">We are committed to delivering high-quality, reliable and cost-optimal solutions. Excellence is not an aspiration — it is our standard.</div>
+            </div>
+            <div style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px 26px;">
+              <div style="width: 48px; height: 48px; border-radius: 12px; background: #f0fdf4; border: 1px solid #d1fae5; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 18px;">🧠</div>
+              <div style="font-family: 'Syne', sans-serif; font-weight: 700; color: var(--navy); font-size: 16px; margin-bottom: 10px;">Expertise</div>
+              <div style="font-size: 13.5px; color: var(--text-secondary); line-height: 1.7;">We value the brightest minds in the industry and invest in continuous professional development so you stay ahead of the curve.</div>
+            </div>
+            <div style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px 26px;">
+              <div style="width: 48px; height: 48px; border-radius: 12px; background: #f0fdf4; border: 1px solid #d1fae5; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 18px;">🤝</div>
+              <div style="font-family: 'Syne', sans-serif; font-weight: 700; color: var(--navy); font-size: 16px; margin-bottom: 10px;">Teamwork</div>
+              <div style="font-size: 13.5px; color: var(--text-secondary); line-height: 1.7;">"Coming together is a Beginning. Keeping together is Progress. Working together is Success." — We win as one team.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BENEFITS -->
+      <section class="section" style="background: var(--off-white); padding: 80px 0;">
+        <div class="container">
+          <div class="section-header">
+            <div class="label">Benefits</div>
+            <h2 class="section-title">What we offer</h2>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin-top: 40px;">
+            <div style="background: var(--white); border: 1px solid var(--border); border-radius: 40px; padding: 14px 28px; display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 500; color: var(--navy);">
+              <span style="color: var(--blue);">✓</span> Flexible Hours
+            </div>
+            <div style="background: var(--white); border: 1px solid var(--border); border-radius: 40px; padding: 14px 28px; display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 500; color: var(--navy);">
+              <span style="color: var(--blue);">✓</span> Health Insurance
+            </div>
+            <div style="background: var(--white); border: 1px solid var(--border); border-radius: 40px; padding: 14px 28px; display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 500; color: var(--navy);">
+              <span style="color: var(--blue);">✓</span> Maternity &amp; Paternity Leave
+            </div>
+            <div style="background: var(--white); border: 1px solid var(--border); border-radius: 40px; padding: 14px 28px; display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 500; color: var(--navy);">
+              <span style="color: var(--blue);">✓</span> Flat Hierarchies &amp; Open Door Policy
+            </div>
+            <div style="background: var(--white); border: 1px solid var(--border); border-radius: 40px; padding: 14px 28px; display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 500; color: var(--navy);">
+              <span style="color: var(--blue);">✓</span> Continuous Learning
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section-sm cta-banner">
+        <div class="container">
+          <div class="cta-inner">
+            <div class="label label-light">Join Us</div>
+            <h2 class="cta-title">Would you like to connect with us?</h2>
+            <p class="cta-sub">We are always looking for passionate, talented people. Drop us a message and let's start a conversation.</p>
+            <div class="cta-actions">
+              <a href="#" class="btn btn-white" onclick="showPage('contact'); return false;">Get in Touch</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- CONTACT PAGE -->
+    <div id="page-contact" class="page">
+      <section class="page-hero">
+        <div class="container">
+          <div class="page-hero-content">
+            <div class="label label-light">Contact Us</div>
+            <h1 class="page-title">Let's start your transformation</h1>
+            <p class="page-sub">
+              Book a free infrastructure assessment. Our enterprise consultants
+              will review your current environment and outline a clear path
+              forward — no commitment required.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="contact-grid">
+            <div class="contact-info">
+              <div class="contact-item">
+                <div class="contact-icon">📍</div>
+                <div>
+                  <div class="contact-label">Corporate Office</div>
+                  <div class="contact-val">
+                    #252, KGS Premier 2nd &amp; 3rd Floor,<br />46th Cross Rd,
+                    8th Block, Jayanagar,<br />Bengaluru – 560070, India<br /><strong
+                      >+91 9353906913</strong
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">📍</div>
+                <div>
+                  <div class="contact-label">Hyderabad Office</div>
+                  <div class="contact-val">
+                    Workafella Cyber Crown, Sec-II Village,<br />HUDA Techno
+                    Enclave, Hi-Tech City,<br />Hyderabad – 500081
+                  </div>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">📍</div>
+                <div>
+                  <div class="contact-label">USA Office</div>
+                  <div class="contact-val">
+                    919 North Market Street, Suite 425,<br />Wilmington, DE
+                    19801
+                  </div>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">📧</div>
+                <div>
+                  <div class="contact-label">Email</div>
+                  <div class="contact-val">info@optit.in</div>
+                </div>
+              </div>
+            </div>
+            <div class="contact-form-card">
+              <h3
+                style="
+                  font-family: &quot;Syne&quot;, sans-serif;
+                  font-size: 22px;
+                  font-weight: 700;
+                  color: var(--navy);
+                  margin-bottom: 6px;
+                "
+              >
+                Book a Free Demo
+              </h3>
+              <p
+                style="
+                  font-size: 14px;
+                  color: var(--text-secondary);
+                  margin-bottom: 28px;
+                "
+              >
+                Our enterprise consultants typically respond within 4 business
+                hours.
+              </p>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">First Name</label
+                  ><input type="text" class="form-input" placeholder="Your first name" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Last Name</label
+                  ><input type="text" class="form-input" placeholder="Your last name" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Work Email</label
+                ><input
+                  type="email"
+                  class="form-input"
+                  placeholder="abc@company.com"
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Phone Number</label
+                ><input
+                  type="phone number"
+                  class="form-input"
+                  placeholder="+919876543210"
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Company</label
+                ><input
+                  type="text"
+                  class="form-input"
+                  placeholder="Company name"
+                />
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Your Role</label>
+                  <select class="form-input">
+                    <option>CTO / CIO</option>
+                    <option>IT Director</option>
+                    <option>Infrastructure Manager</option>
+                    <option>DevOps Lead</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Company Size</label>
+                  <select class="form-input">
+                    <option>1–50 employees</option>
+                    <option>51–200</option>
+                    <option>201–1,000</option>
+                    <option>1,000+</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Service Interest</label>
+                <select class="form-input">
+                  <option>IT Infrastructure Management</option>
+                  <option>Cloud Services</option>
+                  <option>DevOps Services</option>
+                  <option>Security & Cybersecurity</option>
+                  <option>Semiconductor & EDA Infrastructure</option>
+                  <option>ElevateOps AI Platform</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Tell us about your challenge</label>
+                <textarea
+                  class="form-input"
+                  placeholder="Briefly describe your current IT situation and what you're hoping to achieve..."
+                ></textarea>
+              </div>
+              <button
+                class="btn btn-primary"
+                style="
+                  width: 100%;
+                  justify-content: center;
+                  padding: 14px 28px;
+                  font-size: 15px;
+                "
+              >
+                <svg
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                >
+                  <path d="M3 8h10M9 4l4 4-4 4" />
+                </svg>
+                Send Message
+              </button>
+              <p
+                style="
+                  font-size: 12px;
+                  color: var(--text-muted);
+                  margin-top: 12px;
+                  text-align: center;
+                "
+              >
+                No commitment required. We'll respond within 4 business hours.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- RESOURCES: BLOG -->
+    <div id="page-res-blog" class="page">
+      <section class="page-hero">
+        <div class="container">
+          <div class="page-hero-content">
+            <div class="label label-light">Resources / Blog</div>
+            <h1 class="page-title">
+              Insights from the enterprise IT frontline
+            </h1>
+            <p class="page-sub">
+              Practical guides and thinking from our engineers and consultants.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <div class="resources-grid">
+            <div class="resource-card">
+              <div class="resource-img">📝</div>
+              <div class="resource-body">
+                <div class="resource-tag">Cloud</div>
+                <div class="resource-title">
+                  How to cut AWS costs by 35% without sacrificing performance
+                </div>
+                <p class="resource-excerpt">
+                  A practical FinOps playbook for growing companies spending
+                  between $10K–$100K/month on AWS.
+                </p>
+              </div>
+            </div>
+            <div class="resource-card">
+              <div
+                class="resource-img"
+                style="background: linear-gradient(135deg, #065f46, #6ee7b7)"
+              >
+                🔐
+              </div>
+              <div class="resource-body">
+                <div class="resource-tag">Security</div>
+                <div class="resource-title">
+                  ISO 27001 readiness: the 12-month implementation roadmap
+                </div>
+                <p class="resource-excerpt">
+                  Step-by-step guide for companies preparing for their first ISO
+                  27001 certification audit.
+                </p>
+              </div>
+            </div>
+            <div class="resource-card">
+              <div
+                class="resource-img"
+                style="background: linear-gradient(135deg, #1a0b3e, #4a1a8a)"
+              >
+                🤖
+              </div>
+              <div class="resource-body">
+                <div class="resource-tag">ElevateOps</div>
+                <div class="resource-title">
+                  Why AI-powered runbooks reduce MTTR by 40%
+                </div>
+                <p class="resource-excerpt">
+                  Our research into how AI knowledge tools change how on-call
+                  engineers resolve incidents.
+                </p>
+              </div>
+            </div>
+            <div class="resource-card">
+              <div
+                class="resource-img"
+                style="background: linear-gradient(135deg, #064e3b, #34d399)"
+              >
+                ⚙️
+              </div>
+              <div class="resource-body">
+                <div class="resource-tag">DevOps</div>
+                <div class="resource-title">
+                  Platform engineering vs DevOps: what growing companies
+                  actually need
+                </div>
+                <p class="resource-excerpt">
+                  A clear-eyed breakdown of when to invest in platform
+                  engineering vs DevOps-as-a-service.
+                </p>
+              </div>
+            </div>
+            <div class="resource-card">
+              <div
+                class="resource-img"
+                style="background: linear-gradient(135deg, #2a1b0e, #a06010)"
+              >
+                🔬
+              </div>
+              <div class="resource-body">
+                <div class="resource-tag">Semiconductor</div>
+                <div class="resource-title">
+                  Setting up an EDA environment on AWS: a complete guide for
+                  VLSI startups
+                </div>
+                <p class="resource-excerpt">
+                  How to run Cadence and Synopsys tools on AWS without breaking
+                  your budget or your PDK security model.
+                </p>
+              </div>
+            </div>
+            <div class="resource-card">
+              <div
+                class="resource-img"
+                style="background: linear-gradient(135deg, #064e3b, #10b981)"
+              >
+                ☸️
+              </div>
+              <div class="resource-body">
+                <div class="resource-tag">Kubernetes</div>
+                <div class="resource-title">
+                  Kubernetes in production: the mistakes we see every time
+                </div>
+                <p class="resource-excerpt">
+                  15 recurring Kubernetes production issues our engineers
+                  encounter and the fixes that actually work.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- RESOURCES: NEWS -->
+    <div id="page-res-news" class="page">
+      <section class="page-hero">
+        <div class="container">
+          <div class="page-hero-content">
+            <div class="label label-light">Resources / News</div>
+            <h1 class="page-title">Latest news & announcements</h1>
+            <p class="page-sub">
+              Stay up to date with Opt IT's latest milestones, partnerships, and
+              industry recognitions.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <div class="resources-grid">
+            <div class="resource-card">
+              <div
+                class="resource-img"
+                style="background: linear-gradient(135deg, #064e3b, #10b981)"
+              >
+                🏆
+              </div>
+              <div class="resource-body">
+                <div class="resource-tag">Partnership</div>
+                <div class="resource-title">
+                  Opt IT achieves AWS Advanced Tier Consulting Partner status
+                </div>
+                <p class="resource-excerpt">
+                  Recognition of our cloud expertise and successful delivery
+                  track record across 100+ AWS engagements.
+                </p>
+              </div>
+            </div>
+            <div class="resource-card">
+              <div
+                class="resource-img"
+                style="background: linear-gradient(135deg, #065f46, #34d399)"
+              >
+                🌐
+              </div>
+              <div class="resource-body">
+                <div class="resource-tag">Expansion</div>
+                <div class="resource-title">
+                  Opt IT expands US presence with Wilmington, Delaware office
+                </div>
+                <p class="resource-excerpt">
+                  New US office strengthens our ability to serve North American
+                  enterprise clients across all time zones.
+                </p>
+              </div>
+            </div>
+            <div class="resource-card">
+              <div
+                class="resource-img"
+                style="background: linear-gradient(135deg, #1a0b3e, #4a1a8a)"
+              >
+                🚀
+              </div>
+              <div class="resource-body">
+                <div class="resource-tag">Product</div>
+                <div class="resource-title">
+                  ElevateOps AI Platform enters early access programme
+                </div>
+                <p class="resource-excerpt">
+                  Our AI-powered operations knowledge platform is now available
+                  for early access to select enterprise clients.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- RESOURCES: CLIENTS -->
+    <div id="page-res-clients" class="page">
+      <section class="page-hero">
+        <div class="container">
+          <div class="page-hero-content">
+            <div class="label label-light">Resources / Clients</div>
+            <h1 class="page-title">300+ enterprises trust Opt IT</h1>
+            <p class="page-sub">
+              A selection of the companies we've served across industries and
+              geographies.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(4, 1fr);
+              gap: 20px;
+            "
+          >
+            <div
+              class="cert-card"
+              style="background: var(--white); border-color: var(--border)"
+            >
+              <div style="font-size: 28px; margin-bottom: 10px">🏥</div>
+              <div class="cert-name">HealthBridge Technologies</div>
+              <div class="cert-sub">Healthcare, Bengaluru</div>
+            </div>
+            <div
+              class="cert-card"
+              style="background: var(--white); border-color: var(--border)"
+            >
+              <div style="font-size: 28px; margin-bottom: 10px">🔬</div>
+              <div class="cert-name">Apex VLSI Systems</div>
+              <div class="cert-sub">Semiconductor, Hyderabad</div>
+            </div>
+            <div
+              class="cert-card"
+              style="background: var(--white); border-color: var(--border)"
+            >
+              <div style="font-size: 28px; margin-bottom: 10px">🎓</div>
+              <div class="cert-name">Samhita Academy</div>
+              <div class="cert-sub">Education, Bengaluru</div>
+            </div>
+            <div
+              class="cert-card"
+              style="background: var(--white); border-color: var(--border)"
+            >
+              <div style="font-size: 28px; margin-bottom: 10px">🏦</div>
+              <div class="cert-name">FinServe Capital</div>
+              <div class="cert-sub">BFSI, Mumbai</div>
+            </div>
+            <div
+              class="cert-card"
+              style="background: var(--white); border-color: var(--border)"
+            >
+              <div style="font-size: 28px; margin-bottom: 10px">🏭</div>
+              <div class="cert-name">PrecisionMfg Corp</div>
+              <div class="cert-sub">Manufacturing, Pune</div>
+            </div>
+            <div
+              class="cert-card"
+              style="background: var(--white); border-color: var(--border)"
+            >
+              <div style="font-size: 28px; margin-bottom: 10px">💡</div>
+              <div class="cert-name">CloudScale SaaS</div>
+              <div class="cert-sub">Technology, Bengaluru</div>
+            </div>
+            <div
+              class="cert-card"
+              style="background: var(--white); border-color: var(--border)"
+            >
+              <div style="font-size: 28px; margin-bottom: 10px">🚀</div>
+              <div class="cert-name">RocketShip Inc</div>
+              <div class="cert-sub">SaaS, Wilmington DE</div>
+            </div>
+            <div
+              class="cert-card"
+              style="background: var(--white); border-color: var(--border)"
+            >
+              <div style="font-size: 28px; margin-bottom: 10px">🔐</div>
+              <div class="cert-name">SecureNet India</div>
+              <div class="cert-sub">Cybersecurity, Chennai</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- RESOURCES: CASE STUDIES -->
+    <div id="page-res-cases" class="page">
+      <section class="page-hero">
+        <div class="container">
+          <div class="page-hero-content">
+            <div class="label label-light">Resources / Case Studies</div>
+            <h1 class="page-title">Real results for real enterprises</h1>
+            <p class="page-sub">
+              See how we've helped companies transform their technology
+              infrastructure.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <div class="cases-grid">
+            <div class="case-card">
+              <div
+                class="case-top"
+                style="background: linear-gradient(135deg, #064e3b, #10b981)"
+              >
+                <span class="case-industry">Healthcare</span>
+              </div>
+              <div class="case-body">
+                <div class="case-title">
+                  Zero-downtime migration for healthtech startup
+                </div>
+                <div class="case-desc">
+                  Migrated 40TB of clinical data and 18 microservices to AWS
+                  with zero production downtime.
+                </div>
+                <div class="case-metric">40%</div>
+                <div class="case-metric-label">
+                  infrastructure cost reduction
+                </div>
+              </div>
+            </div>
+            <div class="case-card">
+              <div
+                class="case-top"
+                style="background: linear-gradient(135deg, #065f46, #6ee7b7)"
+              >
+                <span class="case-industry">Semiconductor</span>
+              </div>
+              <div class="case-body">
+                <div class="case-title">
+                  EDA cloud infrastructure for fabless VLSI startup
+                </div>
+                <div class="case-desc">
+                  Designed and deployed a secure EDA environment on AWS for a
+                  30-person chip design team.
+                </div>
+                <div class="case-metric">3×</div>
+                <div class="case-metric-label">faster design iteration</div>
+              </div>
+            </div>
+            <div class="case-card">
+              <div
+                class="case-top"
+                style="background: linear-gradient(135deg, #047857, #34d399)"
+              >
+                <span class="case-industry">Education</span>
+              </div>
+              <div class="case-body">
+                <div class="case-title">
+                  Full IT outsourcing for Samhita Academy
+                </div>
+                <div class="case-desc">
+                  Complete IT management for an education institution with 500+
+                  students and 80+ staff.
+                </div>
+                <div class="case-metric">₹0</div>
+                <div class="case-metric-label">in in-house IT headcount</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <a
+              href="#"
+              class="logo"
+              onclick="
+                showPage('home');
+                return false;
+              "
+              style="text-decoration: none; gap: 8px"
+            >
+              <div class="logo-circle">
+                <span class="logo-circle-text">Start<br />Optimizing</span>
+              </div>
+              <div class="logo-wordmark" style="color: var(--white)">
+                <span>PT</span>
+                <div class="logo-i-bar"></div>
+                <span>T</span>
+              </div>
+            </a>
+            <p class="footer-brand-desc">
+              Your trusted enterprise technology transformation partner.
+              Delivering IT excellence across India and the United States since
+              2009.
+            </p>
+            <div class="footer-social">
+              <a href="#" class="social-btn">in</a>
+              <a href="#" class="social-btn">𝕏</a>
+              <a href="#" class="social-btn">▶</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="footer-col-title">Services</div>
+            <div class="footer-links">
+              <a
+                href="#"
+                class="footer-link"
+                onclick="
+                  showPage('svc-infra');
+                  return false;
+                "
+                >IT Infrastructure</a
+              >
+              <a
+                href="#"
+                class="footer-link"
+                onclick="
+                  showPage('svc-cloud');
+                  return false;
+                "
+                >Cloud Services</a
+              >
+              <a
+                href="#"
+                class="footer-link"
+                onclick="
+                  showPage('svc-devops');
+                  return false;
+                "
+                >DevOps</a
+              >
+              <a
+                href="#"
+                class="footer-link"
+                onclick="
+                  showPage('svc-security');
+                  return false;
+                "
+                >Cybersecurity</a
+              >
+              <a
+                href="#"
+                class="footer-link"
+                onclick="
+                  showPage('svc-semi');
+                  return false;
+                "
+                >Semiconductor & EDA</a
+              >
+              <a
+                href="#"
+                class="footer-link"
+                onclick="
+                  showPage('svc-elevate');
+                  return false;
+                "
+                >ElevateOps</a
+              >
+            </div>
+          </div>
+
+          <div>
+            <div class="footer-col-title">Company</div>
+            <div class="footer-links">
+              <a
+                href="#"
+                class="footer-link"
+                onclick="
+                  showPage('about');
+                  return false;
+                "
+                >About Us</a
+              >
+              <a
+                href="#"
+                class="footer-link"
+                onclick="
+                  showPage('industries');
+                  return false;
+                "
+                >Industries</a
+              >
+              <a
+                href="#"
+                class="footer-link"
+                onclick="
+                  showPage('resources');
+                  return false;
+                "
+                >Resources</a
+              >
+              <a href="#" class="footer-link" onclick="showPage('careers'); return false;">Careers</a>
+              <a
+                href="#"
+                class="footer-link"
+                onclick="
+                  showPage('contact');
+                  return false;
+                "
+                >Contact</a
+              >
+            </div>
+          </div>
+
+          <div>
+            <div class="footer-col-title">Locations</div>
+            <div class="footer-links">
+              <a href="#" class="footer-link">Bengaluru, India</a>
+              <a href="#" class="footer-link">Hyderabad, India</a>
+              <a href="#" class="footer-link">Wilmington, USA</a>
+            </div>
+            <div style="margin-top: 24px">
+              <div class="footer-col-title">Certifications</div>
+              <div class="footer-links">
+                <a href="#" class="footer-link">AWS Advanced Tier Partner</a>
+                <a href="#" class="footer-link">ISO 27001 Certified</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-bottom-left">
+            © 2026 Opt IT Technologies Pvt. Ltd. All rights reserved.
+          </div>
+          <div class="footer-bottom-right">
+            <a href="#" class="footer-legal">Privacy Policy</a>
+            <a href="#" class="footer-legal">Terms of Service</a>
+            <a href="#" class="footer-legal">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function showPage(id) {
+        document
+          .querySelectorAll(".page")
+          .forEach((p) => p.classList.remove("active"));
+        const el = document.getElementById("page-" + id);
+        if (el) {
+          el.classList.add("active");
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+        document
+          .querySelectorAll(".nav-link")
+          .forEach((l) => l.classList.remove("active"));
+        document
+          .querySelectorAll(".nav-dropdown")
+          .forEach((d) => d.classList.remove("label-active"));
+        const linkMap = {
+          home: "Home",
+          about: "About Us",
+          careers: "Careers",
+          contact: "Contact Us",
+        };
+        const ddMap = {
+          services: "nav-dd-services",
+          "svc-infra": "nav-dd-services",
+          "svc-cloud": "nav-dd-services",
+          "svc-devops": "nav-dd-services",
+          "svc-security": "nav-dd-services",
+          "svc-semi": "nav-dd-services",
+          "svc-elevate": "nav-dd-services",
+          industries: "nav-dd-industries",
+          "res-blog": "nav-dd-resources",
+          "res-news": "nav-dd-resources",
+          "res-clients": "nav-dd-resources",
+          "res-cases": "nav-dd-resources",
+          resources: "nav-dd-resources",
+        };
+        if (linkMap[id]) {
+          document.querySelectorAll(".nav-link").forEach((l) => {
+            if (l.textContent.trim() === linkMap[id]) l.classList.add("active");
+          });
+        }
+        if (ddMap[id]) {
+          const dd = document.getElementById(ddMap[id]);
+          if (dd) dd.classList.add("label-active");
+        }
+      }
+
+      function closeDropdowns() {
+        document
+          .querySelectorAll(".dropdown-menu")
+          .forEach((m) => m.classList.remove("active"));
+      }
+
+      function scrollToForm() {
+        setTimeout(function () {
+          var form = document.querySelector(".contact-form-card");
+          if (form) form.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 150);
+      }
+
+      function switchTab(btn, tabId) {
+        document
+          .querySelectorAll(".page-tab")
+          .forEach((t) => t.classList.remove("active"));
+        btn.classList.add("active");
+        document
+          .querySelectorAll(".tab-content")
+          .forEach((t) => (t.style.display = "none"));
+        const el = document.getElementById(tabId);
+        if (el) el.style.display = "";
+      }
+
+      window.addEventListener("scroll", function () {
+        document
+          .getElementById("mainNav")
+          .classList.toggle("scrolled", window.scrollY > 10);
+      });
+    </script>
+  </body>
+</html>
