@@ -1833,6 +1833,356 @@
         width: 24px;
         border-radius: 4px;
       }
+
+      /* ── OUR TEAM ── */
+      .team-section {
+        padding: 100px 0;
+        background: var(--off-white);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .team-section::before {
+        content: '';
+        position: absolute;
+        width: 600px; height: 600px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(16,185,129,0.07) 0%, transparent 70%);
+        top: -200px; left: -200px;
+        pointer-events: none;
+      }
+
+      .team-header {
+        text-align: center;
+        margin-bottom: 64px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .team-header .label {
+        display: inline-block;
+        margin-bottom: 14px;
+      }
+
+      .team-header h2 {
+        font-size: clamp(26px, 3vw, 40px);
+        font-weight: 800;
+        color: var(--navy);
+        margin-bottom: 14px;
+      }
+
+      .team-header h2 span { color: var(--blue); }
+
+      .team-header p {
+        font-size: 15px;
+        color: var(--text-secondary);
+        max-width: 460px;
+        margin: 0 auto;
+        line-height: 1.7;
+      }
+
+      .team-header-line {
+        display: block;
+        width: 56px; height: 3px;
+        background: linear-gradient(90deg, var(--blue), var(--cyan));
+        border-radius: 2px;
+        margin: 20px auto 0;
+      }
+
+      /* ── Single row of 5 ── */
+      .team-grid-all {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 20px;
+        position: relative;
+        z-index: 1;
+      }
+
+      @media (max-width: 900px) {
+        .team-grid-all { grid-template-columns: repeat(3, 1fr); }
+      }
+      @media (max-width: 580px) {
+        .team-grid-all { grid-template-columns: repeat(2, 1fr); }
+      }
+
+      /* ── Card ── */
+      .team-card {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 0 0 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: var(--shadow-sm);
+        transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .team-card::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--blue), var(--cyan));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease;
+        z-index: 2;
+      }
+
+      .team-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+        border-color: rgba(16,185,129,0.3);
+      }
+
+      .team-card:hover::before { transform: scaleX(1); }
+
+      /* ── Photo ── */
+      .team-card-img-wrap {
+        width: 100%;
+        aspect-ratio: 5 / 4;
+        overflow: hidden;
+        border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+        flex-shrink: 0;
+        background: #ffffff;
+      }
+
+      .team-card-img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+        display: block;
+        transition: transform 0.45s ease;
+        mix-blend-mode: multiply;
+      }
+
+      .team-card:hover .team-card-img-wrap img {
+        transform: scale(1.04);
+      }
+
+      /* ── Text below photo ── */
+      .team-card-info {
+        padding: 14px 14px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1;
+      }
+
+      .team-card-name {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 13px;
+        font-weight: 800;
+        color: var(--navy);
+        margin-bottom: 4px;
+        letter-spacing: -0.01em;
+        line-height: 1.3;
+      }
+
+      .team-card-role {
+        font-size: 9.5px;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--blue);
+        margin-bottom: 12px;
+        line-height: 1.4;
+      }
+
+      .team-linkedin {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 34px; height: 34px;
+        border-radius: 50%;
+        background: #0077b5;
+        color: var(--white);
+        text-decoration: none;
+        transition: background 0.22s, transform 0.22s;
+        flex-shrink: 0;
+      }
+
+      .team-linkedin:hover {
+        background: #005f8e;
+        transform: scale(1.1);
+      }
+
+      .team-linkedin svg {
+        width: 16px; height: 16px;
+        fill: currentColor;
+      }
+
+      /* ── Modal overlay ── */
+      .team-modal-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(2, 44, 34, 0.55);
+        backdrop-filter: blur(6px);
+        z-index: 9000;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .team-modal-overlay.open {
+        display: flex;
+        animation: modalFadeIn 0.25s ease forwards;
+      }
+
+      @keyframes modalFadeIn {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+      }
+
+      .team-modal {
+        background: var(--white);
+        border-radius: var(--radius-xl);
+        box-shadow: 0 32px 80px rgba(2,44,34,0.22);
+        max-width: 780px;
+        width: 100%;
+        max-height: 90vh;
+        overflow-y: auto;
+        position: relative;
+        animation: modalSlideUp 0.28s ease forwards;
+      }
+
+      @keyframes modalSlideUp {
+        from { opacity: 0; transform: translateY(28px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+
+      .team-modal-close {
+        position: absolute;
+        top: 16px; right: 16px;
+        width: 36px; height: 36px;
+        border-radius: 50%;
+        background: var(--gray-100);
+        border: none;
+        cursor: pointer;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 18px;
+        color: var(--gray-600);
+        transition: background 0.2s, color 0.2s;
+        z-index: 10;
+        line-height: 1;
+      }
+
+      .team-modal-close:hover {
+        background: var(--navy);
+        color: var(--white);
+      }
+
+      .team-modal-inner {
+        display: grid;
+        grid-template-columns: 220px 1fr;
+        gap: 0;
+      }
+
+      .team-modal-left {
+        border-radius: var(--radius-xl) 0 0 var(--radius-xl);
+        overflow: hidden;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        background: var(--white);
+      }
+
+      .team-modal-left .modal-img-crop {
+        flex: 0 0 80%;
+        overflow: hidden;
+        background: #ffffff;
+      }
+
+      .team-modal-left .modal-img-crop img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+        display: block;
+        mix-blend-mode: multiply;
+      }
+
+      .team-modal-li-wrap {
+        flex: 0 0 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--off-white);
+        border-top: 1px solid var(--border);
+      }
+
+      .team-modal-li {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 38px; height: 38px;
+        border-radius: 50%;
+        background: #0077b5;
+        color: var(--white);
+        text-decoration: none;
+        transition: background 0.2s, transform 0.2s;
+      }
+
+      .team-modal-li:hover { background: #005f8e; transform: scale(1.1); }
+
+      .team-modal-li svg {
+        width: 17px; height: 17px;
+        fill: currentColor;
+      }
+
+      .team-modal-right {
+        padding: 40px 36px 36px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .team-modal-name {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: clamp(20px, 2.5vw, 26px);
+        font-weight: 800;
+        color: var(--navy);
+        margin-bottom: 6px;
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+      }
+
+      .team-modal-role {
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--blue);
+        margin-bottom: 20px;
+      }
+
+      .team-modal-divider {
+        width: 44px; height: 3px;
+        background: linear-gradient(90deg, var(--blue), var(--cyan));
+        border-radius: 2px;
+        margin-bottom: 20px;
+      }
+
+      .team-modal-bio {
+        font-size: 14.5px;
+        line-height: 1.8;
+        color: var(--text-secondary);
+      }
+
+      @media (max-width: 600px) {
+        .team-modal-inner { grid-template-columns: 1fr; }
+        .team-modal-left  { border-radius: var(--radius-xl) var(--radius-xl) 0 0; height: 300px; flex-direction: row; }
+        .team-modal-left .modal-img-crop { flex: 0 0 80%; height: 100%; }
+        .team-modal-li-wrap { flex: 0 0 20%; border-top: none; border-left: 1px solid var(--border); }
+        .team-modal-right { padding: 24px 20px 28px; }
+      }
     </style>
   </head>
 
@@ -2436,9 +2786,70 @@
             <div class="label label-light">About Opt IT</div>
             <h1 class="page-title">17+ years of enterprise IT excellence</h1>
             <p class="page-sub">
-              Founded in Bengaluru, trusted across India and the United States.
+              Founded in Bengaluru in 2009, built on expertise, and driven by a passion for making technology work for your business.
               We are the technology backbone that growing companies rely on.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT OPT IT -->
+      <section style="background:var(--white); padding:88px 0;">
+        <div class="container">
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center;">
+
+            <!-- Left: Story -->
+            <div>
+              <div class="label" style="margin-bottom:16px;">Our Story</div>
+              <h2 style="font-family:'Plus Jakarta Sans',sans-serif; font-size:clamp(26px,3vw,36px); font-weight:800; color:var(--navy); line-height:1.25; margin-bottom:24px;">
+                A niche IT partner built on <span style="color:var(--blue);">expertise, not just tools</span>
+              </h2>
+              <p style="font-size:15px; color:var(--text-secondary); line-height:1.8; margin-bottom:20px;">
+                Opt IT is a <strong style="color:var(--navy);">vendor-neutral IT infrastructure consulting and DevOps services company</strong> founded in Bengaluru in 2009. Unlike large system integrators that push products, we were built to solve real business problems - with the right technology, right-sized for each client.
+              </p>
+              <p style="font-size:15px; color:var(--text-secondary); line-height:1.8; margin-bottom:32px;">
+                Our founding team brought together deep expertise from some of the world's most demanding technology environments. That experience shaped a company that values precision over volume, long-term impact over quick fixes, and people over processes. Today, 200+ team members carry that same mindset into every engagement.
+              </p>
+              <div style="display:flex; gap:12px; flex-wrap:wrap;">
+                <span style="display:inline-flex; align-items:center; gap:6px; background:var(--cyan-soft); border:1px solid rgba(16,185,129,0.2); border-radius:100px; padding:7px 16px; font-size:12.5px; font-weight:600; color:var(--blue);">🏢 Founded 2009, Bengaluru</span>
+                <span style="display:inline-flex; align-items:center; gap:6px; background:var(--cyan-soft); border:1px solid rgba(16,185,129,0.2); border-radius:100px; padding:7px 16px; font-size:12.5px; font-weight:600; color:var(--blue);">👥 200+ Team Members</span>
+                <span style="display:inline-flex; align-items:center; gap:6px; background:var(--cyan-soft); border:1px solid rgba(16,185,129,0.2); border-radius:100px; padding:7px 16px; font-size:12.5px; font-weight:600; color:var(--blue);">🏆 300+ Customers Served</span>
+              </div>
+            </div>
+
+            <!-- Right: Journey timeline -->
+            <div style="position:relative; padding-left:28px; border-left:2px solid var(--border);">
+
+              <div style="position:relative; margin-bottom:36px;">
+                <div style="position:absolute; left:-37px; top:4px; width:18px; height:18px; border-radius:50%; background:var(--blue); border:3px solid var(--white); box-shadow:0 0 0 2px var(--blue);"></div>
+                <div style="font-family:'Plus Jakarta Sans',sans-serif; font-size:12px; font-weight:700; color:var(--blue); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:6px;">The Beginning</div>
+                <div style="font-family:'Plus Jakarta Sans',sans-serif; font-size:15px; font-weight:700; color:var(--navy); margin-bottom:6px;">Founded in Bengaluru</div>
+                <p style="font-size:13.5px; color:var(--text-secondary); line-height:1.65; margin:0;">Started with a clear purpose - to be a trusted, vendor-neutral IT partner for businesses that needed more than a product reseller.</p>
+              </div>
+
+              <div style="position:relative; margin-bottom:36px;">
+                <div style="position:absolute; left:-37px; top:4px; width:18px; height:18px; border-radius:50%; background:var(--blue); border:3px solid var(--white); box-shadow:0 0 0 2px var(--blue);"></div>
+                <div style="font-family:'Plus Jakarta Sans',sans-serif; font-size:12px; font-weight:700; color:var(--blue); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:6px;">Early Growth</div>
+                <div style="font-family:'Plus Jakarta Sans',sans-serif; font-size:15px; font-weight:700; color:var(--navy); margin-bottom:6px;">Expanding Into Cloud & DevOps</div>
+                <p style="font-size:13.5px; color:var(--text-secondary); line-height:1.65; margin:0;">Grew our capabilities beyond infrastructure into cloud migration and DevOps - helping clients modernise at scale across AWS, Azure, and GCP.</p>
+              </div>
+
+              <div style="position:relative; margin-bottom:36px;">
+                <div style="position:absolute; left:-37px; top:4px; width:18px; height:18px; border-radius:50%; background:var(--blue); border:3px solid var(--white); box-shadow:0 0 0 2px var(--blue);"></div>
+                <div style="font-family:'Plus Jakarta Sans',sans-serif; font-size:12px; font-weight:700; color:var(--blue); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:6px;">Recognition</div>
+                <div style="font-family:'Plus Jakarta Sans',sans-serif; font-size:15px; font-weight:700; color:var(--navy); margin-bottom:6px;">AWS Advanced Tier Consulting Partner</div>
+                <p style="font-size:13.5px; color:var(--text-secondary); line-height:1.65; margin:0;">Achieved AWS Advanced Tier Partner status - a recognition of our delivery track record, certified expertise, and customer success outcomes.</p>
+              </div>
+
+              <div style="position:relative;">
+                <div style="position:absolute; left:-37px; top:4px; width:18px; height:18px; border-radius:50%; background:var(--cyan); border:3px solid var(--white); box-shadow:0 0 0 2px var(--cyan);"></div>
+                <div style="font-family:'Plus Jakarta Sans',sans-serif; font-size:12px; font-weight:700; color:var(--blue); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:6px;">Today</div>
+                <div style="font-family:'Plus Jakarta Sans',sans-serif; font-size:15px; font-weight:700; color:var(--navy); margin-bottom:6px;">17+ Years. 300+ Customers. Still Growing.</div>
+                <p style="font-size:13.5px; color:var(--text-secondary); line-height:1.65; margin:0;">From IT infrastructure to cybersecurity and AI-led operations - Opt IT continues to evolve alongside the businesses we serve.</p>
+              </div>
+
+            </div>
           </div>
         </div>
       </section>
@@ -2448,11 +2859,10 @@
           <div class="section-header">
             <div class="label label-light">Why Opt IT</div>
             <h2 class="section-title section-title-light">
-              The enterprise technology partner that's different
+              What makes us the right choice
             </h2>
             <p class="section-subtitle section-subtitle-light">
-              We don't just manage IT. We become the technical backbone your
-              business depends on.
+              Most IT providers offer the same stack, the same playbook, the same pitch. Here's what sets Opt IT apart - and why our clients stay with us for years, not just projects.
             </p>
           </div>
 
@@ -2535,12 +2945,11 @@
               </div>
 
               <div class="exp-box">
-                <div class="exp-num">17<span>+</span></div>
+                <div class="exp-num">300<span>+</span></div>
                 <div class="exp-text">
-                  <div class="exp-title">Years of enterprise IT excellence</div>
+                  <div class="exp-title">Customers who trust us</div>
                   <div class="exp-sub">
-                    Founded in Bengaluru. Trusted across India & the United
-                    States.
+                    From fast-growing startups to large enterprises - across cloud, infrastructure, DevOps & security.
                   </div>
                 </div>
               </div>
@@ -2548,6 +2957,190 @@
           </div>
         </div>
       </section>
+
+      <!-- OUR TEAM -->
+      <section class="team-section">
+        <div class="container">
+          <div class="team-header">
+            <div class="label">The People Behind Opt IT</div>
+            <h2>Meet <span>Our Team</span></h2>
+            <p>A passionate group of technologists, architects, and business leaders - each bringing decades of hands-on experience across enterprise IT, cloud, DevOps, and business operations. Together, they're the driving force behind every solution Opt IT delivers.</p>
+            <span class="team-header-line"></span>
+          </div>
+
+          <!-- All 5 in one row -->
+          <div class="team-grid-all">
+
+            <div class="team-card" onclick="openTeamModal('santhosh-mogili')">
+              <div class="team-card-img-wrap">
+                <img src="https://optit.in/wp-content/uploads/2021/05/2-100-2.jpg" alt="Santhosh Mogili">
+              </div>
+              <div class="team-card-info">
+                <div class="team-card-name">Santhosh Mogili</div>
+                <div class="team-card-role">Co-Founder &amp; CTO</div>
+                <a class="team-linkedin" href="https://www.linkedin.com/in/smogili/" target="_blank" rel="noopener" onclick="event.stopPropagation()">
+                  <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46C23.2 24 24 23.23 24 22.28V1.72C24 .77 23.2 0 22.23 0z"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="team-card" onclick="openTeamModal('satish-narule')">
+              <div class="team-card-img-wrap">
+                <img src="https://optit.in/wp-content/uploads/2021/05/1-100-2.jpg" alt="Satish Narule">
+              </div>
+              <div class="team-card-info">
+                <div class="team-card-name">Satish Narule</div>
+                <div class="team-card-role">Co-Founder &amp; COO</div>
+                <a class="team-linkedin" href="https://www.linkedin.com/in/satish-narule-8663247/" target="_blank" rel="noopener" onclick="event.stopPropagation()">
+                  <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46C23.2 24 24 23.23 24 22.28V1.72C24 .77 23.2 0 22.23 0z"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="team-card" onclick="openTeamModal('thrishala-narule')">
+              <div class="team-card-img-wrap">
+                <img src="https://optit.in/wp-content/uploads/2021/05/1-12.jpg" alt="Thrishala Narule">
+              </div>
+              <div class="team-card-info">
+                <div class="team-card-name">Thrishala Narule</div>
+                <div class="team-card-role">Head: Finance &amp; HR Operations</div>
+                <a class="team-linkedin" href="https://www.linkedin.com/in/thrishala-narule-8b1936134/" target="_blank" rel="noopener" onclick="event.stopPropagation()">
+                  <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46C23.2 24 24 23.23 24 22.28V1.72C24 .77 23.2 0 22.23 0z"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="team-card" onclick="openTeamModal('anil-samant')">
+              <div class="team-card-img-wrap">
+                <img src="https://optit.in/wp-content/uploads/2024/09/Anil-Samant-HD-Image-793x1024.png" alt="Anil Vasant Samant">
+              </div>
+              <div class="team-card-info">
+                <div class="team-card-name">Anil Vasant Samant</div>
+                <div class="team-card-role">Business Head – IT Services</div>
+                <a class="team-linkedin" href="https://www.linkedin.com/in/anil-samant-35123312/" target="_blank" rel="noopener" onclick="event.stopPropagation()">
+                  <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46C23.2 24 24 23.23 24 22.28V1.72C24 .77 23.2 0 22.23 0z"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="team-card" onclick="openTeamModal('santhosh-gandham')">
+              <div class="team-card-img-wrap">
+                <img src="https://optit.in/wp-content/uploads/2021/05/5.jpg" alt="Santhosh Gandham">
+              </div>
+              <div class="team-card-info">
+                <div class="team-card-name">Santhosh Gandham</div>
+                <div class="team-card-role">Lead DevOps Architect</div>
+                <a class="team-linkedin" href="https://www.linkedin.com/in/santhosh-gandham-b4539814/" target="_blank" rel="noopener" onclick="event.stopPropagation()">
+                  <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46C23.2 24 24 23.23 24 22.28V1.72C24 .77 23.2 0 22.23 0z"/></svg>
+                </a>
+              </div>
+            </div>
+
+          </div><!-- /team-grid-all -->
+        </div>
+      </section>
+
+      <!-- TEAM MODAL -->
+      <div class="team-modal-overlay" id="teamModal" onclick="closeTeamModal(event)">
+        <div class="team-modal" role="dialog" aria-modal="true">
+          <button class="team-modal-close" id="teamModalClose" aria-label="Close">&times;</button>
+          <div class="team-modal-inner">
+            <div class="team-modal-left">
+              <div class="modal-img-crop">
+                <img id="modalImg" src="" alt="">
+              </div>
+              <div class="team-modal-li-wrap">
+                <a class="team-modal-li" id="modalLi" href="#" target="_blank" rel="noopener" aria-label="LinkedIn">
+                  <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46C23.2 24 24 23.23 24 22.28V1.72C24 .77 23.2 0 22.23 0z" fill="currentColor"/></svg>
+                </a>
+              </div>
+            </div>
+            <div class="team-modal-right">
+              <div class="team-modal-name" id="modalName"></div>
+              <div class="team-modal-role" id="modalRole"></div>
+              <div class="team-modal-divider"></div>
+              <p class="team-modal-bio" id="modalBio"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        const teamData = {
+          'santhosh-mogili': {
+            name: 'Santhosh Mogili',
+            role: 'Co-Founder & CTO',
+            img: 'https://optit.in/wp-content/uploads/2021/05/2-100-2.jpg',
+            linkedin: 'https://www.linkedin.com/in/smogili/',
+            modalImgPosition: '50% 20%',
+            bio: 'Santhosh brings over 20 years of experience in the IT industry. Prior to founding Opt IT, Santhosh has worked at Intel, Synopsys. He has held various positions at Intel and has played key roles in datacenter architecture and implementation, liaising with business functions for IT requirements, and has led teams for service delivery and support. Santhosh has a passion for High-Performance Computing and Virtualization and has worked extensively with enterprise servers, storage, and systems management solutions.'
+          },
+          'satish-narule': {
+            name: 'Satish Narule',
+            role: 'Co-Founder & COO',
+            img: 'https://optit.in/wp-content/uploads/2021/05/1-100-2.jpg',
+            linkedin: 'https://www.linkedin.com/in/satish-narule-8663247/',
+            modalImgPosition: '50% 20%',
+            bio: "Satish has over 22 years of experience with Intel spanning across IT Engineering to Product Management functions. He has lead global teams responsible for Network Security Engineering, implementation & support. He has managed Intel India's Innovation center that focused on showcasing Intel's latest technologies to customers in India covering Intel AMT and virtualization. Before joining Opt IT, he was a product manager for Intel higher education program in India and drove Intel India's social entrepreneurship initiatives."
+          },
+          'thrishala-narule': {
+            name: 'Thrishala Narule',
+            role: 'Head: Finance & HR Operations',
+            img: 'https://optit.in/wp-content/uploads/2021/05/1-12.jpg',
+            linkedin: 'https://www.linkedin.com/in/thrishala-narule-8b1936134/',
+            modalImgPosition: '50% 20%',
+            bio: 'Over 13 years of experience across operations & business support roles. Started her journey with Opt IT in 2013 as a finance executive and has grown into heading the entire finance as well as HR Operations function. She was mainly instrumental in building the organization from formative days setting up finance & operations team.'
+          },
+          'anil-samant': {
+            name: 'Anil Vasant Samant',
+            role: 'Business Head – IT Services',
+            img: 'https://optit.in/wp-content/uploads/2024/09/Anil-Samant-HD-Image-793x1024.png',
+            linkedin: 'https://www.linkedin.com/in/anil-samant-35123312/',
+            bio: 'Anil is an experienced senior executive with over 30 years in technology services, specializing in IT infrastructure and information security. His expertise spans ITIL frameworks, automation, and global program management, where he has driven cost savings through innovative strategies. Prior to joining Opt IT, Anil held significant leadership roles at Digital/HP Globalsoft, Fidelity, Wipro, and Cognizant. He is a certified PMP who is passionate about enhancing customer experiences and committed to organizational success.'
+          },
+          'santhosh-gandham': {
+            name: 'Santhosh Gandham',
+            role: 'Lead DevOps Architect',
+            img: 'https://optit.in/wp-content/uploads/2021/05/5.jpg',
+            linkedin: 'https://www.linkedin.com/in/santhosh-gandham-b4539814/',
+            bio: 'Experienced Senior Technical Lead with a demonstrated history of working in the biotechnology and IT industry in the past. Skilled in Cluster Management, Life Sciences, Amazon Web Services, Google Cloud Platform, Microsoft Azure and Automation. Strong engineering professional with a hunch towards understanding large to small scale applications in a simple manner and putting together a technology roadmap keeping scalability, reliability & cost in mind.'
+          }
+        };
+
+        function openTeamModal(id) {
+          const d = teamData[id];
+          if (!d) return;
+          const modalImg = document.getElementById('modalImg');
+          modalImg.src = d.img;
+          modalImg.alt = d.name;
+          modalImg.style.objectPosition = d.modalImgPosition || 'top center';
+          document.getElementById('modalLi').href = d.linkedin;
+          document.getElementById('modalName').textContent = d.name;
+          document.getElementById('modalRole').textContent = d.role;
+          document.getElementById('modalBio').textContent = d.bio;
+          document.getElementById('teamModal').classList.add('open');
+          document.body.style.overflow = 'hidden';
+        }
+
+        function closeTeamModal(e) {
+          if (e && e.target !== document.getElementById('teamModal')) return;
+          document.getElementById('teamModal').classList.remove('open');
+          document.body.style.overflow = '';
+        }
+
+        document.getElementById('teamModalClose').addEventListener('click', function() {
+          document.getElementById('teamModal').classList.remove('open');
+          document.body.style.overflow = '';
+        });
+
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape') {
+            document.getElementById('teamModal').classList.remove('open');
+            document.body.style.overflow = '';
+          }
+        });
+      </script>
+
     </div>
 
     <!-- SERVICES PAGE -->
@@ -3614,14 +4207,6 @@
                 </div>
               </div>
               <div class="resource-card">
-                <div class="resource-img" style="background: linear-gradient(135deg, #065f46, #34d399)">🌐</div>
-                <div class="resource-body">
-                  <div class="resource-tag">Expansion</div>
-                  <div class="resource-title">Opt IT expands US presence with Wilmington, Delaware office</div>
-                  <p class="resource-excerpt">New US office strengthens our ability to serve North American enterprise clients across all time zones.</p>
-                </div>
-              </div>
-              <div class="resource-card">
                 <div class="resource-img" style="background: linear-gradient(135deg, #1a0b3e, #4a1a8a)">🚀</div>
                 <div class="resource-body">
                   <div class="resource-tag">Product</div>
@@ -4066,26 +4651,6 @@
                 </div>
               </div>
               <div class="contact-item">
-                <div class="contact-icon">📍</div>
-                <div>
-                  <div class="contact-label">Hyderabad Office</div>
-                  <div class="contact-val">
-                    Workafella Cyber Crown, Sec-II Village,<br />HUDA Techno
-                    Enclave, Hi-Tech City,<br />Hyderabad - 500081
-                  </div>
-                </div>
-              </div>
-              <div class="contact-item">
-                <div class="contact-icon">📍</div>
-                <div>
-                  <div class="contact-label">USA Office</div>
-                  <div class="contact-val">
-                    919 North Market Street, Suite 425,<br />Wilmington, DE
-                    19801
-                  </div>
-                </div>
-              </div>
-              <div class="contact-item">
                 <div class="contact-icon">📧</div>
                 <div>
                   <div class="contact-label">Email</div>
@@ -4385,24 +4950,6 @@
                 <p class="resource-excerpt">
                   Recognition of our cloud expertise and successful delivery
                   track record across 100+ AWS engagements.
-                </p>
-              </div>
-            </div>
-            <div class="resource-card">
-              <div
-                class="resource-img"
-                style="background: linear-gradient(135deg, #065f46, #34d399)"
-              >
-                🌐
-              </div>
-              <div class="resource-body">
-                <div class="resource-tag">Expansion</div>
-                <div class="resource-title">
-                  Opt IT expands US presence with Wilmington, Delaware office
-                </div>
-                <p class="resource-excerpt">
-                  New US office strengthens our ability to serve North American
-                  enterprise clients across all time zones.
                 </p>
               </div>
             </div>
@@ -4805,11 +5352,9 @@
           </div>
 
           <div>
-            <div class="footer-col-title">Locations</div>
+            <div class="footer-col-title">Location</div>
             <div class="footer-links">
               <p style="font-size:14px; color:rgba(255,255,255,0.5); font-weight:300;">Bengaluru, India</p>
-              <p style="font-size:14px; color:rgba(255,255,255,0.5); font-weight:300;">Hyderabad, India</p>
-              <p style="font-size:14px; color:rgba(255,255,255,0.5); font-weight:300;">Wilmington, USA</p>
             </div>
             <div style="margin-top: 24px">
               <div class="footer-col-title">Certifications</div>
