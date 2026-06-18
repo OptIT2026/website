@@ -1576,6 +1576,8 @@
         background: var(--white);
         box-shadow: var(--shadow-sm);
         transition: all 0.25s;
+        display: flex;
+        flex-direction: column;
       }
 
       .case-card:hover {
@@ -1584,7 +1586,7 @@
       }
 
       .case-top {
-        height: 140px;
+        height: 110px;
         display: flex;
         align-items: flex-end;
         padding: 20px;
@@ -1603,7 +1605,10 @@
       }
 
       .case-body {
-        padding: 24px;
+        padding: 16px 20px 20px;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
       }
 
       .case-title {
@@ -1619,7 +1624,7 @@
         font-size: 14px;
         color: var(--text-secondary);
         line-height: 1.65;
-        margin-bottom: 16px;
+        margin-bottom: 0;
       }
 
       .case-metric {
@@ -2304,7 +2309,7 @@
                 href="#"
                 class="dropdown-item"
                 onclick="
-                  showPage('industries');
+                  showPage('ind-semiconductor');
                   return false;
                 "
                 >Semiconductor & Electronics</a
@@ -2313,7 +2318,7 @@
                 href="#"
                 class="dropdown-item"
                 onclick="
-                  showPage('industries');
+                  showPage('ind-manufacturing');
                   return false;
                 "
                 >Manufacturing</a
@@ -2322,7 +2327,7 @@
                 href="#"
                 class="dropdown-item"
                 onclick="
-                  showPage('industries');
+                  showPage('ind-healthcare');
                   return false;
                 "
                 >Healthcare & Life Sciences</a
@@ -2331,7 +2336,7 @@
                 href="#"
                 class="dropdown-item"
                 onclick="
-                  showPage('industries');
+                  showPage('ind-banking');
                   return false;
                 "
                 >Banking & Financial Services</a
@@ -2340,7 +2345,7 @@
                 href="#"
                 class="dropdown-item"
                 onclick="
-                  showPage('industries');
+                  showPage('ind-technology');
                   return false;
                 "
                 >Technology & SaaS</a
@@ -3887,7 +3892,7 @@
       <section class="section">
         <div class="container">
           <div class="cases-grid">
-            <div class="case-card" style="cursor: default">
+            <div class="case-card" style="cursor: pointer" onclick="showPage('ind-semiconductor')">
               <div
                 class="case-top"
                 style="
@@ -3905,51 +3910,12 @@
                   environments purpose-built for fabless companies and VLSI
                   teams. We support Cadence, Synopsys, and Mentor toolchains.
                 </p>
-                <div
-                  style="
-                    display: flex;
-                    flex-wrap: wrap;
-                    gap: 6px;
-                    margin-top: 12px;
-                  "
-                >
-                  <span
-                    style="
-                      font-size: 11px;
-                      padding: 3px 10px;
-                      background: var(--off-white);
-                      border: 1px solid var(--border);
-                      border-radius: 100px;
-                      color: var(--text-secondary);
-                    "
-                    >EDA Tools</span
-                  >
-                  <span
-                    style="
-                      font-size: 11px;
-                      padding: 3px 10px;
-                      background: var(--off-white);
-                      border: 1px solid var(--border);
-                      border-radius: 100px;
-                      color: var(--text-secondary);
-                    "
-                    >PDK Management</span
-                  >
-                  <span
-                    style="
-                      font-size: 11px;
-                      padding: 3px 10px;
-                      background: var(--off-white);
-                      border: 1px solid var(--border);
-                      border-radius: 100px;
-                      color: var(--text-secondary);
-                    "
-                    >IP Security</span
-                  >
+                <div style="margin-top: auto; padding-top: 16px;">
+                  <a href="#" class="service-link" onclick="showPage('ind-semiconductor'); return false;" style="font-size: 13px;">Learn More →</a>
                 </div>
               </div>
             </div>
-            <div class="case-card" style="cursor: default">
+            <div class="case-card" style="cursor: pointer" onclick="showPage('ind-manufacturing')">
               <div
                 class="case-top"
                 style="
@@ -3967,40 +3933,12 @@
                   cloud-connected factory infrastructure for Industry 4.0
                   transformation.
                 </p>
-                <div
-                  style="
-                    display: flex;
-                    flex-wrap: wrap;
-                    gap: 6px;
-                    margin-top: 12px;
-                  "
-                >
-                  <span
-                    style="
-                      font-size: 11px;
-                      padding: 3px 10px;
-                      background: var(--off-white);
-                      border: 1px solid var(--border);
-                      border-radius: 100px;
-                      color: var(--text-secondary);
-                    "
-                    >OT/IT Convergence</span
-                  >
-                  <span
-                    style="
-                      font-size: 11px;
-                      padding: 3px 10px;
-                      background: var(--off-white);
-                      border: 1px solid var(--border);
-                      border-radius: 100px;
-                      color: var(--text-secondary);
-                    "
-                    >Industry 4.0</span
-                  >
+                <div style="margin-top: auto; padding-top: 16px;">
+                  <a href="#" class="service-link" onclick="showPage('ind-manufacturing'); return false;" style="font-size: 13px;">Learn More →</a>
                 </div>
               </div>
             </div>
-            <div class="case-card" style="cursor: default">
+            <div class="case-card" style="cursor: pointer" onclick="showPage('ind-healthcare')">
               <div
                 class="case-top"
                 style="
@@ -4018,40 +3956,12 @@
                   cloud environments purpose-built for healthcare data
                   sensitivity requirements.
                 </p>
-                <div
-                  style="
-                    display: flex;
-                    flex-wrap: wrap;
-                    gap: 6px;
-                    margin-top: 12px;
-                  "
-                >
-                  <span
-                    style="
-                      font-size: 11px;
-                      padding: 3px 10px;
-                      background: var(--off-white);
-                      border: 1px solid var(--border);
-                      border-radius: 100px;
-                      color: var(--text-secondary);
-                    "
-                    >HIPAA</span
-                  >
-                  <span
-                    style="
-                      font-size: 11px;
-                      padding: 3px 10px;
-                      background: var(--off-white);
-                      border: 1px solid var(--border);
-                      border-radius: 100px;
-                      color: var(--text-secondary);
-                    "
-                    >Data Security</span
-                  >
+                <div style="margin-top: auto; padding-top: 16px;">
+                  <a href="#" class="service-link" onclick="showPage('ind-healthcare'); return false;" style="font-size: 13px;">Learn More →</a>
                 </div>
               </div>
             </div>
-            <div class="case-card" style="cursor: default">
+            <div class="case-card" style="cursor: pointer" onclick="showPage('ind-banking')">
               <div
                 class="case-top"
                 style="
@@ -4069,40 +3979,12 @@
                   and zero-trust security architectures for regulated financial
                   institutions.
                 </p>
-                <div
-                  style="
-                    display: flex;
-                    flex-wrap: wrap;
-                    gap: 6px;
-                    margin-top: 12px;
-                  "
-                >
-                  <span
-                    style="
-                      font-size: 11px;
-                      padding: 3px 10px;
-                      background: var(--off-white);
-                      border: 1px solid var(--border);
-                      border-radius: 100px;
-                      color: var(--text-secondary);
-                    "
-                    >PCI-DSS</span
-                  >
-                  <span
-                    style="
-                      font-size: 11px;
-                      padding: 3px 10px;
-                      background: var(--off-white);
-                      border: 1px solid var(--border);
-                      border-radius: 100px;
-                      color: var(--text-secondary);
-                    "
-                    >Zero Trust</span
-                  >
+                <div style="margin-top: auto; padding-top: 16px;">
+                  <a href="#" class="service-link" onclick="showPage('ind-banking'); return false;" style="font-size: 13px;">Learn More →</a>
                 </div>
               </div>
             </div>
-            <div class="case-card" style="cursor: default">
+            <div class="case-card" style="cursor: pointer" onclick="showPage('ind-technology')">
               <div
                 class="case-top"
                 style="
@@ -4120,40 +4002,477 @@
                   architecture, and platform engineering for fast-growing
                   technology companies.
                 </p>
-                <div
-                  style="
-                    display: flex;
-                    flex-wrap: wrap;
-                    gap: 6px;
-                    margin-top: 12px;
-                  "
-                >
-                  <span
-                    style="
-                      font-size: 11px;
-                      padding: 3px 10px;
-                      background: var(--off-white);
-                      border: 1px solid var(--border);
-                      border-radius: 100px;
-                      color: var(--text-secondary);
-                    "
-                    >Scalability</span
-                  >
-                  <span
-                    style="
-                      font-size: 11px;
-                      padding: 3px 10px;
-                      background: var(--off-white);
-                      border: 1px solid var(--border);
-                      border-radius: 100px;
-                      color: var(--text-secondary);
-                    "
-                    >FinOps</span
-                  >
+                <div style="margin-top: auto; padding-top: 16px;">
+                  <a href="#" class="service-link" onclick="showPage('ind-technology'); return false;" style="font-size: 13px;">Learn More →</a>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- INDUSTRY DETAIL: SEMICONDUCTOR & ELECTRONICS -->
+    <div id="page-ind-semiconductor" class="page">
+      <section class="page-hero">
+        <div class="container">
+          <div class="page-hero-content">
+            <div class="label label-light">Semiconductor & Electronics</div>
+            <h1 class="page-title">Managed IT Services for Semiconductor Companies</h1>
+            <p class="page-sub">
+              Enabling precision, performance, and always-on IT for semiconductor operations. OPT IT is a trusted IT services partner for semiconductor companies, delivering reliable, SLA-driven infrastructure support designed for high-performance and data-intensive EDA environments.
+            </p>
+            <div style="margin-top: 32px; display: flex; gap: 14px; flex-wrap: wrap;">
+              <a href="#" class="btn btn-primary" onclick="showPage('contact'); return false;">Schedule a Demo</a>
+              <a href="#" class="btn btn-ghost" onclick="showPage('industries'); return false;">← All Industries</a>
+            </div>
+            <div style="display: flex; gap: 24px; margin-top: 32px; flex-wrap: wrap;">
+              <div style="display: flex; align-items: center; gap: 8px; color: var(--text-secondary); font-size: 13px;"><span style="color: var(--green);">✓</span> ISO 27001 Certified</div>
+              <div style="display: flex; align-items: center; gap: 8px; color: var(--text-secondary); font-size: 13px;"><span style="color: var(--green);">✓</span> 99.9% Uptime</div>
+              <div style="display: flex; align-items: center; gap: 8px; color: var(--text-secondary); font-size: 13px;"><span style="color: var(--green);">✓</span> 24/7 Support</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-header center">
+            <div class="label">Complete EDA Infrastructure Solutions</div>
+            <h2 class="section-title">Reliable Managed IT Services for Semiconductor Companies</h2>
+          </div>
+          <div class="service-features">
+            <div class="feature-card">
+              <div class="feature-icon">🖥️</div>
+              <div class="feature-title">Compute Infrastructure Management</div>
+              <p class="feature-text">Design and manage scalable compute clusters optimized for EDA workloads, including high-performance clusters, LSF/Grid Engine configuration, resource optimization, and scalability planning.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🔧</div>
+              <div class="feature-title">EDA Tool Setup & Configuration</div>
+              <p class="feature-text">Expert installation, configuration, and optimization of leading EDA tools including Cadence, Synopsys, Mentor Graphics, and Ansys. We ensure seamless integration with your existing workflow and PDKs.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">📊</div>
+              <div class="feature-title">Compute Monitoring & Performance</div>
+              <p class="feature-text">Real-time monitoring with performance analytics dashboards, automated alerting, and capacity planning reports. Proactive issue detection and resolution before they impact design schedules.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🔑</div>
+              <div class="feature-title">EDA Infrastructure & License Management</div>
+              <p class="feature-text">Complete license server management including FlexLM setup, usage tracking, cost optimization strategies, and vendor management support for your entire EDA toolset.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🖥️</div>
+              <div class="feature-title">Interactive Compute Environment</div>
+              <p class="feature-text">Deploy and manage interactive design environments including VNC/NoMachine setup, VDI infrastructure (VMware Horizon), and secure remote access for distributed design teams.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">⚡</div>
+              <div class="feature-title">Batch Compute Management</div>
+              <p class="feature-text">Optimize simulation and verification workflows with advanced batch job scheduling. LSF/Slurm/PBS configuration, queue management, and resource allocation for maximum throughput.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" style="background: var(--off-white);">
+        <div class="container">
+          <div class="section-header center">
+            <div class="label">Industry Challenges</div>
+            <h2 class="section-title">IT and Operational Risks in the Semiconductor Industry</h2>
+            <p class="section-subtitle">Semiconductor companies operate in one of the most complex and technology-intensive industries. As design cycles shorten and production volumes increase, IT challenges grow in scale and directly impact productivity, data accuracy, and time-to-market.</p>
+          </div>
+          <div class="service-features">
+            <div class="feature-card">
+              <div class="feature-icon">⏱️</div>
+              <div class="feature-title">Zero-Downtime Expectations</div>
+              <p class="feature-text">Semiconductor design and production demand uninterrupted access to critical IT systems, where even minor outages can disrupt timelines.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🚀</div>
+              <div class="feature-title">High-Performance & Data-Heavy Workloads</div>
+              <p class="feature-text">EDA tools and simulation workflows require consistently high compute and storage performance across environments.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🔒</div>
+              <div class="feature-title">IP-Centric Security Needs</div>
+              <p class="feature-text">Protecting sensitive chip designs and proprietary data requires strong access control, monitoring, and security-by-design.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🌐</div>
+              <div class="feature-title">Globally Distributed IT Environments</div>
+              <p class="feature-text">R&D teams and operations often span multiple locations, making centralized management and secure connectivity essential.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🔄</div>
+              <div class="feature-title">Legacy & Modern Infrastructure Coexistence</div>
+              <p class="feature-text">Business-critical legacy systems must remain stable while integrating with newer platforms and technologies.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">👨‍💻</div>
+              <div class="feature-title">Specialized IT Expertise Requirements</div>
+              <p class="feature-text">Managing EDA-focused infrastructure demands deep technical skills that are difficult to scale internally.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-header center">
+            <div class="label">Why Choose OPT IT</div>
+            <h2 class="section-title">Why Semiconductor Companies Choose OPT IT</h2>
+            <p class="section-subtitle">We understand the unique challenges of semiconductor design infrastructure. Our team brings decades of combined experience in EDA tool management and high-performance computing.</p>
+          </div>
+          <div class="service-features">
+            <div class="feature-card">
+              <div class="feature-icon">🔬</div>
+              <div class="feature-title">EDA Expertise</div>
+              <p class="feature-text">Deep knowledge of Cadence, Synopsys, Mentor, and Ansys workflows.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">📦</div>
+              <div class="feature-title">Turnkey Solutions</div>
+              <p class="feature-text">From planning to deployment to ongoing management.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">⚡</div>
+              <div class="feature-title">Performance Optimization</div>
+              <p class="feature-text">Maximize tool efficiency and reduce runtime across your EDA environment.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">💰</div>
+              <div class="feature-title">Cost Efficiency</div>
+              <p class="feature-text">Optimize license usage and infrastructure costs with smart management.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🛡️</div>
+              <div class="feature-title">Security First</div>
+              <p class="feature-text">Protect your valuable IP with enterprise-grade security controls.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🕐</div>
+              <div class="feature-title">24/7 Support</div>
+              <p class="feature-text">Round-the-clock monitoring and rapid response for your critical systems.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" style="background: var(--off-white);">
+        <div class="container">
+          <div class="section-header center">
+            <div class="label">Technologies</div>
+            <h2 class="section-title">Technologies We Work With</h2>
+            <p class="section-subtitle">Supporting industry-leading EDA tools and platforms</p>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin-top: 40px;">
+            <div style="background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 24px;">
+              <div style="font-weight: 600; color: var(--text-primary); margin-bottom: 12px; font-size: 14px;">Compute Platforms</div>
+              <div style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; color: var(--text-secondary);">
+                <span>IBM LSF</span><span>Slurm Workload Manager</span><span>Grid Engine</span><span>PBS Professional</span><span>Kubernetes</span>
+              </div>
+            </div>
+            <div style="background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 24px;">
+              <div style="font-weight: 600; color: var(--text-primary); margin-bottom: 12px; font-size: 14px;">Storage Solutions</div>
+              <div style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; color: var(--text-secondary);">
+                <span>NetApp Filers</span><span>Pure Storage</span><span>Vast Data</span><span>Lustre (Parallel FS)</span><span>IBM GPFS</span>
+              </div>
+            </div>
+            <div style="background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 24px;">
+              <div style="font-weight: 600; color: var(--text-primary); margin-bottom: 12px; font-size: 14px;">Virtualization & Cloud</div>
+              <div style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; color: var(--text-secondary);">
+                <span>VMware vSphere</span><span>AWS Cloud Integration</span><span>Azure Cloud Integration</span><span>Docker / Kubernetes</span><span>VNC / NoMachine</span>
+              </div>
+            </div>
+            <div style="background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 24px;">
+              <div style="font-weight: 600; color: var(--text-primary); margin-bottom: 12px; font-size: 14px;">EDA Tools</div>
+              <div style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; color: var(--text-secondary);">
+                <span>Cadence (Virtuoso, Innovus, Genus)</span><span>Synopsys (Design Compiler, ICC, VCS)</span><span>Mentor Graphics (Calibre, Questa)</span><span>Ansys (HFSS, Q3D)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" style="text-align: center;">
+        <div class="container">
+          <h2 style="color: var(--navy); font-size: 28px; margin-bottom: 16px;">Managed IT for Semiconductor Teams</h2>
+          <p style="color: var(--text-secondary); max-width: 620px; margin: 0 auto 32px; line-height: 1.7;">Semiconductor teams require IT infrastructure that delivers precision, performance, and zero tolerance for downtime. OPT IT Technologies provides managed IT services purpose-built for EDA-driven and data-intensive semiconductor environments.</p>
+          <a href="#" class="btn btn-primary" onclick="showPage('contact'); return false;">Let's Connect</a>
+        </div>
+      </section>
+    </div>
+
+    <!-- INDUSTRY DETAIL: MANUFACTURING -->
+    <div id="page-ind-manufacturing" class="page">
+      <section class="page-hero">
+        <div class="container">
+          <div class="page-hero-content">
+            <div class="label label-light">Manufacturing</div>
+            <h1 class="page-title">IT Solutions for Modern Manufacturing</h1>
+            <p class="page-sub">
+              OT/IT convergence, industrial network security, and cloud-connected factory infrastructure for Industry 4.0 transformation. We help manufacturers build reliable, secure, and intelligent IT environments that support operational continuity and growth.
+            </p>
+            <div style="margin-top: 32px; display: flex; gap: 14px; flex-wrap: wrap;">
+              <a href="#" class="btn btn-primary" onclick="showPage('contact'); return false;">Get in Touch</a>
+              <a href="#" class="btn btn-ghost" onclick="showPage('industries'); return false;">← All Industries</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-header center">
+            <div class="label">Key Capabilities</div>
+            <h2 class="section-title">IT Services for Manufacturing Operations</h2>
+          </div>
+          <div class="service-features">
+            <div class="feature-card">
+              <div class="feature-icon">🏭</div>
+              <div class="feature-title">OT/IT Convergence</div>
+              <p class="feature-text">Bridge operational technology and IT systems safely, enabling real-time visibility across factory floors without compromising production stability or security.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🔒</div>
+              <div class="feature-title">Industrial Network Security</div>
+              <p class="feature-text">Protect manufacturing networks from cyber threats with industrial-grade security controls, network segmentation, and continuous monitoring tailored for OT environments.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">☁️</div>
+              <div class="feature-title">Cloud-Connected Factory Infrastructure</div>
+              <p class="feature-text">Connect manufacturing systems to cloud platforms for centralized data management, analytics, and remote operational visibility across multiple sites.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">📊</div>
+              <div class="feature-title">Industry 4.0 Transformation</div>
+              <p class="feature-text">Accelerate digital transformation initiatives with IoT integration, data-driven insights, and automated workflows that improve production efficiency and quality.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🖥️</div>
+              <div class="feature-title">Infrastructure Management</div>
+              <p class="feature-text">End-to-end management of manufacturing IT infrastructure including servers, networks, and endpoints with 24/7 monitoring and proactive maintenance.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🔄</div>
+              <div class="feature-title">Disaster Recovery & Business Continuity</div>
+              <p class="feature-text">Ensure production uptime with robust backup, recovery, and continuity planning for critical manufacturing systems and data.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" style="text-align: center;">
+        <div class="container">
+          <h2 style="color: var(--navy); font-size: 28px; margin-bottom: 16px;">Ready to modernize your manufacturing IT?</h2>
+          <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto 32px; line-height: 1.7;">From plant floor to cloud, OPT IT delivers IT infrastructure and security solutions built for the demands of modern manufacturing.</p>
+          <a href="#" class="btn btn-primary" onclick="showPage('contact'); return false;">Let's Connect</a>
+        </div>
+      </section>
+    </div>
+
+    <!-- INDUSTRY DETAIL: HEALTHCARE & LIFE SCIENCES -->
+    <div id="page-ind-healthcare" class="page">
+      <section class="page-hero">
+        <div class="container">
+          <div class="page-hero-content">
+            <div class="label label-light">Healthcare & Life Sciences</div>
+            <h1 class="page-title">IT Infrastructure for Healthcare & Life Sciences</h1>
+            <p class="page-sub">
+              HIPAA-compliant infrastructure, clinical data security, and cloud environments purpose-built for healthcare data sensitivity requirements. We help healthcare and life sciences organizations maintain secure, reliable, and compliant IT operations.
+            </p>
+            <div style="margin-top: 32px; display: flex; gap: 14px; flex-wrap: wrap;">
+              <a href="#" class="btn btn-primary" onclick="showPage('contact'); return false;">Get in Touch</a>
+              <a href="#" class="btn btn-ghost" onclick="showPage('industries'); return false;">← All Industries</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-header center">
+            <div class="label">Key Capabilities</div>
+            <h2 class="section-title">IT Services for Healthcare Organizations</h2>
+          </div>
+          <div class="service-features">
+            <div class="feature-card">
+              <div class="feature-icon">🏥</div>
+              <div class="feature-title">HIPAA-Compliant Infrastructure</div>
+              <p class="feature-text">Design, deploy, and manage infrastructure that meets HIPAA requirements - with access controls, audit logging, encryption, and documented compliance processes.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🔒</div>
+              <div class="feature-title">Clinical Data Security</div>
+              <p class="feature-text">Protect patient data and clinical information with enterprise-grade security controls, data loss prevention, and continuous threat monitoring across all systems.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">☁️</div>
+              <div class="feature-title">Healthcare Cloud Environments</div>
+              <p class="feature-text">Purpose-built cloud environments for healthcare workloads with the security, availability, and compliance controls required for sensitive medical data.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">📋</div>
+              <div class="feature-title">Compliance & Audit Readiness</div>
+              <p class="feature-text">Maintain audit-ready documentation, evidence packages, and compliance reporting to satisfy regulatory requirements and internal governance standards.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🖥️</div>
+              <div class="feature-title">Managed IT Operations</div>
+              <p class="feature-text">24/7 monitoring and management of healthcare IT infrastructure ensuring high availability for clinical applications and critical healthcare systems.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🔄</div>
+              <div class="feature-title">Disaster Recovery</div>
+              <p class="feature-text">Robust backup and recovery solutions to protect healthcare data and ensure continuity of clinical operations in the event of an incident.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" style="text-align: center;">
+        <div class="container">
+          <h2 style="color: var(--navy); font-size: 28px; margin-bottom: 16px;">Secure, compliant IT for healthcare organizations</h2>
+          <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto 32px; line-height: 1.7;">OPT IT provides healthcare and life sciences organizations with the infrastructure, security, and compliance expertise to protect patient data and maintain operational continuity.</p>
+          <a href="#" class="btn btn-primary" onclick="showPage('contact'); return false;">Let's Connect</a>
+        </div>
+      </section>
+    </div>
+
+    <!-- INDUSTRY DETAIL: BANKING & FINANCIAL SERVICES -->
+    <div id="page-ind-banking" class="page">
+      <section class="page-hero">
+        <div class="container">
+          <div class="page-hero-content">
+            <div class="label label-light">Banking & Financial Services</div>
+            <h1 class="page-title">IT Solutions for Banking & Financial Services</h1>
+            <p class="page-sub">
+              PCI-DSS compliance, high-availability trading infrastructure, and zero-trust security architectures for regulated financial institutions. We deliver the reliability, security, and compliance that financial services demand.
+            </p>
+            <div style="margin-top: 32px; display: flex; gap: 14px; flex-wrap: wrap;">
+              <a href="#" class="btn btn-primary" onclick="showPage('contact'); return false;">Get in Touch</a>
+              <a href="#" class="btn btn-ghost" onclick="showPage('industries'); return false;">← All Industries</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-header center">
+            <div class="label">Key Capabilities</div>
+            <h2 class="section-title">IT Services for Financial Institutions</h2>
+          </div>
+          <div class="service-features">
+            <div class="feature-card">
+              <div class="feature-icon">🏦</div>
+              <div class="feature-title">PCI-DSS Compliance</div>
+              <p class="feature-text">End-to-end PCI-DSS compliance management - from gap assessment and remediation through ongoing monitoring and audit support for payment card environments.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">⚡</div>
+              <div class="feature-title">High-Availability Infrastructure</div>
+              <p class="feature-text">Mission-critical infrastructure designed for zero downtime with redundant systems, automated failover, and SLA-backed availability for trading and core banking platforms.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🔒</div>
+              <div class="feature-title">Zero-Trust Security Architecture</div>
+              <p class="feature-text">Implement zero-trust security models with identity verification, micro-segmentation, and continuous monitoring to protect financial data and systems.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">📋</div>
+              <div class="feature-title">Regulatory Compliance</div>
+              <p class="feature-text">Navigate complex financial regulatory requirements with compliance frameworks, documentation, and reporting tailored for regulated financial institutions.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🛡️</div>
+              <div class="feature-title">Cybersecurity for Financial Services</div>
+              <p class="feature-text">Advanced threat detection, incident response, and security operations designed for the threat landscape faced by financial institutions.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">☁️</div>
+              <div class="feature-title">Hybrid Cloud for Finance</div>
+              <p class="feature-text">Secure hybrid cloud environments that meet financial regulatory requirements while enabling modernization of legacy systems and infrastructure.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" style="text-align: center;">
+        <div class="container">
+          <h2 style="color: var(--navy); font-size: 28px; margin-bottom: 16px;">Resilient IT for financial services</h2>
+          <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto 32px; line-height: 1.7;">OPT IT helps financial institutions build IT infrastructure that is secure, compliant, and available - so they can focus on serving their customers with confidence.</p>
+          <a href="#" class="btn btn-primary" onclick="showPage('contact'); return false;">Let's Connect</a>
+        </div>
+      </section>
+    </div>
+
+    <!-- INDUSTRY DETAIL: TECHNOLOGY & SAAS -->
+    <div id="page-ind-technology" class="page">
+      <section class="page-hero">
+        <div class="container">
+          <div class="page-hero-content">
+            <div class="label label-light">Technology & SaaS</div>
+            <h1 class="page-title">IT Infrastructure for Technology & SaaS Companies</h1>
+            <p class="page-sub">
+              Scalable DevOps infrastructure, cost-optimised cloud architecture, and platform engineering for fast-growing technology companies. We help tech and SaaS businesses build the infrastructure foundation to scale reliably and efficiently.
+            </p>
+            <div style="margin-top: 32px; display: flex; gap: 14px; flex-wrap: wrap;">
+              <a href="#" class="btn btn-primary" onclick="showPage('contact'); return false;">Get in Touch</a>
+              <a href="#" class="btn btn-ghost" onclick="showPage('industries'); return false;">← All Industries</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-header center">
+            <div class="label">Key Capabilities</div>
+            <h2 class="section-title">IT Services for Technology Companies</h2>
+          </div>
+          <div class="service-features">
+            <div class="feature-card">
+              <div class="feature-icon">🚀</div>
+              <div class="feature-title">Scalable DevOps Infrastructure</div>
+              <p class="feature-text">Build and operate DevOps pipelines, CI/CD automation, and platform engineering practices that support rapid product development and deployment at scale.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">☁️</div>
+              <div class="feature-title">Cost-Optimised Cloud Architecture</div>
+              <p class="feature-text">Design and continuously optimize cloud environments for performance and cost efficiency - helping technology companies control infrastructure spend as they grow.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">💡</div>
+              <div class="feature-title">Platform Engineering</div>
+              <p class="feature-text">Build internal developer platforms and self-service infrastructure capabilities that accelerate engineering velocity and reduce operational overhead.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">📊</div>
+              <div class="feature-title">FinOps & Cloud Cost Management</div>
+              <p class="feature-text">Implement FinOps practices and tooling to gain full visibility into cloud spend, optimize resource usage, and eliminate waste across your cloud environment.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🔒</div>
+              <div class="feature-title">Security for SaaS Platforms</div>
+              <p class="feature-text">Embed security into your development and deployment lifecycle with DevSecOps practices, vulnerability management, and compliance automation.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">📈</div>
+              <div class="feature-title">Observability & Reliability Engineering</div>
+              <p class="feature-text">Implement full-stack observability with metrics, logs, and tracing to ensure platform reliability and rapid incident response for production systems.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" style="text-align: center;">
+        <div class="container">
+          <h2 style="color: var(--navy); font-size: 28px; margin-bottom: 16px;">Build infrastructure that scales with your product</h2>
+          <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto 32px; line-height: 1.7;">OPT IT helps technology and SaaS companies build the DevOps, cloud, and platform engineering capabilities they need to ship faster, scale reliably, and manage costs.</p>
+          <a href="#" class="btn btn-primary" onclick="showPage('contact'); return false;">Let's Connect</a>
         </div>
       </section>
     </div>
@@ -5410,6 +5729,11 @@
           "svc-semi": "nav-dd-services",
           "svc-elevate": "nav-dd-services",
           industries: "nav-dd-industries",
+          "ind-semiconductor": "nav-dd-industries",
+          "ind-manufacturing": "nav-dd-industries",
+          "ind-healthcare": "nav-dd-industries",
+          "ind-banking": "nav-dd-industries",
+          "ind-technology": "nav-dd-industries",
           "res-blog": "nav-dd-resources",
           "res-news": "nav-dd-resources",
           "res-clients": "nav-dd-resources",
