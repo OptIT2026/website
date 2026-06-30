@@ -6189,12 +6189,8 @@
         <div class="container">
           <div class="page-hero-content">
             <div class="label label-light">Contact Us</div>
-            <h1 class="page-title">Let's start your transformation</h1>
-            <p class="page-sub">
-              Book a free infrastructure assessment. Our enterprise consultants
-              will review your current environment and outline a clear path
-              forward - no commitment required.
-            </p>
+            <h1 class="page-title">Let's Start the Conversation</h1>
+            <p class="page-sub">Have a question, need expert guidance, or want to discuss your business requirements? We're here to help and look forward to connecting with you.</p>
           </div>
         </div>
       </section>
@@ -6209,10 +6205,15 @@
                   <div class="contact-label">Corporate Office</div>
                   <div class="contact-val">
                     #252, KGS Premier 2nd &amp; 3rd Floor,<br />46th Cross Rd,
-                    8th Block, Jayanagar,<br />Bengaluru - 560070, India<br /><strong
-                      >+91 9353906913</strong
-                    >
+                    8th Block, Jayanagar,<br />Bengaluru - 560070, India
                   </div>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">📞</div>
+                <div>
+                  <div class="contact-label">Phone</div>
+                  <div class="contact-val">+91 9353906913</div>
                 </div>
               </div>
               <div class="contact-item">
@@ -6224,131 +6225,81 @@
               </div>
             </div>
             <div class="contact-form-card">
-              <h3
-                style="
-                  font-family: &quot;Syne&quot;, sans-serif;
-                  font-size: 22px;
-                  font-weight: 700;
-                  color: var(--navy);
-                  margin-bottom: 6px;
-                "
-              >
-                Book a Free Demo
-              </h3>
-              <p
-                style="
-                  font-size: 14px;
-                  color: var(--text-secondary);
-                  margin-bottom: 28px;
-                "
-              >
-                Our enterprise consultants typically respond within 4 business
-                hours.
-              </p>
+              <h3 style="font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 700; color: var(--navy); margin-bottom: 6px;">Get in Touch</h3>
+              <p style="font-size: 14px; color: var(--text-secondary); margin-bottom: 28px;">Complete the form below and our team will get back to you as soon as possible.</p>
               <div class="form-row">
                 <div class="form-group">
-                  <label class="form-label">First Name</label
-                  ><input type="text" class="form-input" placeholder="Your first name" />
+                  <label class="form-label">First Name *</label>
+                  <input type="text" class="form-input" placeholder="Your first name" required />
                 </div>
                 <div class="form-group">
-                  <label class="form-label">Last Name</label
-                  ><input type="text" class="form-input" placeholder="Your last name" />
+                  <label class="form-label">Last Name *</label>
+                  <input type="text" class="form-input" placeholder="Your last name" required />
                 </div>
               </div>
               <div class="form-group">
-                <label class="form-label">Work Email</label
-                ><input
-                  type="email"
-                  class="form-input"
-                  placeholder="abc@company.com"
-                />
+                <label class="form-label">Email Address *</label>
+                <input type="email" class="form-input" placeholder="name@example.com" required />
               </div>
               <div class="form-group">
-                <label class="form-label">Phone Number</label
-                ><input
-                  type="phone number"
-                  class="form-input"
-                  placeholder="+919876543210"
-                />
+                <label class="form-label">Phone Number *</label>
+                <input type="tel" class="form-input" placeholder="+91 98765 43210" required />
               </div>
               <div class="form-group">
-                <label class="form-label">Company</label
-                ><input
-                  type="text"
-                  class="form-input"
-                  placeholder="Company name"
-                />
-              </div>
-              <div class="form-row">
-                <div class="form-group">
-                  <label class="form-label">Your Role</label>
-                  <select class="form-input">
-                    <option>CTO / CIO</option>
-                    <option>IT Director</option>
-                    <option>Infrastructure Manager</option>
-                    <option>DevOps Lead</option>
-                    <option>Other</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label class="form-label">Company Size</label>
-                  <select class="form-input">
-                    <option>1-50 employees</option>
-                    <option>51-200</option>
-                    <option>201-1,000</option>
-                    <option>1,000+</option>
-                  </select>
-                </div>
+                <label class="form-label">Company / Organization</label>
+                <input type="text" class="form-input" placeholder="Company or Organization name" />
               </div>
               <div class="form-group">
-                <label class="form-label">Service Interest</label>
+                <label class="form-label">Your Role</label>
                 <select class="form-input">
-                  <option>IT Infrastructure Management</option>
-                  <option>Cloud Services</option>
-                  <option>DevOps Services</option>
-                  <option>Security & Cybersecurity</option>
-                  <option>Semiconductor & EDA Infrastructure</option>
-                  <option>ElevateOps AI Platform</option>
+                  <option value="">Select your role</option>
+                  <option>CTO / CIO</option>
+                  <option>IT Director</option>
+                  <option>Infrastructure Manager</option>
+                  <option>DevOps Lead</option>
+                  <option>Engineering Manager</option>
+                  <option>Business Owner</option>
+                  <option>HR / Talent Acquisition</option>
+                  <option>Student / Fresher</option>
                   <option>Other</option>
                 </select>
               </div>
               <div class="form-group">
-                <label class="form-label">Tell us about your challenge</label>
-                <textarea
-                  class="form-input"
-                  placeholder="Briefly describe your current IT situation and what you're hoping to achieve..."
-                ></textarea>
+                <label class="form-label">Area of Interest *</label>
+                <select class="form-input" id="contact-area-interest" onchange="toggleCompanySize()" required>
+                  <option value="">Select an area of interest</option>
+                  <option value="show">IT Infrastructure</option>
+                  <option value="show">Cloud Services</option>
+                  <option value="show">DevOps</option>
+                  <option value="show">Cybersecurity</option>
+                  <option value="show">Semiconductor</option>
+                  <option value="show">ElevateOps</option>
+                  <option value="hide">Careers</option>
+                  <option value="optional">Partnership</option>
+                  <option value="hide">General Enquiry</option>
+                </select>
               </div>
-              <button
-                class="btn btn-primary"
-                style="
-                  width: 100%;
-                  justify-content: center;
-                  padding: 14px 28px;
-                  font-size: 15px;
-                "
-              >
-                <svg
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                >
+              <div class="form-group" id="contact-company-size" style="display: none;">
+                <label class="form-label" id="contact-company-size-label">Company Size</label>
+                <select class="form-input">
+                  <option value="">Select company size</option>
+                  <option>1–50 Employees</option>
+                  <option>51–200 Employees</option>
+                  <option>201–1000 Employees</option>
+                  <option>1000+ Employees</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">How Can We Help? *</label>
+                <textarea class="form-input" placeholder="Tell us about your requirements, enquiry, or how we can assist you..." required></textarea>
+              </div>
+              <button class="btn btn-primary" style="width: 100%; justify-content: center; padding: 14px 28px; font-size: 15px;">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
                   <path d="M3 8h10M9 4l4 4-4 4" />
                 </svg>
                 Send Message
               </button>
-              <p
-                style="
-                  font-size: 12px;
-                  color: var(--text-muted);
-                  margin-top: 12px;
-                  text-align: center;
-                "
-              >
-                No commitment required. We'll respond within 4 business hours.
-              </p>
+              <p style="font-size: 12px; color: var(--text-muted); margin-top: 12px; text-align: center;">Our team will review your enquiry and get back to you as soon as possible.</p>
             </div>
           </div>
         </div>
@@ -7518,6 +7469,13 @@
           icon.textContent = '×';
           btn.style.background = 'var(--off-white)';
         }
+      }
+
+      function toggleCompanySize() {
+        var sel = document.getElementById('contact-area-interest');
+        var sizeGroup = document.getElementById('contact-company-size');
+        var val = sel.options[sel.selectedIndex].value;
+        sizeGroup.style.display = (val === 'show' || val === 'optional') ? 'block' : 'none';
       }
 
       function showPage(id) {
