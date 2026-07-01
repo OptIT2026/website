@@ -415,7 +415,74 @@
       .hero-bg-overlay {
         position: absolute;
         inset: 0;
-        background: rgba(6, 78, 59, 0.72);
+        background: rgba(6, 78, 59, 0.52);
+      }
+
+      .hero-slide {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+      }
+      .hero-slide.active {
+        opacity: 1;
+      }
+      .hero-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        animation: hero-zoom 16s ease-in-out infinite alternate;
+      }
+
+      .hero-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        background: rgba(255,255,255,0.08);
+        border: 1px solid rgba(255,255,255,0.18);
+        color: rgba(255,255,255,0.55);
+        width: 28px;
+        height: 36px;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 12px;
+        font-weight: 400;
+        transition: all 0.25s;
+      }
+      .hero-arrow:hover {
+        background: rgba(255,255,255,0.18);
+        color: rgba(255,255,255,0.95);
+        border-color: rgba(255,255,255,0.35);
+      }
+      .hero-arrow-left  { left: 20px; }
+      .hero-arrow-right { right: 20px; }
+
+      .hero-dots {
+        position: absolute;
+        bottom: 28px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+      .hero-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.4);
+        cursor: pointer;
+        transition: background 0.2s, transform 0.2s;
+      }
+      .hero-dot.active {
+        background: var(--white);
+        transform: scale(1.3);
       }
 
       @keyframes hero-zoom {
@@ -2233,7 +2300,7 @@
           "
           style="gap: 8px"
         >
-          <img src="logo.png" alt="Opt IT" style="height:42px; object-fit:contain;">
+          <img src="Images/Logos/logo.png" alt="Opt IT" style="height:42px; object-fit:contain;">
         </a>
 
         <div class="nav-links">
@@ -2431,9 +2498,20 @@
     <!-- HOME PAGE -->
     <div id="page-home" class="page active">
       <section class="hero">
-        <div class="hero-bg">
-          <img class="hero-bg-img" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=85&auto=format&fit=crop" alt="Modern data center server infrastructure">
+        <div class="hero-bg" id="hero-bg">
+          <div class="hero-slide active"><img src="Images/Home/hero-cloud.png" alt="Cloud"></div>
+          <div class="hero-slide"><img src="Images/Home/hero-managed-it.jpeg" alt="Managed IT"></div>
+          <div class="hero-slide"><img src="Images/Home/hero-cybersecurity.jpg" alt="Cybersecurity"></div>
+          <div class="hero-slide"><img src="Images/Home/hero-enterprise-technology.jpg" alt="Enterprise Technology"></div>
           <div class="hero-bg-overlay"></div>
+        </div>
+        <button class="hero-arrow hero-arrow-left" onclick="heroSlide(-1)" aria-label="Previous">&lt;</button>
+        <button class="hero-arrow hero-arrow-right" onclick="heroSlide(1)" aria-label="Next">&gt;</button>
+        <div class="hero-dots" id="hero-dots">
+          <span class="hero-dot active" onclick="heroGoTo(0)"></span>
+          <span class="hero-dot" onclick="heroGoTo(1)"></span>
+          <span class="hero-dot" onclick="heroGoTo(2)"></span>
+          <span class="hero-dot" onclick="heroGoTo(3)"></span>
         </div>
         <div class="hero-content">
           <div class="hero-badge animate">
@@ -2751,7 +2829,7 @@
 
     <!-- ABOUT PAGE -->
     <div id="page-about" class="page">
-      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.75), rgba(6,78,59,0.75)), url('img-about.jpg'); background-size: cover; background-position: center;">
+      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.75), rgba(6,78,59,0.75)), url('Images/About/hero.jpg'); background-size: cover; background-position: center;">
         <div class="container">
           <div class="page-hero-content">
             <div class="label label-light">About Opt IT</div>
@@ -3140,7 +3218,7 @@
 
     <!-- SERVICES PAGE -->
     <div id="page-services" class="page">
-      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.72), rgba(6,78,59,0.72)), url('img-services.jpg'); background-size: cover; background-position: center left;">
+      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.72), rgba(6,78,59,0.72)), url('Images/Services/hero.jpg'); background-size: cover; background-position: center left;">
         <div class="container">
           <div class="page-hero-content">
             <div class="label label-light">Services</div>
@@ -3263,7 +3341,7 @@
     <div id="page-svc-infra" class="page">
 
       <!-- HERO -->
-      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.72), rgba(6,78,59,0.72)), url('img-datacenter.webp'); background-size: cover; background-position: center;">
+      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.72), rgba(6,78,59,0.72)), url('Images/Services/it-infrastructure.webp'); background-size: cover; background-position: center;">
         <div class="container">
           <div class="page-hero-content">
             <div class="label label-light">IT Infrastructure Management</div>
@@ -3524,7 +3602,7 @@
     <div id="page-svc-cloud" class="page">
 
       <!-- HERO -->
-      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.72), rgba(6,78,59,0.72)), url('img-cloud.jpg'); background-size: cover; background-position: center;">
+      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.72), rgba(6,78,59,0.72)), url('Images/Services/cloud.jpg'); background-size: cover; background-position: center;">
         <div class="container">
           <div class="page-hero-content">
             <div class="label label-light">Cloud Services</div>
@@ -3780,7 +3858,7 @@
     <div id="page-svc-devops" class="page">
 
       <!-- HERO -->
-      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.78), rgba(6,78,59,0.78)), url('img-devops.jpg'); background-size: cover; background-position: center;">
+      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.78), rgba(6,78,59,0.78)), url('Images/Services/devops.jpg'); background-size: cover; background-position: center;">
         <div class="container">
           <div class="page-hero-content">
             <div class="label label-light">DevOps Services</div>
@@ -4035,7 +4113,7 @@
 
     <!-- SERVICE DETAIL: SECURITY -->
     <div id="page-svc-security" class="page">
-      <section class="page-hero" style="background-image: linear-gradient(rgba(2,44,34,0.75), rgba(2,44,34,0.75)), url('img-security.webp'); background-size: cover; background-position: center right;">
+      <section class="page-hero" style="background-image: linear-gradient(rgba(2,44,34,0.75), rgba(2,44,34,0.75)), url('Images/Services/cybersecurity.webp'); background-size: cover; background-position: center right;">
         <div class="container">
           <div class="page-hero-content">
             <div class="label label-light">Security & Cybersecurity</div>
@@ -4287,7 +4365,7 @@
 
     <!-- SERVICE DETAIL: SEMICONDUCTOR -->
     <div id="page-svc-semi" class="page">
-      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.78), rgba(6,78,59,0.78)), url('img-semicon.png'); background-size: cover; background-position: center;">
+      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.78), rgba(6,78,59,0.78)), url('Images/Services/semiconductor.png'); background-size: cover; background-position: center;">
         <div class="container">
           <div class="page-hero-content">
             <div class="label label-light">Semiconductor & EDA Infrastructure</div>
@@ -4538,7 +4616,7 @@
 
     <!-- SERVICE DETAIL: ELEVATEOPS -->
     <div id="page-svc-elevate" class="page">
-      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.78), rgba(6,78,59,0.78)), url('img-elevateops.jpg'); background-size: cover; background-position: center;">
+      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.78), rgba(6,78,59,0.78)), url('Images/Services/elevateops.jpg'); background-size: cover; background-position: center;">
         <div class="container">
           <div class="page-hero-content">
             <div class="label label-light">ElevateOps AI Platform</div>
@@ -4740,7 +4818,7 @@
 
     <!-- INDUSTRIES PAGE -->
     <div id="page-industries" class="page">
-      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.70), rgba(6,78,59,0.70)), url('img-industries.jpg'); background-size: cover; background-position: center;">
+      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.70), rgba(6,78,59,0.70)), url('Images/Industries/hero.jpg'); background-size: cover; background-position: center;">
         <div class="container">
           <div class="page-hero-content">
             <div class="label label-light">Industries</div>
@@ -4847,7 +4925,7 @@
 
     <!-- INDUSTRY DETAIL: SEMICONDUCTOR & ELECTRONICS -->
     <div id="page-ind-semiconductor" class="page">
-      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.75), rgba(6,78,59,0.75)), url('img-ind-semicon.png'); background-size: cover; background-position: center;">
+      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.75), rgba(6,78,59,0.75)), url('Images/Industries/semiconductor.png'); background-size: cover; background-position: center;">
         <div class="container">
           <div class="page-hero-content">
             <div class="label label-light">Semiconductor & Electronics</div>
@@ -5002,7 +5080,7 @@
 
     <!-- INDUSTRY DETAIL: MANUFACTURING -->
     <div id="page-ind-manufacturing" class="page">
-      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.75), rgba(6,78,59,0.75)), url('img-manufacturing.jpg'); background-size: cover; background-position: center;">
+      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.75), rgba(6,78,59,0.75)), url('Images/Industries/manufacturing.jpg'); background-size: cover; background-position: center;">
         <div class="container">
           <div class="page-hero-content">
             <div class="label label-light">Manufacturing</div>
@@ -5158,7 +5236,7 @@
 
     <!-- INDUSTRY DETAIL: HEALTHCARE & LIFE SCIENCES -->
     <div id="page-ind-healthcare" class="page">
-      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.75), rgba(6,78,59,0.75)), url('img-healthcare.jpg'); background-size: cover; background-position: center;">
+      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.75), rgba(6,78,59,0.75)), url('Images/Industries/healthcare.jpg'); background-size: cover; background-position: center;">
         <div class="container">
           <div class="page-hero-content">
             <div class="label label-light">Healthcare & Life Sciences</div>
@@ -5314,7 +5392,7 @@
 
     <!-- INDUSTRY DETAIL: BANKING & FINANCIAL SERVICES -->
     <div id="page-ind-banking" class="page">
-      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.75), rgba(6,78,59,0.75)), url('img-banking.jpg'); background-size: cover; background-position: center;">
+      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.75), rgba(6,78,59,0.75)), url('Images/Industries/banking.jpg'); background-size: cover; background-position: center;">
         <div class="container">
           <div class="page-hero-content">
             <div class="label label-light">Banking & Financial Services</div>
@@ -5470,7 +5548,7 @@
 
     <!-- INDUSTRY DETAIL: TECHNOLOGY & SAAS -->
     <div id="page-ind-technology" class="page">
-      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.75), rgba(6,78,59,0.75)), url('img-technology.webp'); background-size: cover; background-position: center;">
+      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.75), rgba(6,78,59,0.75)), url('Images/Industries/technology-saas.webp'); background-size: cover; background-position: center;">
         <div class="container">
           <div class="page-hero-content">
             <div class="label label-light">Technology & SaaS</div>
@@ -5626,7 +5704,7 @@
 
     <!-- INDUSTRY DETAIL: EDUCATION -->
     <div id="page-ind-education" class="page">
-      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.75), rgba(6,78,59,0.75)), url('img-education.webp'); background-size: cover; background-position: center;">
+      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.75), rgba(6,78,59,0.75)), url('Images/Industries/education.webp'); background-size: cover; background-position: center;">
         <div class="container">
           <div class="page-hero-content">
             <div class="label label-light">Education</div>
@@ -5782,7 +5860,7 @@
 
     <!-- RESOURCES PAGE -->
     <div id="page-resources" class="page">
-      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.75), rgba(6,78,59,0.75)), url('img-resources.jpg'); background-size: cover; background-position: center;">
+      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.75), rgba(6,78,59,0.75)), url('Images/Resources/hero.jpg'); background-size: cover; background-position: center;">
         <div class="container">
           <div class="page-hero-content">
             <div class="label label-light">Resources</div>
@@ -6077,7 +6155,7 @@
 
     <!-- CAREERS PAGE -->
     <div id="page-careers" class="page">
-      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.75), rgba(6,78,59,0.75)), url('img-careers.jpg'); background-size: cover; background-position: center;">
+      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.75), rgba(6,78,59,0.75)), url('Images/Careers/hero.jpg'); background-size: cover; background-position: center;">
         <div class="container">
           <div class="page-hero-content">
             <div class="label label-light">Careers</div>
@@ -6175,7 +6253,7 @@
 
     <!-- CONTACT PAGE -->
     <div id="page-contact" class="page">
-      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.72), rgba(6,78,59,0.72)), url('img-contact.jpg'); background-size: cover; background-position: center;">
+      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.72), rgba(6,78,59,0.72)), url('Images/Contact/hero.jpg'); background-size: cover; background-position: center;">
         <div class="container">
           <div class="page-hero-content">
             <div class="label label-light">Contact Us</div>
@@ -6293,7 +6371,7 @@
 
     <!-- RESOURCES: BLOG -->
     <div id="page-res-blog" class="page">
-      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.75), rgba(6,78,59,0.75)), url('img-res-blog.jpg'); background-size: cover; background-position: center;">
+      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.75), rgba(6,78,59,0.75)), url('Images/Resources/blog.jpg'); background-size: cover; background-position: center;">
         <div class="container">
           <div class="page-hero-content">
             <div class="label label-light">Resources / Blog</div>
@@ -6894,7 +6972,7 @@
 
     <!-- RESOURCES: NEWS -->
     <div id="page-res-news" class="page">
-      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.78), rgba(6,78,59,0.78)), url('img-res-news.jpg'); background-size: cover; background-position: center;">
+      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.78), rgba(6,78,59,0.78)), url('Images/Resources/news.jpg'); background-size: cover; background-position: center;">
         <div class="container">
           <div class="page-hero-content">
             <div class="label label-light">Resources / News</div>
@@ -7060,7 +7138,7 @@
 
     <!-- RESOURCES: CLIENTS -->
     <div id="page-res-clients" class="page">
-      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.75), rgba(6,78,59,0.75)), url('img-res-clients.jpg'); background-size: cover; background-position: center;">
+      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.75), rgba(6,78,59,0.75)), url('Images/Resources/clients.jpg'); background-size: cover; background-position: center;">
         <div class="container">
           <div class="page-hero-content">
             <div class="label label-light">Resources / Clients</div>
@@ -7224,7 +7302,7 @@
 
     <!-- RESOURCES: CASE STUDIES -->
     <div id="page-res-cases" class="page">
-      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.78), rgba(6,78,59,0.78)), url('img-res-cases.jpg'); background-size: cover; background-position: center;">
+      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.78), rgba(6,78,59,0.78)), url('Images/Resources/case-studies.jpg'); background-size: cover; background-position: center;">
         <div class="container">
           <div class="page-hero-content">
             <div class="label label-light">Resources / Case Studies</div>
@@ -7293,7 +7371,7 @@
               "
               style="text-decoration: none; gap: 8px; display:inline-flex; align-items:center;"
             >
-              <img src="logo-white-bg.png" alt="Opt IT" style="height:56px; object-fit:contain; border-radius:8px;">
+              <img src="Images/Logos/logo-white-bg.png" alt="Opt IT" style="height:56px; object-fit:contain; border-radius:8px;">
             </a>
             <img src="https://optit.in/wp-content/uploads/2026/04/footer-image.png" alt="" style="width:100%; max-width:260px; margin:20px 0 16px; display:block; object-fit:contain;">
             <p class="footer-brand-desc">
@@ -7456,6 +7534,33 @@
         }
       }
 
+      (function() {
+        var slides = document.querySelectorAll('.hero-slide');
+        var dots = document.querySelectorAll('.hero-dot');
+        var current = 0;
+        var timer;
+
+        function heroGoTo(n) {
+          slides[current].classList.remove('active');
+          dots[current].classList.remove('active');
+          current = (n + slides.length) % slides.length;
+          slides[current].classList.add('active');
+          dots[current].classList.add('active');
+          resetTimer();
+        }
+
+        function heroSlide(dir) { heroGoTo(current + dir); }
+
+        function resetTimer() {
+          clearInterval(timer);
+          timer = setInterval(function() { heroGoTo(current + 1); }, 5000);
+        }
+
+        window.heroGoTo = heroGoTo;
+        window.heroSlide = heroSlide;
+        resetTimer();
+      })();
+
       function toggleCompanySize() {
         var sel = document.getElementById('contact-area-interest');
         var sizeGroup = document.getElementById('contact-company-size');
@@ -7597,3 +7702,4 @@
     </script>
   </body>
 </html>
+
