@@ -2046,11 +2046,11 @@
       /* ── Photo ── */
       .team-card-img-wrap {
         width: 100%;
-        aspect-ratio: 5 / 4;
+        aspect-ratio: 1 / 1;
         overflow: hidden;
         border-radius: var(--radius-lg) var(--radius-lg) 0 0;
         flex-shrink: 0;
-        background: #ffffff;
+        background: #f0f0f0;
       }
 
       .team-card-img-wrap img {
@@ -2060,7 +2060,7 @@
         object-position: top center;
         display: block;
         transition: transform 0.45s ease;
-        mix-blend-mode: multiply;
+        filter: contrast(1.04) brightness(1.02);
       }
 
       .team-card:hover .team-card-img-wrap img {
@@ -2198,7 +2198,7 @@
       .team-modal-left .modal-img-crop {
         flex: 0 0 80%;
         overflow: hidden;
-        background: #ffffff;
+        background: #dce8e2;
       }
 
       .team-modal-left .modal-img-crop img {
@@ -2207,7 +2207,7 @@
         object-fit: cover;
         object-position: top center;
         display: block;
-        mix-blend-mode: multiply;
+        filter: contrast(1.04) brightness(1.02);
       }
 
       .team-modal-li-wrap {
@@ -3046,7 +3046,7 @@
 
             <div class="team-card" onclick="openTeamModal('santhosh-mogili')">
               <div class="team-card-img-wrap">
-                <img src="https://optit.in/wp-content/uploads/2021/05/2-100-2.jpg" alt="Santhosh Mogili">
+                <img src="Images/About/Leadership/santhosh-mogili-new.png" alt="Santhosh Mogili" style="object-position: center 5%;">
               </div>
               <div class="team-card-info">
                 <div class="team-card-name">Santhosh Mogili</div>
@@ -3058,8 +3058,8 @@
             </div>
 
             <div class="team-card" onclick="openTeamModal('satish-narule')">
-              <div class="team-card-img-wrap">
-                <img src="https://optit.in/wp-content/uploads/2021/05/1-100-2.jpg" alt="Satish Narule">
+              <div class="team-card-img-wrap" style="background: #f0f0f0;">
+                <img src="Images/About/Leadership/satish-narule.jpg" alt="Satish Narule" style="object-position: center 8%;">
               </div>
               <div class="team-card-info">
                 <div class="team-card-name">Satish Narule</div>
@@ -3071,8 +3071,8 @@
             </div>
 
             <div class="team-card" onclick="openTeamModal('thrishala-narule')">
-              <div class="team-card-img-wrap">
-                <img src="https://optit.in/wp-content/uploads/2021/05/1-12.jpg" alt="Thrishala Narule">
+              <div class="team-card-img-wrap" style="background: #ffffff;">
+                <img src="Images/About/Leadership/thrishala-narule.jpg" alt="Thrishala Narule" style="object-fit: cover; object-position: center -6%;">
               </div>
               <div class="team-card-info">
                 <div class="team-card-name">Thrishala Narule</div>
@@ -3085,7 +3085,7 @@
 
             <div class="team-card" onclick="openTeamModal('anil-samant')">
               <div class="team-card-img-wrap">
-                <img src="https://optit.in/wp-content/uploads/2024/09/Anil-Samant-HD-Image-793x1024.png" alt="Anil Vasant Samant">
+                <img src="Images/About/Leadership/anil-samant.png" alt="Anil Vasant Samant" style="object-position: center -37%;">
               </div>
               <div class="team-card-info">
                 <div class="team-card-name">Anil Vasant Samant</div>
@@ -3097,8 +3097,8 @@
             </div>
 
             <div class="team-card" onclick="openTeamModal('santhosh-gandham')">
-              <div class="team-card-img-wrap">
-                <img src="https://optit.in/wp-content/uploads/2021/05/5.jpg" alt="Santhosh Gandham">
+              <div class="team-card-img-wrap" style="background: #f0f0f0;">
+                <img src="Images/About/Leadership/santhosh-gandham.jpg" alt="Santhosh Gandham" style="object-position: center 5%;">
               </div>
               <div class="team-card-info">
                 <div class="team-card-name">Santhosh Gandham</div>
@@ -3143,7 +3143,7 @@
           'santhosh-mogili': {
             name: 'Santhosh Mogili',
             role: 'Co-Founder & CTO',
-            img: 'https://optit.in/wp-content/uploads/2021/05/2-100-2.jpg',
+            img: 'Images/About/Leadership/santhosh-mogili-new.png',
             linkedin: 'https://www.linkedin.com/in/smogili/',
             modalImgPosition: '50% 20%',
             bio: 'Santhosh brings over 20 years of experience in the IT industry. Prior to founding Opt IT, Santhosh has worked at Intel, Synopsys. He has held various positions at Intel and has played key roles in datacenter architecture and implementation, liaising with business functions for IT requirements, and has led teams for service delivery and support. Santhosh has a passion for High-Performance Computing and Virtualization and has worked extensively with enterprise servers, storage, and systems management solutions.'
@@ -3151,7 +3151,7 @@
           'satish-narule': {
             name: 'Satish Narule',
             role: 'Co-Founder & COO',
-            img: 'https://optit.in/wp-content/uploads/2021/05/1-100-2.jpg',
+            img: 'Images/About/Leadership/satish-narule.jpg',
             linkedin: 'https://www.linkedin.com/in/satish-narule-8663247/',
             modalImgPosition: '50% 20%',
             bio: "Satish has over 22 years of experience with Intel spanning across IT Engineering to Product Management functions. He has lead global teams responsible for Network Security Engineering, implementation & support. He has managed Intel India's Innovation center that focused on showcasing Intel's latest technologies to customers in India covering Intel AMT and virtualization. Before joining Opt IT, he was a product manager for Intel higher education program in India and drove Intel India's social entrepreneurship initiatives."
@@ -3159,7 +3159,7 @@
           'thrishala-narule': {
             name: 'Thrishala Narule',
             role: 'Head - Finance & HR Operations',
-            img: 'https://optit.in/wp-content/uploads/2021/05/1-12.jpg',
+            img: 'Images/About/Leadership/thrishala-narule.jpg',
             linkedin: 'https://www.linkedin.com/in/thrishala-narule-8b1936134/',
             modalImgPosition: '50% 20%',
             bio: 'Over 13 years of experience across operations & business support roles. Started her journey with Opt IT in 2013 as a finance executive and has grown into heading the entire finance as well as HR Operations function. She was mainly instrumental in building the organization from formative days setting up finance & operations team.'
@@ -3167,14 +3167,14 @@
           'anil-samant': {
             name: 'Anil Vasant Samant',
             role: 'Business Head – IT Services',
-            img: 'https://optit.in/wp-content/uploads/2024/09/Anil-Samant-HD-Image-793x1024.png',
+            img: 'Images/About/Leadership/anil-samant.png',
             linkedin: 'https://www.linkedin.com/in/anil-samant-35123312/',
             bio: 'Anil is an experienced senior executive with over 30 years in technology services, specializing in IT infrastructure and information security. His expertise spans ITIL frameworks, automation, and global program management, where he has driven cost savings through innovative strategies. Prior to joining Opt IT, Anil held significant leadership roles at Digital/HP Globalsoft, Fidelity, Wipro, and Cognizant. He is a certified PMP who is passionate about enhancing customer experiences and committed to organizational success.'
           },
           'santhosh-gandham': {
             name: 'Santhosh Gandham',
             role: 'Lead DevOps Architect',
-            img: 'https://optit.in/wp-content/uploads/2021/05/5.jpg',
+            img: 'Images/About/Leadership/santhosh-gandham.jpg',
             linkedin: 'https://www.linkedin.com/in/santhosh-gandham-b4539814/',
             bio: 'Experienced Senior Technical Lead with a demonstrated history of working in the biotechnology and IT industry in the past. Skilled in Cluster Management, Life Sciences, Amazon Web Services, Google Cloud Platform, Microsoft Azure and Automation. Strong engineering professional with a hunch towards understanding large to small scale applications in a simple manner and putting together a technology roadmap keeping scalability, reliability & cost in mind.'
           }
@@ -7702,4 +7702,6 @@
     </script>
   </body>
 </html>
+
+
 
