@@ -2812,6 +2812,47 @@
         /* Bug 9: Contact form row — reduce gap when stacked */
         .form-row { gap: 0; }
       }
+
+      /* ══════════════════════════════════════════
+         HERO MOBILE REFINEMENTS — PASS 4
+         Additive only. Desktop unchanged.
+      ══════════════════════════════════════════ */
+
+      /* ── Tablet (≤900px) — hero refinements ── */
+      @media (max-width: 900px) {
+        /* Page-hero: add bottom breathing room so content isn't flush to edge */
+        .page-hero { padding-bottom: 24px; }
+      }
+
+      /* ── Mobile (≤600px) — hero refinements ── */
+      @media (max-width: 600px) {
+
+        /* Home hero: increase height to fit all content comfortably */
+        .hero { height: 580px; }
+
+        /* Home hero content: increase top padding for breathing room below nav */
+        .hero-content { padding: 48px 20px 36px; }
+
+        /* Hero arrows: keep above dots with plenty of clearance */
+        .hero-arrow-left  { left: 10px; top: auto; bottom: 72px; transform: translateY(0); }
+        .hero-arrow-right { right: 10px; top: auto; bottom: 72px; transform: translateY(0); }
+
+        /* Page-hero: increase height so content isn't compressed */
+        .page-hero { height: 340px; padding: 68px 0 24px; }
+      }
+
+      /* ── Small mobile (≤360px) — hero refinements ── */
+      @media (max-width: 360px) {
+
+        /* Home hero: scale down slightly from 580 */
+        .hero { height: 520px; }
+
+        /* Home hero content: slightly tighter on very small screens */
+        .hero-content { padding: 40px 16px 28px; }
+
+        /* Page-hero: slight reduction for 360px */
+        .page-hero { height: 320px; padding: 68px 0 20px; }
+      }
     </style>
   </head>
 
