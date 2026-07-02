@@ -2589,6 +2589,81 @@
         .exp-num { font-size: 38px; }
         .hero-stat .num { font-size: 26px; }
       }
+
+      /* ══════════════════════════════════════════
+         PHASE 3 — RESPONSIVE POLISH & FINAL QA
+         Additive only. Desktop unchanged.
+      ══════════════════════════════════════════ */
+
+      /* ── TABLET (≤900px) — Phase 3 ── */
+      @media (max-width: 900px) {
+
+        /* 2. Section spacing — reduce slightly */
+        .section     { padding: 64px 0; }
+        .section-sm  { padding: 48px 0; }
+        .vm-section  { padding: 72px 0; }
+        .team-section { padding: 72px 0; }
+
+        /* 6. Careers culture cards grid */
+        .careers-culture-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+        /* Tech tool mini-row */
+        .tech-tool-row { grid-template-columns: repeat(3, 1fr) !important; }
+      }
+
+      /* ── MOBILE (≤600px) — Phase 3 ── */
+      @media (max-width: 600px) {
+
+        /* 1. Hero stats gap */
+        .hero-stats { gap: 28px; }
+        .hero-actions { gap: 10px; margin-bottom: 40px; }
+
+        /* 2. Section spacing */
+        .section     { padding: 48px 0; }
+        .section-sm  { padding: 36px 0; }
+        .vm-section  { padding: 56px 0; }
+        .team-section { padding: 56px 0; }
+
+        /* 3. Contact form card padding */
+        .contact-form-card { padding: 24px 20px; }
+
+        /* 4. Team modal at small screens */
+        .team-modal { border-radius: var(--radius-lg); }
+        .team-modal-overlay { padding: 12px; }
+        .team-modal-left { height: 240px; }
+
+        /* 5. Hero badge pill */
+        .hero-badge { padding: 5px 12px 5px 5px; }
+        .hero-badge span { font-size: 12px; }
+
+        /* 6. Careers culture grid → 1 column */
+        .careers-culture-grid { grid-template-columns: 1fr !important; }
+
+        /* Tech tool mini-row → 1 column */
+        .tech-tool-row { grid-template-columns: 1fr !important; }
+
+        /* 7. Images — contain within viewport */
+        img { max-width: 100%; }
+
+        /* 8. Minimum tap target on buttons */
+        .btn { min-height: 44px; }
+
+        /* 9. Prevent long words overflowing narrow viewports */
+        .page-sub, .section-subtitle, .feature-text,
+        .testimonial-text, .footer-brand-desc {
+          overflow-wrap: break-word;
+          word-break: break-word;
+        }
+      }
+
+      /* ── 360px and below — edge case polish ── */
+      @media (max-width: 360px) {
+        .hero-stats { gap: 20px; }
+        .hero-stat .num { font-size: 22px; }
+        .stat-number { font-size: 30px; }
+        .contact-form-card { padding: 20px 16px; }
+        .team-modal-right { padding: 20px 16px 24px; }
+      }
     </style>
   </head>
 
@@ -3841,7 +3916,7 @@
               </div>
             </div>
             <!-- Row 2: 3 cards -->
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+            <div class="tech-tool-row" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
               <div style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 14px 16px; border-top: 3px solid var(--blue); text-align: center;">
                 <div style="font-size: 20px; margin-bottom: 6px;">🛡️</div>
                 <div style="font-size: 12px; font-weight: 700; color: var(--text-primary); margin-bottom: 6px;">Backup</div>
@@ -6508,7 +6583,7 @@
             <h2 class="section-title">What Can You Look Forward To</h2>
             <p class="section-subtitle">We believe great work starts with a supportive environment where people are encouraged to learn, collaborate, and make a meaningful impact. Here's what makes Opt IT a place where individuals and teams can thrive.</p>
           </div>
-          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px;">
+          <div class="careers-culture-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px;">
             <div style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px 26px; transition: all 0.28s ease;" onmouseover="this.style.borderColor='var(--blue)';this.style.boxShadow='var(--shadow-md)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='';this.style.transform=''">
               <div style="width: 48px; height: 48px; border-radius: 12px; background: #f0fdf4; border: 1px solid #d1fae5; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 18px;">😊</div>
               <div style="font-family: 'Syne', sans-serif; font-weight: 700; color: var(--navy); font-size: 16px; margin-bottom: 10px;">Happiness Culture</div>
