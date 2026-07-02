@@ -2288,6 +2288,237 @@
         .team-modal-li-wrap { flex: 0 0 20%; border-top: none; border-left: 1px solid var(--border); }
         .team-modal-right { padding: 24px 20px 28px; }
       }
+
+      /* ══════════════════════════════════════════
+         PHASE 1 — RESPONSIVE FOUNDATION
+         All rules below are additive only.
+         Desktop layout (>900px) is unchanged.
+      ══════════════════════════════════════════ */
+
+      /* ── HAMBURGER BUTTON (hidden on desktop) ── */
+      .mob-menu-btn {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 38px;
+        height: 38px;
+        background: none;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        cursor: pointer;
+        padding: 8px;
+        margin-left: auto;
+        flex-shrink: 0;
+      }
+      .mob-menu-btn span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: var(--navy);
+        border-radius: 2px;
+        transition: all 0.25s ease;
+        transform-origin: center;
+      }
+      .mob-menu-btn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+      .mob-menu-btn.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+      .mob-menu-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+      /* ── MOBILE DRAWER OVERLAY ── */
+      .mob-drawer-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(2, 44, 34, 0.4);
+        z-index: 90;
+      }
+      .mob-drawer-overlay.open { display: block; }
+
+      /* ── MOBILE DRAWER ── */
+      .mob-drawer {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 300px;
+        max-width: 85vw;
+        height: 100%;
+        background: var(--white);
+        z-index: 95;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+        box-shadow: -4px 0 24px rgba(2,44,34,0.15);
+      }
+      .mob-drawer.open { transform: translateX(0); }
+
+      .mob-drawer-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 20px;
+        border-bottom: 1px solid var(--border);
+        flex-shrink: 0;
+      }
+      .mob-drawer-close {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        background: var(--off-white);
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--navy);
+        line-height: 1;
+      }
+      .mob-drawer-close:hover { background: var(--gray-100); }
+
+      .mob-drawer-body {
+        flex: 1;
+        padding: 12px 0;
+        overflow-y: auto;
+      }
+
+      .mob-nav-link {
+        display: block;
+        padding: 13px 20px;
+        font-size: 15px;
+        font-weight: 500;
+        color: var(--text-secondary);
+        text-decoration: none;
+        border: none;
+        background: none;
+        width: 100%;
+        text-align: left;
+        cursor: pointer;
+        font-family: "Inter", sans-serif;
+        transition: color 0.15s, background 0.15s;
+      }
+      .mob-nav-link:hover { color: var(--navy); background: var(--off-white); }
+      .mob-nav-link.active { color: var(--blue); }
+
+      .mob-dd-trigger {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 13px 20px;
+        font-size: 15px;
+        font-weight: 500;
+        color: var(--text-secondary);
+        background: none;
+        border: none;
+        width: 100%;
+        text-align: left;
+        cursor: pointer;
+        font-family: "Inter", sans-serif;
+        transition: color 0.15s, background 0.15s;
+      }
+      .mob-dd-trigger:hover { color: var(--navy); background: var(--off-white); }
+      .mob-dd-trigger.open { color: var(--navy); }
+      .mob-dd-arrow {
+        font-size: 11px;
+        transition: transform 0.2s;
+        color: var(--text-muted);
+      }
+      .mob-dd-trigger.open .mob-dd-arrow { transform: rotate(180deg); }
+
+      .mob-dd-items {
+        display: none;
+        background: var(--off-white);
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+      }
+      .mob-dd-items.open { display: block; }
+      .mob-dd-item {
+        display: block;
+        padding: 11px 20px 11px 32px;
+        font-size: 14px;
+        color: var(--text-secondary);
+        text-decoration: none;
+        border: none;
+        background: none;
+        width: 100%;
+        text-align: left;
+        cursor: pointer;
+        font-family: "Inter", sans-serif;
+        transition: color 0.15s;
+      }
+      .mob-dd-item:hover { color: var(--blue); }
+
+      .mob-drawer-foot {
+        padding: 16px 20px;
+        border-top: 1px solid var(--border);
+        flex-shrink: 0;
+      }
+      .mob-drawer-foot .btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      /* ── TABLET (≤900px) ── */
+      @media (max-width: 900px) {
+
+        /* Container padding */
+        .container { padding: 0 24px; }
+
+        /* Hide desktop nav, show hamburger */
+        .nav-links { display: none; }
+        .nav-cta   { display: none; }
+        .mob-menu-btn { display: flex; }
+
+        /* Grids → 2 columns */
+        .services-grid      { grid-template-columns: repeat(2, 1fr); }
+        .testimonial-grid   { grid-template-columns: repeat(2, 1fr); }
+        .service-features   { grid-template-columns: repeat(2, 1fr); }
+        .resources-grid     { grid-template-columns: repeat(2, 1fr); }
+        .cases-grid         { grid-template-columns: repeat(2, 1fr); }
+        .industries-grid    { grid-template-columns: repeat(3, 1fr); }
+        .tech-grid          { grid-template-columns: repeat(4, 1fr); }
+        .tech-badge         { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+
+        /* Footer → 2 columns */
+        .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+
+        /* Contact grid → 1 column */
+        .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+
+        /* Form rows → 1 column */
+        .form-row { grid-template-columns: 1fr; }
+      }
+
+      /* ── MOBILE (≤600px) ── */
+      @media (max-width: 600px) {
+
+        /* Container padding */
+        .container { padding: 0 20px; }
+
+        /* Grids → 1 column */
+        .services-grid    { grid-template-columns: 1fr; }
+        .testimonial-grid { grid-template-columns: 1fr; }
+        .service-features { grid-template-columns: 1fr; }
+        .resources-grid   { grid-template-columns: 1fr; }
+        .cases-grid       { grid-template-columns: 1fr; }
+
+        /* Industries → 2 columns */
+        .industries-grid  { grid-template-columns: repeat(2, 1fr); }
+
+        /* Tech → 3 columns */
+        .tech-grid        { grid-template-columns: repeat(3, 1fr); }
+
+        /* Footer → 1 column */
+        .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+        .footer-bottom {
+          flex-direction: column;
+          align-items: center;
+          gap: 12px;
+          text-align: center;
+        }
+        .footer-bottom-right { gap: 16px; }
+      }
     </style>
   </head>
 
@@ -2496,8 +2727,74 @@
             >Get in Touch</a
           >
         </div>
+
+        <button class="mob-menu-btn" id="mobMenuBtn" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </nav>
+
+    <!-- MOBILE DRAWER OVERLAY -->
+    <div class="mob-drawer-overlay" id="mobDrawerOverlay"></div>
+
+    <!-- MOBILE DRAWER -->
+    <div class="mob-drawer" id="mobDrawer" role="dialog" aria-label="Navigation menu">
+      <div class="mob-drawer-head">
+        <a href="#" class="logo" onclick="mobNavGo('home'); return false;" style="gap:8px;">
+          <img src="Images/Logos/logo.png" alt="Opt IT" style="height:36px; object-fit:contain;">
+        </a>
+        <button class="mob-drawer-close" id="mobDrawerClose" aria-label="Close menu">✕</button>
+      </div>
+
+      <div class="mob-drawer-body">
+        <a href="#" class="mob-nav-link" onclick="mobNavGo('home'); return false;">Home</a>
+        <a href="#" class="mob-nav-link" onclick="mobNavGo('about'); return false;">About Us</a>
+
+        <!-- Services dropdown -->
+        <button class="mob-dd-trigger" onclick="mobToggleDd('mob-dd-services')">
+          Services <span class="mob-dd-arrow">▾</span>
+        </button>
+        <div class="mob-dd-items" id="mob-dd-services">
+          <button class="mob-dd-item" onclick="mobNavGo('svc-infra')">IT Infrastructure Management</button>
+          <button class="mob-dd-item" onclick="mobNavGo('svc-cloud')">Cloud Services</button>
+          <button class="mob-dd-item" onclick="mobNavGo('svc-devops')">DevOps Services</button>
+          <button class="mob-dd-item" onclick="mobNavGo('svc-security')">Security & Cybersecurity</button>
+          <button class="mob-dd-item" onclick="mobNavGo('svc-semi')">Semiconductor & EDA Infrastructure</button>
+          <button class="mob-dd-item" onclick="mobNavGo('svc-elevate')">ElevateOps AI Platform</button>
+        </div>
+
+        <!-- Industries dropdown -->
+        <button class="mob-dd-trigger" onclick="mobToggleDd('mob-dd-industries')">
+          Industries <span class="mob-dd-arrow">▾</span>
+        </button>
+        <div class="mob-dd-items" id="mob-dd-industries">
+          <button class="mob-dd-item" onclick="mobNavGo('ind-semiconductor')">Semiconductor & Electronics</button>
+          <button class="mob-dd-item" onclick="mobNavGo('ind-banking')">Banking & Financial Services</button>
+          <button class="mob-dd-item" onclick="mobNavGo('ind-healthcare')">Healthcare & Life Sciences</button>
+          <button class="mob-dd-item" onclick="mobNavGo('ind-manufacturing')">Manufacturing</button>
+          <button class="mob-dd-item" onclick="mobNavGo('ind-technology')">Technology & SaaS</button>
+          <button class="mob-dd-item" onclick="mobNavGo('ind-education')">Education</button>
+        </div>
+
+        <!-- Resources dropdown -->
+        <button class="mob-dd-trigger" onclick="mobToggleDd('mob-dd-resources')">
+          Resources <span class="mob-dd-arrow">▾</span>
+        </button>
+        <div class="mob-dd-items" id="mob-dd-resources">
+          <button class="mob-dd-item" onclick="mobNavGo('res-blog')">Blog</button>
+          <button class="mob-dd-item" onclick="mobNavGo('res-news')">News</button>
+          <button class="mob-dd-item" onclick="mobNavGo('res-clients')">Clients</button>
+          <button class="mob-dd-item" onclick="mobNavGo('res-cases')">Case Studies</button>
+        </div>
+
+        <a href="#" class="mob-nav-link" onclick="mobNavGo('careers'); return false;">Careers</a>
+        <a href="#" class="mob-nav-link" onclick="mobNavGo('contact'); return false;">Contact Us</a>
+      </div>
+
+      <div class="mob-drawer-foot">
+        <a href="#" class="btn btn-primary" onclick="mobNavGo('contact'); scrollToForm(); return false;">Get in Touch</a>
+      </div>
+    </div>
 
     <!-- HOME PAGE -->
     <div id="page-home" class="page active">
@@ -7667,6 +7964,59 @@
         resTabGoToT(resTabCurrentT + dir);
       }
       setInterval(function () { resTabChangeT(1); }, 5000);
+
+      /* ── MOBILE NAV ── */
+      (function () {
+        var btn     = document.getElementById('mobMenuBtn');
+        var drawer  = document.getElementById('mobDrawer');
+        var overlay = document.getElementById('mobDrawerOverlay');
+        var closeBtn= document.getElementById('mobDrawerClose');
+
+        function openDrawer() {
+          drawer.classList.add('open');
+          overlay.classList.add('open');
+          btn.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+          document.body.style.overflow = 'hidden';
+        }
+
+        function closeDrawer() {
+          drawer.classList.remove('open');
+          overlay.classList.remove('open');
+          btn.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        }
+
+        btn.addEventListener('click', function () {
+          drawer.classList.contains('open') ? closeDrawer() : openDrawer();
+        });
+        closeBtn.addEventListener('click', closeDrawer);
+        overlay.addEventListener('click', closeDrawer);
+
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape') closeDrawer();
+        });
+
+        window.mobNavGo = function (id) {
+          showPage(id);
+          closeDrawer();
+        };
+
+        window.mobToggleDd = function (id) {
+          var panel   = document.getElementById(id);
+          var trigger = panel.previousElementSibling;
+          var isOpen  = panel.classList.contains('open');
+          // close all
+          document.querySelectorAll('.mob-dd-items').forEach(function (p) { p.classList.remove('open'); });
+          document.querySelectorAll('.mob-dd-trigger').forEach(function (t) { t.classList.remove('open'); });
+          // open clicked if it was closed
+          if (!isOpen) {
+            panel.classList.add('open');
+            trigger.classList.add('open');
+          }
+        };
+      })();
     </script>
   </body>
 </html>
