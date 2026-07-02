@@ -2664,6 +2664,77 @@
         .contact-form-card { padding: 20px 16px; }
         .team-modal-right { padding: 20px 16px 24px; }
       }
+
+      /* ══════════════════════════════════════════
+         MOBILE AUDIT BUG FIXES
+         Additive only. Desktop unchanged.
+      ══════════════════════════════════════════ */
+
+      /* ── Bug 6: Mobile nav split trigger row ── */
+      .mob-dd-row {
+        display: flex;
+        align-items: stretch;
+        border: none;
+      }
+      .mob-dd-row .mob-nav-link.mob-dd-parent {
+        flex: 1;
+      }
+      .mob-dd-expand {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        flex-shrink: 0;
+        background: none;
+        border: none;
+        border-left: 1px solid var(--border);
+        cursor: pointer;
+        color: var(--text-secondary);
+        transition: color 0.15s, background 0.15s;
+      }
+      .mob-dd-expand:hover { background: var(--off-white); color: var(--navy); }
+      .mob-dd-expand .mob-dd-arrow { font-size: 11px; transition: transform 0.2s; color: var(--text-muted); }
+      .mob-dd-expand.open .mob-dd-arrow { transform: rotate(180deg); }
+
+      /* ── Tablet (≤900px) — Bug Fixes ── */
+      @media (max-width: 900px) {
+
+        /* Bug 2: Hamburger always visible — reduce nav-inner padding/gap */
+        .nav-inner { padding: 0 16px; gap: 0; overflow: visible; }
+        .nav-inner .logo { min-width: 0; flex-shrink: 1; }
+        .nav-inner .logo img { max-width: 120px; height: 36px; }
+
+        /* Bug 4: Why Choose Us — 2 columns on tablet */
+        .why-choose-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+        /* Bug 7: Infra tech row 4-col → 2-col on tablet */
+        .tech-tool-row-4 { grid-template-columns: repeat(2, 1fr) !important; }
+
+        /* Bug 8: Business impact — stack on tablet */
+        .biz-impact-row { flex-direction: column; gap: 32px; }
+      }
+
+      /* ── Mobile (≤600px) — Bug Fixes ── */
+      @media (max-width: 600px) {
+
+        /* Bug 3: Hero arrows — move to bottom, away from content */
+        .hero-arrow-left  { left: 10px; top: auto; bottom: 72px; transform: translateY(0); }
+        .hero-arrow-right { right: 10px; top: auto; bottom: 72px; transform: translateY(0); }
+
+        /* Bug 4: Why Choose Us → 1 column on mobile */
+        .why-choose-grid { grid-template-columns: 1fr !important; }
+
+        /* Bug 7: Infra tech row 4-col → 2-col on mobile */
+        .tech-tool-row-4 { grid-template-columns: repeat(2, 1fr) !important; }
+
+        /* Bug 7: Cloud/DevOps/Security/Semi 2-col tech grid → 1 column */
+        .tech-eco-grid { grid-template-columns: 1fr !important; }
+
+        /* Bug 8: Business impact — already stacked at tablet */
+
+        /* Bug 9: Contact form row — reduce gap when stacked */
+        .form-row { gap: 0; }
+      }
     </style>
   </head>
 
@@ -2896,9 +2967,10 @@
         <a href="#" class="mob-nav-link" onclick="mobNavGo('about'); return false;">About Us</a>
 
         <!-- Services dropdown -->
-        <button class="mob-dd-trigger" onclick="mobToggleDd('mob-dd-services')">
-          Services <span class="mob-dd-arrow">▾</span>
-        </button>
+        <div class="mob-dd-row">
+          <a href="#" class="mob-nav-link mob-dd-parent" onclick="mobNavGo('services'); return false;">Services</a>
+          <button class="mob-dd-expand" onclick="mobToggleDd('mob-dd-services')" aria-label="Expand Services"><span class="mob-dd-arrow">▾</span></button>
+        </div>
         <div class="mob-dd-items" id="mob-dd-services">
           <button class="mob-dd-item" onclick="mobNavGo('svc-infra')">IT Infrastructure Management</button>
           <button class="mob-dd-item" onclick="mobNavGo('svc-cloud')">Cloud Services</button>
@@ -2909,9 +2981,10 @@
         </div>
 
         <!-- Industries dropdown -->
-        <button class="mob-dd-trigger" onclick="mobToggleDd('mob-dd-industries')">
-          Industries <span class="mob-dd-arrow">▾</span>
-        </button>
+        <div class="mob-dd-row">
+          <a href="#" class="mob-nav-link mob-dd-parent" onclick="mobNavGo('industries'); return false;">Industries</a>
+          <button class="mob-dd-expand" onclick="mobToggleDd('mob-dd-industries')" aria-label="Expand Industries"><span class="mob-dd-arrow">▾</span></button>
+        </div>
         <div class="mob-dd-items" id="mob-dd-industries">
           <button class="mob-dd-item" onclick="mobNavGo('ind-semiconductor')">Semiconductor & Electronics</button>
           <button class="mob-dd-item" onclick="mobNavGo('ind-banking')">Banking & Financial Services</button>
@@ -2922,9 +2995,10 @@
         </div>
 
         <!-- Resources dropdown -->
-        <button class="mob-dd-trigger" onclick="mobToggleDd('mob-dd-resources')">
-          Resources <span class="mob-dd-arrow">▾</span>
-        </button>
+        <div class="mob-dd-row">
+          <a href="#" class="mob-nav-link mob-dd-parent" onclick="mobNavGo('resources'); return false;">Resources</a>
+          <button class="mob-dd-expand" onclick="mobToggleDd('mob-dd-resources')" aria-label="Expand Resources"><span class="mob-dd-arrow">▾</span></button>
+        </div>
         <div class="mob-dd-items" id="mob-dd-resources">
           <button class="mob-dd-item" onclick="mobNavGo('res-blog')">Blog</button>
           <button class="mob-dd-item" onclick="mobNavGo('res-news')">News</button>
@@ -3069,7 +3143,7 @@
           </div>
 
           <!-- 5 Cards Grid -->
-          <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:20px;">
+          <div class="why-choose-grid" style="display:grid; grid-template-columns:repeat(5,1fr); gap:20px;">
 
             <div style="background:var(--white); border:1px solid var(--border); border-radius:var(--radius-lg); padding:28px 24px; transition:all .25s;" onmouseover="this.style.borderColor='var(--blue)';this.style.boxShadow='var(--shadow-md)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none';this.style.transform='none'">
               <div style="width:48px;height:48px;border-radius:var(--radius-sm);background:var(--cyan-soft);border:1px solid rgba(16,185,129,0.2);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:18px;">📐</div>
@@ -3571,7 +3645,7 @@
             role: 'Head - Finance & HR Operations',
             img: 'Images/About/Leadership/thrishala-narule.jpg',
             linkedin: 'https://www.linkedin.com/in/thrishala-narule-8b1936134/',
-            modalImgPosition: '50% 20%',
+            modalImgPosition: '50% 5%',
             bio: 'Over 13 years of experience across operations & business support roles. Started her journey with Opt IT in 2013 as a finance executive and has grown into heading the entire finance as well as HR Operations function. She was mainly instrumental in building the organization from formative days setting up finance & operations team.'
           },
           'anil-samant': {
@@ -3887,7 +3961,7 @@
               <p style="font-size: 15px; color: var(--text-secondary); margin-top: 8px;">Platforms and technologies that support modern infrastructure operations.</p>
             </div>
             <!-- Row 1: 4 cards -->
-            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 10px;">
+            <div class="tech-tool-row-4" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 10px;">
               <div style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 14px 16px; border-top: 3px solid var(--blue); text-align: center;">
                 <div style="font-size: 20px; margin-bottom: 6px;">🖥️</div>
                 <div style="font-size: 12px; font-weight: 700; color: var(--text-primary); margin-bottom: 6px;">Virtualization</div>
@@ -4139,7 +4213,7 @@
               <div class="label">Cloud Ecosystem</div>
               <p style="font-size: 15px; color: var(--text-secondary); margin-top: 8px;">Platforms and tools that enable secure and efficient cloud operations.</p>
             </div>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div class="tech-eco-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
 
               <div style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 24px; border-left: 4px solid var(--blue);">
                 <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px;">
@@ -4394,7 +4468,7 @@
               <div class="label">Technology Ecosystem</div>
               <p style="font-size: 15px; color: var(--text-secondary); margin-top: 8px;">Technologies that support automation, delivery, and platform engineering.</p>
             </div>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div class="tech-eco-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
 
               <div style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 24px; border-left: 4px solid var(--blue);">
                 <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px;">
@@ -4649,7 +4723,7 @@
               <div class="label">Technology Ecosystem</div>
               <p style="font-size: 15px; color: var(--text-secondary); margin-top: 8px;">Frameworks and technologies that help strengthen security and support compliance requirements.</p>
             </div>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div class="tech-eco-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
 
               <div style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 24px; border-left: 4px solid var(--blue);">
                 <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px;">
@@ -4901,7 +4975,7 @@
               <div class="label">EDA Ecosystem</div>
               <p style="font-size: 15px; color: var(--text-secondary); margin-top: 8px;">Platforms and tools that support semiconductor design and engineering workflows.</p>
             </div>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div class="tech-eco-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
 
               <div style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 24px; border-left: 4px solid var(--blue);">
                 <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px;">
@@ -5447,7 +5521,7 @@
       <!-- BUSINESS IMPACT -->
       <section class="section" style="background: var(--off-white);">
         <div class="container">
-          <div style="max-width: 860px; margin: 0 auto; display: flex; gap: 64px; align-items: flex-start;">
+          <div class="biz-impact-row" style="max-width: 860px; margin: 0 auto; display: flex; gap: 64px; align-items: flex-start;">
             <div style="flex: 1;">
               <div class="label" style="margin-bottom: 16px;">Business Impact</div>
               <h2 class="section-title" style="margin-bottom: 20px;">Enabling Better Business Outcomes</h2>
@@ -5603,7 +5677,7 @@
       <!-- OPERATIONAL VALUE -->
       <section class="section" style="background: var(--off-white);">
         <div class="container">
-          <div style="max-width: 860px; margin: 0 auto; display: flex; gap: 64px; align-items: flex-start;">
+          <div class="biz-impact-row" style="max-width: 860px; margin: 0 auto; display: flex; gap: 64px; align-items: flex-start;">
             <div style="flex: 1;">
               <div class="label" style="margin-bottom: 16px;">Operational Value</div>
               <h2 class="section-title" style="margin-bottom: 20px;">Building Resilient Manufacturing Operations</h2>
@@ -5759,7 +5833,7 @@
       <!-- ORGANIZATIONAL VALUE -->
       <section class="section" style="background: var(--off-white);">
         <div class="container">
-          <div style="max-width: 860px; margin: 0 auto; display: flex; gap: 64px; align-items: flex-start;">
+          <div class="biz-impact-row" style="max-width: 860px; margin: 0 auto; display: flex; gap: 64px; align-items: flex-start;">
             <div style="flex: 1;">
               <div class="label" style="margin-bottom: 16px;">Organizational Value</div>
               <h2 class="section-title" style="margin-bottom: 20px;">Supporting Better Healthcare Delivery</h2>
@@ -5915,7 +5989,7 @@
       <!-- BUSINESS VALUE -->
       <section class="section" style="background: var(--off-white);">
         <div class="container">
-          <div style="max-width: 860px; margin: 0 auto; display: flex; gap: 64px; align-items: flex-start;">
+          <div class="biz-impact-row" style="max-width: 860px; margin: 0 auto; display: flex; gap: 64px; align-items: flex-start;">
             <div style="flex: 1;">
               <div class="label" style="margin-bottom: 16px;">Business Value</div>
               <h2 class="section-title" style="margin-bottom: 20px;">Strengthening Trust Through Technology</h2>
@@ -6071,7 +6145,7 @@
       <!-- GROWTH ENABLEMENT -->
       <section class="section" style="background: var(--off-white);">
         <div class="container">
-          <div style="max-width: 860px; margin: 0 auto; display: flex; gap: 64px; align-items: flex-start;">
+          <div class="biz-impact-row" style="max-width: 860px; margin: 0 auto; display: flex; gap: 64px; align-items: flex-start;">
             <div style="flex: 1;">
               <div class="label" style="margin-bottom: 16px;">Growth Enablement</div>
               <h2 class="section-title" style="margin-bottom: 20px;">Building the Foundation for Sustainable Growth</h2>
@@ -6227,7 +6301,7 @@
       <!-- LEARNING OUTCOMES -->
       <section class="section" style="background: var(--off-white);">
         <div class="container">
-          <div style="max-width: 860px; margin: 0 auto; display: flex; gap: 64px; align-items: flex-start;">
+          <div class="biz-impact-row" style="max-width: 860px; margin: 0 auto; display: flex; gap: 64px; align-items: flex-start;">
             <div style="flex: 1;">
               <div class="label" style="margin-bottom: 16px;">Learning Outcomes</div>
               <h2 class="section-title" style="margin-bottom: 20px;">Creating Better Digital Learning Experiences</h2>
@@ -8150,15 +8224,15 @@
 
         window.mobToggleDd = function (id) {
           var panel   = document.getElementById(id);
-          var trigger = panel.previousElementSibling;
+          var row     = panel.previousElementSibling;
           var isOpen  = panel.classList.contains('open');
           // close all
           document.querySelectorAll('.mob-dd-items').forEach(function (p) { p.classList.remove('open'); });
-          document.querySelectorAll('.mob-dd-trigger').forEach(function (t) { t.classList.remove('open'); });
+          document.querySelectorAll('.mob-dd-expand').forEach(function (b) { b.classList.remove('open'); });
           // open clicked if it was closed
           if (!isOpen) {
             panel.classList.add('open');
-            trigger.classList.add('open');
+            row.querySelector('.mob-dd-expand').classList.add('open');
           }
         };
       })();
