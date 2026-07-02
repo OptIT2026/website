@@ -2820,85 +2820,59 @@
          Additive only. Desktop (>900px) unchanged.
       ══════════════════════════════════════════ */
 
-      /* ── Tablet (≤900px) — inner page banners ── */
+      /* ══════════════════════════════════════════
+         INNER PAGE BANNERS — UNIFORM HEIGHT
+         Same fixed height on every inner page.
+         Content centered by align-items:center.
+         Desktop (>900px) unchanged.
+      ══════════════════════════════════════════ */
+
       @media (max-width: 900px) {
-        /* Switch from fixed height + top-only padding to auto height
-           with equal top/bottom padding for symmetric centering */
         .page-hero {
-          height: auto !important;
-          min-height: 0 !important;
-          padding: 100px 0 !important;
+          height: 420px !important;
+          padding: 68px 0 0 !important;
+          display: flex !important;
+          align-items: center !important;
+          box-sizing: border-box !important;
         }
+        #hero-services  { background-position: 70% center !important; }
+        #hero-svc-cloud { background-position: center center !important; }
+        #hero-res-news  { background-position: right center !important; }
       }
 
-      /* ── All mobile viewports (≤600px) ── */
       @media (max-width: 600px) {
+        .page-hero { height: 420px !important; }
 
-        /* ─ Inner page heroes (page-hero) ─
-           Switch from fixed height to auto so content is never clipped.
-           Equal padding top/bottom: 68px clears the fixed nav, matching
-           bottom gives symmetric breathing space. align-items:center
-           (already set in base) then centers content within that space. */
-        .page-hero {
-          height: auto !important;
-          min-height: 0 !important;
-          padding: 88px 0 !important;
-        }
-
-        /* ─ Home hero ─
-           Switch to auto height with symmetric padding.
-           flex-direction:column so content stacks top-to-bottom predictably.
-           Padding-top=88px (68px nav + 20px gap), padding-bottom=80px
-           (space for dots at bottom:28px + comfortable gap). */
+        /* Home hero — content flows top-down, arrows below CTAs */
         .hero {
           height: auto !important;
-          min-height: 0 !important;
-          padding-top: 88px !important;
-          padding-bottom: 80px !important;
+          padding-top: 76px !important;
+          padding-bottom: 100px !important;
           flex-direction: column !important;
           justify-content: flex-start !important;
           align-items: center !important;
         }
-
-        /* hero-content: no extra padding needed — .hero padding handles spacing */
         .hero-content {
           padding: 0 20px !important;
           width: 100%;
           box-sizing: border-box;
         }
-
-        /* Tighten internal spacing so content fits naturally */
-        .hero-badge  { margin-bottom: 14px; }
-        .hero-title  { margin-bottom: 14px; }
-        .hero-sub    { margin-bottom: 20px; }
+        .hero-badge   { margin-bottom: 12px; }
+        .hero-title   { margin-bottom: 12px; }
+        .hero-sub     { margin-bottom: 20px; }
         .hero-actions { gap: 10px; margin-bottom: 0; justify-content: center; }
-
-        /* Arrows: keep at left/right edges, vertically centered in the hero.
-           Since hero is now auto height, position them relative to viewport
-           midpoint. Use top:50% on the hero which is now flex-start layout —
-           restore transform-based centering but with manual offset. */
-        .hero-arrow-left {
-          top: 50% !important;
-          bottom: auto !important;
-          left: 10px !important;
-          transform: translateY(-50%) !important;
-        }
-        .hero-arrow-right {
-          top: 50% !important;
-          bottom: auto !important;
-          right: 10px !important;
-          transform: translateY(-50%) !important;
-        }
-
-        /* Dots: keep at bottom of hero */
-        .hero-dots { bottom: 20px; }
+        /* Arrows pinned to bottom, below CTAs, above dots */
+        .hero-arrow-left  { top: auto !important; bottom: 52px !important; left: 10px !important; transform: none !important; }
+        .hero-arrow-right { top: auto !important; bottom: 52px !important; right: 10px !important; transform: none !important; }
+        .hero-dots { bottom: 16px; }
       }
 
-      /* ── Small mobile (≤360px) ── */
       @media (max-width: 360px) {
-        .page-hero  { padding: 80px 0 !important; }
-        .hero       { padding-top: 80px !important; padding-bottom: 72px !important; }
+        .page-hero    { height: 460px !important; }
+        .hero         { padding-top: 72px !important; padding-bottom: 96px !important; }
         .hero-content { padding: 0 16px !important; }
+        .hero-arrow-left  { bottom: 50px !important; }
+        .hero-arrow-right { bottom: 50px !important; }
       }
     </style>
   </head>
@@ -3867,7 +3841,7 @@
 
     <!-- SERVICES PAGE -->
     <div id="page-services" class="page">
-      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.72), rgba(6,78,59,0.72)), url('Images/Services/hero.jpg'); background-size: cover; background-position: center left;">
+      <section id="hero-services" class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.72), rgba(6,78,59,0.72)), url('Images/Services/hero.jpg'); background-size: cover; background-position: center left;">
         <div class="container">
           <div class="page-hero-content">
             <div class="label label-light">Services</div>
@@ -4251,13 +4225,12 @@
     <div id="page-svc-cloud" class="page">
 
       <!-- HERO -->
-      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.72), rgba(6,78,59,0.72)), url('Images/Services/cloud.jpg'); background-size: cover; background-position: center;">
+      <section id="hero-svc-cloud" class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.72), rgba(6,78,59,0.72)), url('Images/Services/cloud.jpg'); background-size: cover; background-position: center;">
         <div class="container">
           <div class="page-hero-content">
             <div class="label label-light">Cloud Services</div>
             <h1 class="page-title">Enabling Modern Cloud Environments</h1>
             <p class="page-sub">Helping organizations adopt cloud technologies with confidence through trusted expertise, proven practices, and ongoing support.</p>
-            <div class="hero-aws-badge" style="margin-top: 16px; display: inline-block; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); border-radius: 20px; padding: 6px 16px; font-size: 13px; font-weight: 600; color: var(--white);">🏆 AWS Advanced Tier Consulting Partner</div>
             <div class="hero-cta-row" style="margin-top: 28px; display: flex; gap: 14px;">
               <a href="#" class="btn btn-primary" onclick="showPage('contact'); return false;">Talk to Our Team</a>
               <a href="#" class="btn btn-ghost" onclick="showPage('services'); return false;">← All Services</a>
@@ -7621,7 +7594,7 @@
 
     <!-- RESOURCES: NEWS -->
     <div id="page-res-news" class="page">
-      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.78), rgba(6,78,59,0.78)), url('Images/Resources/news.jpg'); background-size: cover; background-position: center;">
+      <section id="hero-res-news" class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.78), rgba(6,78,59,0.78)), url('Images/Resources/news.jpg'); background-size: cover; background-position: center;">
         <div class="container">
           <div class="page-hero-content">
             <div class="label label-light">Resources / News</div>
