@@ -2814,103 +2814,91 @@
       }
 
       /* ══════════════════════════════════════════
-         HERO MOBILE REFINEMENTS — PASS 4
-         Additive only. Desktop unchanged.
+         HERO BANNER ALIGNMENT — FINAL PASS
+         Goal: equal visual breathing space above
+         and below content on every banner.
+         Additive only. Desktop (>900px) unchanged.
       ══════════════════════════════════════════ */
 
-      /* ── Tablet (≤900px) — hero refinements ── */
+      /* ── Tablet (≤900px) — inner page banners ── */
       @media (max-width: 900px) {
-        /* Page-hero: add bottom breathing room so content isn't flush to edge */
-        .page-hero { padding-bottom: 24px; }
+        /* Switch from fixed height + top-only padding to auto height
+           with equal top/bottom padding for symmetric centering */
+        .page-hero {
+          height: auto !important;
+          min-height: 0 !important;
+          padding: 100px 0 !important;
+        }
       }
 
-      /* ── Mobile (≤600px) — hero refinements ── */
+      /* ── All mobile viewports (≤600px) ── */
       @media (max-width: 600px) {
 
-        /* Home hero: flex-column from top so content positions are predictable */
-        .hero {
-          height: 620px;
-          flex-direction: column;
-          justify-content: flex-start;
-          align-items: stretch;
+        /* ─ Inner page heroes (page-hero) ─
+           Switch from fixed height to auto so content is never clipped.
+           Equal padding top/bottom: 68px clears the fixed nav, matching
+           bottom gives symmetric breathing space. align-items:center
+           (already set in base) then centers content within that space. */
+        .page-hero {
+          height: auto !important;
+          min-height: 0 !important;
+          padding: 88px 0 !important;
         }
 
-        /* Hero content: 20px top breathing below the nav-offset already on .hero.
-           The .hero base CSS has padding-top:68px for the fixed nav, so
-           hero-content starts at 68px. We add 20px top padding for breathing room,
-           placing the first element at 88px from hero top. */
+        /* ─ Home hero ─
+           Switch to auto height with symmetric padding.
+           flex-direction:column so content stacks top-to-bottom predictably.
+           Padding-top=88px (68px nav + 20px gap), padding-bottom=80px
+           (space for dots at bottom:28px + comfortable gap). */
+        .hero {
+          height: auto !important;
+          min-height: 0 !important;
+          padding-top: 88px !important;
+          padding-bottom: 80px !important;
+          flex-direction: column !important;
+          justify-content: flex-start !important;
+          align-items: center !important;
+        }
+
+        /* hero-content: no extra padding needed — .hero padding handles spacing */
         .hero-content {
-          padding: 20px 20px 0;
+          padding: 0 20px !important;
           width: 100%;
           box-sizing: border-box;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
         }
 
-        /* Tighten badge bottom margin */
-        .hero-badge { margin-bottom: 16px; }
+        /* Tighten internal spacing so content fits naturally */
+        .hero-badge  { margin-bottom: 14px; }
+        .hero-title  { margin-bottom: 14px; }
+        .hero-sub    { margin-bottom: 20px; }
+        .hero-actions { gap: 10px; margin-bottom: 0; justify-content: center; }
 
-        /* Tighten H1 bottom margin */
-        .hero-title { margin-bottom: 14px; }
-
-        /* Description bottom margin — arrows sit immediately below */
-        .hero-sub { margin-bottom: 18px; }
-
-        /* Arrows: positioned absolutely relative to .hero.
-           Text block bottom from hero top:
-           hero-padding-top(68) + content-padding-top(20) +
-           badge(32)+gap(16) + h1(~72)+gap(14) + p(~78)+gap(18) = ~318px.
-           Place arrows at top:322px (4px clearance below text). */
-        .hero-arrow-left  {
-          top: 322px;
-          left: 10px;
-          bottom: auto;
-          transform: none;
+        /* Arrows: keep at left/right edges, vertically centered in the hero.
+           Since hero is now auto height, position them relative to viewport
+           midpoint. Use top:50% on the hero which is now flex-start layout —
+           restore transform-based centering but with manual offset. */
+        .hero-arrow-left {
+          top: 50% !important;
+          bottom: auto !important;
+          left: 10px !important;
+          transform: translateY(-50%) !important;
         }
         .hero-arrow-right {
-          top: 322px;
-          right: 10px;
-          bottom: auto;
-          transform: none;
+          top: 50% !important;
+          bottom: auto !important;
+          right: 10px !important;
+          transform: translateY(-50%) !important;
         }
 
-        /* CTA: margin-top pushes it below the arrows.
-           Arrows bottom: 322 + 36 = 358px. Gap: 16px → CTA at 374px.
-           Text block ends at ~318px → margin-top = 374 - 318 = 56px. */
-        .hero-actions {
-          margin-top: 56px;
-          margin-bottom: 0;
-          justify-content: center;
-        }
-
-        /* Dots remain position:absolute bottom:28px — no change needed */
-
-        /* Page-hero: increase height so content isn't compressed */
-        .page-hero { height: 340px; padding: 68px 0 24px; }
+        /* Dots: keep at bottom of hero */
+        .hero-dots { bottom: 20px; }
       }
 
-      /* ── Small mobile (≤360px) — hero refinements ── */
+      /* ── Small mobile (≤360px) ── */
       @media (max-width: 360px) {
-
-        /* Home hero: slightly taller at 360px — text wraps more at narrow width */
-        .hero { height: 600px; }
-
-        /* Slightly tighter side padding */
-        .hero-content { padding: 20px 16px 0; }
-
-        /* Arrows: at 360px text wraps more — description is taller (~90px).
-           hero-padding-top(68)+content-pad(20)+badge(32)+gap(16)+h1(~80)+gap(14)+p(~90)+gap(18) = ~338px
-           Place arrows at top:342px. */
-        .hero-arrow-left  { top: 342px; }
-        .hero-arrow-right { top: 342px; }
-
-        /* CTA margin: 342+36+16 = 394 - 338 = 56px */
-        .hero-actions { margin-top: 56px; }
-
-        /* Page-hero: slight reduction for 360px */
-        .page-hero { height: 320px; padding: 68px 0 20px; }
+        .page-hero  { padding: 80px 0 !important; }
+        .hero       { padding-top: 80px !important; padding-bottom: 72px !important; }
+        .hero-content { padding: 0 16px !important; }
       }
     </style>
   </head>
