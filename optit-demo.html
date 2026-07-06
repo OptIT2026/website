@@ -8192,18 +8192,27 @@
         ];
 
         function updateHeroContent(index) {
-          var data = heroContent[index];
-          var badge = document.getElementById('hero-badge');
-          var title = document.getElementById('hero-title');
-          var sub = document.getElementById('hero-sub');
-          if (data.badge) {
-            badge.innerHTML = data.badge;
-            badge.style.display = '';
-          } else {
-            badge.style.display = 'none';
-          }
-          title.innerHTML = data.title;
-          sub.innerHTML = data.sub;
+          var content = document.getElementById('hero-content');
+          // fade out fast
+          content.style.transition = 'opacity 0.3s ease-in-out';
+          content.style.opacity = '0';
+          // swap text after fade-out, then fade back in slowly in sync with image (1s transition)
+          setTimeout(function() {
+            var data = heroContent[index];
+            var badge = document.getElementById('hero-badge');
+            var title = document.getElementById('hero-title');
+            var sub = document.getElementById('hero-sub');
+            if (data.badge) {
+              badge.innerHTML = data.badge;
+              badge.style.display = '';
+            } else {
+              badge.style.display = 'none';
+            }
+            title.innerHTML = data.title;
+            sub.innerHTML = data.sub;
+            content.style.transition = 'opacity 0.8s ease-in-out';
+            content.style.opacity = '1';
+          }, 700);
         }
 
         function heroGoTo(n) {
