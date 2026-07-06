@@ -498,7 +498,7 @@
         z-index: 2;
         max-width: 900px;
         margin: 0 auto;
-        padding: 80px 32px;
+        padding: 0 32px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -2543,7 +2543,7 @@
         .page-hero { height: 320px; padding: 68px 0 0; }
 
         /* 5. Hero content padding reduction — tablet */
-        .hero-content { padding: 60px 24px; }
+        .hero-content { padding: 0 24px; }
 
         /* 6. CTA actions — allow wrapping */
         .cta-actions { flex-wrap: wrap; justify-content: center; }
@@ -2573,7 +2573,7 @@
         /* 5. Hero heights — mobile */
         .hero      { height: 450px; }
         .page-hero { height: 280px; padding: 68px 0 0; }
-        .hero-content { padding: 36px 20px; }
+        .hero-content { padding: 0 20px; }
 
         /* 6. CTA buttons → full width on mobile */
         .cta-actions {
@@ -3161,10 +3161,10 @@
     <div id="page-home" class="page active">
       <section class="hero">
         <div class="hero-bg" id="hero-bg">
-          <div class="hero-slide active"><img src="Images/Home/hero-cloud.png" alt="Cloud"></div>
+          <div class="hero-slide active"><img src="Images/Home/hero-enterprise-technology.jpg" alt="Enterprise Technology"></div>
+          <div class="hero-slide"><img src="Images/Home/hero-cloud.png" alt="Cloud"></div>
           <div class="hero-slide"><img src="Images/Home/hero-managed-it.jpeg" alt="Managed IT"></div>
           <div class="hero-slide"><img src="Images/Home/hero-cybersecurity.jpg" alt="Cybersecurity"></div>
-          <div class="hero-slide"><img src="Images/Home/hero-enterprise-technology.jpg" alt="Enterprise Technology"></div>
           <div class="hero-bg-overlay"></div>
         </div>
         <button class="hero-arrow hero-arrow-left" onclick="heroSlide(-1)" aria-label="Previous">&lt;</button>
@@ -3175,17 +3175,17 @@
           <span class="hero-dot" onclick="heroGoTo(2)"></span>
           <span class="hero-dot" onclick="heroGoTo(3)"></span>
         </div>
-        <div class="hero-content">
-          <div class="hero-badge animate">
+        <div class="hero-content" id="hero-content">
+          <div class="hero-badge animate" id="hero-badge">
             <div class="hero-badge-dot"></div>
             <span>Enterprise Technology Partner</span>
           </div>
 
-          <h1 class="hero-title animate delay-1" style="max-width:720px;">
+          <h1 class="hero-title animate delay-1" id="hero-title" style="max-width:720px;">
             Transform Your <span class="accent">Technology</span> Infrastructure
           </h1>
 
-          <p class="hero-sub animate delay-2" style="max-width:620px; margin-left:auto; margin-right:auto;">
+          <p class="hero-sub animate delay-2" id="hero-sub" style="max-width:620px; margin-left:auto; margin-right:auto;">
             IT infrastructure to cloud migration - Opt IT delivers enterprise-grade technology transformation that scales with your ambition
           </p>
 
@@ -8168,12 +8168,51 @@
         var current = 0;
         var timer;
 
+        var heroContent = [
+          {
+            badge: '<div class="hero-badge-dot"></div><span>Enterprise Technology Partner</span>',
+            title: 'Transform Your <span class="accent">Technology</span> Infrastructure',
+            sub: 'IT infrastructure to cloud migration - Opt IT delivers enterprise-grade technology transformation that scales with your ambition'
+          },
+          {
+            badge: null,
+            title: 'Accelerate Your <span class="accent">Cloud</span> Journey',
+            sub: 'Migrate, modernize, and optimize your cloud with secure, scalable solutions built for long-term business growth.'
+          },
+          {
+            badge: null,
+            title: 'Reliable IT. <span class="accent">Zero Compromise.</span>',
+            sub: 'Proactive managed infrastructure and support services that keep your business secure, available, and performing at its best.'
+          },
+          {
+            badge: null,
+            title: 'Secure Today. <span class="accent">Resilient Tomorrow.</span>',
+            sub: 'Strengthen your security posture with proactive protection, continuous monitoring, and compliance-focused cybersecurity services.'
+          }
+        ];
+
+        function updateHeroContent(index) {
+          var data = heroContent[index];
+          var badge = document.getElementById('hero-badge');
+          var title = document.getElementById('hero-title');
+          var sub = document.getElementById('hero-sub');
+          if (data.badge) {
+            badge.innerHTML = data.badge;
+            badge.style.display = '';
+          } else {
+            badge.style.display = 'none';
+          }
+          title.innerHTML = data.title;
+          sub.innerHTML = data.sub;
+        }
+
         function heroGoTo(n) {
           slides[current].classList.remove('active');
           dots[current].classList.remove('active');
           current = (n + slides.length) % slides.length;
           slides[current].classList.add('active');
           dots[current].classList.add('active');
+          updateHeroContent(current);
           resetTimer();
         }
 
