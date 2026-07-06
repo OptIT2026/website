@@ -8244,7 +8244,12 @@
         sizeGroup.style.display = (val === 'show' || val === 'optional') ? 'block' : 'none';
       }
 
-      function showPage(id) {
+      var _historyNav = false;
+
+      function showPage(id, skipHistory) {
+        if (!skipHistory) {
+          history.pushState({ page: id }, '', '#' + id);
+        }
         document
           .querySelectorAll(".page")
           .forEach((p) => p.classList.remove("active"));
@@ -8315,6 +8320,20 @@
           .querySelectorAll(".dropdown-menu")
           .forEach((m) => m.classList.remove("active"));
       }
+
+      // Set initial history state so Back works from the first page
+      (function() {
+        var initialPage = location.hash ? location.hash.slice(1) : 'home';
+        var el = document.getElementById('page-' + initialPage);
+        if (!el) initialPage = 'home';
+        history.replaceState({ page: initialPage }, '', '#' + initialPage);
+        if (initialPage !== 'home') showPage(initialPage, true);
+      })();
+
+      window.addEventListener('popstate', function(e) {
+        var id = (e.state && e.state.page) ? e.state.page : 'home';
+        showPage(id, true);
+      });
 
       function scrollToForm() {
         setTimeout(function () {
