@@ -6614,7 +6614,7 @@
                   <div class="resource-tag">Anniversary</div>
                   <div class="resource-title">Celebrating 17 Years of Excellence – OPT IT Marks a Remarkable Journey</div>
                   <p class="resource-excerpt">On 23rd March 2026, OPT IT proudly celebrated its 17th Anniversary — 17 years of proven expertise, 300+ clients served, and a 200+ member strong team delivering world-class IT services.</p>
-                  <a href="#" class="resource-learn-more" onclick="showPage('news-1'); return false;">Read More</a>
+                  <a href="#" class="resource-learn-more" onclick="event.stopPropagation(); showPage('news-1'); return false;">Read More</a>
                 </div>
               </div>
               <div class="resource-card" style="cursor:pointer" onclick="showPage('news-2'); return false;">
@@ -6623,7 +6623,7 @@
                   <div class="resource-tag">Compliance</div>
                   <div class="resource-title">SEBI Releases CSCRF Compliance Mandate for AIFs and PMS Firms, Enhancing Cybersecurity Measures</div>
                   <p class="resource-excerpt">SEBI's CSCRF mandate is now in effect, requiring financial entities to strengthen cybersecurity measures including SOC setup, VAPT, ISO 27001 certification, and incident reporting.</p>
-                  <a href="#" class="resource-learn-more" onclick="showPage('news-2'); return false;">Read More</a>
+                  <a href="#" class="resource-learn-more" onclick="event.stopPropagation(); showPage('news-2'); return false;">Read More</a>
                 </div>
               </div>
               <div class="resource-card" style="cursor:pointer" onclick="showPage('news-3'); return false;">
@@ -6632,7 +6632,7 @@
                   <div class="resource-tag">Achievement</div>
                   <div class="resource-title">OPT IT ISO 27001 Certification</div>
                   <p class="resource-excerpt">OPT IT has successfully achieved ISO 27001:2022 certification — the globally recognized standard for Information Security Management Systems — reinforcing our commitment to protecting client data.</p>
-                  <a href="#" class="resource-learn-more" onclick="showPage('news-3'); return false;">Read More</a>
+                  <a href="#" class="resource-learn-more" onclick="event.stopPropagation(); showPage('news-3'); return false;">Read More</a>
                 </div>
               </div>
             </div>
@@ -6641,13 +6641,14 @@
           <div id="tab-blogs" class="tab-content">
             <div class="resources-grid">
               <div class="resource-card" style="cursor:pointer" onclick="showPage('blog-1'); return false;">
-                <img src="Images/Resources/Blog/blog1.jpg" alt="Transform Your Security Posture with ISO 27001" style="width:100%; display:block;">
-
+                <div class="resource-img" style="padding:0; background:none;">
+                  <img src="Images/Resources/Blog/blog1.jpg" alt="Transform Your Security Posture with ISO 27001" style="width:100%; height:120px; object-fit:cover; display:block;">
+                </div>
                 <div class="resource-body">
                   <div class="resource-tag">Security</div>
                   <div class="resource-title">Transform Your Security Posture with ISO 27001</div>
                   <p class="resource-excerpt">Data breaches are a business reality. Discover how ISO 27001 certification builds resilience, trust, and growth — and how OPT IT makes certification faster and audit-ready year-round.</p>
-                  <a href="#" class="resource-learn-more" onclick="showPage('blog-1'); return false;">Read More</a>
+                  <a href="#" class="resource-learn-more" onclick="event.stopPropagation(); showPage('blog-1'); return false;">Read More</a>
                 </div>
               </div>
               <div class="resource-card" style="cursor:pointer" onclick="showPage('blog-2'); return false;">
@@ -6656,7 +6657,7 @@
                   <div class="resource-tag">Cloud</div>
                   <div class="resource-title">Why Growing Businesses Choose OPT IT as Their AWS Partner</div>
                   <p class="resource-excerpt">As an AWS Advanced Tier Partner, OPT IT delivers proven cloud and DevOps solutions that reduce costs, improve security, and accelerate your cloud journey with full accountability.</p>
-                  <a href="#" class="resource-learn-more" onclick="showPage('blog-2'); return false;">Read More</a>
+                  <a href="#" class="resource-learn-more" onclick="event.stopPropagation(); showPage('blog-2'); return false;">Read More</a>
                 </div>
               </div>
               <div class="resource-card" style="cursor:pointer" onclick="showPage('blog-3'); return false;">
@@ -6665,7 +6666,7 @@
                   <div class="resource-tag">Security</div>
                   <div class="resource-title">Most Data Loss Doesn't Start with Hackers – It Starts Inside the Organization</div>
                   <p class="resource-excerpt">Insider-driven data movement is one of the most complex risks to manage. Learn how a structured DLP approach improves visibility, governance, and data protection across your environment.</p>
-                  <a href="#" class="resource-learn-more" onclick="showPage('blog-3'); return false;">Read More</a>
+                  <a href="#" class="resource-learn-more" onclick="event.stopPropagation(); showPage('blog-3'); return false;">Read More</a>
                 </div>
               </div>
               <div class="resource-card" style="cursor:pointer" onclick="showPage('blog-4'); return false;">
@@ -6674,7 +6675,7 @@
                   <div class="resource-tag">Security</div>
                   <div class="resource-title">Why Cybersecurity is Essential for Startups</div>
                   <p class="resource-excerpt">Startups face disproportionate cyber risks with limited budgets and lean teams. Discover how early investment in foundational security controls protects data, maintains compliance, and builds customer trust.</p>
-                  <a href="#" class="resource-learn-more" onclick="showPage('blog-4'); return false;">Read More</a>
+                  <a href="#" class="resource-learn-more" onclick="event.stopPropagation(); showPage('blog-4'); return false;">Read More</a>
                 </div>
               </div>
               <div class="resource-card" style="cursor:pointer" onclick="showPage('blog-5'); return false;">
@@ -6683,7 +6684,7 @@
                   <div class="resource-tag">Security</div>
                   <div class="resource-title">What is a Zero-Day Vulnerability and Why It Matters to Your Business</div>
                   <p class="resource-excerpt">A zero-day vulnerability is one of the most dangerous threats in cybersecurity. Learn how they work, real-world examples, and how OPT IT's proactive approach reduces your exposure.</p>
-                  <a href="#" class="resource-learn-more" onclick="showPage('blog-5'); return false;">Read More</a>
+                  <a href="#" class="resource-learn-more" onclick="event.stopPropagation(); showPage('blog-5'); return false;">Read More</a>
                 </div>
               </div>
               <div class="resource-card" style="cursor:pointer" onclick="showPage('blog-6'); return false;">
@@ -6692,7 +6693,7 @@
                   <div class="resource-tag">Cloud Security</div>
                   <div class="resource-title">Why Cloud Security Posture Management Is Critical for Modern Enterprises</div>
                   <p class="resource-excerpt">Over 65% of cloud breaches stem from misconfigurations. Explore how CSPM delivers continuous monitoring, automated remediation, and compliance assurance across your cloud infrastructure.</p>
-                  <a href="#" class="resource-learn-more" onclick="showPage('blog-6'); return false;">Read More</a>
+                  <a href="#" class="resource-learn-more" onclick="event.stopPropagation(); showPage('blog-6'); return false;">Read More</a>
                 </div>
               </div>
               <div class="resource-card" style="cursor:pointer" onclick="showPage('blog-7'); return false;">
@@ -6701,7 +6702,7 @@
                   <div class="resource-tag">Security</div>
                   <div class="resource-title">What Happens If You Skip Cyber Security Assessments? Real Stories, Real Losses</div>
                   <p class="resource-excerpt">Skipping cybersecurity assessments leaves gaps that attackers exploit. Real-world incidents show the financial, legal, and reputational cost of ignoring regular security reviews.</p>
-                  <a href="#" class="resource-learn-more" onclick="showPage('blog-7'); return false;">Read More</a>
+                  <a href="#" class="resource-learn-more" onclick="event.stopPropagation(); showPage('blog-7'); return false;">Read More</a>
                 </div>
               </div>
               <div class="resource-card" style="cursor:pointer" onclick="showPage('blog-8'); return false;">
@@ -6710,7 +6711,7 @@
                   <div class="resource-tag">Security</div>
                   <div class="resource-title">Black Friday Cyber Risks: Why E-Commerce Needs OPT IT Security</div>
                   <p class="resource-excerpt">Black Friday brings record sales — and record cyber threats. Learn how OPT IT protects e-commerce platforms from DDoS, payment skimming, ransomware, and account takeover attacks during peak periods.</p>
-                  <a href="#" class="resource-learn-more" onclick="showPage('blog-8'); return false;">Read More</a>
+                  <a href="#" class="resource-learn-more" onclick="event.stopPropagation(); showPage('blog-8'); return false;">Read More</a>
                 </div>
               </div>
               <div class="resource-card" style="cursor:pointer" onclick="showPage('blog-9'); return false;">
@@ -6719,7 +6720,7 @@
                   <div class="resource-tag">Cloud</div>
                   <div class="resource-title">Cloud Migration: What Nobody Tells You About the Post-Move Hurdles</div>
                   <p class="resource-excerpt">The real cloud journey begins after migration. Discover the hidden costs, security gaps, integration challenges, and cultural shifts that organizations must address to realize true cloud value.</p>
-                  <a href="#" class="resource-learn-more" onclick="showPage('blog-9'); return false;">Read More</a>
+                  <a href="#" class="resource-learn-more" onclick="event.stopPropagation(); showPage('blog-9'); return false;">Read More</a>
                 </div>
               </div>
             </div>
@@ -6732,7 +6733,7 @@
                   <div class="resource-tag">SaaS / IT Infrastructure</div>
                   <div class="resource-title">Patch Management Case Study | 93.5% OS Compliance for SaaS</div>
                   <p class="resource-excerpt">A fast-growing organization faced challenges with limited IT monitoring, recurring performance issues, and delayed incident resolution – impacting productivity and business continuity.</p>
-                  <a href="#" class="resource-learn-more" onclick="showPage('case-1'); return false;">Read More</a>
+                  <a href="#" class="resource-learn-more" onclick="event.stopPropagation(); showPage('case-1'); return false;">Read More</a>
                 </div>
               </div>
             </div>
@@ -7105,7 +7106,7 @@
                 <div class="resource-tag">Security</div>
                 <div class="resource-title">Transform Your Security Posture with ISO 27001</div>
                 <p class="resource-excerpt">Data breaches are a business reality. Discover how ISO 27001 certification builds resilience, trust, and growth — and how OPT IT makes certification faster and audit-ready year-round.</p>
-                <a href="#" class="resource-learn-more" onclick="showPage('blog-1'); return false;">Read More</a>
+                <a href="#" class="resource-learn-more" onclick="event.stopPropagation(); showPage('blog-1'); return false;">Read More</a>
               </div>
             </div>
             <div class="resource-card" style="cursor:pointer" onclick="showPage('blog-2'); return false;">
@@ -7114,7 +7115,7 @@
                 <div class="resource-tag">Cloud</div>
                 <div class="resource-title">Why Growing Businesses Choose OPT IT as Their AWS Partner</div>
                 <p class="resource-excerpt">As an AWS Advanced Tier Partner, OPT IT delivers proven cloud and DevOps solutions that reduce costs, improve security, and accelerate your cloud journey with full accountability.</p>
-                <a href="#" class="resource-learn-more" onclick="showPage('blog-2'); return false;">Read More</a>
+                <a href="#" class="resource-learn-more" onclick="event.stopPropagation(); showPage('blog-2'); return false;">Read More</a>
               </div>
             </div>
             <div class="resource-card" style="cursor:pointer" onclick="showPage('blog-3'); return false;">
@@ -7123,7 +7124,7 @@
                 <div class="resource-tag">Security</div>
                 <div class="resource-title">Most Data Loss Doesn't Start with Hackers – It Starts Inside the Organization</div>
                 <p class="resource-excerpt">Insider-driven data movement is one of the most complex risks to manage. Learn how a structured DLP approach improves visibility, governance, and data protection across your environment.</p>
-                <a href="#" class="resource-learn-more" onclick="showPage('blog-3'); return false;">Read More</a>
+                <a href="#" class="resource-learn-more" onclick="event.stopPropagation(); showPage('blog-3'); return false;">Read More</a>
               </div>
             </div>
             <div class="resource-card" style="cursor:pointer" onclick="showPage('blog-4'); return false;">
@@ -7132,7 +7133,7 @@
                 <div class="resource-tag">Security</div>
                 <div class="resource-title">Why Cybersecurity is Essential for Startups</div>
                 <p class="resource-excerpt">Startups face disproportionate cyber risks with limited budgets and lean teams. Discover how early investment in foundational security controls protects data, maintains compliance, and builds customer trust.</p>
-                <a href="#" class="resource-learn-more" onclick="showPage('blog-4'); return false;">Read More</a>
+                <a href="#" class="resource-learn-more" onclick="event.stopPropagation(); showPage('blog-4'); return false;">Read More</a>
               </div>
             </div>
             <div class="resource-card" style="cursor:pointer" onclick="showPage('blog-5'); return false;">
@@ -7141,7 +7142,7 @@
                 <div class="resource-tag">Security</div>
                 <div class="resource-title">What is a Zero-Day Vulnerability and Why It Matters to Your Business</div>
                 <p class="resource-excerpt">A zero-day vulnerability is one of the most dangerous threats in cybersecurity. Learn how they work, real-world examples, and how OPT IT's proactive approach reduces your exposure.</p>
-                <a href="#" class="resource-learn-more" onclick="showPage('blog-5'); return false;">Read More</a>
+                <a href="#" class="resource-learn-more" onclick="event.stopPropagation(); showPage('blog-5'); return false;">Read More</a>
               </div>
             </div>
             <div class="resource-card" style="cursor:pointer" onclick="showPage('blog-6'); return false;">
@@ -7150,7 +7151,7 @@
                 <div class="resource-tag">Cloud Security</div>
                 <div class="resource-title">Why Cloud Security Posture Management Is Critical for Modern Enterprises</div>
                 <p class="resource-excerpt">Over 65% of cloud breaches stem from misconfigurations. Explore how CSPM delivers continuous monitoring, automated remediation, and compliance assurance across your cloud infrastructure.</p>
-                <a href="#" class="resource-learn-more" onclick="showPage('blog-6'); return false;">Read More</a>
+                <a href="#" class="resource-learn-more" onclick="event.stopPropagation(); showPage('blog-6'); return false;">Read More</a>
               </div>
             </div>
             <div class="resource-card" style="cursor:pointer" onclick="showPage('blog-7'); return false;">
@@ -7159,7 +7160,7 @@
                 <div class="resource-tag">Security</div>
                 <div class="resource-title">What Happens If You Skip Cyber Security Assessments? Real Stories, Real Losses</div>
                 <p class="resource-excerpt">Skipping cybersecurity assessments leaves gaps that attackers exploit. Real-world incidents show the financial, legal, and reputational cost of ignoring regular security reviews.</p>
-                <a href="#" class="resource-learn-more" onclick="showPage('blog-7'); return false;">Read More</a>
+                <a href="#" class="resource-learn-more" onclick="event.stopPropagation(); showPage('blog-7'); return false;">Read More</a>
               </div>
             </div>
             <div class="resource-card" style="cursor:pointer" onclick="showPage('blog-8'); return false;">
@@ -7168,7 +7169,7 @@
                 <div class="resource-tag">Security</div>
                 <div class="resource-title">Black Friday Cyber Risks: Why E-Commerce Needs OPT IT Security</div>
                 <p class="resource-excerpt">Black Friday brings record sales — and record cyber threats. Learn how OPT IT protects e-commerce platforms from DDoS, payment skimming, ransomware, and account takeover attacks during peak periods.</p>
-                <a href="#" class="resource-learn-more" onclick="showPage('blog-8'); return false;">Read More</a>
+                <a href="#" class="resource-learn-more" onclick="event.stopPropagation(); showPage('blog-8'); return false;">Read More</a>
               </div>
             </div>
             <div class="resource-card" style="cursor:pointer" onclick="showPage('blog-9'); return false;">
@@ -7177,7 +7178,7 @@
                 <div class="resource-tag">Cloud</div>
                 <div class="resource-title">Cloud Migration: What Nobody Tells You About the Post-Move Hurdles</div>
                 <p class="resource-excerpt">The real cloud journey begins after migration. Discover the hidden costs, security gaps, integration challenges, and cultural shifts that organizations must address to realize true cloud value.</p>
-                <a href="#" class="resource-learn-more" onclick="showPage('blog-9'); return false;">Read More</a>
+                <a href="#" class="resource-learn-more" onclick="event.stopPropagation(); showPage('blog-9'); return false;">Read More</a>
               </div>
             </div>
           </div>
@@ -7207,7 +7208,6 @@
       <section class="section">
         <div class="container">
           <div style="max-width: 800px; margin: 0 auto;">
-            <a href="#" onclick="showPage('res-blog'); return false;" style="display:inline-flex; align-items:center; gap:8px; color:var(--blue); font-size:14px; font-weight:600; text-decoration:none; margin-bottom:40px;">&#8592; Back to Blog</a>
             <p style="font-size:15px; color:var(--text-secondary); line-height:1.8; margin-bottom:24px;">Data breaches are no longer rare events they're a business reality. The question is no longer if your organization will be tested, but when. That's why more businesses are turning to ISO 27001 – not just for compliance, but for resilience, trust, and growth. But achieving certification and sustaining it is where most organizations struggle.</p>
             <p style="font-size:15px; color:var(--text-secondary); line-height:1.8; margin-bottom:24px;">That's where OPT IT makes the difference. OPT IT delivers end-to-end ISO 27001 certification services that help you get certified faster and stay audit-ready year-round.</p>
             <h2 style="font-size:22px; font-weight:700; color:var(--text-primary); margin-bottom:16px;">What Is ISO 27001 and Why Does It Matter?</h2>
@@ -7283,7 +7283,6 @@
       <section class="section">
         <div class="container">
           <div style="max-width: 800px; margin: 0 auto;">
-            <a href="#" onclick="showPage('res-blog'); return false;" style="display:inline-flex; align-items:center; gap:8px; color:var(--blue); font-size:14px; font-weight:600; text-decoration:none; margin-bottom:40px;">&#8592; Back to Blog</a>
             <p style="font-size:15px; color:var(--text-secondary); line-height:1.8; margin-bottom:24px;">Cloud adoption today is no longer a strategic advantage – it is a necessity. However, the real challenge lies not in adopting cloud, but in executing it effectively to deliver consistent business outcomes. OPT IT is proud to announce that we have achieved the AWS Advanced Tier Partner status.</p>
             <p style="font-size:15px; color:var(--text-secondary); line-height:1.8; margin-bottom:24px;">This milestone reflects our proven technical expertise, successful customer engagements, and our commitment to delivering high-quality cloud and DevOps solutions at scale.</p>
             <h2 style="font-size:22px; font-weight:700; color:var(--text-primary); margin-bottom:16px;">The Challenges Businesses Face Today</h2>
@@ -7351,7 +7350,6 @@
       <section class="section">
         <div class="container">
           <div style="max-width: 800px; margin: 0 auto;">
-            <a href="#" onclick="showPage('res-blog'); return false;" style="display:inline-flex; align-items:center; gap:8px; color:var(--blue); font-size:14px; font-weight:600; text-decoration:none; margin-bottom:40px;">&#8592; Back to Blog</a>
             <p style="font-size:15px; color:var(--text-secondary); line-height:1.8; margin-bottom:24px;">Organizations today manage vast amounts of sensitive information — customer records, financial data, intellectual property, research datasets, and internal business documents. While security investments continue to grow, data leakage incidents remain common across industries. Surprisingly, the majority of these exposures do not originate from sophisticated cyberattacks, but from insider-driven data movement — often unintentional and occurring during normal business workflows.</p>
             <p style="font-size:15px; color:var(--text-secondary); line-height:1.8; margin-bottom:24px;">Employees routinely move data across email, collaboration platforms, cloud storage, remote access environments, and external partners. Without clear visibility and governance, organizations may not realize where sensitive data is being exposed until it is already outside controlled environments.</p>
             <p style="font-size:15px; color:var(--text-secondary); line-height:1.8; margin-bottom:24px;">This is where Data Loss Prevention (DLP) becomes critical. However, DLP should not be viewed as just another security tool. It requires a structured approach to understanding data, governing its usage, and implementing appropriate protection mechanisms.</p>
@@ -7433,7 +7431,6 @@
       <section class="section">
         <div class="container">
           <div style="max-width: 800px; margin: 0 auto;">
-            <a href="#" onclick="showPage('res-blog'); return false;" style="display:inline-flex; align-items:center; gap:8px; color:var(--blue); font-size:14px; font-weight:600; text-decoration:none; margin-bottom:40px;">&#8592; Back to Blog</a>
             <p style="font-size:15px; color:var(--text-secondary); line-height:1.8; margin-bottom:24px;">Startups face disproportionate cybersecurity risks due to limited budgets, lean security teams, and rapid growth priorities. Cybercriminals exploit these gaps, targeting young companies for data theft, financial fraud, and operational disruption.</p>
             <h2 style="font-size:22px; font-weight:700; color:var(--text-primary); margin-bottom:16px;">Why Startups Are Prime Targets</h2>
             <p style="font-size:15px; color:var(--text-secondary); line-height:1.8; margin-bottom:16px;"><strong>Data-Rich, Defense-Poor:</strong> Startups collect valuable customer data, payment information, and intellectual property but often lack enterprise-grade protection.</p>
@@ -7481,7 +7478,6 @@
       <section class="section">
         <div class="container">
           <div style="max-width: 800px; margin: 0 auto;">
-            <a href="#" onclick="showPage('res-blog'); return false;" style="display:inline-flex; align-items:center; gap:8px; color:var(--blue); font-size:14px; font-weight:600; text-decoration:none; margin-bottom:40px;">&#8592; Back to Blog</a>
             <p style="font-size:15px; color:var(--text-secondary); line-height:1.8; margin-bottom:24px;">In cybersecurity, a zero-day vulnerability is one of the most dangerous threats. It refers to a hidden software flaw that neither the organization nor the software vendor is aware of. Since no fix exists at the time of discovery, attackers can exploit it before a security patch is released.</p>
             <h2 style="font-size:22px; font-weight:700; color:var(--text-primary); margin-bottom:16px;">What Is the Difference Between a Zero-Day Vulnerability, Exploit, and Attack?</h2>
             <ul style="font-size:15px; color:var(--text-secondary); line-height:1.8; margin-bottom:24px; padding-left:24px;">
@@ -7546,7 +7542,6 @@
       <section class="section">
         <div class="container">
           <div style="max-width: 800px; margin: 0 auto;">
-            <a href="#" onclick="showPage('res-blog'); return false;" style="display:inline-flex; align-items:center; gap:8px; color:var(--blue); font-size:14px; font-weight:600; text-decoration:none; margin-bottom:40px;">&#8592; Back to Blog</a>
             <p style="font-size:15px; color:var(--text-secondary); line-height:1.8; margin-bottom:24px;">As organizations rapidly migrate to the cloud, securing these environments has become more complex than ever. Cloud Security Posture Management (CSPM) emerges as a critical solution to monitor, identify, and remediate security risks across cloud infrastructures. It's not just about protection — it's about maintaining continuous visibility and control over your cloud assets.</p>
             <h2 style="font-size:22px; font-weight:700; color:var(--text-primary); margin-bottom:16px;">Cloud Security Issues</h2>
             <p style="font-size:15px; color:var(--text-secondary); line-height:1.8; margin-bottom:8px;">Modern cloud environments face several persistent challenges:</p>
@@ -7605,7 +7600,6 @@
       <section class="section">
         <div class="container">
           <div style="max-width: 800px; margin: 0 auto;">
-            <a href="#" onclick="showPage('res-blog'); return false;" style="display:inline-flex; align-items:center; gap:8px; color:var(--blue); font-size:14px; font-weight:600; text-decoration:none; margin-bottom:40px;">&#8592; Back to Blog</a>
             <p style="font-size:15px; color:var(--text-secondary); line-height:1.8; margin-bottom:24px;">Many organizations still view cybersecurity risks as manageable without structured reviews. In reality, skipping a cybersecurity risk assessment or vulnerability assessment leaves security gaps that attackers can exploit. Assessments are more than audits; they are a proactive approach to cybersecurity that reveals misconfigurations, poor access controls, and response gaps. Ignoring them may face financial risks, regulatory compliance penalties, and the loss of customer trust.</p>
             <h2 style="font-size:22px; font-weight:700; color:var(--text-primary); margin-bottom:16px;">Cloud Misconfigurations Left Unchecked</h2>
             <p style="font-size:15px; color:var(--text-secondary); line-height:1.8; margin-bottom:24px;">Cloud adoption is rising across industries, but misconfigured network security remains one of the most common potential security breaches. A 2024 report found that 98.6% of companies had misconfigurations in their cloud environments. One financial services firm migrated financial records to the cloud but skipped a regular cybersecurity audit. An unsecured storage bucket left sensitive data exposed to the public. Regular assessments help detect weaknesses before attackers can exploit them. A structured risk assessment evaluates configurations against the NIST Cybersecurity Framework, significantly reducing exposure.</p>
@@ -7650,7 +7644,6 @@
       <section class="section">
         <div class="container">
           <div style="max-width: 800px; margin: 0 auto;">
-            <a href="#" onclick="showPage('res-blog'); return false;" style="display:inline-flex; align-items:center; gap:8px; color:var(--blue); font-size:14px; font-weight:600; text-decoration:none; margin-bottom:40px;">&#8592; Back to Blog</a>
             <p style="font-size:15px; color:var(--text-secondary); line-height:1.8; margin-bottom:24px;">The excitement of Black Friday brings record-breaking sales but also rising cyber threats. While shoppers hunt for deals, cybercriminals hunt for vulnerabilities in your e-commerce infrastructure. A single successful attack during this critical 72-hour window can cost your business millions in lost revenue, damaged reputation, and customer trust.</p>
             <h2 style="font-size:22px; font-weight:700; color:var(--text-primary); margin-bottom:16px;">The Black Friday Cyber Threat Landscape: What You're Up Against</h2>
             <p style="font-size:15px; color:var(--text-secondary); line-height:1.8; margin-bottom:16px;"><strong>1. DDoS Attacks: Taking Your Store Offline When Traffic Peaks</strong><br>Distributed Denial of Service (DDoS) attacks surge during Black Friday, with attackers flooding your servers to crash your website precisely when customers are ready to buy. In 2024, e-commerce sites experienced a 300% increase in DDoS attacks during the holiday shopping period.</p>
@@ -7708,7 +7701,6 @@
       <section class="section">
         <div class="container">
           <div style="max-width: 800px; margin: 0 auto;">
-            <a href="#" onclick="showPage('res-blog'); return false;" style="display:inline-flex; align-items:center; gap:8px; color:var(--blue); font-size:14px; font-weight:600; text-decoration:none; margin-bottom:40px;">&#8592; Back to Blog</a>
             <p style="font-size:15px; color:var(--text-secondary); line-height:1.8; margin-bottom:24px;">Cloud migration promises scalability, efficiency, and agility for organizations of all sizes. While the move itself marks a major accomplishment, the real journey and its challenges begin once systems go live. In the post-migration phase, businesses face unexpected hurdles that can impact returns from cloud investments.</p>
             <h2 style="font-size:22px; font-weight:700; color:var(--text-primary); margin-bottom:16px;">Hidden Costs of Cloud Operations</h2>
             <p style="font-size:15px; color:var(--text-secondary); line-height:1.8; margin-bottom:8px;">Businesses often overlook the ongoing costs of operating in the cloud. The "pay-as-you-go" model seems economical, but unchecked usage can lead to budget surprises like unused virtual machines, excessive storage, and duplicate resources.</p>
@@ -7762,7 +7754,7 @@
                 <div class="resource-tag">Anniversary</div>
                 <div class="resource-title">Celebrating 17 Years of Excellence – OPT IT Marks a Remarkable Journey</div>
                 <p class="resource-excerpt">On 23rd March 2026, OPT IT proudly celebrated its 17th Anniversary — 17 years of proven expertise, 300+ clients served, and a 200+ member strong team delivering world-class IT services.</p>
-                <a href="#" class="resource-learn-more" onclick="showPage('news-1'); return false;">Read More</a>
+                <a href="#" class="resource-learn-more" onclick="event.stopPropagation(); showPage('news-1'); return false;">Read More</a>
               </div>
             </div>
             <div class="resource-card" style="cursor:pointer" onclick="showPage('news-2'); return false;">
@@ -7771,7 +7763,7 @@
                 <div class="resource-tag">Compliance</div>
                 <div class="resource-title">SEBI Releases CSCRF Compliance Mandate for AIFs and PMS Firms, Enhancing Cybersecurity Measures</div>
                 <p class="resource-excerpt">SEBI's CSCRF mandate is now in effect, requiring financial entities to strengthen cybersecurity measures including SOC setup, VAPT, ISO 27001 certification, and incident reporting.</p>
-                <a href="#" class="resource-learn-more" onclick="showPage('news-2'); return false;">Read More</a>
+                <a href="#" class="resource-learn-more" onclick="event.stopPropagation(); showPage('news-2'); return false;">Read More</a>
               </div>
             </div>
             <div class="resource-card" style="cursor:pointer" onclick="showPage('news-3'); return false;">
@@ -7780,7 +7772,7 @@
                 <div class="resource-tag">Achievement</div>
                 <div class="resource-title">OPT IT ISO 27001 Certification</div>
                 <p class="resource-excerpt">OPT IT has successfully achieved ISO 27001:2022 certification — the globally recognized standard for Information Security Management Systems — reinforcing our commitment to protecting client data.</p>
-                <a href="#" class="resource-learn-more" onclick="showPage('news-3'); return false;">Read More</a>
+                <a href="#" class="resource-learn-more" onclick="event.stopPropagation(); showPage('news-3'); return false;">Read More</a>
               </div>
             </div>
           </div>
@@ -8093,7 +8085,7 @@
                 <div class="resource-tag">SaaS / IT Infrastructure</div>
                 <div class="resource-title">Patch Management Case Study | 93.5% OS Compliance for SaaS</div>
                 <p class="resource-excerpt">A fast-growing organization faced challenges with limited IT monitoring, recurring performance issues, and delayed incident resolution – impacting productivity and business continuity.</p>
-                <a href="#" class="resource-learn-more" onclick="showPage('case-1'); return false;">Read More</a>
+                <a href="#" class="resource-learn-more" onclick="event.stopPropagation(); showPage('case-1'); return false;">Read More</a>
               </div>
             </div>
           </div>
