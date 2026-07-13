@@ -1112,6 +1112,146 @@
         color: rgba(255, 255, 255, 0.6);
       }
 
+      /* ── ELEVATEOPS HERO MOCKUP ── */
+      @keyframes elevateops-fadein {
+        from { opacity: 0; transform: translateY(16px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes elevateops-float {
+        0%, 100% { transform: translateY(0); }
+        50%       { transform: translateY(-6px); }
+      }
+
+      #page-svc-elevate .page-hero {
+        overflow: visible;
+      }
+      #page-svc-elevate .page-hero > .container {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+      }
+      #page-svc-elevate .page-hero-content {
+        flex: 1;
+        min-width: 0;
+        max-width: none;
+      }
+      .elevateops-mockup-col {
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        animation: elevateops-fadein 0.7s ease both;
+        position: relative;
+        z-index: 1;
+      }
+      .elevateops-browser {
+        width: 340px;
+        background: #1e1e2e;
+        border-radius: 10px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.45), 0 2px 8px rgba(0,0,0,0.3);
+        overflow: hidden;
+        animation: elevateops-float 4s ease-in-out infinite;
+        cursor: pointer;
+        text-decoration: none;
+        display: block;
+      }
+      .elevateops-browser-bar {
+        background: #2a2a3e;
+        padding: 8px 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+      }
+      .elevateops-dots {
+        display: flex;
+        gap: 5px;
+        flex-shrink: 0;
+      }
+      .elevateops-dots span {
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        display: block;
+      }
+      .elevateops-dots span:nth-child(1) { background: #ff5f57; }
+      .elevateops-dots span:nth-child(2) { background: #febc2e; }
+      .elevateops-dots span:nth-child(3) { background: #28c840; }
+      .elevateops-url-bar {
+        flex: 1;
+        background: rgba(255,255,255,0.07);
+        border-radius: 4px;
+        padding: 3px 8px;
+        font-size: 10px;
+        color: rgba(255,255,255,0.55);
+        font-family: monospace;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .elevateops-browser-screen {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: fill;
+        background: #ffffff;
+      }
+      .elevateops-cta {
+        font-size: 13px;
+        padding: 9px 20px;
+        white-space: nowrap;
+        background: #ffffff;
+        color: var(--green);
+        border: none;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+      }
+      .elevateops-cta:hover {
+        transform: translateY(-2px);
+        background: #f0fdf8;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.22);
+        color: var(--green);
+      }
+
+      /* Tablet: smaller mockup, still side-by-side */
+      @media (max-width: 900px) {
+        #page-svc-elevate .page-hero > .container {
+          gap: 24px;
+        }
+        .elevateops-browser {
+          width: 248px;
+        }
+        .elevateops-browser-screen {
+          height: auto;
+        }
+        .elevateops-cta {
+          font-size: 12px;
+          padding: 8px 16px;
+        }
+      }
+
+      /* Mobile: stack below hero content */
+      @media (max-width: 600px) {
+        #page-svc-elevate .page-hero > .container {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 20px;
+        }
+        .elevateops-mockup-col {
+          width: 100%;
+          align-items: flex-start;
+        }
+        .elevateops-browser {
+          width: 100%;
+          max-width: 320px;
+        }
+        .elevateops-browser-screen {
+          height: auto;
+        }
+      }
+
       /* ── PAGE HERO ── */
       .page-hero {
         background: var(--navy);
@@ -5365,6 +5505,18 @@
               <a href="https://optit.ai/" target="_blank" class="btn btn-primary">Explore ElevateOps</a>
               <a href="#" class="btn btn-ghost" onclick="showPage('services'); return false;">← All Services</a>
             </div>
+          </div>
+          <div class="elevateops-mockup-col">
+            <a href="https://optit.ai" target="_blank" rel="noopener" class="elevateops-browser">
+              <div class="elevateops-browser-bar">
+                <div class="elevateops-dots">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="elevateops-url-bar">https://optit.ai</div>
+              </div>
+              <img src="Images/Services/elevateops-mockup.png" alt="ElevateOps website preview" class="elevateops-browser-screen">
+            </a>
+            <a href="https://optit.ai" target="_blank" rel="noopener" class="btn elevateops-cta">Learn More About ElevateOps →</a>
           </div>
         </div>
       </section>
