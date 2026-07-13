@@ -3266,6 +3266,15 @@
                 "
                 >Case Studies</a
               >
+              <a
+                href="#"
+                class="dropdown-item"
+                onclick="
+                  showPage('res-newsletter');
+                  return false;
+                "
+                >Newsletters</a
+              >
             </div>
           </div>
 
@@ -3363,6 +3372,7 @@
           <button class="mob-dd-item" onclick="mobNavGo('res-news')">News</button>
           <button class="mob-dd-item" onclick="mobNavGo('res-clients')">Clients</button>
           <button class="mob-dd-item" onclick="mobNavGo('res-cases')">Case Studies</button>
+          <button class="mob-dd-item" onclick="mobNavGo('res-newsletter')">Newsletters</button>
         </div>
 
         <a href="#" class="mob-nav-link" onclick="mobNavGo('careers'); return false;">Careers</a>
@@ -6819,6 +6829,9 @@
               <button class="page-tab" onclick="switchTab(this, 'tab-cases')">
                 Case Studies
               </button>
+              <button class="page-tab" onclick="switchTab(this, 'tab-newsletter')">
+                Newsletters
+              </button>
             </div>
           </div>
           <div id="tab-news" class="tab-content" style="display: none">
@@ -6977,6 +6990,14 @@
               </div>
             </div>
           </div>
+          <div id="tab-newsletter" class="tab-content" style="display: none">
+            <div class="section-header center">
+              <h2 class="section-title">Our Newsletter Is Coming Soon</h2>
+              <p class="section-subtitle">We're building a dedicated newsletter experience to bring you the latest technology insights, industry trends, enterprise innovations, product updates, and company announcements from Opt IT Technologies.</p>
+              <p class="section-subtitle" style="margin-top: 12px;">Stay tuned for future editions.</p>
+            </div>
+          </div>
+
           <div id="tab-clients" class="tab-content" style="display: none">
             <div class="section-header center" style="margin-bottom: 48px">
               <span class="label">Our Clients</span>
@@ -8049,6 +8070,31 @@
         </div>
       </section>
     </div>
+
+    <!-- RESOURCES: NEWSLETTER -->
+    <div id="page-res-newsletter" class="page">
+      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.78), rgba(6,78,59,0.78)), url('Images/Resources/newsletter.webp'); background-size: cover; background-position: center;">
+        <div class="container">
+          <div class="page-hero-content">
+            <div class="label label-light">Resources / Newsletters</div>
+            <h1 class="page-title">Insights Delivered to Your Inbox</h1>
+            <p class="page-sub">Stay connected with the latest insights, thought leadership, and updates from Opt IT-all in one place.</p>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <div class="section-header center">
+            <h2 class="section-title">Our Newsletter Is Coming Soon</h2>
+            <p class="section-subtitle">We're working on a dedicated newsletter that will bring together our latest technology insights, industry perspectives, product updates, company announcements, and enterprise best practices.</p>
+            <p class="section-subtitle" style="margin-top: 12px;">Once launched, you'll be able to explore every edition right here.</p>
+            <p class="section-subtitle" style="margin-top: 12px;">Please check back soon for future updates.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- NEWSLETTER DETAIL PAGES -->
 
     <!-- NEWS DETAIL PAGES -->
 
