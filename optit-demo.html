@@ -50,6 +50,7 @@
       }
 
       *,
+      *,
       *::before,
       *::after {
         box-sizing: border-box;
@@ -3065,11 +3066,12 @@
 
         /* Home hero - content flows top-down, arrows below CTAs */
         .hero {
-          height: auto !important;
-          padding-top: 76px !important;
-          padding-bottom: 100px !important;
+          min-height: 0 !important;
+          height: 460px !important;
+          padding-top: 72px !important;
+          padding-bottom: 56px !important;
           flex-direction: column !important;
-          justify-content: flex-start !important;
+          justify-content: center !important;
           align-items: center !important;
         }
         .hero-content {
@@ -3082,9 +3084,9 @@
         .hero-sub     { margin-bottom: 20px; }
         .hero-actions { gap: 10px; margin-bottom: 0; justify-content: center; }
         /* Arrows pinned to bottom, below CTAs, above dots */
-        .hero-arrow-left  { top: auto !important; bottom: 52px !important; left: 10px !important; transform: none !important; }
-        .hero-arrow-right { top: auto !important; bottom: 52px !important; right: 10px !important; transform: none !important; }
-        .hero-dots { bottom: 16px; }
+        .hero-arrow-left  { top: auto !important; bottom: 16px !important; left: 10px !important; transform: none !important; }
+        .hero-arrow-right { top: auto !important; bottom: 16px !important; right: 10px !important; transform: none !important; }
+        .hero-dots { bottom: 8px; }
       }
 
       @media (max-width: 360px) {
@@ -3093,6 +3095,23 @@
         .hero-content { padding: 0 16px !important; }
         .hero-arrow-left  { bottom: 50px !important; }
         .hero-arrow-right { bottom: 50px !important; }
+      }
+      /* AI-Assisted Managed Services — tablet */
+      @media (max-width: 1024px) {
+        .ai-managed-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+        .ai-outcome-cards { grid-template-columns: 1fr 1fr !important; }
+      }
+      /* AI-Assisted Managed Services — mobile */
+      @media (max-width: 768px) {
+        .ai-outcome-cards { grid-template-columns: 1fr !important; }
+      }
+      /* What's Next — tablet */
+      @media (max-width: 1024px) {
+        .whats-next-grid { grid-template-columns: repeat(2, 1fr) !important; }
+      }
+      /* What's Next — mobile */
+      @media (max-width: 768px) {
+        .whats-next-grid { grid-template-columns: 1fr !important; }
       }
     </style>
   </head>
@@ -3514,32 +3533,32 @@
           <!-- 5 Cards Grid -->
           <div class="why-choose-grid" style="display:grid; grid-template-columns:repeat(5,1fr); gap:20px;">
 
-            <div style="background:var(--white); border:1px solid var(--border); border-radius:var(--radius-lg); padding:28px 24px; transition:all .25s;" onmouseover="this.style.borderColor='var(--blue)';this.style.boxShadow='var(--shadow-md)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none';this.style.transform='none'">
-              <div style="width:48px;height:48px;border-radius:var(--radius-sm);background:var(--cyan-soft);border:1px solid rgba(16,185,129,0.2);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:18px;">📐</div>
+            <div style="background:var(--white); border:1px solid var(--border); border-radius:var(--radius-lg); padding:28px 24px; transition:all .25s; text-align:center;" onmouseover="this.style.borderColor='var(--blue)';this.style.boxShadow='var(--shadow-md)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none';this.style.transform='none'">
+              <div style="width:48px;height:48px;border-radius:var(--radius-sm);background:var(--cyan-soft);border:1px solid rgba(16,185,129,0.2);display:flex;align-items:center;justify-content:center;font-size:22px;margin:0 auto 18px;">📐</div>
               <div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:15px;color:var(--navy);margin-bottom:8px;">Right-sized</div>
               <p style="font-size:13px;color:var(--text-secondary);line-height:1.65;margin:0;">IT Solutions tailored to your requirements and business objectives</p>
             </div>
 
-            <div style="background:var(--white); border:1px solid var(--border); border-radius:var(--radius-lg); padding:28px 24px; transition:all .25s;" onmouseover="this.style.borderColor='var(--blue)';this.style.boxShadow='var(--shadow-md)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none';this.style.transform='none'">
-              <div style="width:48px;height:48px;border-radius:var(--radius-sm);background:var(--cyan-soft);border:1px solid rgba(16,185,129,0.2);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:18px;">🤝</div>
+            <div style="background:var(--white); border:1px solid var(--border); border-radius:var(--radius-lg); padding:28px 24px; transition:all .25s; text-align:center;" onmouseover="this.style.borderColor='var(--blue)';this.style.boxShadow='var(--shadow-md)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none';this.style.transform='none'">
+              <div style="width:48px;height:48px;border-radius:var(--radius-sm);background:var(--cyan-soft);border:1px solid rgba(16,185,129,0.2);display:flex;align-items:center;justify-content:center;font-size:22px;margin:0 auto 18px;">🤝</div>
               <div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:15px;color:var(--navy);margin-bottom:8px;">Customer First</div>
               <p style="font-size:13px;color:var(--text-secondary);line-height:1.65;margin:0;">Building long-term relationships through trust, collaboration, and responsiveness</p>
             </div>
 
-            <div style="background:var(--white); border:1px solid var(--border); border-radius:var(--radius-lg); padding:28px 24px; transition:all .25s;" onmouseover="this.style.borderColor='var(--blue)';this.style.boxShadow='var(--shadow-md)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none';this.style.transform='none'">
-              <div style="width:48px;height:48px;border-radius:var(--radius-sm);background:var(--cyan-soft);border:1px solid rgba(16,185,129,0.2);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:18px;">⚡</div>
+            <div style="background:var(--white); border:1px solid var(--border); border-radius:var(--radius-lg); padding:28px 24px; transition:all .25s; text-align:center;" onmouseover="this.style.borderColor='var(--blue)';this.style.boxShadow='var(--shadow-md)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none';this.style.transform='none'">
+              <div style="width:48px;height:48px;border-radius:var(--radius-sm);background:var(--cyan-soft);border:1px solid rgba(16,185,129,0.2);display:flex;align-items:center;justify-content:center;font-size:22px;margin:0 auto 18px;">⚡</div>
               <div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:15px;color:var(--navy);margin-bottom:8px;">Nimble and Agile</div>
               <p style="font-size:13px;color:var(--text-secondary);line-height:1.65;margin:0;">Responsive teams focused on speed, flexibility, and continuous improvement</p>
             </div>
 
-            <div style="background:var(--white); border:1px solid var(--border); border-radius:var(--radius-lg); padding:28px 24px; transition:all .25s;" onmouseover="this.style.borderColor='var(--blue)';this.style.boxShadow='var(--shadow-md)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none';this.style.transform='none'">
-              <div style="width:48px;height:48px;border-radius:var(--radius-sm);background:var(--cyan-soft);border:1px solid rgba(16,185,129,0.2);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:18px;">⚙️</div>
+            <div style="background:var(--white); border:1px solid var(--border); border-radius:var(--radius-lg); padding:28px 24px; transition:all .25s; text-align:center;" onmouseover="this.style.borderColor='var(--blue)';this.style.boxShadow='var(--shadow-md)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none';this.style.transform='none'">
+              <div style="width:48px;height:48px;border-radius:var(--radius-sm);background:var(--cyan-soft);border:1px solid rgba(16,185,129,0.2);display:flex;align-items:center;justify-content:center;font-size:22px;margin:0 auto 18px;">⚙️</div>
               <div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:15px;color:var(--navy);margin-bottom:8px;">Optimize</div>
               <p style="font-size:13px;color:var(--text-secondary);line-height:1.65;margin:0;">Helping organizations maximize the value of their technology investments</p>
             </div>
 
-            <div style="background:var(--white); border:1px solid var(--border); border-radius:var(--radius-lg); padding:28px 24px; transition:all .25s;" onmouseover="this.style.borderColor='var(--blue)';this.style.boxShadow='var(--shadow-md)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none';this.style.transform='none'">
-              <div style="width:48px;height:48px;border-radius:var(--radius-sm);background:var(--cyan-soft);border:1px solid rgba(16,185,129,0.2);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:18px;">⚖️</div>
+            <div style="background:var(--white); border:1px solid var(--border); border-radius:var(--radius-lg); padding:28px 24px; transition:all .25s; text-align:center;" onmouseover="this.style.borderColor='var(--blue)';this.style.boxShadow='var(--shadow-md)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none';this.style.transform='none'">
+              <div style="width:48px;height:48px;border-radius:var(--radius-sm);background:var(--cyan-soft);border:1px solid rgba(16,185,129,0.2);display:flex;align-items:center;justify-content:center;font-size:22px;margin:0 auto 18px;">⚖️</div>
               <div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:15px;color:var(--navy);margin-bottom:8px;">Vendor Neutral</div>
               <p style="font-size:13px;color:var(--text-secondary);line-height:1.65;margin:0;">Recommendations driven by business needs and industry best practices</p>
             </div>
@@ -3654,7 +3673,7 @@
       <!-- AI-ASSISTED MANAGED SERVICES -->
       <section class="section" style="padding: 56px 0;">
         <div class="container">
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;">
+          <div class="ai-managed-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;">
 
             <div class="animate">
               <h2 class="section-title" style="margin-bottom: 10px;">AI-Assisted Managed Services</h2>
@@ -3663,24 +3682,24 @@
               <a href="https://optit.ai" target="_blank" rel="noopener" class="btn btn-primary">Explore AI-Assisted Operations</a>
             </div>
 
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;" class="animate delay-1">
+            <div class="ai-outcome-cards animate delay-1" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
 
-              <div style="background: var(--off-white); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px 18px; display: flex; align-items: flex-start; gap: 12px;">
+              <div style="background: var(--off-white); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px 18px; display: flex; align-items: center; gap: 12px;">
                 <div style="width:48px;height:48px;border-radius:var(--radius-sm);background:var(--cyan-soft);border:1px solid rgba(16,185,129,0.2);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;">⚡</div>
                 <div style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 700; color: var(--navy); line-height: 1.4;">Faster Incident Resolution</div>
               </div>
 
-              <div style="background: var(--off-white); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px 18px; display: flex; align-items: flex-start; gap: 12px;">
+              <div style="background: var(--off-white); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px 18px; display: flex; align-items: center; gap: 12px;">
                 <div style="width:48px;height:48px;border-radius:var(--radius-sm);background:var(--cyan-soft);border:1px solid rgba(16,185,129,0.2);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;">🕐</div>
                 <div style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 700; color: var(--navy); line-height: 1.4;">24×7 Knowledge Access</div>
               </div>
 
-              <div style="background: var(--off-white); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px 18px; display: flex; align-items: flex-start; gap: 12px;">
+              <div style="background: var(--off-white); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px 18px; display: flex; align-items: center; gap: 12px;">
                 <div style="width:48px;height:48px;border-radius:var(--radius-sm);background:var(--cyan-soft);border:1px solid rgba(16,185,129,0.2);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;">✅</div>
                 <div style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 700; color: var(--navy); line-height: 1.4;">Automated Policy & Compliance Checks</div>
               </div>
 
-              <div style="background: var(--off-white); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px 18px; display: flex; align-items: flex-start; gap: 12px;">
+              <div style="background: var(--off-white); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px 18px; display: flex; align-items: center; gap: 12px;">
                 <div style="width:48px;height:48px;border-radius:var(--radius-sm);background:var(--cyan-soft);border:1px solid rgba(16,185,129,0.2);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;">📊</div>
                 <div style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 700; color: var(--navy); line-height: 1.4;">Intelligent Monitoring & Insights</div>
               </div>
@@ -3698,7 +3717,7 @@
             <h2 class="section-title">What's Next at Optimize IT</h2>
             <p class="section-subtitle" style="max-width: 600px; margin: 0 auto;">Our innovation roadmap is focused on helping enterprises stay ahead of evolving technology, security, and operational challenges.</p>
           </div>
-          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;">
+          <div class="whats-next-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;">
 
             <div class="animate delay-1" style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px 18px; text-align: center; transition: all 0.28s ease;" onmouseover="this.style.borderColor='var(--blue)';this.style.boxShadow='var(--shadow-md)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='';this.style.transform=''">
               <div style="width:48px;height:48px;border-radius:var(--radius-sm);background:var(--cyan-soft);border:1px solid rgba(16,185,129,0.2);display:flex;align-items:center;justify-content:center;font-size:22px;margin:0 auto 12px;">⚙️</div>
