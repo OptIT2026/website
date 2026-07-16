@@ -1255,40 +1255,64 @@
         color: var(--green);
       }
 
-      /* Tablet: smaller mockup, still side-by-side */
+      /* Tablet: stack content + mockup, hero grows to fit */
       @media (max-width: 900px) {
+        #page-svc-elevate .page-hero {
+          height: auto !important;
+          overflow: visible;
+          padding-bottom: 24px;
+        }
         #page-svc-elevate .page-hero > .container {
-          gap: 24px;
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+        }
+        #page-svc-elevate .page-hero-content {
+          width: 100%;
+          max-width: none;
+        }
+        #page-svc-elevate .page-hero-content .hero-cta-row {
+          justify-content: center;
+          margin-top: 16px !important;
+          gap: 10px;
+        }
+        #page-svc-elevate .page-hero-content .hero-cta-row .btn {
+          font-size: 13px;
+          padding: 7px 14px;
+        }
+        .elevateops-mockup-col {
+          display: flex;
+          width: 42%;
+          max-width: 240px;
+          align-items: center;
+          gap: 4px;
         }
         .elevateops-browser {
-          width: 248px;
+          width: 100%;
         }
         .elevateops-browser-screen {
           height: auto;
+          object-fit: fill;
         }
         .elevateops-cta {
-          font-size: 12px;
-          padding: 8px 16px;
+          font-size: 10px;
+          padding: 3px 10px;
+          white-space: nowrap;
+          text-align: center;
+          letter-spacing: 0;
+          line-height: 1.2;
         }
       }
 
-      /* Mobile: stack below hero content */
+      /* Mobile: slightly wider mockup */
       @media (max-width: 600px) {
-        #page-svc-elevate .page-hero > .container {
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 20px;
-        }
         .elevateops-mockup-col {
-          width: 100%;
-          align-items: flex-start;
-        }
-        .elevateops-browser {
-          width: 100%;
-          max-width: 320px;
+          width: 55%;
+          max-width: 200px;
         }
         .elevateops-browser-screen {
           height: auto;
+          object-fit: fill;
         }
       }
 
