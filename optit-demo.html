@@ -1260,12 +1260,13 @@
         #page-svc-elevate .page-hero {
           height: auto !important;
           overflow: visible;
-          padding-bottom: 24px;
+          padding-top: 88px;
+          padding-bottom: 28px;
         }
         #page-svc-elevate .page-hero > .container {
           flex-direction: column;
           align-items: center;
-          gap: 10px;
+          gap: 16px;
         }
         #page-svc-elevate .page-hero-content {
           width: 100%;
@@ -1273,7 +1274,7 @@
         }
         #page-svc-elevate .page-hero-content .hero-cta-row {
           justify-content: center;
-          margin-top: 16px !important;
+          margin-top: 12px !important;
           gap: 10px;
         }
         #page-svc-elevate .page-hero-content .hero-cta-row .btn {
@@ -1282,33 +1283,42 @@
         }
         .elevateops-mockup-col {
           display: flex;
-          width: 42%;
-          max-width: 240px;
+          flex-direction: row;
           align-items: center;
-          gap: 4px;
+          justify-content: center;
+          gap: 16px;
+          width: 100%;
         }
         .elevateops-browser {
-          width: 100%;
+          width: 55%;
+          max-width: 280px;
+          flex-shrink: 0;
         }
         .elevateops-browser-screen {
           height: auto;
           object-fit: fill;
         }
         .elevateops-cta {
-          font-size: 10px;
-          padding: 3px 10px;
-          white-space: nowrap;
+          font-size: 11px;
+          padding: 8px 14px;
+          white-space: normal;
           text-align: center;
           letter-spacing: 0;
-          line-height: 1.2;
+          line-height: 1.4;
+          flex: 1;
         }
       }
 
       /* Mobile: slightly wider mockup */
       @media (max-width: 600px) {
-        .elevateops-mockup-col {
-          width: 55%;
-          max-width: 200px;
+        .elevateops-browser {
+          width: 52%;
+          max-width: 220px;
+        }
+        .elevateops-cta {
+          flex: 1;
+          font-size: 10px;
+          padding: 6px 10px;
         }
         .elevateops-browser-screen {
           height: auto;
