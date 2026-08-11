@@ -3209,6 +3209,82 @@
         .careers-domains-grid { grid-template-columns: 1fr; gap: 16px; }
       }
 
+      /* ── CURRENT OPPORTUNITIES ── */
+      .careers-jobs-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        align-items: stretch;
+      }
+      .careers-job-card {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 28px 24px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: var(--shadow-sm);
+        transition: all 0.28s ease;
+      }
+      .careers-job-card:hover {
+        border-color: #10b981;
+        box-shadow: 0 4px 16px rgba(6,78,59,0.1), 0 2px 4px rgba(6,78,59,0.06);
+        transform: translateY(-4px);
+      }
+      .careers-job-top {
+        margin-bottom: 14px;
+      }
+      .careers-job-title {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 17px;
+        font-weight: 700;
+        color: var(--navy);
+        margin-bottom: 10px;
+      }
+      .careers-job-meta {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 6px;
+        overflow: hidden;
+      }
+      .careers-job-meta span {
+        font-size: 11.5px;
+        color: var(--text-secondary);
+        background: var(--off-white);
+        border: 1px solid var(--border);
+        border-radius: 100px;
+        padding: 3px 8px;
+        white-space: nowrap;
+      }
+      .careers-job-desc {
+        font-size: 13.5px;
+        color: var(--text-secondary);
+        line-height: 1.7;
+        flex: 1;
+        margin: 0 0 20px;
+      }
+      .careers-job-btn {
+        display: inline-flex;
+        align-items: center;
+        font-size: 13.5px;
+        font-weight: 600;
+        color: #10b981;
+        text-decoration: none;
+        margin-top: auto;
+        transition: gap 0.2s ease;
+        gap: 4px;
+      }
+      .careers-job-btn:hover {
+        gap: 8px;
+        color: var(--navy);
+      }
+      @media (max-width: 900px) {
+        .careers-jobs-grid { grid-template-columns: repeat(2, 1fr); }
+      }
+      @media (max-width: 600px) {
+        .careers-jobs-grid { grid-template-columns: 1fr; gap: 16px; }
+      }
+
       /* AI-Assisted Managed Services — tablet */
       @media (max-width: 1024px) {
         .ai-managed-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
@@ -3225,6 +3301,151 @@
       /* What's Next — mobile */
       @media (max-width: 768px) {
         .whats-next-grid { grid-template-columns: 1fr !important; }
+      }
+
+      /* Job Description Modal */
+      .job-modal-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(6, 26, 18, 0.55);
+        backdrop-filter: blur(3px);
+        z-index: 9000;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+      .job-modal-overlay.open { display: flex; }
+      .job-modal {
+        background: #fff;
+        border-radius: 16px;
+        width: 100%;
+        max-width: 680px;
+        max-height: 88vh;
+        overflow-y: auto;
+        position: relative;
+        box-shadow: 0 24px 64px rgba(6,26,18,0.22);
+        padding: 40px 40px 36px;
+      }
+      .job-modal-close {
+        position: absolute;
+        top: 16px;
+        right: 18px;
+        width: 34px;
+        height: 34px;
+        border: none;
+        background: var(--off-white);
+        border-radius: 50%;
+        font-size: 20px;
+        line-height: 1;
+        cursor: pointer;
+        color: var(--text-secondary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.18s ease;
+      }
+      .job-modal-close:hover { background: #e2e8f0; color: var(--navy); }
+      .job-modal-title {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 22px;
+        font-weight: 800;
+        color: var(--navy);
+        margin-bottom: 12px;
+        padding-right: 36px;
+      }
+      .job-modal-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 24px;
+      }
+      .job-modal-meta span {
+        font-size: 12.5px;
+        color: var(--text-secondary);
+        background: var(--off-white);
+        border: 1px solid var(--border);
+        border-radius: 100px;
+        padding: 4px 12px;
+        white-space: nowrap;
+      }
+      .job-modal-divider {
+        height: 1px;
+        background: var(--border);
+        margin-bottom: 24px;
+      }
+      .job-modal-section-title {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: #10b981;
+        margin-bottom: 10px;
+      }
+      .job-modal-text {
+        font-size: 14px;
+        color: var(--text-secondary);
+        line-height: 1.75;
+        margin-bottom: 20px;
+      }
+      .job-modal-list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 20px;
+      }
+      .job-modal-list li {
+        font-size: 14px;
+        color: var(--text-secondary);
+        line-height: 1.65;
+        padding: 5px 0 5px 20px;
+        position: relative;
+      }
+      .job-modal-list li::before {
+        content: '→';
+        position: absolute;
+        left: 0;
+        color: #10b981;
+        font-size: 12px;
+        top: 6px;
+      }
+      .job-modal-footer {
+        margin-top: 28px;
+        padding-top: 20px;
+        border-top: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+      .job-modal-email {
+        font-size: 13px;
+        color: var(--text-secondary);
+      }
+      .job-modal-email a {
+        color: #10b981;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .job-modal-apply {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: #10b981;
+        color: #fff;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        padding: 10px 22px;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: background 0.2s ease;
+      }
+      .job-modal-apply:hover { background: #059669; }
+      @media (max-width: 600px) {
+        .job-modal { padding: 28px 20px 24px; }
+        .job-modal-footer { flex-direction: column; align-items: flex-start; }
       }
     </style>
   </head>
@@ -7446,6 +7667,59 @@
         </div>
       </section>
 
+      <!-- CURRENT OPPORTUNITIES -->
+      <section class="section" style="padding: 80px 0;">
+        <div class="container">
+          <div class="section-header center animate" style="margin-bottom: 48px;">
+            <div class="label">Current Opportunities</div>
+            <h2 class="section-title">Find Your Next Opportunity at Opt IT</h2>
+            <p class="section-subtitle" style="max-width: 600px; margin: 0 auto;">Explore current opportunities to build your career, apply your expertise, and contribute to real-world technology challenges with Opt IT.</p>
+          </div>
+          <div class="careers-jobs-grid">
+
+            <div class="careers-job-card animate delay-1">
+              <div class="careers-job-top">
+                <div class="careers-job-title">Cloud Engineer</div>
+                <div class="careers-job-meta">
+                  <span>📍 Bengaluru, India</span>
+                  <span>💼 3-5 Years</span>
+                  <span>Full Time</span>
+                </div>
+              </div>
+              <p class="careers-job-desc">Work with cloud technologies to build, manage, and optimize reliable enterprise environments.</p>
+              <a href="#" class="careers-job-btn" onclick="openJobModal('cloud'); return false;">View Position →</a>
+            </div>
+
+            <div class="careers-job-card animate delay-2">
+              <div class="careers-job-top">
+                <div class="careers-job-title">Cybersecurity Engineer</div>
+                <div class="careers-job-meta">
+                  <span>📍 Bengaluru, India</span>
+                  <span>💼 3-5 Years</span>
+                  <span>Full Time</span>
+                </div>
+              </div>
+              <p class="careers-job-desc">Help organizations strengthen their security posture through modern security engineering and operations.</p>
+              <a href="#" class="careers-job-btn" onclick="openJobModal('cyber'); return false;">View Position →</a>
+            </div>
+
+            <div class="careers-job-card animate delay-3">
+              <div class="careers-job-top">
+                <div class="careers-job-title">DevOps Engineer</div>
+                <div class="careers-job-meta">
+                  <span>📍 Bengaluru, India</span>
+                  <span>💼 3-5 Years</span>
+                  <span>Full Time</span>
+                </div>
+              </div>
+              <p class="careers-job-desc">Build and automate modern application and infrastructure environments using DevOps and platform engineering practices.</p>
+              <a href="#" class="careers-job-btn" onclick="openJobModal('devops'); return false;">View Position →</a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       <!-- CTA -->
       <section class="section-sm cta-banner">
         <div class="container">
@@ -7459,6 +7733,149 @@
           </div>
         </div>
       </section>
+
+      <!-- Job Description Modal -->
+      <div class="job-modal-overlay" id="jobModal" onclick="closeJobModal(event)">
+        <div class="job-modal" role="dialog" aria-modal="true" aria-labelledby="jobModalTitle">
+          <button class="job-modal-close" id="jobModalClose" aria-label="Close">&times;</button>
+          <div class="job-modal-title" id="jobModalTitle"></div>
+          <div class="job-modal-meta" id="jobModalMeta"></div>
+          <div class="job-modal-divider"></div>
+          <div class="job-modal-section-title">About the Role</div>
+          <p class="job-modal-text" id="jobModalAbout"></p>
+          <div class="job-modal-section-title">Key Responsibilities</div>
+          <ul class="job-modal-list" id="jobModalResponsibilities"></ul>
+          <div class="job-modal-section-title">Required Skills</div>
+          <ul class="job-modal-list" id="jobModalSkills"></ul>
+          <div class="job-modal-section-title">Qualifications</div>
+          <p class="job-modal-text" id="jobModalQualifications"></p>
+          <div class="job-modal-footer">
+            <div class="job-modal-email">
+              <strong>Ready to apply?</strong><br>Submit your application with your resume.
+            </div>
+            <a href="#" id="jobModalApply" class="job-modal-apply">Apply Now →</a>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        var jobData = {
+          'cloud': {
+            title: 'Cloud Engineer',
+            meta: ['📍 Bengaluru, India', '💼 3-5 Years', 'Full Time'],
+            about: 'We are looking for a skilled Cloud Engineer to join our managed services team. You will be responsible for designing, building, and maintaining cloud infrastructure for enterprise clients across AWS environments, ensuring reliability, security, and cost optimization.',
+            responsibilities: [
+              'Design and implement scalable cloud architectures on AWS for enterprise clients.',
+              'Manage and monitor cloud resources, ensuring high availability and performance.',
+              'Automate infrastructure provisioning using Infrastructure-as-Code (Terraform, CloudFormation).',
+              'Collaborate with cross-functional teams to support DevOps and security practices.'
+            ],
+            skills: [
+              'Hands-on experience with AWS services (EC2, S3, RDS, Lambda, VPC, IAM).',
+              'Proficiency in Infrastructure-as-Code tools such as Terraform or CloudFormation.',
+              'Experience with Linux administration and scripting (Bash, Python).',
+              'Familiarity with monitoring and observability tools (CloudWatch, Grafana, Prometheus).'
+            ],
+            qualifications: "Bachelor's degree in Computer Science, IT, or a related field. AWS Certified Solutions Architect or equivalent certification preferred. Strong analytical and problem-solving skills with excellent communication abilities."
+          },
+          'cyber': {
+            title: 'Cybersecurity Engineer',
+            meta: ['📍 Bengaluru, India', '💼 3-5 Years', 'Full Time'],
+            about: 'We are seeking a Cybersecurity Engineer to help our enterprise clients strengthen their security posture. You will design and implement security controls, monitor for threats, and guide clients through compliance and risk management processes.',
+            responsibilities: [
+              'Design and implement security architectures, policies, and controls for client environments.',
+              'Monitor security events and lead incident response investigations and remediation.',
+              'Conduct vulnerability assessments and penetration testing to identify risk exposure.',
+              'Advise clients on compliance requirements (ISO 27001, SOC 2, NIST frameworks).'
+            ],
+            skills: [
+              'Experience with SIEM tools (Splunk, Microsoft Sentinel, or similar).',
+              'Knowledge of network security, firewalls, IDS/IPS, and endpoint protection.',
+              'Familiarity with cloud security (AWS Security Hub, IAM, GuardDuty).',
+              'Understanding of vulnerability management tools and penetration testing methodologies.'
+            ],
+            qualifications: "Bachelor's degree in Cybersecurity, IT, or a related field. Certifications such as CEH, CISSP, CompTIA Security+, or AWS Security Specialty are an advantage. Strong attention to detail and the ability to communicate security risks clearly to non-technical stakeholders."
+          },
+          'devops': {
+            title: 'DevOps Engineer',
+            meta: ['📍 Bengaluru, India', '💼 3-5 Years', 'Full Time'],
+            about: 'We are looking for a DevOps Engineer to build and automate modern CI/CD pipelines and platform engineering practices for our clients. You will work closely with development and infrastructure teams to streamline deployment processes and improve reliability.',
+            responsibilities: [
+              'Design and manage CI/CD pipelines to accelerate software delivery and deployment.',
+              'Automate infrastructure provisioning, configuration management, and scaling operations.',
+              'Implement container orchestration using Kubernetes and Docker in production environments.',
+              'Monitor application performance and collaborate on incident response and root cause analysis.'
+            ],
+            skills: [
+              'Strong experience with CI/CD tools such as Jenkins, GitLab CI, GitHub Actions, or Azure DevOps.',
+              'Proficiency in containerisation technologies - Docker and Kubernetes.',
+              'Infrastructure-as-Code experience with Terraform, Ansible, or similar tools.',
+              'Scripting proficiency in Python, Bash, or Go for automation and tooling.'
+            ],
+            qualifications: "Bachelor's degree in Computer Science, IT, or a related field. Certifications in Kubernetes (CKA/CKAD), AWS DevOps Engineer, or HashiCorp Terraform are a plus. Strong collaboration and communication skills with the ability to work in fast-paced client-facing environments."
+          }
+        };
+
+        function openJobModal(id) {
+          var d = jobData[id];
+          if (!d) return;
+
+          document.getElementById('jobModalTitle').textContent = d.title;
+
+          var metaEl = document.getElementById('jobModalMeta');
+          metaEl.innerHTML = '';
+          d.meta.forEach(function(m) {
+            var s = document.createElement('span');
+            s.textContent = m;
+            metaEl.appendChild(s);
+          });
+
+          document.getElementById('jobModalAbout').textContent = d.about;
+
+          var respEl = document.getElementById('jobModalResponsibilities');
+          respEl.innerHTML = '';
+          d.responsibilities.forEach(function(r) {
+            var li = document.createElement('li');
+            li.textContent = r;
+            respEl.appendChild(li);
+          });
+
+          var skillsEl = document.getElementById('jobModalSkills');
+          skillsEl.innerHTML = '';
+          d.skills.forEach(function(s) {
+            var li = document.createElement('li');
+            li.textContent = s;
+            skillsEl.appendChild(li);
+          });
+
+          document.getElementById('jobModalQualifications').textContent = d.qualifications;
+
+          var subject = encodeURIComponent('Application for ' + d.title + ' – [Candidate Name]');
+          var body = encodeURIComponent('Hi Opt IT Recruitment Team,\n\nI am interested in applying for the ' + d.title + ' position. Please find my resume attached for your consideration.\n\nRegards,\n[Candidate Name]');
+          document.getElementById('jobModalApply').href = 'mailto:recruitment@optit.in?subject=' + subject + '&body=' + body;
+
+          document.getElementById('jobModal').classList.add('open');
+          document.body.style.overflow = 'hidden';
+        }
+
+        function closeJobModal(e) {
+          if (e && e.target !== document.getElementById('jobModal')) return;
+          document.getElementById('jobModal').classList.remove('open');
+          document.body.style.overflow = '';
+        }
+
+        document.getElementById('jobModalClose').addEventListener('click', function() {
+          document.getElementById('jobModal').classList.remove('open');
+          document.body.style.overflow = '';
+        });
+
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && document.getElementById('jobModal').classList.contains('open')) {
+            document.getElementById('jobModal').classList.remove('open');
+            document.body.style.overflow = '';
+          }
+        });
+      </script>
     </div>
 
     <!-- CONTACT PAGE -->
