@@ -3196,6 +3196,19 @@
         .careers-grow-icon { margin: 0; flex-shrink: 0; }
       }
 
+      /* ── TECHNOLOGY DOMAINS ── */
+      .careers-domains-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+      @media (max-width: 900px) {
+        .careers-domains-grid { grid-template-columns: repeat(2, 1fr); }
+      }
+      @media (max-width: 600px) {
+        .careers-domains-grid { grid-template-columns: 1fr; gap: 16px; }
+      }
+
       /* AI-Assisted Managed Services — tablet */
       @media (max-width: 1024px) {
         .ai-managed-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
@@ -7274,7 +7287,7 @@
       <!-- CULTURE PILLARS -->
       <section class="section">
         <div class="container">
-          <div class="section-header">
+          <div class="section-header center">
             <div class="label">Our Culture</div>
             <h2 class="section-title">What Can You Look Forward To</h2>
             <p class="section-subtitle">We believe great work starts with a supportive environment where people are encouraged to learn, collaborate, and make a meaningful impact. Here's what makes Opt IT a place where individuals and teams can thrive.</p>
@@ -7317,7 +7330,7 @@
       <!-- BENEFITS & PERKS -->
       <section class="section section-padded" style="background: var(--off-white); padding: 80px 0;">
         <div class="container">
-          <div class="section-header">
+          <div class="section-header center">
             <div class="label">Benefits &amp; Perks</div>
             <h2 class="section-title">Supporting Your Professional Journey</h2>
             <p class="section-subtitle">We believe in creating an environment where our people can grow, succeed, and maintain a healthy work-life balance.</p>
@@ -7383,6 +7396,50 @@
               <div class="careers-grow-icon">🚀</div>
               <div class="careers-grow-title">Grow</div>
               <p class="careers-grow-desc">Build a long-term career through new responsibilities, opportunities, and continuous development.</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- TECHNOLOGY DOMAINS -->
+      <section class="section" style="background: var(--off-white); padding: 80px 0;">
+        <div class="container">
+          <div class="section-header center animate" style="margin-bottom: 48px;">
+            <div class="label">Technology Domains</div>
+            <h2 class="section-title">Explore Where Your Expertise Can Grow</h2>
+            <p class="section-subtitle" style="max-width: 640px; margin: 0 auto;">Build your career across the technologies shaping modern enterprises. At Opt IT, you'll have opportunities to learn, contribute, and grow across diverse technology domains.</p>
+          </div>
+          <div class="careers-domains-grid">
+
+            <div class="animate delay-1" style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px 26px; transition: all 0.28s ease;" onmouseover="this.style.borderColor='#10b981';this.style.boxShadow='0 4px 16px rgba(6,78,59,0.1),0 2px 4px rgba(6,78,59,0.06)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='#e2e8f0';this.style.boxShadow='';this.style.transform=''">
+              <div style="width:48px;height:48px;border-radius:var(--radius-sm);background:#f0fdf4;border:1px solid #d1fae5;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:18px;">☁️</div>
+              <div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;color:var(--navy);font-size:16px;margin-bottom:10px;">Cloud & Infrastructure</div>
+              <div style="font-size:13.5px;color:var(--text-secondary);line-height:1.7;">Build expertise in cloud platforms, infrastructure management, modernization, and reliable enterprise environments.</div>
+            </div>
+
+            <div class="animate delay-2" style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px 26px; transition: all 0.28s ease;" onmouseover="this.style.borderColor='#10b981';this.style.boxShadow='0 4px 16px rgba(6,78,59,0.1),0 2px 4px rgba(6,78,59,0.06)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='#e2e8f0';this.style.boxShadow='';this.style.transform=''">
+              <div style="width:48px;height:48px;border-radius:var(--radius-sm);background:#f0fdf4;border:1px solid #d1fae5;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:18px;">⚙️</div>
+              <div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;color:var(--navy);font-size:16px;margin-bottom:10px;">DevOps & Platform Engineering</div>
+              <div style="font-size:13.5px;color:var(--text-secondary);line-height:1.7;">Develop skills in automation, CI/CD, Kubernetes, observability, and modern platform engineering practices.</div>
+            </div>
+
+            <div class="animate delay-3" style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px 26px; transition: all 0.28s ease;" onmouseover="this.style.borderColor='#10b981';this.style.boxShadow='0 4px 16px rgba(6,78,59,0.1),0 2px 4px rgba(6,78,59,0.06)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='#e2e8f0';this.style.boxShadow='';this.style.transform=''">
+              <div style="width:48px;height:48px;border-radius:var(--radius-sm);background:#f0fdf4;border:1px solid #d1fae5;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:18px;">🛡️</div>
+              <div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;color:var(--navy);font-size:16px;margin-bottom:10px;">Cybersecurity</div>
+              <div style="font-size:13.5px;color:var(--text-secondary);line-height:1.7;">Grow your expertise across security operations, cloud security, compliance, and security engineering.</div>
+            </div>
+
+            <div class="animate delay-4" style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px 26px; transition: all 0.28s ease;" onmouseover="this.style.borderColor='#10b981';this.style.boxShadow='0 4px 16px rgba(6,78,59,0.1),0 2px 4px rgba(6,78,59,0.06)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='#e2e8f0';this.style.boxShadow='';this.style.transform=''">
+              <div style="width:48px;height:48px;border-radius:var(--radius-sm);background:#f0fdf4;border:1px solid #d1fae5;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:18px;">🔬</div>
+              <div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;color:var(--navy);font-size:16px;margin-bottom:10px;">Semiconductor & EDA</div>
+              <div style="font-size:13.5px;color:var(--text-secondary);line-height:1.7;">Explore specialized opportunities supporting semiconductor engineering, EDA environments, and next-generation technology development.</div>
+            </div>
+
+            <div class="animate delay-5" style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px 26px; transition: all 0.28s ease;" onmouseover="this.style.borderColor='#10b981';this.style.boxShadow='0 4px 16px rgba(6,78,59,0.1),0 2px 4px rgba(6,78,59,0.06)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='#e2e8f0';this.style.boxShadow='';this.style.transform=''">
+              <div style="width:48px;height:48px;border-radius:var(--radius-sm);background:#f0fdf4;border:1px solid #d1fae5;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:18px;">🤖</div>
+              <div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;color:var(--navy);font-size:16px;margin-bottom:10px;">AI & Intelligent Operations</div>
+              <div style="font-size:13.5px;color:var(--text-secondary);line-height:1.7;">Work with AI-driven automation, operational intelligence, and emerging technologies that transform how businesses operate.</div>
             </div>
 
           </div>
