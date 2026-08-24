@@ -3745,6 +3745,7 @@
           <div class="hero-slide"><img src="Images/Home/hero-cloud.png" alt="Cloud"></div>
           <div class="hero-slide"><img src="Images/Home/hero-managed-it.jpeg" alt="Managed IT"></div>
           <div class="hero-slide"><img src="Images/Home/hero-cybersecurity.jpg" alt="Cybersecurity"></div>
+          <div class="hero-slide"><img src="Images/Home/hero-semiconductor.jpg" alt="Semiconductor"></div>
           <div class="hero-bg-overlay"></div>
         </div>
         <button class="hero-arrow hero-arrow-left" onclick="heroSlide(-1)" aria-label="Previous">&lt;</button>
@@ -3754,6 +3755,7 @@
           <span class="hero-dot" onclick="heroGoTo(1)"></span>
           <span class="hero-dot" onclick="heroGoTo(2)"></span>
           <span class="hero-dot" onclick="heroGoTo(3)"></span>
+          <span class="hero-dot" onclick="heroGoTo(4)"></span>
         </div>
         <div class="hero-content" id="hero-content">
           <div class="hero-badge animate" id="hero-badge">
@@ -9550,6 +9552,12 @@
             badge: null,
             title: 'Secure Today. <span class="accent">Resilient Tomorrow.</span>',
             sub: 'Strengthen your security posture with proactive protection, continuous monitoring, and compliance-focused cybersecurity services.'
+          },
+          {
+            badge: null,
+            title: 'Powering <span class="accent">Semiconductor</span> Innovation',
+            sub: 'Build and optimize high-performance semiconductor engineering environments with scalable EDA infrastructure designed for demanding workloads.',
+            titleStyle: 'white-space: nowrap;'
           }
         ];
 
@@ -9570,6 +9578,7 @@
             } else {
               badge.style.display = 'none';
             }
+            title.style.whiteSpace = data.titleStyle ? 'nowrap' : '';
             title.innerHTML = data.title;
             sub.innerHTML = data.sub;
             content.style.transition = 'opacity 0.8s ease-in-out';
