@@ -3386,6 +3386,7 @@
         .cloudops-statement { font-size: 13.5px; padding: 10px 20px; }
       }
 
+
       /* Job Description Modal */
       .job-modal-overlay {
         display: none;
@@ -7480,15 +7481,39 @@
           </div>
           <div id="tab-cases" class="tab-content" style="display: none">
             <div class="resources-grid">
-              <div class="resource-card" style="cursor:pointer;" onclick="showPage('case-1'); return false;">
+              <div class="resource-card" style="cursor:pointer;" onclick="showPage('case-study-1'); return false;">
                 <div class="resource-img">
                   <img src="Images/Resources/Case Studies/case-study1.jpg" alt="Patch Management Case Study">
                 </div>
                 <div class="resource-body">
                   <div class="resource-tag">SaaS / IT Infrastructure</div>
                   <div class="resource-title">Patch Management Case Study | 93.5% OS Compliance for SaaS</div>
-                  <p class="resource-excerpt">A fast-growing organization faced challenges with limited IT monitoring, recurring performance issues, and delayed incident resolution – impacting productivity and business continuity.</p>
-                  <a href="#" class="resource-learn-more" onclick="event.stopPropagation(); showPage('case-1'); return false;">Read More</a>
+                  <p class="resource-excerpt">A fast-growing organization faced challenges with limited IT monitoring, recurring performance issues, and delayed incident resolution - impacting productivity and business continuity.</p>
+                  <a href="#" class="resource-learn-more" onclick="event.stopPropagation(); showPage('case-study-1'); return false;">Read More</a>
+                </div>
+              </div>
+
+              <div class="resource-card" style="cursor:pointer;" onclick="showPage('case-study-2'); return false;">
+                <div class="resource-img">
+                  <img src="Images/Resources/Case Studies/case-study-2.jpg" alt="L&T Semiconductor HPC Case Study">
+                </div>
+                <div class="resource-body">
+                  <div class="resource-tag">Semiconductor / HPC Infrastructure</div>
+                  <div class="resource-title">Migrating a Live HPC Design Environment to a Resilient, Scalable Infrastructure</div>
+                  <p class="resource-excerpt">How Opt IT Technologies helped a leading semiconductor organization eliminate instability, reduce costs, and build a future-ready compute foundation - with zero downtime.</p>
+                  <a href="#" class="resource-learn-more" onclick="event.stopPropagation(); showPage('case-study-2'); return false;">Read More</a>
+                </div>
+              </div>
+
+              <div class="resource-card" style="cursor:pointer;" onclick="showPage('case-study-3'); return false;">
+                <div class="resource-img">
+                  <img src="Images/Resources/Case Studies/case-study-3.jpg" alt="Skyflow Security Operations Case Study">
+                </div>
+                <div class="resource-body">
+                  <div class="resource-tag">Fintech / Managed Security</div>
+                  <div class="resource-title">Enterprise Security Operations & DevSecOps Transformation</div>
+                  <p class="resource-excerpt">Implementing a unified security operations framework with continuous monitoring, DevSecOps automation, vulnerability management, and PCI compliance for a fintech organization.</p>
+                  <a href="#" class="resource-learn-more" onclick="event.stopPropagation(); showPage('case-study-3'); return false;">Read More</a>
                 </div>
               </div>
             </div>
@@ -9245,15 +9270,39 @@
       <section class="section">
         <div class="container">
           <div class="resources-grid">
-            <div class="resource-card" style="cursor:pointer;" onclick="showPage('case-1'); return false;">
+            <div class="resource-card" style="cursor:pointer;" onclick="showPage('case-study-1'); return false;">
               <div class="resource-img">
                 <img src="Images/Resources/Case Studies/case-study1.jpg" alt="Patch Management Case Study">
               </div>
               <div class="resource-body">
                 <div class="resource-tag">SaaS / IT Infrastructure</div>
                 <div class="resource-title">Patch Management Case Study | 93.5% OS Compliance for SaaS</div>
-                <p class="resource-excerpt">A fast-growing organization faced challenges with limited IT monitoring, recurring performance issues, and delayed incident resolution – impacting productivity and business continuity.</p>
-                <a href="#" class="resource-learn-more" onclick="event.stopPropagation(); showPage('case-1'); return false;">Read More</a>
+                <p class="resource-excerpt">A fast-growing organization faced challenges with limited IT monitoring, recurring performance issues, and delayed incident resolution - impacting productivity and business continuity.</p>
+                <a href="#" class="resource-learn-more" onclick="event.stopPropagation(); showPage('case-study-1'); return false;">Read More</a>
+              </div>
+            </div>
+
+            <div class="resource-card" style="cursor:pointer;" onclick="showPage('case-study-2'); return false;">
+              <div class="resource-img">
+                <img src="Images/Resources/Case Studies/case-study-2.jpg" alt="L&T Semiconductor HPC Case Study">
+              </div>
+              <div class="resource-body">
+                <div class="resource-tag">Semiconductor / HPC Infrastructure</div>
+                <div class="resource-title">Migrating a Live HPC Design Environment to a Resilient, Scalable Infrastructure</div>
+                <p class="resource-excerpt">How Opt IT Technologies helped a leading semiconductor organization eliminate instability, reduce costs, and build a future-ready compute foundation - with zero downtime.</p>
+                <a href="#" class="resource-learn-more" onclick="event.stopPropagation(); showPage('case-study-2'); return false;">Read More</a>
+              </div>
+            </div>
+
+            <div class="resource-card" style="cursor:pointer;" onclick="showPage('case-study-3'); return false;">
+              <div class="resource-img">
+                <img src="Images/Resources/Case Studies/case-study-3.jpg" alt="Skyflow Security Operations Case Study">
+              </div>
+              <div class="resource-body">
+                <div class="resource-tag">Fintech / Managed Security</div>
+                <div class="resource-title">Enterprise Security Operations & DevSecOps Transformation</div>
+                <p class="resource-excerpt">Implementing a unified security operations framework with continuous monitoring, DevSecOps automation, vulnerability management, and PCI compliance for a fintech organization.</p>
+                <a href="#" class="resource-learn-more" onclick="event.stopPropagation(); showPage('case-study-3'); return false;">Read More</a>
               </div>
             </div>
           </div>
@@ -9263,7 +9312,7 @@
 
     <!-- CASE STUDY DETAIL PAGES -->
 
-    <div id="page-case-1" class="page">
+    <div id="page-case-study-1" class="page">
       <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.78), rgba(6,78,59,0.78)), url('Images/Resources/Case Studies/individual-casestudy-banner.webp'); background-size: cover; background-position: center;">
         <div class="container">
           <div class="page-hero-content">
@@ -9289,6 +9338,72 @@
               <h3 style="color:#fff; font-size:20px; font-weight:700; margin-bottom:12px;">Explore the Case Study</h3>
               <p style="color:rgba(255,255,255,0.7); font-size:15px; margin-bottom:24px;">Read the case study to learn more about the business challenge, solution approach, implementation, and outcomes.</p>
               <a href="https://optit.in/wp-content/uploads/2026/02/Case-study-1.pdf" target="_blank" rel="noopener" style="display:inline-block; background:var(--blue); color:#fff; padding:12px 28px; border-radius:6px; font-weight:600; text-decoration:none; font-size:15px;">View Case Study</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- CASE STUDY 2: L&T SEMICONDUCTOR -->
+    <div id="page-case-study-2" class="page">
+      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.78), rgba(6,78,59,0.78)), url('Images/Resources/Case Studies/individual-casestudy-banner.webp'); background-size: cover; background-position: center;">
+        <div class="container">
+          <div class="page-hero-content">
+            <div class="label label-light">Case Studies / Semiconductor & HPC</div>
+            <h1 class="page-title">Migrating a Live HPC Design Environment to a Resilient, Scalable Infrastructure</h1>
+          </div>
+        </div>
+      </section>
+      <section style="padding: 48px 0 0;">
+        <div class="container">
+          <div style="max-width: 800px; margin: 0 auto;">
+            <img src="Images/Resources/Case Studies/case-study-2.jpg" alt="L&T Semiconductor HPC Case Study" style="width:100%; border-radius: var(--radius-lg); display:block;">
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <div style="max-width: 800px; margin: 0 auto;">
+            <h2 style="font-size:22px; font-weight:700; color:var(--text-primary); margin-bottom:20px;">Building a Resilient, High-Performance Computing Foundation for Semiconductor Design</h2>
+            <p style="font-size:15px; color:var(--text-secondary); line-height:1.8; margin-bottom:24px;">A leading semiconductor organization faced instability and scalability challenges with their virtual HPC design environment, limiting productivity across multiple simultaneous design programs.</p>
+            <p style="font-size:15px; color:var(--text-secondary); line-height:1.8; margin-bottom:40px;">Opt IT Technologies designed and executed a migration to a consolidated, high-performance infrastructure spanning compute, display, and storage across two datacenters - delivered with zero disruption to live design workflows, eliminating redundant licenses, and building a resilient, scalable foundation ready for future growth.</p>
+            <div style="background: var(--navy); border-radius: 12px; padding: 40px; text-align: center;">
+              <h3 style="color:#fff; font-size:20px; font-weight:700; margin-bottom:12px;">Explore the Case Study</h3>
+              <p style="color:rgba(255,255,255,0.7); font-size:15px; margin-bottom:24px;">Read the case study to learn more about the business challenge, solution approach, implementation, and outcomes.</p>
+              <a href="Images/Resources/Case Studies/Documents/case-study-2.pdf" target="_blank" rel="noopener" style="display:inline-block; background:var(--blue); color:#fff; padding:12px 28px; border-radius:6px; font-weight:600; text-decoration:none; font-size:15px;">View Case Study</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- CASE STUDY 3: SKYFLOW -->
+    <div id="page-case-study-3" class="page">
+      <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.78), rgba(6,78,59,0.78)), url('Images/Resources/Case Studies/individual-casestudy-banner.webp'); background-size: cover; background-position: center;">
+        <div class="container">
+          <div class="page-hero-content">
+            <div class="label label-light">Case Studies / Managed Security</div>
+            <h1 class="page-title">Enterprise Security Operations & DevSecOps Transformation</h1>
+          </div>
+        </div>
+      </section>
+      <section style="padding: 48px 0 0;">
+        <div class="container">
+          <div style="max-width: 800px; margin: 0 auto;">
+            <img src="Images/Resources/Case Studies/case-study-3.jpg" alt="Skyflow Security Operations Case Study" style="width:100%; border-radius: var(--radius-lg); display:block;">
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <div style="max-width: 800px; margin: 0 auto;">
+            <h2 style="font-size:22px; font-weight:700; color:var(--text-primary); margin-bottom:20px;">Unifying Security Operations and DevSecOps Across a Fintech Enterprise</h2>
+            <p style="font-size:15px; color:var(--text-secondary); line-height:1.8; margin-bottom:24px;">A fintech organization faced high SOC alert volumes, security gaps across repositories, fragmented vulnerability management, and growing PCI compliance overhead - with limited visibility across teams.</p>
+            <p style="font-size:15px; color:var(--text-secondary); line-height:1.8; margin-bottom:40px;">Opt IT implemented an integrated Security Operations and DevSecOps program covering SAST, secret scanning, GitHub Actions automation, cloud security posture management, and Jira-based vulnerability workflows - securing 80+ repositories, reducing false positives, and delivering PCI compliance readiness across two GitHub organizations.</p>
+            <div style="background: var(--navy); border-radius: 12px; padding: 40px; text-align: center;">
+              <h3 style="color:#fff; font-size:20px; font-weight:700; margin-bottom:12px;">Explore the Case Study</h3>
+              <p style="color:rgba(255,255,255,0.7); font-size:15px; margin-bottom:24px;">Read the case study to learn more about the business challenge, solution approach, implementation, and outcomes.</p>
+              <a href="Images/Resources/Case Studies/Documents/case-study-3.pdf" target="_blank" rel="noopener" style="display:inline-block; background:var(--blue); color:#fff; padding:12px 28px; border-radius:6px; font-weight:600; text-decoration:none; font-size:15px;">View Case Study</a>
             </div>
           </div>
         </div>
@@ -9817,7 +9932,9 @@
           "news-1": "nav-dd-resources",
           "news-2": "nav-dd-resources",
           "news-3": "nav-dd-resources",
-          "case-1": "nav-dd-resources",
+          "case-study-1": "nav-dd-resources",
+          "case-study-2": "nav-dd-resources",
+          "case-study-3": "nav-dd-resources",
         };
         if (linkMap[id]) {
           document.querySelectorAll(".nav-link").forEach((l) => {
