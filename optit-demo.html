@@ -321,6 +321,7 @@
       .nav-dd-label {
         cursor: pointer;
         color: inherit;
+        text-decoration: none;
       }
 
       .nav-dropdown.label-active > .nav-dd-label {
@@ -1162,15 +1163,15 @@
         50%       { transform: translateY(-6px); }
       }
 
-      #page-svc-elevate .page-hero {
+      #page-elevateops-ai-platform .page-hero {
         overflow: visible;
       }
-      #page-svc-elevate .page-hero > .container {
+      #page-elevateops-ai-platform .page-hero > .container {
         display: flex;
         align-items: center;
         gap: 40px;
       }
-      #page-svc-elevate .page-hero-content {
+      #page-elevateops-ai-platform .page-hero-content {
         flex: 1;
         min-width: 0;
         max-width: none;
@@ -1257,27 +1258,27 @@
 
       /* Tablet: stack content + mockup, hero grows to fit */
       @media (max-width: 900px) {
-        #page-svc-elevate .page-hero {
+        #page-elevateops-ai-platform .page-hero {
           height: auto !important;
           overflow: visible;
           padding-top: 88px;
           padding-bottom: 28px;
         }
-        #page-svc-elevate .page-hero > .container {
+        #page-elevateops-ai-platform .page-hero > .container {
           flex-direction: column;
           align-items: center;
           gap: 16px;
         }
-        #page-svc-elevate .page-hero-content {
+        #page-elevateops-ai-platform .page-hero-content {
           width: 100%;
           max-width: none;
         }
-        #page-svc-elevate .page-hero-content .hero-cta-row {
+        #page-elevateops-ai-platform .page-hero-content .hero-cta-row {
           justify-content: center;
           margin-top: 12px !important;
           gap: 10px;
         }
-        #page-svc-elevate .page-hero-content .hero-cta-row .btn {
+        #page-elevateops-ai-platform .page-hero-content .hero-cta-row .btn {
           font-size: 13px;
           padding: 7px 14px;
         }
@@ -3091,8 +3092,8 @@
           box-sizing: border-box !important;
         }
         #hero-services  { background-position: 70% center !important; }
-        #hero-svc-cloud { background-position: center center !important; }
-        #hero-res-news  { background-position: right center !important; }
+        #hero-cloud-services { background-position: center center !important; }
+        #hero-news  { background-position: right center !important; }
       }
 
       @media (max-width: 600px) {
@@ -3565,27 +3566,28 @@
             href="#"
             class="nav-link"
             onclick="
-              showPage('about');
+              showPage('about-us');
               return false;
             "
             >About Us</a
           >
 
           <div class="nav-dropdown" id="nav-dd-services">
-            <span
+            <a
+              href="#services"
               class="nav-dd-label"
               onclick="
                 showPage('services');
                 return false;
               "
-              >Services</span
+              >Services</a
             >
             <div class="dropdown-menu">
               <a
                 href="#"
                 class="dropdown-item"
                 onclick="
-                  showPage('svc-infra');
+                  showPage('it-infrastructure-management');
                   return false;
                 "
                 >IT Infrastructure Management</a
@@ -3594,7 +3596,7 @@
                 href="#"
                 class="dropdown-item"
                 onclick="
-                  showPage('svc-cloud');
+                  showPage('cloud-services');
                   return false;
                 "
                 >Cloud Services</a
@@ -3603,7 +3605,7 @@
                 href="#"
                 class="dropdown-item"
                 onclick="
-                  showPage('svc-devops');
+                  showPage('devops-services');
                   return false;
                 "
                 >DevOps Services</a
@@ -3612,7 +3614,7 @@
                 href="#"
                 class="dropdown-item"
                 onclick="
-                  showPage('svc-security');
+                  showPage('managed-security');
                   return false;
                 "
                 >Managed Security</a
@@ -3621,7 +3623,7 @@
                 href="#"
                 class="dropdown-item"
                 onclick="
-                  showPage('svc-semi');
+                  showPage('semiconductor-eda-infrastructure');
                   return false;
                 "
                 >Semiconductor & EDA Infrastructure</a
@@ -3630,7 +3632,7 @@
                 href="#"
                 class="dropdown-item"
                 onclick="
-                  showPage('svc-elevate');
+                  showPage('elevateops-ai-platform');
                   return false;
                 "
                 >ElevateOps AI Platform</a
@@ -3639,39 +3641,41 @@
           </div>
 
           <div class="nav-dropdown" id="nav-dd-industries">
-            <span
+            <a
+              href="#industries"
               class="nav-dd-label"
               onclick="
                 showPage('industries');
                 return false;
               "
-              >Industries</span
+              >Industries</a
             >
             <div class="dropdown-menu">
-              <a href="#" class="dropdown-item" onclick="showPage('ind-semiconductor'); return false;">Semiconductor & Electronics</a>
-              <a href="#" class="dropdown-item" onclick="showPage('ind-banking'); return false;">Banking & Financial Services</a>
-              <a href="#" class="dropdown-item" onclick="showPage('ind-healthcare'); return false;">Healthcare & Life Sciences</a>
-              <a href="#" class="dropdown-item" onclick="showPage('ind-manufacturing'); return false;">Manufacturing</a>
-              <a href="#" class="dropdown-item" onclick="showPage('ind-technology'); return false;">Technology & SaaS</a>
-              <a href="#" class="dropdown-item" onclick="showPage('ind-education'); return false;">Education</a>
+              <a href="#" class="dropdown-item" onclick="showPage('semiconductor-electronics'); return false;">Semiconductor & Electronics</a>
+              <a href="#" class="dropdown-item" onclick="showPage('banking-financial-services'); return false;">Banking & Financial Services</a>
+              <a href="#" class="dropdown-item" onclick="showPage('healthcare-life-sciences'); return false;">Healthcare & Life Sciences</a>
+              <a href="#" class="dropdown-item" onclick="showPage('manufacturing'); return false;">Manufacturing</a>
+              <a href="#" class="dropdown-item" onclick="showPage('technology-saas'); return false;">Technology & SaaS</a>
+              <a href="#" class="dropdown-item" onclick="showPage('education'); return false;">Education</a>
             </div>
           </div>
 
           <div class="nav-dropdown" id="nav-dd-resources">
-            <span
+            <a
+              href="#resources"
               class="nav-dd-label"
               onclick="
                 showPage('resources');
                 return false;
               "
-              >Resources</span
+              >Resources</a
             >
             <div class="dropdown-menu">
               <a
                 href="#"
                 class="dropdown-item"
                 onclick="
-                  showPage('res-blog');
+                  showPage('blog');
                   return false;
                 "
                 >Blog</a
@@ -3680,7 +3684,7 @@
                 href="#"
                 class="dropdown-item"
                 onclick="
-                  showPage('res-news');
+                  showPage('news');
                   return false;
                 "
                 >News</a
@@ -3689,7 +3693,7 @@
                 href="#"
                 class="dropdown-item"
                 onclick="
-                  showPage('res-clients');
+                  showPage('clients');
                   return false;
                 "
                 >Clients</a
@@ -3698,7 +3702,7 @@
                 href="#"
                 class="dropdown-item"
                 onclick="
-                  showPage('res-cases');
+                  showPage('case-studies');
                   return false;
                 "
                 >Case Studies</a
@@ -3707,7 +3711,7 @@
                 href="#"
                 class="dropdown-item"
                 onclick="
-                  showPage('res-newsletter');
+                  showPage('newsletter');
                   return false;
                 "
                 >Newsletters</a
@@ -3729,7 +3733,7 @@
             href="#"
             class="nav-link"
             onclick="
-              showPage('contact');
+              showPage('contact-us');
               return false;
             "
             >Contact Us</a
@@ -3741,7 +3745,7 @@
             href="#"
             class="btn btn-primary"
             onclick="
-              showPage('contact');
+              showPage('contact-us');
               scrollToForm();
               return false;
             "
@@ -3777,12 +3781,12 @@
           <button class="mob-dd-expand" onclick="mobToggleDd('mob-dd-services')" aria-label="Expand Services"><span class="mob-dd-arrow">▾</span></button>
         </div>
         <div class="mob-dd-items" id="mob-dd-services">
-          <button class="mob-dd-item" onclick="mobNavGo('svc-infra')">IT Infrastructure Management</button>
-          <button class="mob-dd-item" onclick="mobNavGo('svc-cloud')">Cloud Services</button>
-          <button class="mob-dd-item" onclick="mobNavGo('svc-devops')">DevOps Services</button>
-          <button class="mob-dd-item" onclick="mobNavGo('svc-security')">Managed Security</button>
-          <button class="mob-dd-item" onclick="mobNavGo('svc-semi')">Semiconductor & EDA Infrastructure</button>
-          <button class="mob-dd-item" onclick="mobNavGo('svc-elevate')">ElevateOps AI Platform</button>
+          <button class="mob-dd-item" onclick="mobNavGo('it-infrastructure-management')">IT Infrastructure Management</button>
+          <button class="mob-dd-item" onclick="mobNavGo('cloud-services')">Cloud Services</button>
+          <button class="mob-dd-item" onclick="mobNavGo('devops-services')">DevOps Services</button>
+          <button class="mob-dd-item" onclick="mobNavGo('managed-security')">Managed Security</button>
+          <button class="mob-dd-item" onclick="mobNavGo('semiconductor-eda-infrastructure')">Semiconductor & EDA Infrastructure</button>
+          <button class="mob-dd-item" onclick="mobNavGo('elevateops-ai-platform')">ElevateOps AI Platform</button>
         </div>
 
         <!-- Industries dropdown -->
@@ -3791,12 +3795,12 @@
           <button class="mob-dd-expand" onclick="mobToggleDd('mob-dd-industries')" aria-label="Expand Industries"><span class="mob-dd-arrow">▾</span></button>
         </div>
         <div class="mob-dd-items" id="mob-dd-industries">
-          <button class="mob-dd-item" onclick="mobNavGo('ind-semiconductor')">Semiconductor & Electronics</button>
-          <button class="mob-dd-item" onclick="mobNavGo('ind-banking')">Banking & Financial Services</button>
-          <button class="mob-dd-item" onclick="mobNavGo('ind-healthcare')">Healthcare & Life Sciences</button>
-          <button class="mob-dd-item" onclick="mobNavGo('ind-manufacturing')">Manufacturing</button>
-          <button class="mob-dd-item" onclick="mobNavGo('ind-technology')">Technology & SaaS</button>
-          <button class="mob-dd-item" onclick="mobNavGo('ind-education')">Education</button>
+          <button class="mob-dd-item" onclick="mobNavGo('semiconductor-electronics')">Semiconductor & Electronics</button>
+          <button class="mob-dd-item" onclick="mobNavGo('banking-financial-services')">Banking & Financial Services</button>
+          <button class="mob-dd-item" onclick="mobNavGo('healthcare-life-sciences')">Healthcare & Life Sciences</button>
+          <button class="mob-dd-item" onclick="mobNavGo('manufacturing')">Manufacturing</button>
+          <button class="mob-dd-item" onclick="mobNavGo('technology-saas')">Technology & SaaS</button>
+          <button class="mob-dd-item" onclick="mobNavGo('education')">Education</button>
         </div>
 
         <!-- Resources dropdown -->
@@ -3805,11 +3809,11 @@
           <button class="mob-dd-expand" onclick="mobToggleDd('mob-dd-resources')" aria-label="Expand Resources"><span class="mob-dd-arrow">▾</span></button>
         </div>
         <div class="mob-dd-items" id="mob-dd-resources">
-          <button class="mob-dd-item" onclick="mobNavGo('res-blog')">Blog</button>
-          <button class="mob-dd-item" onclick="mobNavGo('res-news')">News</button>
-          <button class="mob-dd-item" onclick="mobNavGo('res-clients')">Clients</button>
-          <button class="mob-dd-item" onclick="mobNavGo('res-cases')">Case Studies</button>
-          <button class="mob-dd-item" onclick="mobNavGo('res-newsletter')">Newsletters</button>
+          <button class="mob-dd-item" onclick="mobNavGo('blog')">Blog</button>
+          <button class="mob-dd-item" onclick="mobNavGo('news')">News</button>
+          <button class="mob-dd-item" onclick="mobNavGo('clients')">Clients</button>
+          <button class="mob-dd-item" onclick="mobNavGo('case-studies')">Case Studies</button>
+          <button class="mob-dd-item" onclick="mobNavGo('newsletter')">Newsletters</button>
         </div>
 
         <a href="#" class="mob-nav-link" onclick="mobNavGo('careers'); return false;">Careers</a>
@@ -3859,7 +3863,7 @@
             <a
               href="#"
               class="btn btn-primary"
-              onclick="showPage('contact'); return false;"
+              onclick="showPage('contact-us'); return false;"
             >
               Talk to Our Team
             </a>
@@ -3998,7 +4002,7 @@
 
           <div class="services-grid">
             <!-- IT Infrastructure -->
-            <div class="service-card" onclick="showPage('svc-infra')" style="border:none; min-height:320px;">
+            <div class="service-card" onclick="showPage('it-infrastructure-management')" style="border:none; min-height:320px;">
               <div style="position:absolute; inset:0; z-index:0;">
                 <img src="https://www.advsyscon.com/wp-content/uploads/it-infrastructure-operations-management.jpg" alt="" style="width:100%; height:100%; object-fit:cover; display:block;">
                 <div style="position:absolute; inset:0; background:rgba(4,30,18,0.78);"></div>
@@ -4007,13 +4011,13 @@
                 <div class="service-card-inner-group">
                   <div class="service-name" style="color:var(--white); font-size:18px;">IT Infrastructure Management</div>
                   <div class="service-desc" style="color:rgba(255,255,255,0.92); font-size:13.5px;">Proactive management of infrastructure across on-premises, hybrid, and cloud environments</div>
-                  <a href="#" class="service-link" onclick="showPage('svc-infra'); return false;">Learn More</a>
+                  <a href="#" class="service-link" onclick="showPage('it-infrastructure-management'); return false;">Learn More</a>
                 </div>
               </div>
             </div>
 
             <!-- Cloud Services -->
-            <div class="service-card" onclick="showPage('svc-cloud')" style="border:none; min-height:320px;">
+            <div class="service-card" onclick="showPage('cloud-services')" style="border:none; min-height:320px;">
               <div style="position:absolute; inset:0; z-index:0;">
                 <img src="https://www.dewsolutions.in/wp-content/uploads/2022/08/Cloud-technology.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block;">
                 <div style="position:absolute; inset:0; background:rgba(4,30,18,0.78);"></div>
@@ -4022,13 +4026,13 @@
                 <div class="service-card-inner-group">
                   <div class="service-name" style="color:var(--white); font-size:18px;">Cloud Services</div>
                   <div class="service-desc" style="color:rgba(255,255,255,0.92); font-size:13.5px;">Cloud migration, modernization, and cost optimization backed by deep multi cloud expertise to help you move to the Cloud with confidence</div>
-                  <a href="#" class="service-link" onclick="showPage('svc-cloud'); return false;">Learn More</a>
+                  <a href="#" class="service-link" onclick="showPage('cloud-services'); return false;">Learn More</a>
                 </div>
               </div>
             </div>
 
             <!-- DevOps -->
-            <div class="service-card" onclick="showPage('svc-devops')" style="border:none; min-height:320px;">
+            <div class="service-card" onclick="showPage('devops-services')" style="border:none; min-height:320px;">
               <div style="position:absolute; inset:0; z-index:0;">
                 <img src="https://cloud.folio3.com/wp-content/uploads/2024/06/DevOps-As-a-Service-OG.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block;">
                 <div style="position:absolute; inset:0; background:rgba(4,30,18,0.78);"></div>
@@ -4037,13 +4041,13 @@
                 <div class="service-card-inner-group">
                   <div class="service-name" style="color:var(--white); font-size:18px;">DevOps Services</div>
                   <div class="service-desc" style="color:rgba(255,255,255,0.92); font-size:13.5px;">Infra Automation, CI/CD, Container Orchestration, Observability and platform engineering to accelerate your software delivery</div>
-                  <a href="#" class="service-link" onclick="showPage('svc-devops'); return false;">Learn More</a>
+                  <a href="#" class="service-link" onclick="showPage('devops-services'); return false;">Learn More</a>
                 </div>
               </div>
             </div>
 
             <!-- Security -->
-            <div class="service-card" onclick="showPage('svc-security')" style="border:none; min-height:320px;">
+            <div class="service-card" onclick="showPage('managed-security')" style="border:none; min-height:320px;">
               <div style="position:absolute; inset:0; z-index:0;">
                 <img src="https://innefu.com/wp-content/uploads/2025/05/HOW-CYBER-SECURITY-IMPACTS-BUSINESSES-GLOBALLY.webp" alt="" style="width:100%; height:100%; object-fit:cover; display:block;">
                 <div style="position:absolute; inset:0; background:rgba(4,30,18,0.78);"></div>
@@ -4052,13 +4056,13 @@
                 <div class="service-card-inner-group">
                   <div class="service-name" style="color:var(--white); font-size:18px;">Managed Security</div>
                   <div class="service-desc" style="color:rgba(255,255,255,0.92); font-size:13.5px;">Security assessments, ISO 27001 consulting, compliance services, and cybersecurity solutions designed for modern IT environments</div>
-                  <a href="#" class="service-link" onclick="showPage('svc-security'); return false;">Learn More</a>
+                  <a href="#" class="service-link" onclick="showPage('managed-security'); return false;">Learn More</a>
                 </div>
               </div>
             </div>
 
             <!-- Semiconductor -->
-            <div class="service-card" onclick="showPage('svc-semi')" style="border:none; min-height:320px;">
+            <div class="service-card" onclick="showPage('semiconductor-eda-infrastructure')" style="border:none; min-height:320px;">
               <div style="position:absolute; inset:0; z-index:0;">
                 <img src="https://www.appliedmaterials.com/content/dam/site/prod-tech/semi/img/semi-landing/Graphic%201%20-%20chip%20abstract.jpg" alt="" style="width:100%; height:100%; object-fit:cover; display:block;">
                 <div style="position:absolute; inset:0; background:rgba(4,30,18,0.78);"></div>
@@ -4067,13 +4071,13 @@
                 <div class="service-card-inner-group">
                   <div class="service-name" style="color:var(--white); font-size:18px;">Semiconductor & EDA Infrastructure</div>
                   <div class="service-desc" style="color:rgba(255,255,255,0.92); font-size:13.5px;">Purpose-built EDA infrastructure and engineering environments designed for semiconductor design teams to move faster without infrastructure friction</div>
-                  <a href="#" class="service-link" onclick="showPage('svc-semi'); return false;">Learn More</a>
+                  <a href="#" class="service-link" onclick="showPage('semiconductor-eda-infrastructure'); return false;">Learn More</a>
                 </div>
               </div>
             </div>
 
             <!-- ElevateOps AI -->
-            <div class="service-card" onclick="showPage('svc-elevate')" style="border:none; min-height:320px;">
+            <div class="service-card" onclick="showPage('elevateops-ai-platform')" style="border:none; min-height:320px;">
               <div style="position:absolute; inset:0; z-index:0;">
                 <img src="https://www.zinghr.com/wp-content/uploads/2023/01/How-Enterprises-Can-Leverage-AI-Powered-HR-Tech-to-Streamline-Workforce-Training-Strategies.jpg" alt="" style="width:100%; height:100%; object-fit:cover; display:block;">
                 <div style="position:absolute; inset:0; background:rgba(4,30,18,0.78);"></div>
@@ -4082,7 +4086,7 @@
                 <div class="service-card-inner-group">
                   <div class="service-name" style="color:var(--white); font-size:18px;">ElevateOps AI Platform</div>
                   <div class="service-desc" style="color:rgba(255,255,255,0.92); font-size:13.5px;">AI-powered operational intelligence that helps teams organize knowledge and improve operational efficiency</div>
-                  <a href="#" class="service-link" onclick="showPage('svc-elevate'); return false;">Learn More</a>
+                  <a href="#" class="service-link" onclick="showPage('elevateops-ai-platform'); return false;">Learn More</a>
                 </div>
               </div>
             </div>
@@ -4213,7 +4217,7 @@
                 href="#"
                 class="btn btn-white"
                 onclick="
-                  showPage('contact');
+                  showPage('contact-us');
                   return false;
                 "
                 >Talk to Our Team</a
@@ -4234,7 +4238,7 @@
     </div>
 
     <!-- ABOUT PAGE -->
-    <div id="page-about" class="page">
+    <div id="page-about-us" class="page">
       <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.75), rgba(6,78,59,0.75)), url('Images/About/hero.jpg'); background-size: cover; background-position: center;">
         <div class="container">
           <div class="page-hero-content">
@@ -4614,7 +4618,7 @@
           </div>
           <div class="services-grid">
             <!-- IT Infrastructure -->
-            <div class="service-card" onclick="showPage('svc-infra')" style="border:none; min-height:320px;">
+            <div class="service-card" onclick="showPage('it-infrastructure-management')" style="border:none; min-height:320px;">
               <div style="position:absolute; inset:0; z-index:0;">
                 <img src="https://www.advsyscon.com/wp-content/uploads/it-infrastructure-operations-management.jpg" alt="" style="width:100%; height:100%; object-fit:cover; display:block;">
                 <div style="position:absolute; inset:0; background:rgba(4,30,18,0.78);"></div>
@@ -4623,13 +4627,13 @@
                 <div class="service-card-inner-group">
                   <div class="service-name" style="color:var(--white); font-size:18px;">IT Infrastructure Management</div>
                   <div class="service-desc" style="color:rgba(255,255,255,0.92); font-size:13.5px;">Proactive management of infrastructure across on-premises, hybrid, and cloud environments</div>
-                  <a href="#" class="service-link" onclick="showPage('svc-infra'); return false;">Learn More</a>
+                  <a href="#" class="service-link" onclick="showPage('it-infrastructure-management'); return false;">Learn More</a>
                 </div>
               </div>
             </div>
 
             <!-- Cloud Services -->
-            <div class="service-card" onclick="showPage('svc-cloud')" style="border:none; min-height:320px;">
+            <div class="service-card" onclick="showPage('cloud-services')" style="border:none; min-height:320px;">
               <div style="position:absolute; inset:0; z-index:0;">
                 <img src="https://www.dewsolutions.in/wp-content/uploads/2022/08/Cloud-technology.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block;">
                 <div style="position:absolute; inset:0; background:rgba(4,30,18,0.78);"></div>
@@ -4638,13 +4642,13 @@
                 <div class="service-card-inner-group">
                   <div class="service-name" style="color:var(--white); font-size:18px;">Cloud Services</div>
                   <div class="service-desc" style="color:rgba(255,255,255,0.92); font-size:13.5px;">Cloud migration, modernization, and cost optimization backed by deep multi cloud expertise to help you move to the Cloud with confidence</div>
-                  <a href="#" class="service-link" onclick="showPage('svc-cloud'); return false;">Learn More</a>
+                  <a href="#" class="service-link" onclick="showPage('cloud-services'); return false;">Learn More</a>
                 </div>
               </div>
             </div>
 
             <!-- DevOps -->
-            <div class="service-card" onclick="showPage('svc-devops')" style="border:none; min-height:320px;">
+            <div class="service-card" onclick="showPage('devops-services')" style="border:none; min-height:320px;">
               <div style="position:absolute; inset:0; z-index:0;">
                 <img src="https://cloud.folio3.com/wp-content/uploads/2024/06/DevOps-As-a-Service-OG.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block;">
                 <div style="position:absolute; inset:0; background:rgba(4,30,18,0.78);"></div>
@@ -4653,13 +4657,13 @@
                 <div class="service-card-inner-group">
                   <div class="service-name" style="color:var(--white); font-size:18px;">DevOps Services</div>
                   <div class="service-desc" style="color:rgba(255,255,255,0.92); font-size:13.5px;">Infra Automation, CI/CD, Container Orchestration, Observability and platform engineering to accelerate your software delivery</div>
-                  <a href="#" class="service-link" onclick="showPage('svc-devops'); return false;">Learn More</a>
+                  <a href="#" class="service-link" onclick="showPage('devops-services'); return false;">Learn More</a>
                 </div>
               </div>
             </div>
 
             <!-- Security -->
-            <div class="service-card" onclick="showPage('svc-security')" style="border:none; min-height:320px;">
+            <div class="service-card" onclick="showPage('managed-security')" style="border:none; min-height:320px;">
               <div style="position:absolute; inset:0; z-index:0;">
                 <img src="https://innefu.com/wp-content/uploads/2025/05/HOW-CYBER-SECURITY-IMPACTS-BUSINESSES-GLOBALLY.webp" alt="" style="width:100%; height:100%; object-fit:cover; display:block;">
                 <div style="position:absolute; inset:0; background:rgba(4,30,18,0.78);"></div>
@@ -4668,13 +4672,13 @@
                 <div class="service-card-inner-group">
                   <div class="service-name" style="color:var(--white); font-size:18px;">Managed Security</div>
                   <div class="service-desc" style="color:rgba(255,255,255,0.92); font-size:13.5px;">Security assessments, ISO 27001 consulting, compliance services, and cybersecurity solutions designed for modern IT environments</div>
-                  <a href="#" class="service-link" onclick="showPage('svc-security'); return false;">Learn More</a>
+                  <a href="#" class="service-link" onclick="showPage('managed-security'); return false;">Learn More</a>
                 </div>
               </div>
             </div>
 
             <!-- Semiconductor -->
-            <div class="service-card" onclick="showPage('svc-semi')" style="border:none; min-height:320px;">
+            <div class="service-card" onclick="showPage('semiconductor-eda-infrastructure')" style="border:none; min-height:320px;">
               <div style="position:absolute; inset:0; z-index:0;">
                 <img src="https://www.appliedmaterials.com/content/dam/site/prod-tech/semi/img/semi-landing/Graphic%201%20-%20chip%20abstract.jpg" alt="" style="width:100%; height:100%; object-fit:cover; display:block;">
                 <div style="position:absolute; inset:0; background:rgba(4,30,18,0.78);"></div>
@@ -4683,13 +4687,13 @@
                 <div class="service-card-inner-group">
                   <div class="service-name" style="color:var(--white); font-size:18px;">Semiconductor & EDA Infrastructure</div>
                   <div class="service-desc" style="color:rgba(255,255,255,0.92); font-size:13.5px;">Purpose-built EDA infrastructure and engineering environments designed for semiconductor design teams to move faster without infrastructure friction</div>
-                  <a href="#" class="service-link" onclick="showPage('svc-semi'); return false;">Learn More</a>
+                  <a href="#" class="service-link" onclick="showPage('semiconductor-eda-infrastructure'); return false;">Learn More</a>
                 </div>
               </div>
             </div>
 
             <!-- ElevateOps AI -->
-            <div class="service-card" onclick="showPage('svc-elevate')" style="border:none; min-height:320px;">
+            <div class="service-card" onclick="showPage('elevateops-ai-platform')" style="border:none; min-height:320px;">
               <div style="position:absolute; inset:0; z-index:0;">
                 <img src="https://www.zinghr.com/wp-content/uploads/2023/01/How-Enterprises-Can-Leverage-AI-Powered-HR-Tech-to-Streamline-Workforce-Training-Strategies.jpg" alt="" style="width:100%; height:100%; object-fit:cover; display:block;">
                 <div style="position:absolute; inset:0; background:rgba(4,30,18,0.78);"></div>
@@ -4698,7 +4702,7 @@
                 <div class="service-card-inner-group">
                   <div class="service-name" style="color:var(--white); font-size:18px;">ElevateOps AI Platform</div>
                   <div class="service-desc" style="color:rgba(255,255,255,0.92); font-size:13.5px;">AI-powered operational intelligence that helps teams organize knowledge and improve operational efficiency</div>
-                  <a href="#" class="service-link" onclick="showPage('svc-elevate'); return false;">Learn More</a>
+                  <a href="#" class="service-link" onclick="showPage('elevateops-ai-platform'); return false;">Learn More</a>
                 </div>
               </div>
             </div>
@@ -4769,7 +4773,7 @@
     </div>
 
     <!-- SERVICE DETAIL: IT INFRASTRUCTURE -->
-    <div id="page-svc-infra" class="page">
+    <div id="page-it-infrastructure-management" class="page">
 
       <!-- HERO -->
       <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.72), rgba(6,78,59,0.72)), url('Images/Services/it-infrastructure.webp'); background-size: cover; background-position: center;">
@@ -4781,7 +4785,7 @@
               Helping organizations maintain reliable, secure, and efficient IT environments through proactive management, monitoring, and support.
             </p>
             <div class="hero-cta-row" style="margin-top: 32px; display: flex; gap: 14px">
-              <a href="#" class="btn btn-primary" onclick="showPage('contact'); return false;">Talk to Our Team</a>
+              <a href="#" class="btn btn-primary" onclick="showPage('contact-us'); return false;">Talk to Our Team</a>
               <a href="#" class="btn btn-ghost" onclick="showPage('services'); return false;">← All Services</a>
             </div>
           </div>
@@ -5023,24 +5027,24 @@
           <div class="label label-light" style="margin-bottom: 16px;">Get Started</div>
           <h2 class="section-title" style="color: var(--white); margin-bottom: 16px;">Ready to Strengthen Your IT Operations?</h2>
           <p style="color: var(--cyan); font-size: 17px; max-width: 560px; margin: 0 auto 32px;">Whether you're enhancing existing environments or planning future initiatives, our team is here to help.</p>
-          <a href="#" class="btn btn-primary" onclick="showPage('contact'); return false;">Talk to Our Team</a>
+          <a href="#" class="btn btn-primary" onclick="showPage('contact-us'); return false;">Talk to Our Team</a>
         </div>
       </section>
 
     </div>
 
     <!-- SERVICE DETAIL: CLOUD -->
-    <div id="page-svc-cloud" class="page">
+    <div id="page-cloud-services" class="page">
 
       <!-- HERO -->
-      <section id="hero-svc-cloud" class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.72), rgba(6,78,59,0.72)), url('Images/Services/cloud.jpg'); background-size: cover; background-position: center;">
+      <section id="hero-cloud-services" class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.72), rgba(6,78,59,0.72)), url('Images/Services/cloud.jpg'); background-size: cover; background-position: center;">
         <div class="container">
           <div class="page-hero-content">
             <div class="label label-light">Cloud Services</div>
             <h1 class="page-title">Enabling Modern Cloud Environments</h1>
             <p class="page-sub">Helping organizations adopt cloud technologies with confidence and transforming the existing cloud infrastructure cost efficient, secure and operationally mature.</p>
             <div class="hero-cta-row" style="margin-top: 28px; display: flex; gap: 14px;">
-              <a href="#" class="btn btn-primary" onclick="showPage('contact'); return false;">Talk to Our Team</a>
+              <a href="#" class="btn btn-primary" onclick="showPage('contact-us'); return false;">Talk to Our Team</a>
               <a href="#" class="btn btn-ghost" onclick="showPage('services'); return false;">← All Services</a>
             </div>
           </div>
@@ -5278,14 +5282,14 @@
           <div class="label label-light" style="margin-bottom: 16px;">Get Started</div>
           <h2 class="section-title" style="color: var(--white); margin-bottom: 16px;">Ready to Modernize Your Cloud Environment?</h2>
           <p style="color: var(--cyan); font-size: 17px; max-width: 560px; margin: 0 auto 32px;">Whether you're planning your first migration, need to cut cloud costs, strengthen security posture, or hand off day-to-day operations to a team that lives and breathes cloud - let's talk.</p>
-          <a href="#" class="btn btn-primary" onclick="showPage('contact'); return false;">Talk to Our Team</a>
+          <a href="#" class="btn btn-primary" onclick="showPage('contact-us'); return false;">Talk to Our Team</a>
         </div>
       </section>
 
     </div>
 
     <!-- SERVICE DETAIL: DEVOPS -->
-    <div id="page-svc-devops" class="page">
+    <div id="page-devops-services" class="page">
 
       <!-- HERO -->
       <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.78), rgba(6,78,59,0.78)), url('Images/Services/devops.jpg'); background-size: cover; background-position: center;">
@@ -5295,7 +5299,7 @@
             <h1 class="page-title">Enabling Reliable and Efficient Software Delivery</h1>
             <p class="page-sub">Helping organizations improve collaboration, automate delivery processes, and build scalable and reliable production ready platforms that support modern application development.</p>
             <div class="hero-cta-row" style="margin-top: 28px; display: flex; gap: 14px;">
-              <a href="#" class="btn btn-primary" onclick="showPage('contact'); return false;">Talk to Our Team</a>
+              <a href="#" class="btn btn-primary" onclick="showPage('contact-us'); return false;">Talk to Our Team</a>
               <a href="#" class="btn btn-ghost" onclick="showPage('services'); return false;">← All Services</a>
             </div>
           </div>
@@ -5534,14 +5538,14 @@
           <div class="label label-light" style="margin-bottom: 16px;">Get Started</div>
           <h2 class="section-title" style="color: var(--white); margin-bottom: 16px;">Ready to Strengthen Your Delivery Processes?</h2>
           <p style="color: var(--cyan); font-size: 17px; max-width: 560px; margin: 0 auto 32px;">Whether you're starting your DevOps journey or looking to enhance existing practices, our team is here to help.</p>
-          <a href="#" class="btn btn-primary" onclick="showPage('contact'); return false;">Talk to Our Team</a>
+          <a href="#" class="btn btn-primary" onclick="showPage('contact-us'); return false;">Talk to Our Team</a>
         </div>
       </section>
 
     </div>
 
     <!-- SERVICE DETAIL: SECURITY -->
-    <div id="page-svc-security" class="page">
+    <div id="page-managed-security" class="page">
       <section class="page-hero" style="background-image: linear-gradient(rgba(2,44,34,0.75), rgba(2,44,34,0.75)), url('Images/Services/cybersecurity.webp'); background-size: cover; background-position: center right;">
         <div class="container">
           <div class="page-hero-content">
@@ -5549,7 +5553,7 @@
             <h1 class="page-title">Strengthening Security and Compliance</h1>
             <p class="page-sub">Helping organizations assess risks, improve security practices, and support compliance requirements through a structured and proactive approach.</p>
             <div class="hero-cta-row" style="margin-top: 28px; display: flex; gap: 14px;">
-              <a href="#" class="btn btn-primary" onclick="showPage('contact'); return false;">Talk to Our Team</a>
+              <a href="#" class="btn btn-primary" onclick="showPage('contact-us'); return false;">Talk to Our Team</a>
               <a href="#" class="btn btn-ghost" onclick="showPage('services'); return false;">← All Services</a>
             </div>
           </div>
@@ -5786,14 +5790,14 @@
           <div class="label label-light" style="margin-bottom: 16px;">Get Started</div>
           <h2 class="section-title" style="color: var(--white); margin-bottom: 16px;">Ready to Strengthen Your Security Posture?</h2>
           <p style="color: var(--cyan); font-size: 17px; max-width: 560px; margin: 0 auto 32px;">Whether you're enhancing existing security practices or addressing compliance requirements, our team is here to help.</p>
-          <a href="#" class="btn btn-primary" onclick="showPage('contact'); return false;">Talk to Our Team</a>
+          <a href="#" class="btn btn-primary" onclick="showPage('contact-us'); return false;">Talk to Our Team</a>
         </div>
       </section>
 
     </div>
 
     <!-- SERVICE DETAIL: SEMICONDUCTOR -->
-    <div id="page-svc-semi" class="page">
+    <div id="page-semiconductor-eda-infrastructure" class="page">
       <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.78), rgba(6,78,59,0.78)), url('Images/Services/semiconductor.png'); background-size: cover; background-position: center;">
         <div class="container">
           <div class="page-hero-content">
@@ -5801,7 +5805,7 @@
             <h1 class="page-title">Infrastructure for Semiconductor Engineering Teams</h1>
             <p class="page-sub">Supporting semiconductor organizations with secure, scalable, and high-performance infrastructure designed for engineering and design workloads.</p>
             <div class="hero-cta-row" style="margin-top: 28px; display: flex; gap: 14px;">
-              <a href="#" class="btn btn-primary" onclick="showPage('contact'); return false;">Talk to Our Team</a>
+              <a href="#" class="btn btn-primary" onclick="showPage('contact-us'); return false;">Talk to Our Team</a>
               <a href="#" class="btn btn-ghost" onclick="showPage('services'); return false;">← All Services</a>
             </div>
           </div>
@@ -6040,14 +6044,14 @@
           <div class="label label-light" style="margin-bottom: 16px;">Get Started</div>
           <h2 class="section-title" style="color: var(--white); margin-bottom: 16px;">Ready to Strengthen Your Engineering Infrastructure?</h2>
           <p style="color: var(--cyan); font-size: 17px; max-width: 560px; margin: 0 auto 32px;">Whether you're expanding existing environments or building new engineering capabilities, our team is here to help.</p>
-          <a href="#" class="btn btn-primary" onclick="showPage('contact'); return false;">Talk to Our Team</a>
+          <a href="#" class="btn btn-primary" onclick="showPage('contact-us'); return false;">Talk to Our Team</a>
         </div>
       </section>
 
     </div>
 
     <!-- SERVICE DETAIL: ELEVATEOPS -->
-    <div id="page-svc-elevate" class="page">
+    <div id="page-elevateops-ai-platform" class="page">
       <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.78), rgba(6,78,59,0.78)), url('Images/Services/elevateops.jpg'); background-size: cover; background-position: center;">
         <div class="container">
           <div class="page-hero-content">
@@ -6289,7 +6293,7 @@
             <div class="label">Industries We Serve</div>
           </div>
           <div class="cases-grid">
-            <div class="case-card" style="cursor: pointer" onclick="showPage('ind-semiconductor')">
+            <div class="case-card" style="cursor: pointer" onclick="showPage('semiconductor-electronics')">
               <div class="case-top" style="background: linear-gradient(135deg, #064e3b, #10b981); align-items: center; justify-content: center;">
                 <span style="font-size: 48px">🔬</span>
               </div>
@@ -6297,11 +6301,11 @@
                 <div class="case-title">Semiconductor & Electronics</div>
                 <p class="case-desc">Purpose-built infrastructure, EDA environments, high-performance computing, and secure engineering platforms for semiconductor design teams.</p>
                 <div style="margin-top: auto; padding-top: 16px;">
-                  <a href="#" class="service-link" onclick="showPage('ind-semiconductor'); return false;" style="font-size: 13px;">Learn More</a>
+                  <a href="#" class="service-link" onclick="showPage('semiconductor-electronics'); return false;" style="font-size: 13px;">Learn More</a>
                 </div>
               </div>
             </div>
-            <div class="case-card" style="cursor: pointer" onclick="showPage('ind-banking')">
+            <div class="case-card" style="cursor: pointer" onclick="showPage('banking-financial-services')">
               <div class="case-top" style="background: linear-gradient(135deg, #0b3b2e, #1a6b4a); align-items: center; justify-content: center;">
                 <span style="font-size: 48px">🏦</span>
               </div>
@@ -6309,11 +6313,11 @@
                 <div class="case-title">Banking & Financial Services</div>
                 <p class="case-desc">Infrastructure, cloud, and security solutions designed to support compliance, resilience, and business continuity.</p>
                 <div style="margin-top: auto; padding-top: 16px;">
-                  <a href="#" class="service-link" onclick="showPage('ind-banking'); return false;" style="font-size: 13px;">Learn More</a>
+                  <a href="#" class="service-link" onclick="showPage('banking-financial-services'); return false;" style="font-size: 13px;">Learn More</a>
                 </div>
               </div>
             </div>
-            <div class="case-card" style="cursor: pointer" onclick="showPage('ind-healthcare')">
+            <div class="case-card" style="cursor: pointer" onclick="showPage('healthcare-life-sciences')">
               <div class="case-top" style="background: linear-gradient(135deg, #047857, #6ee7b7); align-items: center; justify-content: center;">
                 <span style="font-size: 48px">🏥</span>
               </div>
@@ -6321,11 +6325,11 @@
                 <div class="case-title">Healthcare & Life Sciences</div>
                 <p class="case-desc">Secure technology environments that support healthcare operations, data protection, and regulatory requirements.</p>
                 <div style="margin-top: auto; padding-top: 16px;">
-                  <a href="#" class="service-link" onclick="showPage('ind-healthcare'); return false;" style="font-size: 13px;">Learn More</a>
+                  <a href="#" class="service-link" onclick="showPage('healthcare-life-sciences'); return false;" style="font-size: 13px;">Learn More</a>
                 </div>
               </div>
             </div>
-            <div class="case-card" style="cursor: pointer" onclick="showPage('ind-manufacturing')">
+            <div class="case-card" style="cursor: pointer" onclick="showPage('manufacturing')">
               <div class="case-top" style="background: linear-gradient(135deg, #065f46, #34d399); align-items: center; justify-content: center;">
                 <span style="font-size: 48px">🏭</span>
               </div>
@@ -6333,11 +6337,11 @@
                 <div class="case-title">Manufacturing</div>
                 <p class="case-desc">Reliable infrastructure, cloud, cybersecurity, and operational technologies that support modern manufacturing environments.</p>
                 <div style="margin-top: auto; padding-top: 16px;">
-                  <a href="#" class="service-link" onclick="showPage('ind-manufacturing'); return false;" style="font-size: 13px;">Learn More</a>
+                  <a href="#" class="service-link" onclick="showPage('manufacturing'); return false;" style="font-size: 13px;">Learn More</a>
                 </div>
               </div>
             </div>
-            <div class="case-card" style="cursor: pointer" onclick="showPage('ind-technology')">
+            <div class="case-card" style="cursor: pointer" onclick="showPage('technology-saas')">
               <div class="case-top" style="background: linear-gradient(135deg, #1a0b3e, #4a1a8a); align-items: center; justify-content: center;">
                 <span style="font-size: 48px">💡</span>
               </div>
@@ -6345,11 +6349,11 @@
                 <div class="case-title">Technology & SaaS</div>
                 <p class="case-desc">Cloud, DevOps, platform engineering, and scalable infrastructure that support product development and business growth.</p>
                 <div style="margin-top: auto; padding-top: 16px;">
-                  <a href="#" class="service-link" onclick="showPage('ind-technology'); return false;" style="font-size: 13px;">Learn More</a>
+                  <a href="#" class="service-link" onclick="showPage('technology-saas'); return false;" style="font-size: 13px;">Learn More</a>
                 </div>
               </div>
             </div>
-            <div class="case-card" style="cursor: pointer" onclick="showPage('ind-education')">
+            <div class="case-card" style="cursor: pointer" onclick="showPage('education')">
               <div class="case-top" style="background: linear-gradient(135deg, #1e3a5f, #2d6a9f); align-items: center; justify-content: center;">
                 <span style="font-size: 48px">🎓</span>
               </div>
@@ -6357,7 +6361,7 @@
                 <div class="case-title">Education</div>
                 <p class="case-desc">Technology solutions that support digital learning environments, secure campus infrastructure, collaboration, and efficient IT operations.</p>
                 <div style="margin-top: auto; padding-top: 16px;">
-                  <a href="#" class="service-link" onclick="showPage('ind-education'); return false;" style="font-size: 13px;">Learn More</a>
+                  <a href="#" class="service-link" onclick="showPage('education'); return false;" style="font-size: 13px;">Learn More</a>
                 </div>
               </div>
             </div>
@@ -6368,7 +6372,7 @@
     </div>
 
     <!-- INDUSTRY DETAIL: SEMICONDUCTOR & ELECTRONICS -->
-    <div id="page-ind-semiconductor" class="page">
+    <div id="page-semiconductor-electronics" class="page">
       <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.75), rgba(6,78,59,0.75)), url('Images/Industries/semiconductor.png'); background-size: cover; background-position: center;">
         <div class="container">
           <div class="page-hero-content">
@@ -6376,7 +6380,7 @@
             <h1 class="page-title">Technology Solutions Built for Semiconductor Innovation</h1>
             <p class="page-sub">Supporting semiconductor organizations with secure, scalable, and high-performance technology environments that enable engineering, design, and business operations.</p>
             <div class="hero-cta-row" style="margin-top: 28px; display: flex; gap: 14px;">
-              <a href="#" class="btn btn-primary" onclick="showPage('contact'); return false;">Talk to Our Team</a>
+              <a href="#" class="btn btn-primary" onclick="showPage('contact-us'); return false;">Talk to Our Team</a>
               <a href="#" class="btn btn-ghost" onclick="showPage('industries'); return false;">← All Industries</a>
             </div>
           </div>
@@ -6517,13 +6521,13 @@
           <div class="label label-light" style="margin-bottom: 16px;">Get Started</div>
           <h2 class="section-title" style="color: var(--white); margin-bottom: 16px;">Ready to Support Your Semiconductor Technology Journey?</h2>
           <p style="color: var(--cyan); font-size: 17px; max-width: 560px; margin: 0 auto 32px;">Whether you're strengthening engineering infrastructure, optimizing technology environments, or planning future growth, our team is here to help.</p>
-          <a href="#" class="btn btn-primary" onclick="showPage('contact'); return false;">Talk to Our Team</a>
+          <a href="#" class="btn btn-primary" onclick="showPage('contact-us'); return false;">Talk to Our Team</a>
         </div>
       </section>
     </div>
 
     <!-- INDUSTRY DETAIL: MANUFACTURING -->
-    <div id="page-ind-manufacturing" class="page">
+    <div id="page-manufacturing" class="page">
       <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.75), rgba(6,78,59,0.75)), url('Images/Industries/manufacturing.jpg'); background-size: cover; background-position: center;">
         <div class="container">
           <div class="page-hero-content">
@@ -6531,7 +6535,7 @@
             <h1 class="page-title">Enabling Smarter Manufacturing</h1>
             <p class="page-sub">Helping manufacturers build secure, connected, and reliable IT environments that improve operational efficiency, support production systems, and drive digital transformation.</p>
             <div class="hero-cta-row" style="margin-top: 28px; display: flex; gap: 14px;">
-              <a href="#" class="btn btn-primary" onclick="showPage('contact'); return false;">Talk to Our Team</a>
+              <a href="#" class="btn btn-primary" onclick="showPage('contact-us'); return false;">Talk to Our Team</a>
               <a href="#" class="btn btn-ghost" onclick="showPage('industries'); return false;">← All Industries</a>
             </div>
           </div>
@@ -6673,13 +6677,13 @@
           <div class="label label-light" style="margin-bottom: 16px;">Get Started</div>
           <h2 class="section-title" style="color: var(--white); margin-bottom: 16px;">Ready to Modernize Your Manufacturing IT?</h2>
           <p style="color: var(--cyan); font-size: 17px; max-width: 560px; margin: 0 auto 32px;">Whether you're improving infrastructure, strengthening security, or supporting digital transformation initiatives, our team is here to help.</p>
-          <a href="#" class="btn btn-primary" onclick="showPage('contact'); return false;">Talk to Our Team</a>
+          <a href="#" class="btn btn-primary" onclick="showPage('contact-us'); return false;">Talk to Our Team</a>
         </div>
       </section>
     </div>
 
     <!-- INDUSTRY DETAIL: HEALTHCARE & LIFE SCIENCES -->
-    <div id="page-ind-healthcare" class="page">
+    <div id="page-healthcare-life-sciences" class="page">
       <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.75), rgba(6,78,59,0.75)), url('Images/Industries/healthcare.jpg'); background-size: cover; background-position: center;">
         <div class="container">
           <div class="page-hero-content">
@@ -6687,7 +6691,7 @@
             <h1 class="page-title">Enabling Secure and Connected Healthcare</h1>
             <p class="page-sub">Helping healthcare and life sciences organizations build secure, reliable, and compliant IT environments that support patient care, protect sensitive data, and ensure operational continuity.</p>
             <div class="hero-cta-row" style="margin-top: 28px; display: flex; gap: 14px;">
-              <a href="#" class="btn btn-primary" onclick="showPage('contact'); return false;">Talk to Our Team</a>
+              <a href="#" class="btn btn-primary" onclick="showPage('contact-us'); return false;">Talk to Our Team</a>
               <a href="#" class="btn btn-ghost" onclick="showPage('industries'); return false;">← All Industries</a>
             </div>
           </div>
@@ -6829,13 +6833,13 @@
           <div class="label label-light" style="margin-bottom: 16px;">Get Started</div>
           <h2 class="section-title" style="color: var(--white); margin-bottom: 16px;">Ready to Strengthen Your Healthcare IT Environment?</h2>
           <p style="color: var(--cyan); font-size: 17px; max-width: 560px; margin: 0 auto 32px;">Whether you're improving security, modernizing infrastructure, or supporting compliance initiatives, our team is here to help.</p>
-          <a href="#" class="btn btn-primary" onclick="showPage('contact'); return false;">Talk to Our Team</a>
+          <a href="#" class="btn btn-primary" onclick="showPage('contact-us'); return false;">Talk to Our Team</a>
         </div>
       </section>
     </div>
 
     <!-- INDUSTRY DETAIL: BANKING & FINANCIAL SERVICES -->
-    <div id="page-ind-banking" class="page">
+    <div id="page-banking-financial-services" class="page">
       <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.75), rgba(6,78,59,0.75)), url('Images/Industries/banking.jpg'); background-size: cover; background-position: center;">
         <div class="container">
           <div class="page-hero-content">
@@ -6843,7 +6847,7 @@
             <h1 class="page-title">Secure Technology for Modern Financial Services</h1>
             <p class="page-sub">Helping financial institutions strengthen security, maintain compliance, and build resilient technology environments that support business continuity and customer trust.</p>
             <div class="hero-cta-row" style="margin-top: 28px; display: flex; gap: 14px;">
-              <a href="#" class="btn btn-primary" onclick="showPage('contact'); return false;">Talk to Our Team</a>
+              <a href="#" class="btn btn-primary" onclick="showPage('contact-us'); return false;">Talk to Our Team</a>
               <a href="#" class="btn btn-ghost" onclick="showPage('industries'); return false;">← All Industries</a>
             </div>
           </div>
@@ -6985,13 +6989,13 @@
           <div class="label label-light" style="margin-bottom: 16px;">Get Started</div>
           <h2 class="section-title" style="color: var(--white); margin-bottom: 16px;">Ready to Strengthen Your Technology Environment?</h2>
           <p style="color: var(--cyan); font-size: 17px; max-width: 560px; margin: 0 auto 32px;">Whether you're modernizing infrastructure, enhancing cybersecurity, or meeting evolving regulatory requirements, our team is here to help.</p>
-          <a href="#" class="btn btn-primary" onclick="showPage('contact'); return false;">Talk to Our Team</a>
+          <a href="#" class="btn btn-primary" onclick="showPage('contact-us'); return false;">Talk to Our Team</a>
         </div>
       </section>
     </div>
 
     <!-- INDUSTRY DETAIL: TECHNOLOGY & SAAS -->
-    <div id="page-ind-technology" class="page">
+    <div id="page-technology-saas" class="page">
       <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.75), rgba(6,78,59,0.75)), url('Images/Industries/technology-saas.webp'); background-size: cover; background-position: center;">
         <div class="container">
           <div class="page-hero-content">
@@ -6999,7 +7003,7 @@
             <h1 class="page-title">Built for High-Growth Digital Businesses</h1>
             <p class="page-sub">Helping technology and SaaS companies build scalable cloud, DevOps, and platform capabilities that support faster innovation, reliable operations, and sustainable growth.</p>
             <div class="hero-cta-row" style="margin-top: 28px; display: flex; gap: 14px;">
-              <a href="#" class="btn btn-primary" onclick="showPage('contact'); return false;">Talk to Our Team</a>
+              <a href="#" class="btn btn-primary" onclick="showPage('contact-us'); return false;">Talk to Our Team</a>
               <a href="#" class="btn btn-ghost" onclick="showPage('industries'); return false;">← All Industries</a>
             </div>
           </div>
@@ -7141,13 +7145,13 @@
           <div class="label label-light" style="margin-bottom: 16px;">Get Started</div>
           <h2 class="section-title" style="color: var(--white); margin-bottom: 16px;">Ready to Scale Your Digital Business?</h2>
           <p style="color: var(--cyan); font-size: 17px; max-width: 560px; margin: 0 auto 32px;">Whether you're strengthening DevOps, optimizing cloud operations, or building scalable platforms, our team is here to help.</p>
-          <a href="#" class="btn btn-primary" onclick="showPage('contact'); return false;">Talk to Our Team</a>
+          <a href="#" class="btn btn-primary" onclick="showPage('contact-us'); return false;">Talk to Our Team</a>
         </div>
       </section>
     </div>
 
     <!-- INDUSTRY DETAIL: EDUCATION -->
-    <div id="page-ind-education" class="page">
+    <div id="page-education" class="page">
       <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.75), rgba(6,78,59,0.75)), url('Images/Industries/education.webp'); background-size: cover; background-position: center;">
         <div class="container">
           <div class="page-hero-content">
@@ -7155,7 +7159,7 @@
             <h1 class="page-title">Empowering Modern Learning</h1>
             <p class="page-sub">Helping educational institutions build secure, connected, and reliable IT environments that enhance learning experiences, support collaboration, and simplify campus operations.</p>
             <div class="hero-cta-row" style="margin-top: 28px; display: flex; gap: 14px;">
-              <a href="#" class="btn btn-primary" onclick="showPage('contact'); return false;">Talk to Our Team</a>
+              <a href="#" class="btn btn-primary" onclick="showPage('contact-us'); return false;">Talk to Our Team</a>
               <a href="#" class="btn btn-ghost" onclick="showPage('industries'); return false;">← All Industries</a>
             </div>
           </div>
@@ -7297,7 +7301,7 @@
           <div class="label label-light" style="margin-bottom: 16px;">Get Started</div>
           <h2 class="section-title" style="color: var(--white); margin-bottom: 16px;">Ready to Modernize Your Education Environment?</h2>
           <p style="color: var(--cyan); font-size: 17px; max-width: 560px; margin: 0 auto 32px;">Whether you're improving campus connectivity, strengthening cybersecurity, or expanding digital learning capabilities, our team is here to help.</p>
-          <a href="#" class="btn btn-primary" onclick="showPage('contact'); return false;">Talk to Our Team</a>
+          <a href="#" class="btn btn-primary" onclick="showPage('contact-us'); return false;">Talk to Our Team</a>
         </div>
       </section>
     </div>
@@ -7929,7 +7933,7 @@
             <h2 class="cta-title">Ready to Grow with Us?</h2>
             <p class="cta-sub">Whether you're starting your career or bringing years of experience, we're always looking for passionate individuals who share our commitment to innovation, collaboration, and customer success.</p>
             <div class="cta-actions">
-              <a href="#" class="btn btn-white" onclick="showPage('contact'); return false;">Get in Touch</a>
+              <a href="#" class="btn btn-white" onclick="showPage('contact-us'); return false;">Get in Touch</a>
             </div>
           </div>
         </div>
@@ -8080,7 +8084,7 @@
     </div>
 
     <!-- CONTACT PAGE -->
-    <div id="page-contact" class="page">
+    <div id="page-contact-us" class="page">
       <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.72), rgba(6,78,59,0.72)), url('Images/Contact/hero.jpg'); background-size: cover; background-position: center;">
         <div class="container">
           <div class="page-hero-content">
@@ -8198,7 +8202,7 @@
     </div>
 
     <!-- RESOURCES: BLOG -->
-    <div id="page-res-blog" class="page">
+    <div id="page-blog" class="page">
       <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.75), rgba(6,78,59,0.75)), url('Images/Resources/blog.jpg'); background-size: cover; background-position: center;">
         <div class="container">
           <div class="page-hero-content">
@@ -8385,7 +8389,7 @@
             <div style="background: var(--navy); border-radius: 12px; padding: 40px; text-align: center;">
               <h3 style="color:#fff; font-size:20px; font-weight:700; margin-bottom:12px;">Ready to Get Certified the Right Way?</h3>
               <p style="color:rgba(255,255,255,0.7); font-size:15px; margin-bottom:24px;">ISO 27001 certification is one of the most impact investments your organization can make. Contact OPT IT today for a no-obligation security posture assessment and take the first step toward certification with a team that stays with you every step of the way.</p>
-              <a href="#" onclick="showPage('contact'); return false;" style="display:inline-block; background:var(--blue); color:#fff; padding:12px 28px; border-radius:6px; font-weight:600; text-decoration:none; font-size:15px;">Get in Touch</a>
+              <a href="#" onclick="showPage('contact-us'); return false;" style="display:inline-block; background:var(--blue); color:#fff; padding:12px 28px; border-radius:6px; font-weight:600; text-decoration:none; font-size:15px;">Get in Touch</a>
             </div>
           </div>
         </div>
@@ -8452,7 +8456,7 @@
             <div style="background: var(--navy); border-radius: 12px; padding: 40px; text-align: center;">
               <h3 style="color:#fff; font-size:20px; font-weight:700; margin-bottom:12px;">Ready to Experience the OPT IT Difference?</h3>
               <p style="color:rgba(255,255,255,0.7); font-size:15px; margin-bottom:24px;">Book a free 30-minute cloud consultation with our senior experts today!</p>
-              <a href="#" onclick="showPage('contact'); return false;" style="display:inline-block; background:var(--blue); color:#fff; padding:12px 28px; border-radius:6px; font-weight:600; text-decoration:none; font-size:15px;">Get in Touch</a>
+              <a href="#" onclick="showPage('contact-us'); return false;" style="display:inline-block; background:var(--blue); color:#fff; padding:12px 28px; border-radius:6px; font-weight:600; text-decoration:none; font-size:15px;">Get in Touch</a>
             </div>
           </div>
         </div>
@@ -8533,7 +8537,7 @@
             <div style="background: var(--navy); border-radius: 12px; padding: 40px; text-align: center;">
               <h3 style="color:#fff; font-size:20px; font-weight:700; margin-bottom:12px;">Book Your Free 30-Minute Data Security Consultation</h3>
               <p style="color:rgba(255,255,255,0.7); font-size:15px; margin-bottom:24px;">Talk to OPT IT about a structured DLP approach for your organization.</p>
-              <a href="#" onclick="showPage('contact'); return false;" style="display:inline-block; background:var(--blue); color:#fff; padding:12px 28px; border-radius:6px; font-weight:600; text-decoration:none; font-size:15px;">Get in Touch</a>
+              <a href="#" onclick="showPage('contact-us'); return false;" style="display:inline-block; background:var(--blue); color:#fff; padding:12px 28px; border-radius:6px; font-weight:600; text-decoration:none; font-size:15px;">Get in Touch</a>
             </div>
           </div>
         </div>
@@ -8580,7 +8584,7 @@
             <div style="background: var(--navy); border-radius: 12px; padding: 40px; text-align: center;">
               <h3 style="color:#fff; font-size:20px; font-weight:700; margin-bottom:12px;">Ready to secure your startup before attackers strike?</h3>
               <p style="color:rgba(255,255,255,0.7); font-size:15px; margin-bottom:24px;">Contact OPT IT today to build a scalable cybersecurity foundation that supports growth with confidence.</p>
-              <a href="#" onclick="showPage('contact'); return false;" style="display:inline-block; background:var(--blue); color:#fff; padding:12px 28px; border-radius:6px; font-weight:600; text-decoration:none; font-size:15px;">Get in Touch</a>
+              <a href="#" onclick="showPage('contact-us'); return false;" style="display:inline-block; background:var(--blue); color:#fff; padding:12px 28px; border-radius:6px; font-weight:600; text-decoration:none; font-size:15px;">Get in Touch</a>
             </div>
           </div>
         </div>
@@ -8651,7 +8655,7 @@
             <div style="background: var(--navy); border-radius: 12px; padding: 40px; text-align: center;">
               <h3 style="color:#fff; font-size:20px; font-weight:700; margin-bottom:12px;">Let's identify your risks and build stronger defenses</h3>
               <p style="color:rgba(255,255,255,0.7); font-size:15px; margin-bottom:24px;">Connect with OPT IT Today!</p>
-              <a href="#" onclick="showPage('contact'); return false;" style="display:inline-block; background:var(--blue); color:#fff; padding:12px 28px; border-radius:6px; font-weight:600; text-decoration:none; font-size:15px;">Get in Touch</a>
+              <a href="#" onclick="showPage('contact-us'); return false;" style="display:inline-block; background:var(--blue); color:#fff; padding:12px 28px; border-radius:6px; font-weight:600; text-decoration:none; font-size:15px;">Get in Touch</a>
             </div>
           </div>
         </div>
@@ -8709,7 +8713,7 @@
             <div style="background: var(--navy); border-radius: 12px; padding: 40px; text-align: center;">
               <h3 style="color:#fff; font-size:20px; font-weight:700; margin-bottom:12px;">Ready to secure your cloud?</h3>
               <p style="color:rgba(255,255,255,0.7); font-size:15px; margin-bottom:24px;">Explore how OPT IT's CSPM solutions can transform your cloud security strategy.</p>
-              <a href="#" onclick="showPage('contact'); return false;" style="display:inline-block; background:var(--blue); color:#fff; padding:12px 28px; border-radius:6px; font-weight:600; text-decoration:none; font-size:15px;">Get in Touch</a>
+              <a href="#" onclick="showPage('contact-us'); return false;" style="display:inline-block; background:var(--blue); color:#fff; padding:12px 28px; border-radius:6px; font-weight:600; text-decoration:none; font-size:15px;">Get in Touch</a>
             </div>
           </div>
         </div>
@@ -8753,7 +8757,7 @@
             <div style="background: var(--navy); border-radius: 12px; padding: 40px; text-align: center;">
               <h3 style="color:#fff; font-size:20px; font-weight:700; margin-bottom:12px;">Schedule a professional cybersecurity assessment today</h3>
               <p style="color:rgba(255,255,255,0.7); font-size:15px; margin-bottom:24px;">Close the gaps before they become real losses.</p>
-              <a href="#" onclick="showPage('contact'); return false;" style="display:inline-block; background:var(--blue); color:#fff; padding:12px 28px; border-radius:6px; font-weight:600; text-decoration:none; font-size:15px;">Get in Touch</a>
+              <a href="#" onclick="showPage('contact-us'); return false;" style="display:inline-block; background:var(--blue); color:#fff; padding:12px 28px; border-radius:6px; font-weight:600; text-decoration:none; font-size:15px;">Get in Touch</a>
             </div>
           </div>
         </div>
@@ -8810,7 +8814,7 @@
             <div style="background: var(--navy); border-radius: 12px; padding: 40px; text-align: center;">
               <h3 style="color:#fff; font-size:20px; font-weight:700; margin-bottom:12px;">Don't Let Cybercriminals Steal Your Black Friday Success!</h3>
               <p style="color:rgba(255,255,255,0.7); font-size:15px; margin-bottom:24px;">Talk to OPT IT today and get a tailored cloud &amp; cybersecurity strategy built for high-performance eCommerce.</p>
-              <a href="#" onclick="showPage('contact'); return false;" style="display:inline-block; background:var(--blue); color:#fff; padding:12px 28px; border-radius:6px; font-weight:600; text-decoration:none; font-size:15px;">Get in Touch</a>
+              <a href="#" onclick="showPage('contact-us'); return false;" style="display:inline-block; background:var(--blue); color:#fff; padding:12px 28px; border-radius:6px; font-weight:600; text-decoration:none; font-size:15px;">Get in Touch</a>
             </div>
           </div>
         </div>
@@ -8863,7 +8867,7 @@
             <div style="background: var(--navy); border-radius: 12px; padding: 40px; text-align: center;">
               <h3 style="color:#fff; font-size:20px; font-weight:700; margin-bottom:12px;">Ready to reveal the potential of your cloud migration?</h3>
               <p style="color:rgba(255,255,255,0.7); font-size:15px; margin-bottom:24px;">Addressing these challenges now will help turn post-move obstacles into long-term gains.</p>
-              <a href="#" onclick="showPage('contact'); return false;" style="display:inline-block; background:var(--blue); color:#fff; padding:12px 28px; border-radius:6px; font-weight:600; text-decoration:none; font-size:15px;">Get in Touch</a>
+              <a href="#" onclick="showPage('contact-us'); return false;" style="display:inline-block; background:var(--blue); color:#fff; padding:12px 28px; border-radius:6px; font-weight:600; text-decoration:none; font-size:15px;">Get in Touch</a>
             </div>
           </div>
         </div>
@@ -8871,8 +8875,8 @@
     </div>
 
     <!-- RESOURCES: NEWS -->
-    <div id="page-res-news" class="page">
-      <section id="hero-res-news" class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.78), rgba(6,78,59,0.78)), url('Images/Resources/news.jpg'); background-size: cover; background-position: center;">
+    <div id="page-news" class="page">
+      <section id="hero-news" class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.78), rgba(6,78,59,0.78)), url('Images/Resources/news.jpg'); background-size: cover; background-position: center;">
         <div class="container">
           <div class="page-hero-content">
             <div class="label label-light">Resources / News</div>
@@ -8923,7 +8927,7 @@
     </div>
 
     <!-- RESOURCES: NEWSLETTER -->
-    <div id="page-res-newsletter" class="page">
+    <div id="page-newsletter" class="page">
       <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.78), rgba(6,78,59,0.78)), url('Images/Resources/newsletter.webp'); background-size: cover; background-position: center;">
         <div class="container">
           <div class="page-hero-content">
@@ -8989,7 +8993,7 @@
             <div style="background: var(--navy); border-radius: 12px; padding: 40px; text-align: center;">
               <h3 style="color:#fff; font-size:20px; font-weight:700; margin-bottom:12px;">Be part of our journey</h3>
               <p style="color:rgba(255,255,255,0.7); font-size:15px; margin-bottom:24px;">Partner with OPT IT and experience 17 years of expertise working for your business.</p>
-              <a href="#" onclick="showPage('contact'); return false;" style="display:inline-block; background:var(--blue); color:#fff; padding:12px 28px; border-radius:6px; font-weight:600; text-decoration:none; font-size:15px;">Get in Touch</a>
+              <a href="#" onclick="showPage('contact-us'); return false;" style="display:inline-block; background:var(--blue); color:#fff; padding:12px 28px; border-radius:6px; font-weight:600; text-decoration:none; font-size:15px;">Get in Touch</a>
             </div>
           </div>
         </div>
@@ -9035,7 +9039,7 @@
             <div style="background: var(--navy); border-radius: 12px; padding: 40px; text-align: center;">
               <h3 style="color:#fff; font-size:20px; font-weight:700; margin-bottom:12px;">Ready to meet CSCRF compliance?</h3>
               <p style="color:rgba(255,255,255,0.7); font-size:15px; margin-bottom:24px;">Talk to OPT IT's experts and get a compliance readiness assessment today.</p>
-              <a href="#" onclick="showPage('contact'); return false;" style="display:inline-block; background:var(--blue); color:#fff; padding:12px 28px; border-radius:6px; font-weight:600; text-decoration:none; font-size:15px;">Get in Touch</a>
+              <a href="#" onclick="showPage('contact-us'); return false;" style="display:inline-block; background:var(--blue); color:#fff; padding:12px 28px; border-radius:6px; font-weight:600; text-decoration:none; font-size:15px;">Get in Touch</a>
             </div>
           </div>
         </div>
@@ -9078,7 +9082,7 @@
             <div style="background: var(--navy); border-radius: 12px; padding: 40px; text-align: center;">
               <h3 style="color:#fff; font-size:20px; font-weight:700; margin-bottom:12px;">Work with an ISO 27001 certified partner</h3>
               <p style="color:rgba(255,255,255,0.7); font-size:15px; margin-bottom:24px;">Talk to OPT IT about how our certified security practices protect your business.</p>
-              <a href="#" onclick="showPage('contact'); return false;" style="display:inline-block; background:var(--blue); color:#fff; padding:12px 28px; border-radius:6px; font-weight:600; text-decoration:none; font-size:15px;">Get in Touch</a>
+              <a href="#" onclick="showPage('contact-us'); return false;" style="display:inline-block; background:var(--blue); color:#fff; padding:12px 28px; border-radius:6px; font-weight:600; text-decoration:none; font-size:15px;">Get in Touch</a>
             </div>
           </div>
         </div>
@@ -9086,7 +9090,7 @@
     </div>
 
     <!-- RESOURCES: CLIENTS -->
-    <div id="page-res-clients" class="page">
+    <div id="page-clients" class="page">
       <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.75), rgba(6,78,59,0.75)), url('Images/Resources/clients.jpg'); background-size: cover; background-position: center;">
         <div class="container">
           <div class="page-hero-content">
@@ -9256,7 +9260,7 @@
     </div>
 
     <!-- RESOURCES: CASE STUDIES -->
-    <div id="page-res-cases" class="page">
+    <div id="page-case-studies" class="page">
       <section class="page-hero" style="background-image: linear-gradient(rgba(6,78,59,0.78), rgba(6,78,59,0.78)), url('Images/Resources/case-studies.jpg'); background-size: cover; background-position: center;">
         <div class="container">
           <div class="page-hero-content">
@@ -9480,7 +9484,7 @@
           <p class="section-subtitle" style="margin-bottom: 32px;">We may update this Privacy Policy from time to time to reflect changes in our business practices, legal requirements, or website functionality. Any updates will be posted on this page along with the revised effective date.</p>
 
           <h2 class="legal-heading">8. Contact Us</h2>
-          <p class="section-subtitle">If you have any questions regarding this Privacy Policy or how your information is handled, please contact us through the contact details provided on our <a href="#" onclick="showPage('contact'); return false;" style="color: var(--blue); text-decoration: underline;">Contact Us</a> page.</p>
+          <p class="section-subtitle">If you have any questions regarding this Privacy Policy or how your information is handled, please contact us through the contact details provided on our <a href="#" onclick="showPage('contact-us'); return false;" style="color: var(--blue); text-decoration: underline;">Contact Us</a> page.</p>
         </div>
       </section>
     </div>
@@ -9541,7 +9545,7 @@
           <p class="section-subtitle" style="margin-bottom: 32px;">These Terms of Service shall be governed by and interpreted in accordance with the laws of India. Any disputes arising from the use of this website shall be subject to the jurisdiction of the competent courts in Bengaluru, Karnataka.</p>
 
           <h2 class="legal-heading">10. Contact Us</h2>
-          <p class="section-subtitle">If you have any questions regarding these Terms of Service, please contact us through the information provided on our <a href="#" onclick="showPage('contact'); return false;" style="color: var(--blue); text-decoration: underline;">Contact Us</a> page.</p>
+          <p class="section-subtitle">If you have any questions regarding these Terms of Service, please contact us through the information provided on our <a href="#" onclick="showPage('contact-us'); return false;" style="color: var(--blue); text-decoration: underline;">Contact Us</a> page.</p>
         </div>
       </section>
     </div>
@@ -9596,7 +9600,7 @@
           <p class="section-subtitle" style="margin-bottom: 32px;">We may update this Cookie Policy from time to time to reflect changes in technology, legal requirements, or our website practices. Any updates will be published on this page along with the revised effective date.</p>
 
           <h2 class="legal-heading">7. Contact Us</h2>
-          <p class="section-subtitle">If you have any questions about this Cookie Policy or our use of cookies, please contact us through the information provided on our <a href="#" onclick="showPage('contact'); return false;" style="color: var(--blue); text-decoration: underline;">Contact Us</a> page.</p>
+          <p class="section-subtitle">If you have any questions about this Cookie Policy or our use of cookies, please contact us through the information provided on our <a href="#" onclick="showPage('contact-us'); return false;" style="color: var(--blue); text-decoration: underline;">Contact Us</a> page.</p>
         </div>
       </section>
     </div>
@@ -9641,7 +9645,7 @@
                 href="#"
                 class="footer-link"
                 onclick="
-                  showPage('svc-infra');
+                  showPage('it-infrastructure-management');
                   return false;
                 "
                 >IT Infrastructure</a
@@ -9650,7 +9654,7 @@
                 href="#"
                 class="footer-link"
                 onclick="
-                  showPage('svc-cloud');
+                  showPage('cloud-services');
                   return false;
                 "
                 >Cloud Services</a
@@ -9659,7 +9663,7 @@
                 href="#"
                 class="footer-link"
                 onclick="
-                  showPage('svc-devops');
+                  showPage('devops-services');
                   return false;
                 "
                 >DevOps</a
@@ -9668,16 +9672,16 @@
                 href="#"
                 class="footer-link"
                 onclick="
-                  showPage('svc-security');
+                  showPage('managed-security');
                   return false;
                 "
-                >Cybersecurity</a
+                >Managed Security</a
               >
               <a
                 href="#"
                 class="footer-link"
                 onclick="
-                  showPage('svc-semi');
+                  showPage('semiconductor-eda-infrastructure');
                   return false;
                 "
                 >Semiconductor & EDA</a
@@ -9686,7 +9690,7 @@
                 href="#"
                 class="footer-link"
                 onclick="
-                  showPage('svc-elevate');
+                  showPage('elevateops-ai-platform');
                   return false;
                 "
                 >ElevateOps</a
@@ -9701,7 +9705,7 @@
                 href="#"
                 class="footer-link"
                 onclick="
-                  showPage('about');
+                  showPage('about-us');
                   return false;
                 "
                 >About Us</a
@@ -9729,7 +9733,7 @@
                 href="#"
                 class="footer-link"
                 onclick="
-                  showPage('contact');
+                  showPage('contact-us');
                   return false;
                 "
                 >Contact</a
@@ -9878,7 +9882,7 @@
 
       function showPage(id, skipHistory) {
         if (!skipHistory) {
-          history.pushState({ page: id }, '', '#' + id);
+          history.pushState({ page: id }, '', id === 'home' ? location.pathname : '#' + id);
         }
         document
           .querySelectorAll(".page")
@@ -9896,29 +9900,29 @@
           .forEach((d) => d.classList.remove("label-active"));
         const linkMap = {
           home: "Home",
-          about: "About Us",
+          "about-us": "About Us",
           careers: "Careers",
-          contact: "Contact Us",
+          "contact-us": "Contact Us",
         };
         const ddMap = {
           services: "nav-dd-services",
-          "svc-infra": "nav-dd-services",
-          "svc-cloud": "nav-dd-services",
-          "svc-devops": "nav-dd-services",
-          "svc-security": "nav-dd-services",
-          "svc-semi": "nav-dd-services",
-          "svc-elevate": "nav-dd-services",
+          "it-infrastructure-management": "nav-dd-services",
+          "cloud-services": "nav-dd-services",
+          "devops-services": "nav-dd-services",
+          "managed-security": "nav-dd-services",
+          "semiconductor-eda-infrastructure": "nav-dd-services",
+          "elevateops-ai-platform": "nav-dd-services",
           industries: "nav-dd-industries",
-          "ind-semiconductor": "nav-dd-industries",
-          "ind-manufacturing": "nav-dd-industries",
-          "ind-healthcare": "nav-dd-industries",
-          "ind-banking": "nav-dd-industries",
-          "ind-technology": "nav-dd-industries",
-          "ind-education": "nav-dd-industries",
-          "res-blog": "nav-dd-resources",
-          "res-news": "nav-dd-resources",
-          "res-clients": "nav-dd-resources",
-          "res-cases": "nav-dd-resources",
+          "semiconductor-electronics": "nav-dd-industries",
+          "manufacturing": "nav-dd-industries",
+          "healthcare-life-sciences": "nav-dd-industries",
+          "banking-financial-services": "nav-dd-industries",
+          "technology-saas": "nav-dd-industries",
+          "education": "nav-dd-industries",
+          "blog": "nav-dd-resources",
+          "news": "nav-dd-resources",
+          "clients": "nav-dd-resources",
+          "case-studies": "nav-dd-resources",
           resources: "nav-dd-resources",
           "blog-1": "nav-dd-resources",
           "blog-2": "nav-dd-resources",
@@ -9958,8 +9962,19 @@
         var initialPage = location.hash ? location.hash.slice(1) : 'home';
         var el = document.getElementById('page-' + initialPage);
         if (!el) initialPage = 'home';
-        history.replaceState({ page: initialPage }, '', '#' + initialPage);
+        history.replaceState({ page: initialPage }, '', initialPage === 'home' ? location.pathname : '#' + initialPage);
         if (initialPage !== 'home') showPage(initialPage, true);
+      })();
+
+      // Set real href on every showPage link so hover shows the correct URL
+      (function() {
+        document.querySelectorAll('a[href="#"]').forEach(function(a) {
+          var oc = a.getAttribute('onclick') || '';
+          var m = oc.match(/showPage\('([^']+)'\)/);
+          if (m) {
+            a.href = m[1] === 'home' ? location.pathname : '#' + m[1];
+          }
+        });
       })();
 
       window.addEventListener('popstate', function(e) {
