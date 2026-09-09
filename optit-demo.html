@@ -7973,7 +7973,7 @@
             <div class="job-modal-email">
               <strong>Ready to apply?</strong><br>Submit your application with your resume.
             </div>
-            <a href="#" id="jobModalApply" class="job-modal-apply">Apply Now →</a>
+            <a href="javascript:void(0)" id="jobModalApply" class="job-modal-apply" onclick="return false;">Apply Now →</a>
           </div>
         </div>
       </div>
@@ -8069,10 +8069,6 @@
           });
 
           document.getElementById('jobModalQualifications').textContent = d.qualifications;
-
-          var subject = encodeURIComponent('Application for ' + d.title + ' – [Candidate Name]');
-          var body = encodeURIComponent('Hi Opt IT Recruitment Team,\n\nI am interested in applying for the ' + d.title + ' position. Please find my resume attached for your consideration.\n\nRegards,\n[Candidate Name]');
-          document.getElementById('jobModalApply').href = 'mailto:recruitment@optit.in?subject=' + subject + '&body=' + body;
 
           document.getElementById('jobModal').classList.add('open');
           document.body.style.overflow = 'hidden';
