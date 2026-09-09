@@ -126,7 +126,7 @@
       }
 
       .section {
-        padding: 80px 0;
+        padding: 64px 0;
       }
       .section-sm {
         padding: 64px 0;
@@ -498,7 +498,7 @@
       .hero-content {
         position: relative;
         z-index: 2;
-        max-width: 900px;
+        max-width: 1200px;
         margin: 0 auto;
         padding: 0 32px;
         display: flex;
@@ -562,7 +562,7 @@
         color: rgba(255, 255, 255, 0.92);
         line-height: 1.8;
         margin-bottom: 40px;
-        max-width: 480px;
+        max-width: 640px;
         font-weight: 400;
       }
 
@@ -1122,11 +1122,11 @@
 
       /* ── SECTION HEADERS ── */
       .section-header {
-        max-width: 600px;
+        max-width: 780px;
       }
 
       .section-header.center {
-        max-width: 640px;
+        max-width: 100%;
         margin: 0 auto;
         text-align: center;
       }
@@ -1136,6 +1136,7 @@
         font-weight: 800;
         color: var(--navy);
         margin: 10px 0 14px;
+        max-width: 100%;
       }
 
       .section-title-light {
@@ -1143,10 +1144,17 @@
       }
 
       .section-subtitle {
+        display: block;
+        max-width: 780px;
         font-size: 15px;
         color: var(--text-secondary);
         line-height: 1.7;
         font-weight: 300;
+      }
+
+      .section-header.center .section-subtitle {
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .section-subtitle-light {
@@ -1357,7 +1365,7 @@
       .page-hero-content {
         position: relative;
         z-index: 1;
-        max-width: 720px;
+        max-width: 920px;
       }
 
       .page-title {
@@ -2843,7 +2851,7 @@
       @media (max-width: 900px) {
 
         /* 2. Section spacing - reduce slightly */
-        .section     { padding: 64px 0; }
+        .section     { padding: 56px 0; }
         .section-sm  { padding: 48px 0; }
         .vm-section  { padding: 72px 0; }
         .team-section { padding: 72px 0; }
@@ -3853,11 +3861,11 @@
             <span>Enterprise Technology Partner</span>
           </div>
 
-          <h1 class="hero-title animate delay-1" id="hero-title" style="max-width:720px;">
+          <h1 class="hero-title animate delay-1" id="hero-title" style="max-width:1000px;">
             Transform Your <span class="accent">Technology</span> Infrastructure
           </h1>
 
-          <p class="hero-sub animate delay-2" id="hero-sub" style="max-width:620px; margin-left:auto; margin-right:auto;">
+          <p class="hero-sub animate delay-2" id="hero-sub" style="max-width:700px; margin-left:auto; margin-right:auto;">
             IT infrastructure to cloud migration - Opt IT delivers enterprise-grade technology transformation that scales with your ambition
           </p>
 
@@ -7308,7 +7316,7 @@
           <div class="page-hero-content">
             <div class="label label-light">Resources</div>
             <h1 class="page-title">Insights That Inspire Action</h1>
-            <p class="page-sub">Explore the latest insights, updates, and success stories that showcase our expertise, customer partnerships, and real-world business impact.</p>
+            <p class="page-sub">Explore the latest insights, updates, and success stories that showcase our expertise, customer partnerships,<br>and real-world business impact.</p>
           </div>
         </div>
       </section>
@@ -9788,7 +9796,7 @@
           {
             badge: '<div class="hero-badge-dot"></div><span>Enterprise Technology Partner</span>',
             title: 'Transform Your <span class="accent">Technology</span> Infrastructure',
-            sub: 'From on-premises data centers to hybrid cloud environments — Opt IT manages your full IT stack so your teams stay focused on the business.'
+            sub: 'From on-premises data centers to hybrid cloud environments - Opt IT manages your full IT stack so your teams stay focused on the business.'
           },
           {
             badge: null,
