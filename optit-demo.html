@@ -3551,6 +3551,77 @@
         .silaunch-env-grid { grid-template-columns: 1fr !important; }
         #page-si-launch-solution .hero-cta-row { flex-wrap: wrap; }
       }
+
+      /* ── SI-LAUNCH HERO LOGO PANEL ── */
+      #page-si-launch-solution .page-hero {
+        overflow: visible;
+      }
+      #page-si-launch-solution .page-hero > .container {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+      }
+      #page-si-launch-solution .page-hero-content {
+        flex: 1;
+        min-width: 0;
+        max-width: none;
+      }
+      .silaunch-logo-panel {
+        flex-shrink: 0;
+        width: 300px;
+        background: rgba(255,255,255,0.08);
+        border: 1px solid rgba(255,255,255,0.18);
+        border-radius: 16px;
+        padding: 28px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(6px);
+        box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+      }
+      .silaunch-logo-panel img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      @media (max-width: 900px) {
+        #page-si-launch-solution .page-hero {
+          height: auto !important;
+          padding-top: 88px;
+          padding-bottom: 28px;
+        }
+        #page-si-launch-solution .page-hero > .container {
+          flex-direction: column;
+          align-items: center;
+          gap: 12px;
+        }
+        #page-si-launch-solution .page-hero-content {
+          width: 100%;
+          max-width: none;
+        }
+        #page-si-launch-solution .page-hero-content .page-title {
+          margin: 10px 0 14px;
+        }
+        #page-si-launch-solution .page-hero-content .page-sub {
+          line-height: 1.55;
+        }
+        #page-si-launch-solution .page-hero-content .hero-cta-row {
+          justify-content: center;
+        }
+        .silaunch-logo-panel {
+          width: 46%;
+          max-width: 200px;
+          padding: 12px;
+        }
+      }
+      @media (max-width: 600px) {
+        .silaunch-logo-panel {
+          width: 42%;
+          max-width: 165px;
+          padding: 10px;
+        }
+      }
     </style>
   </head>
 
@@ -6325,6 +6396,9 @@
               <a href="#" class="btn btn-primary" onclick="showPage('contact-us'); return false;">Talk to Our Team</a>
               <a href="#" class="btn btn-ghost" onclick="showPage('services'); return false;">← All Services</a>
             </div>
+          </div>
+          <div class="silaunch-logo-panel">
+            <img src="Images/Services/si-launch-logo.png" alt="Si-Launch">
           </div>
         </div>
       </section>
